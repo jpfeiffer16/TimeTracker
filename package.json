@@ -1,0 +1,14 @@
+{
+  "name": "timetracker",
+  "version": "0.1.0",
+  "description": "An electron app for tracking time",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joe Pfeiffer",
+  "license": "ISC",
+  "dependencies": {
+    "electron-prebuilt": "^1.4.1"
+  }
+}
