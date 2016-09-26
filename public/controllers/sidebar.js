@@ -1,4 +1,4 @@
 angular.module('app')
   .controller('SidebarCtrl', function ($scope) {
-    $scope.test = 'Test';
+    //TODO: Logic here
   });
