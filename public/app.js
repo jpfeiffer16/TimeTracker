@@ -9,8 +9,8 @@ angular
     //  });
     $routeProvider
       .when('/', {
-        templateUrl: 'public/views/home.html',
-        controller: 'HomeCtrl',
+        templateUrl: 'public/views/time.html',
+        controller: 'TimeCtrl',
         page: 'home'
       }); 
   });

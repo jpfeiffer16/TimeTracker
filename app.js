@@ -1,4 +1,9 @@
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, ipcMain} = require('electron');
+const MessageManager = require('./modules/messageManager');
+
+//Setup custom process communication code
+MessageManager(ipcMain);
+
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
