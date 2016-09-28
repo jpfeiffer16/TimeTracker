@@ -20,15 +20,20 @@
     <script src="public/controllers/main.js"></script>
     <script src="public/controllers/home.js"></script>
     <script src="public/controllers/time.js"></script>
+    <script src="public/controllers/settings.js"></script>
+    <script src="public/controllers/notes.js"></script>
     <script src="public/controllers/sidebar.js"></script>
     
     <script src="public/services/messages.js"></script>
+    <script src="public/services/noteManager.js"></script>
+    <script src="public/services/settingsManager.js"></script>
+    <script src="public/services/timeManager.js"></script>
   </head>
 
   <body ng-app="app" ng-controller="MainCtrl">
-    <md-toolbar class="md-hue-2">
+    <md-toolbar class="md-hue-2" style="-webkit-app-region: drag;">
       <div class="md-toolbar-tools">
-        <md-button ng-click="toggle()" class="md-icon-button" aria-label="Settings">
+        <md-button ng-click="toggleMenu()" class="md-icon-button" aria-label="Settings" style="-webkit-app-region: no-drag;">
           <i class="fa fa-bars fa-2x" style="color:white;" aria-hidden="true"></i>
         </md-button>
         <h2>
@@ -41,24 +46,25 @@
         class="md-sidenav-left"
         md-component-id="left"
         md-is-locked-open="$mdMedia('gt-md')"
-        md-whiteframe="4">
+        md-whiteframe="4"
+        md-component-id="left">
         <md-toolbar class="md-theme-indigo">
           <h1 class="md-toolbar-tools">Tools</h1>
         </md-toolbar>
         <md-content layout-padding ng-controller="SidebarCtrl">
         <md-list ng-cloak>
-          <md-subheader class="md-no-sticky">Single Action Checkboxes</md-subheader>
-          <md-list-item href="/">
+          <!--<md-subheader class="md-no-sticky">Single Action Checkboxes</md-subheader>-->
+          <md-list-item ng-click="menuItemClick('/time')">
             <p> Time </p>
           </md-list-item>
-          <md-list-item href="/">
+          <md-list-item ng-click="menuItemClick('/notes')">
             <p> Notes </p>
           </md-list-item>
 
           <md-divider></md-divider>
 
 
-          <md-list-item href="/">
+          <md-list-item ng-click="menuItemClick('/settings')">
             <p> Settings </p>
           </md-list-item>
         </md-list>

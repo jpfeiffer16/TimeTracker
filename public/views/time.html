@@ -1,3 +1,7 @@
-<div ng-repeat="day in days">
-  <h4>{{day.tasks}}</h4>
-</div>
+<md-list>
+  <md-list-item ng-repeat="day in days" ng-click="doSomething()" class="noright">
+    <p>{{ formatDate(day.date) }}</p>
+    <md-icon md-svg-icon="communication:email"  ng-click="doSecondaryAction($event)" aria-label="Send Email" class="md-secondary md-hue-3" ></md-icon>
+    <md-icon class="md-secondary" ng-click="doSecondaryAction($event)" aria-label="Chat" md-svg-icon="communication:message"></md-icon>
+  </md-list-item>
+</md-list>

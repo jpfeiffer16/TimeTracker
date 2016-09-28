@@ -9,6 +9,8 @@
   "author": "Joe Pfeiffer",
   "license": "ISC",
   "dependencies": {
-    "electron-prebuilt": "^1.4.1"
+    "electron-prebuilt": "^1.4.1",
+    "electron-settings": "^2.2.1",
+    "mongoose": "^4.6.1"
   }
 }

@@ -1,4 +1,7 @@
 angular.module('app')
-  .controller('SidebarCtrl', function ($scope) {
-    //TODO: Logic here
+  .controller('SidebarCtrl', function ($scope, $rootScope) {
+    $scope.menuItemClick = (url) => {
+      $rootScope.navigate(url);
+      $rootScope.closeMenu();
+    };
   });

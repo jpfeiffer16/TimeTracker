@@ -1,7 +1,5 @@
 angular.module('app')
-  .controller('MainCtrl', function ($scope, $mdSidenav) {
+  .controller('MainCtrl', function ($scope) {
     //TODO: Code here 
-    $scope.toggle = () => {
-      $mdSidenav('left').toggle();
-    };
+    
   });
