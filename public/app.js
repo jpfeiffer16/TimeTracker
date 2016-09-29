@@ -1,6 +1,6 @@
 //Create and configure app here
 angular
-  .module('app', ['ngRoute', 'ngMaterial', 'ngAnimate'])
+  .module('app', ['ngRoute', 'ngMaterial', 'ngAnimate', 'cfp.hotkeys'])
   .config(($routeProvider, $locationProvider) => {
     //$locationProvider
     //  .html5Mode({
@@ -9,14 +9,20 @@ angular
     //  });
     $routeProvider
       .when('/', {
-        templateUrl: 'public/views/time.html',
-        controller: 'TimeCtrl',
-        page: 'time'
+        redirectTo: '/time'
       })
       .when('/time', {
         templateUrl: 'public/views/time.html',
         controller: 'TimeCtrl',
-        page: 'time'
+        page: 'time',
+        hotkeys: [
+          ['ctrl+n', 'New Day', 'newDay()']
+        ]
+      })
+      .when('/day/:id', {
+        templateUrl: 'public/views/day.html',
+        controller: 'DayCtrl',
+        page: 'day'
       })
       .when('/notes', {
         templateUrl: 'public/views/notes.html',
@@ -26,7 +32,10 @@ angular
       .when('/settings', {
         templateUrl: 'public/views/settings.html',
         controller: 'SettingsCtrl',
-        page: 'settings'
+        page: 'settings',
+        hotkeys: [
+          ['ctrl+s', 'Save Settings', 'save()']
+        ]
       });
   })
   .run(($rootScope, $mdSidenav, $location) => {

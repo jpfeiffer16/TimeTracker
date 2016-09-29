@@ -5,3 +5,11 @@
 .view-container.leave {
   background-color: red;
 }
+
+md-toolbar.top-bar {
+  position: fixed;
+}
+
+md-content.main-content {
+  margin-top: 56px;
+}

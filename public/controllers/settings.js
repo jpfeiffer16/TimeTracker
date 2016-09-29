@@ -1,5 +1,5 @@
 angular.module('app')
-  .controller('SettingsCtrl', function ($scope, $mdSidenav, SettingsManager) {
+  .controller('SettingsCtrl', function ($scope, $mdSidenav, hotkeys, SettingsManager) {
     $scope.settings = {
       mongoURL: ''
     };
@@ -11,7 +11,4 @@ angular.module('app')
     SettingsManager.getSettings((settings) => {
       $scope.settings = settings;
     });
-    
-
-
   });
