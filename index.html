@@ -4,6 +4,7 @@
     <title>TimeTracker</title> 
     <link rel="stylesheet" href="public/components/angular-material/angular-material.min.css">
     <link rel="stylesheet" href="public/css/font-awesome.min.css">
+    <link rel="stylesheet" href="public/css/custom.css">
 
     <script src="public/components/jquery/dist/jquery.min.js"></script>
     <script src="public/components/angular/angular.js"></script>
@@ -79,7 +80,9 @@
         </md-content>
       </md-sidenav>
       <md-content flex layout-padding>
-        <ng-view></ng-view>
+        <!--<ng-view></ng-view>-->
+        <div ng-view class="view-container">
+        </div>
       </md-content>
     </section>
   </body>

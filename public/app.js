@@ -1,6 +1,6 @@
 //Create and configure app here
 angular
-  .module('app', ['ngRoute', 'ngMaterial'])
+  .module('app', ['ngRoute', 'ngMaterial', 'ngAnimate'])
   .config(($routeProvider, $locationProvider) => {
     //$locationProvider
     //  .html5Mode({

@@ -2,7 +2,6 @@ const settings = require('electron-settings');
 // settings.set('settings', {});
 const MessageManager = (ipcMain) => {
   ipcMain.on('getDays', (event, args) => {
-    console.log('Getting days');
     //TODO: Mongoose code for pulling days here
     //event.sender.send('getDays', data); //When done
     let testDay = {
@@ -47,7 +46,6 @@ const MessageManager = (ipcMain) => {
   ipcMain.on('getSettings', (event, args) => {
     settings.get('settings')
       .then(val => {
-        console.log(val);
         event.sender.send('getSettings', val);
       });
   });

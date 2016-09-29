@@ -1,7 +1,10 @@
+<md-subheader class="md-no-sticky">Time</md-subheader>
+
+<md-button ng-click="newDay()" class="md-raised md-primary">New</md-button> 
+
 <md-list>
   <md-list-item ng-repeat="day in days" ng-click="doSomething()" class="noright">
     <p>{{ formatDate(day.date) }}</p>
-    <md-icon md-svg-icon="communication:email"  ng-click="doSecondaryAction($event)" aria-label="Send Email" class="md-secondary md-hue-3" ></md-icon>
-    <md-icon class="md-secondary" ng-click="doSecondaryAction($event)" aria-label="Chat" md-svg-icon="communication:message"></md-icon>
+    <p>{{ getHours(day) }} Hours</p>
   </md-list-item>
 </md-list>
