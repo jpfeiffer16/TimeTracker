@@ -32,17 +32,26 @@
     <script src="public/services/noteManager.js"></script>
     <script src="public/services/settingsManager.js"></script>
     <script src="public/services/timeManager.js"></script>
+    <script src="public/services/appManager.js"></script>
+    <script src="public/services/windowManager.js"></script>
+    <script src="public/services/infoManager.js"></script>
+
+    <script src="public/directives/rightClickNavigate.js"></script>
   </head>
 
   <body ng-app="app" ng-controller="MainCtrl">
     <md-toolbar class="md-hue-2 top-bar" style="-webkit-app-region: drag;" scoll>
       <div class="md-toolbar-tools">
-        <md-button ng-click="toggleMenu()" class="md-icon-button" aria-label="Settings" style="-webkit-app-region: no-drag;">
+        <md-button ng-click="toggleMenu()" class="md-icon-button" aria-label="Menu" style="-webkit-app-region: no-drag;">
           <i class="fa fa-bars fa-2x" style="color:white;" aria-hidden="true"></i>
         </md-button>
         <h2>
           <span>TimeTracker</span>
         </h2>
+        <span flex></span>
+        <md-button ng-click="closeWindow()" class="md-icon-button" aria-label="Settings" style="-webkit-app-region: no-drag;">
+          <i class="fa fa-close fa-2x" style="color:white; font-weight: normal;" aria-hidden="true"></i>
+        </md-button>
       </div>
     </md-toolbar>
     <section layout="row" flex>
@@ -84,6 +93,7 @@
       </md-sidenav>
       <md-content flex layout-padding class="main-content">
         <!--<ng-view></ng-view>-->
+        <md-subheader class="md-no-sticky">{{ currentPage.capitalize() }}</md-subheader>
         <div ng-view class="view-container">
         </div>
       </md-content>

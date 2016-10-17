@@ -15,6 +15,7 @@ angular.module('app')
       ipcRenderer.once(eventName, function(event, args) {
         if (cb) cb(args);
       });
+      console.log(args);
       ipcRenderer.send(eventName, args);
     };
     return {

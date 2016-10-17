@@ -27,7 +27,7 @@ angular
       .when('/notes', {
         templateUrl: 'public/views/notes.html',
         controller: 'NotesCtrl',
-        page: 'home'
+        page: 'notes'
       })
       .when('/settings', {
         templateUrl: 'public/views/settings.html',
@@ -38,23 +38,40 @@ angular
         ]
       });
   })
-  .run(($rootScope, $mdSidenav, $location) => {
-    // const menu = null;
-    // $rootScope.$on('$viewContentLoaded', function(){
-    //   $mdSidenav('left');
-    // });
-
+  .run(($rootScope, $mdSidenav, $location, $route, AppManager, WindowManager) => {
     $rootScope.toggleMenu = () => {
-      // menu.toggle();
       $mdSidenav('left').toggle();
     };
 
     $rootScope.closeMenu = () => {
-      // menu.close();
       $mdSidenav('left').close();
     };
 
     $rootScope.navigate = (url) => {
       $location.path(url);
     };
+
+    $rootScope.closeApp = () => {
+      AppManager.closeApp();
+    };
+
+
+    $rootScope.closeWindow = () => {
+      WindowManager.closeWindow();
+    };
+
+    Object.defineProperty($rootScope, 'currentPage', {
+        get: function () {
+            if ($route.current != undefined)
+                return $route.current.page;
+            else
+                return '';
+        }
+    });
   });
+
+//Global Type Additions
+
+String.prototype.capitalize = function () {
+  return this.slice(0, 1).toUpperCase() + this.slice(1);
+};

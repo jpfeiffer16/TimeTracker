@@ -1,6 +1,7 @@
 const settings = require('electron-settings');
+const { app } = require('electron');
 // settings.set('settings', {});
-const MessageManager = (ipcMain) => {
+const MessageManager = (ipcMain, callbackObj) => {
   let testDay = {
       id: 123,
       date: Date.now(),
@@ -59,6 +60,15 @@ const MessageManager = (ipcMain) => {
       .then(val => {
         event.sender.send('saveSettings', val);
       });
+  });
+
+  //App controllers
+  ipcMain.on('closeApp', (event, args) => {
+    app.quit();
+  });
+
+  ipcMain.on('openLinkInNewWindow', (event, args) => {
+    callbackObj.createWindow(args);
   });
 };
 
