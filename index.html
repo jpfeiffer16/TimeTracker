@@ -67,17 +67,17 @@
         <md-content layout-padding ng-controller="SidebarCtrl">
         <md-list ng-cloak>
           <!--<md-subheader class="md-no-sticky">Single Action Checkboxes</md-subheader>-->
-          <md-list-item ng-click="menuItemClick('/time')">
+          <md-list-item ng-click="menuItemClick('/time')" right-click-navigate="'/time'">
             <p> Time </p>
           </md-list-item>
-          <md-list-item ng-click="menuItemClick('/notes')">
+          <md-list-item ng-click="menuItemClick('/notes')" right-click-navigate="'/notes'">
             <p> Notes </p>
           </md-list-item>
 
           <md-divider></md-divider>
 
 
-          <md-list-item ng-click="menuItemClick('/settings')">
+          <md-list-item ng-click="menuItemClick('/settings')" right-click-navigate="'/notes'">
             <p> Settings </p>
           </md-list-item>
         </md-list>

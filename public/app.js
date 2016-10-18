@@ -61,12 +61,12 @@ angular
     };
 
     Object.defineProperty($rootScope, 'currentPage', {
-        get: function () {
-            if ($route.current != undefined)
-                return $route.current.page;
-            else
-                return '';
-        }
+      get: function () {
+        if ($route.current != undefined)
+          return $route.current.page;
+        else
+          return '';
+      }
     });
   });
 
