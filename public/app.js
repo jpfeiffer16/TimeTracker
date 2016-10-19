@@ -22,7 +22,18 @@ angular
       .when('/day/:id', {
         templateUrl: 'public/views/day.html',
         controller: 'DayCtrl',
-        page: 'day'
+        page: 'day',
+        hotkeys: [
+          ['ctrl+s', 'Save Day', 'save()']
+        ]
+      })
+      .when('/day', {
+        templateUrl: 'public/views/day.html',
+        controller: 'DayCtrl',
+        page: 'day',
+        hotkeys: [
+          ['ctrl+s', 'Save Day', 'save()']
+        ]
       })
       .when('/notes', {
         templateUrl: 'public/views/notes.html',

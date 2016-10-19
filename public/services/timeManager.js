@@ -9,8 +9,14 @@ angular.module('app')
         cb(day);
       });
     };
+    const saveDay = (day, cb) => {
+      MessagesService.sendMessage('saveDay', day, function(day) {
+        cb(day);
+      });
+    };
     return {
       getDays,
-      getDay
+      getDay,
+      saveDay
     }
   });

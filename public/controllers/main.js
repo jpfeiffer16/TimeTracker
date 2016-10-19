@@ -4,8 +4,6 @@ angular.module('app')
     hotkeys.add({
       combo: 'ctrl+w',
       decription: 'Close window',
-      callback: () => {
-        $rootScope.closeWindow();
-      }
+      callback: $rootScope.closeWindow
     });
   });
