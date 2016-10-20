@@ -24,7 +24,8 @@ angular
         controller: 'DayCtrl',
         page: 'day',
         hotkeys: [
-          ['ctrl+s', 'Save Day', 'save()']
+          ['ctrl+s', 'Save Day', 'save()'],
+          ['ctrl+b', 'Back', 'back()']
         ]
       })
       .when('/day', {
@@ -32,13 +33,32 @@ angular
         controller: 'DayCtrl',
         page: 'day',
         hotkeys: [
-          ['ctrl+s', 'Save Day', 'save()']
+          ['ctrl+s', 'Save Day', 'save()'],
+          ['ctrl+b', 'Back', 'back()']
         ]
       })
       .when('/notes', {
         templateUrl: 'public/views/notes.html',
         controller: 'NotesCtrl',
         page: 'notes'
+      })
+      .when('/note', {
+        templateUrl: 'public/views/note.html',
+        controller: 'NoteCtrl',
+        page: 'note',
+        hotkeys: [
+          ['ctrl+s', 'Save Note', 'save()'],
+          ['ctrl+b', 'Back', 'back()']
+        ]
+      })
+      .when('/note/:id', {
+        templateUrl: 'public/views/note.html',
+        controller: 'NoteCtrl',
+        page: 'note',
+        hotkeys: [
+          ['ctrl+s', 'Save Note', 'save()'],
+          ['ctrl+b', 'Back', 'back()']
+        ]
       })
       .when('/settings', {
         templateUrl: 'public/views/settings.html',

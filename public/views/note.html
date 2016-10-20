@@ -1,0 +1,20 @@
+<md-button ng-click="back()" class="md-raised md-primary">Back</md-button> 
+
+<md-input-container class="md-block">
+  <label>Category</label>
+  <md-select ng-model="ctrl.userState">
+    <!--TODO: Need to repeat out categories here-->
+    <md-option><em>None</em></md-option>
+  </md-select>
+</md-input-container>
+
+
+<md-input-container class="md-block">
+  <label>Title</label>
+  <input md-no-asterisk name="title" ng-model="note.title">
+</md-input-container>
+
+<md-input-container class="md-block">
+  <label>Text</label>
+  <input md-no-asterisk name="text" ng-model="note.text">
+</md-input-container>

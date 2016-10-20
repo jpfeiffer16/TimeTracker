@@ -5,7 +5,7 @@ const NoteCategory = require('../models/noteCategory');
 const Task = require('../models/task');
 
 const StorageManager = function (connectionString) {
-  let isReady = false;
+  // let isReady = false;
   let db = null;
 
   let init = function (connectionString) {
@@ -18,81 +18,161 @@ const StorageManager = function (connectionString) {
       db.once('open', function() {
         // we're connected!
         console.log(`Connected to ${ connectionString }`);
-        isReady = true;
-        new require('../models/day')({
-          date: new Date,
-          tasks: [
-            {
-              decription: 'Test',
-              time: 1
-            }
-          ]
+        // isReady = true;
+        // console.log(isReady);
+        // new require('../models/day')({
+        //   date: new Date,
+        //   tasks: [
+        //     {
+        //       description: 'Test',
+        //       time: 1
+        //     },
+        //     {
+        //       description: 'Test',
+        //       time: 1
+        //     }
+        //   ]
+        // }).save();
+
+        new require('../models/note')({
+          category: null,
+          title: 'test',
+          text: 'test'
         }).save();
       });
       mongoose.connect(connectionString);
     }
   };
 
+  //Days
   let getDays = function (cb) {
-    if (!isReady) return;
+    // if (!isReady) return;
     Day.find((err, days) => {
       if (err) {
         console.error(err);
         return;
       }
-      cb(days);
+      // console.log(days);
+      cb(JSON.parse(JSON.stringify(days)));
     });
   };
 
-  let getDay = function (id) {
-    if (!isReady) return;
-    Day.findOne({ id: id }, (err, days) => {
+  let getDay = function (id, cb) {
+    // if (!isReady) return;
+    console.log('Getting day');
+    console.log(id);
+    Day.findOne({ _id: id }, (err, day) => {
       if (err) {
         console.error(err);
         return;
       }
-      cb(days);
+      cb(JSON.parse(JSON.stringify(day)));
     });
   };
 
   let saveDay = function (day, cb) {
-    if (!isReady) return;
-    let mongooseDay = new Day({
-      id: day.id,
-      date: day.date,
-      tasks: day.tasks
-    });
-    mongooseDay.save((err, day) => {
-      console.log('Saved');
+    // if (!isReady) return;
+    // new Day(day)
+    //   .save((err, day) => {
+    //   console.log('Saved');
+    //   if (err) {
+    //     console.error(err);
+    //     return;
+    //   }
+    //   cb(day);
+    // });
+    // console.log(`day: ${ day }`);
+    // console.log(`id: ${ day.id }`);
+    Day.findOne({ _id: day._id }, (err, foundday) => {
       if (err) {
         console.error(err);
         return;
       }
-      cb(day);
+      console.log(`Day: ${ foundday }`);
+      if (foundday != null) {
+        //Update
+        Day.findOneAndUpdate({ _id: day._id }, day, (foundday) => {
+          cb(foundday);
+        });
+      } else {
+        //Save
+        new Day(day)
+          .save((err, day) => {
+            console.log('Saved');
+            if (err) {
+              console.error(err);
+              return;
+            }
+            cb(day);
+          });
+      }
     });
   };
 
 
-  let getNotes = function () {
-    if (!isReady) return;
-    //TODO: Logic here
+
+  //Notes
+  let getNotes = function (cb) {
+    Note.find((err, notes) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      cb(JSON.parse(JSON.stringify(notes)));
+    });
   };
 
-  let getNote = function () {
-    if (!isReady) return;
-    //TODO: Logic here
+  let getNote = function (id, cb) {
+    Note.findOne({_id: id}, (err, note) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      cb(JSON.parse(JSON.stringify(note)));
+    });
   };
 
-  let saveNote = function () {
-    if (!isReady) return;
-    //TODO: Logic here
+  let saveNote = function (note, cb) {
+    // new Note(note)
+    //   .save((err, note) => {
+    //     if (err) {
+    //       console.error(err);
+    //       return;
+    //     }
+    //     cb(note);
+    //   });
+
+    Note.findOne({ _id: note._id }, (err, foundnote) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      console.log(`Note: ${ foundnote }`);
+      if (foundnote != null) {
+        //Update
+        Day.findOneAndUpdate({ _id: note._id }, note, (foundnote) => {
+          cb(foundnote);
+        });
+      } else {
+        //Save
+        new Note(note)
+          .save((err, savedNote) => {
+            console.log('Saved');
+            if (err) {
+              console.error(err);
+              return;
+            }
+            cb(savedNote);
+          });
+      }
+    });
   };
 
   init(connectionString);
 
   //Exports
   return {
-    isReady,
+    // isReady,
     getDays,
     getDay,
     saveDay,

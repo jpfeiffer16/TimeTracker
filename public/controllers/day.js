@@ -1,5 +1,5 @@
 angular.module('app')
-  .controller('DayCtrl', function ($scope, $rootScope, $routeParams, hotkeys, TimeManager) {
+  .controller('DayCtrl', function ($scope, $rootScope, $routeParams, hotkeys, TimeManager, InfoManager) {
     // hotkeys
     //   .bindTo($scope)
     //   .add({
@@ -17,15 +17,25 @@ angular.module('app')
       });
     }
 
-    $scope.back = () => {
+    $scope.back = function () {
       $rootScope.navigate('/time');
     };
 
-    $scope.save = () => {
+    $scope.save = function () {
       TimeManager.saveDay($scope.day, (day) => {
+        // $scope.day = day;
         InfoManager.showMessage('Day Saved');
       });
-    }
+    };
+
+    $scope.newTimeEntry = function () {
+      $scope.day.tasks.push({ description: '', time: 0 });
+    };
+
+    // $scope.$watch('day', (newValue) => {
+    //   // console.log(newValue);
+    //   $scope.$apply();
+    // });
     // $scope.getDate = (ticks) => {
     //   return new Date(ticks);
     // };

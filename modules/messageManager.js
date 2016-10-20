@@ -7,6 +7,9 @@ settings.get('settings.mongoURL')
     // console.log(val);
     if (val != undefined && val != '')
       storageManager = StorageManager(val);
+      // setInterval(() => {
+      //   console.log(storageManager.isReady);
+      // });
   });
 
 const { app } = require('electron');
@@ -33,11 +36,12 @@ const MessageManager = function (ipcMain, callbackObj) {
   ipcMain.on('getDays', (event, args) => {
     //TODO: Mongoose code for pulling days here
     //event.sender.send('getDays', data); //When done
-    if (storageManager && storageManager.isReady) {
-      storageManager.getDays((days) => {
-        event.sender.send('getDays', days);
-      });
-    }
+    // console.log(storageManager.isReady);
+    // if (storageManager && storageManager.isReady) {
+    storageManager.getDays((days) => {
+      event.sender.send('getDays', days);
+    });
+    // }
     // let mockReturn = [];
     // for (let i = 0; i < 10; i++) {
     //   mockReturn.push(JSON.parse(JSON.stringify(testDay)));
@@ -45,38 +49,61 @@ const MessageManager = function (ipcMain, callbackObj) {
     // event.sender.send('getDays', mockReturn);
   });
   ipcMain.on('getDay', (event, id) => {
-    if (storageManager && storageManager.isReady) {
-      storageManager.getDay(id, (day) => {
-        event.sender.send('getDay', day);
-      });
-    }
+    // if (storageManager && storageManager.isReady) {
+    storageManager.getDay(id, (day) => {
+      event.sender.send('getDay', day);
+    });
+    // }
 
     //TODO: Temp code
     // event.sender.send('getDay', testDay);
   });
   ipcMain.on('saveDay', (event, day) => {
     console.log('Saving day');
-    console.log(storageManager.isReady);
+    // console.log(storageManager.isReady);
     console.log(day);
-    if (storageManager && storageManager.isReady) {
-      storageManager.saveDay(day, (day) => {
-        event.sender.send('getDay', day);
-      });
-    }
+    // if (storageManager && storageManager.isReady) {
+    storageManager.saveDay(day, (day) => {
+      event.sender.send('saveDay', day);
+    });
+    // }
 
     //TODO: Temp code
     // event.sender.send('getDay', testDay);
   });
 
 
-  ipcMain.on('getNote', (event, args) => {
+  ipcMain.on('getNote', (event, id) => {
     //TODO: Mongoose code for pulling note here
    //event.sender.send('getDays', data); //When done
+
+    storageManager.getNote(id, (note) => {
+      event.sender.send('getNote', note);
+    });
   });
-  ipcMain.on('getAllNotes', (event, args) => {
+  ipcMain.on('getNotes', (event, args) => {
     //TODO: Mongoose code for pulling notes here
-   //event.sender.send('getDays', data); //When done
+    //event.sender.send('getDays', data); //When done
+
+    storageManager.getNotes((notes) => {
+      event.sender.send('getNotes', notes);
+    });
   });
+
+  ipcMain.on('saveNote', (event, note) => {
+    console.log('Saving note');
+    // console.log(storageManager.isReady);
+    console.log(note);
+    // if (storageManager && storageManager.isReady) {
+    storageManager.saveNote(note, (note) => {
+      event.sender.send('saveNote', note);
+    });
+    // }
+
+    //TODO: Temp code
+    // event.sender.send('getDay', testDay);
+  });
+
   ipcMain.on('getNoteCategories', (event, args) => {
     //TODO: Mongoose code for pulling categories here
    //event.sender.send('getDays', data); //When done
@@ -85,6 +112,8 @@ const MessageManager = function (ipcMain, callbackObj) {
     //TODO: Mongoose code for pulling notes here
    //event.sender.send('getDays', data); //When done
   });
+
+  //Settings
   ipcMain.on('getSettings', (event, args) => {
     settings.get('settings')
       .then(val => {

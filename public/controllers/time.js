@@ -3,7 +3,7 @@ angular.module('app')
     $scope.days = [];
     $scope.formatDate = (date) => {
       let obj = new Date(date);
-      return obj.getMonth() + "/" + obj.getDay() + "/" + obj.getFullYear();
+      return obj.getMonth() + 1 + "/" + obj.getUTCDate() + "/" + obj.getFullYear();
     };
     $scope.getHours = (day) => {
       let total = 0;
