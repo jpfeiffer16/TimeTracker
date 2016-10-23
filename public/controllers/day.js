@@ -14,6 +14,7 @@ angular.module('app')
     if ($routeParams.id) {
       TimeManager.getDay($routeParams.id, (day) => {
         $scope.day = day;
+        $scope.$apply();
       });
     }
 

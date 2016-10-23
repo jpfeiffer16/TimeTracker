@@ -14,5 +14,6 @@ angular.module('app')
     };
     TimeManager.getDays((days) => {
       $scope.days = days;
+      $scope.$apply();
     });
   });
