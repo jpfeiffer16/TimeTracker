@@ -1,5 +1,6 @@
-const {app, BrowserWindow, ipcMain} = require('electron');
+const {app, BrowserWindow, Tray, Menu, ipcMain} = require('electron');
 const MessageManager = require('./modules/messageManager');
+const path = require('path');
 
 //Setup custom process communication code
 MessageManager(ipcMain, {
@@ -11,7 +12,10 @@ MessageManager(ipcMain, {
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
+let tray
+const iconPath = path.join(__dirname, 'icon.png');
 
+//TODO: This code is not great. Needs to be refactored before it causes problems.
 function createWindow (path) {
   // Create the browser window.
   //TODO: Do more calculations here. If the screen is small, the window should be bigger.
@@ -39,6 +43,16 @@ function createWindow (path) {
 // Some APIs can only be used after this event occurs.
 app.on('ready', function () {
   createWindow('');
+
+  tray = new Tray(iconPath);
+  const contextMenu = Menu.buildFromTemplate([
+    {label: 'Item1', type: 'radio'},
+    {label: 'Item2', type: 'radio'},
+    {label: 'Item3', type: 'radio', checked: true},
+    {label: 'Item4', type: 'radio'}
+  ]);
+  tray.setToolTip('TimeTracker');
+  tray.setContextMenu(contextMenu);
 });
 
 // Quit when all windows are closed.
