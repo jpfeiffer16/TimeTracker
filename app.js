@@ -57,3 +57,32 @@ app.on('activate', () => {
     createWindow()
   }
 })
+
+// let outlook = require("node-outlook");
+
+// var queryParams = {
+//   '$select': 'Subject,ReceivedDateTime,From',
+//   '$orderby': 'ReceivedDateTime desc',
+//   '$top': 10
+// };
+
+// // Set the API endpoint to use the v2.0 endpoint
+// outlook.base.setApiEndpoint('https://outlook.office.com/api/v2.0');
+// // Set the anchor mailbox to the user's SMTP address
+// // outlook.base.setAnchorMailbox(email);
+
+// outlook.mail.getMessages({token: 'ZxuNHh0e4xgim0bYYKhaQGK', odataParams: queryParams},
+//   function(error, result){
+//     if (error) {
+//       console.log('getMessages returned an error: ' + error);
+//     }
+//     else if (result) {
+//       console.log('getMessages returned ' + result.value.length + ' messages.');
+//       result.value.forEach(function(message) {
+//         console.log('  Subject: ' + message.Subject);
+//         var from = message.From ? message.From.EmailAddress.Name : "NONE";
+//         console.log('  From: ' + from);
+//         console.log('  Received: ' + message.ReceivedDateTime.toString());
+//       });
+//     }
+//   });
