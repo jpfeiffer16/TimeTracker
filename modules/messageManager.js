@@ -108,6 +108,15 @@ const MessageManager = function (ipcMain, callbackObj) {
     //TODO: Mongoose code for pulling categories here
    //event.sender.send('getDays', data); //When done
   });
+
+  ipcMain.on('getNoteCategory', (event, id) => {
+    //TODO: Mongoose code for pulling categories here
+   //event.sender.send('getDays', data); //When done
+  });
+  ipcMain.on('saveNoteCategory', (event, category) => {
+    //TODO: Mongoose code for pulling categories here
+   //event.sender.send('getDays', data); //When done
+  });
   ipcMain.on('getNotesByCategory', (event, args) => {
     //TODO: Mongoose code for pulling notes here
    //event.sender.send('getDays', data); //When done

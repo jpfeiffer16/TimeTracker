@@ -60,6 +60,24 @@ angular
           ['ctrl+b', 'Back', 'back()']
         ]
       })
+      .when('/categories/', {
+        templateUrl: 'public/views/categories.html',
+        controller: 'CategoriesCtrl',
+        page: 'categories',
+        hotkeys: [
+          ['ctrl+n', 'New Category', 'new()'],
+          ['ctrl+b', 'Back', 'back()']
+        ]
+      })
+      .when('/category/:id', {
+        templateUrl: 'public/views/category.html',
+        controller: 'CategoryCtrl',
+        page: 'category',
+        hotkeys: [
+          ['ctrl+s', 'Save Category', 'save()'],
+          ['ctrl+b', 'Back', 'back()']
+        ]
+      })
       .when('/settings', {
         templateUrl: 'public/views/settings.html',
         controller: 'SettingsCtrl',

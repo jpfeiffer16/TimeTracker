@@ -2,10 +2,12 @@
 <html>
   <head>
     <title>TimeTracker</title> 
+    <!--Required Css-->
     <link rel="stylesheet" href="public/components/angular-material/angular-material.min.css">
     <link rel="stylesheet" href="public/css/font-awesome.min.css">
     <link rel="stylesheet" href="public/css/custom.css">
 
+    <!--Required Libraries-->
     <script src="public/components/jquery/dist/jquery.min.js"></script>
     <script src="public/components/angular/angular.js"></script>
     <script src="public/components/angular-route/angular-route.min.js"></script>
@@ -28,6 +30,7 @@
     <script src="public/controllers/note.js"></script>
     <script src="public/controllers/sidebar.js"></script>
     <script src="public/controllers/day.js"></script>
+    <script src="public/controllers/categories.js"></script>
     
     <script src="public/services/messages.js"></script>
     <script src="public/services/noteManager.js"></script>
@@ -74,11 +77,14 @@
           <md-list-item ng-click="menuItemClick('/notes')" right-click-navigate="'/notes'">
             <p> Notes </p>
           </md-list-item>
+          <md-list-item ng-click="menuItemClick('/categories')" right-click-navigate="'/categories'">
+            <p> Categories </p>
+          </md-list-item>
 
           <md-divider></md-divider>
 
 
-          <md-list-item ng-click="menuItemClick('/settings')" right-click-navigate="'/notes'">
+          <md-list-item ng-click="menuItemClick('/settings')" right-click-navigate="'/settings'">
             <p> Settings </p>
           </md-list-item>
         </md-list>
