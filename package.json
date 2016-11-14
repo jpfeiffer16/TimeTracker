@@ -12,6 +12,8 @@
     "electron-prebuilt": "^1.4.1",
     "electron-settings": "^2.2.1",
     "mongoose": "^4.6.1",
-    "node-outlook": "^1.1.6"
+    "node-outlook": "^1.1.6",
+    "sequelize": "^3.24.8",
+    "sqlite3": "^3.1.8"
   }
 }

@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-const Day = require('../models/day');
-const Note = require('../models/note');
-const NoteCategory = require('../models/noteCategory');
-const Task = require('../models/task');
+const Day = require('../models/mongo/day');
+const Note = require('../models/mongo/note');
+const NoteCategory = require('../models/mongo/noteCategory');
+const Task = require('../models/mongo/task');
 
 const StorageManager = function (connectionString) {
   // let isReady = false;
@@ -34,7 +34,7 @@ const StorageManager = function (connectionString) {
         //   ]
         // }).save();
 
-        new require('../models/note')({
+        new Note({
           category: null,
           title: 'test',
           text: 'test'

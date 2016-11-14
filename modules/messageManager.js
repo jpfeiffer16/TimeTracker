@@ -1,16 +1,6 @@
 const settings = require('electron-settings');
-const StorageManager = require('./storageManager');
-let storageManager = null;
-
-settings.get('settings.mongoURL')
-  .then(val => {
-    // console.log(val);
-    if (val != undefined && val != '')
-      storageManager = StorageManager(val);
-      // setInterval(() => {
-      //   console.log(storageManager.isReady);
-      // });
-  });
+//const StorageManager = require('./storageManager');
+const StorageManager = require('./sqlStorage);
 
 const { app } = require('electron');
 // settings.set('settings', {});
@@ -38,7 +28,7 @@ const MessageManager = function (ipcMain, callbackObj) {
     //event.sender.send('getDays', data); //When done
     // console.log(storageManager.isReady);
     // if (storageManager && storageManager.isReady) {
-    storageManager.getDays((days) => {
+    StorageManager.getDays((days) => {
       event.sender.send('getDays', days);
     });
     // }
@@ -50,7 +40,7 @@ const MessageManager = function (ipcMain, callbackObj) {
   });
   ipcMain.on('getDay', (event, id) => {
     // if (storageManager && storageManager.isReady) {
-    storageManager.getDay(id, (day) => {
+    StorageManager.getDay(id, (day) => {
       event.sender.send('getDay', day);
     });
     // }
@@ -63,7 +53,7 @@ const MessageManager = function (ipcMain, callbackObj) {
     // console.log(storageManager.isReady);
     console.log(day);
     // if (storageManager && storageManager.isReady) {
-    storageManager.saveDay(day, (day) => {
+    StorageManager.saveDay(day, (day) => {
       event.sender.send('saveDay', day);
     });
     // }
@@ -77,7 +67,7 @@ const MessageManager = function (ipcMain, callbackObj) {
     //TODO: Mongoose code for pulling note here
    //event.sender.send('getDays', data); //When done
 
-    storageManager.getNote(id, (note) => {
+    StorageManager.getNote(id, (note) => {
       event.sender.send('getNote', note);
     });
   });
@@ -85,7 +75,7 @@ const MessageManager = function (ipcMain, callbackObj) {
     //TODO: Mongoose code for pulling notes here
     //event.sender.send('getDays', data); //When done
 
-    storageManager.getNotes((notes) => {
+    StorageManager.getNotes((notes) => {
       event.sender.send('getNotes', notes);
     });
   });
@@ -95,7 +85,7 @@ const MessageManager = function (ipcMain, callbackObj) {
     // console.log(storageManager.isReady);
     console.log(note);
     // if (storageManager && storageManager.isReady) {
-    storageManager.saveNote(note, (note) => {
+    StorageManager.saveNote(note, (note) => {
       event.sender.send('saveNote', note);
     });
     // }
