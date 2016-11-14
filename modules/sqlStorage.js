@@ -6,15 +6,19 @@ const sequelize = new Sequelize('database', 'username', 'password', {
 });
 
 //Models
-const day = require('../models/sqlite/day.js')(sequelize);
-const note = require('../models/sqlite/note.js')(sequelize);
-//const noteCategory = require('../models/sqlite/noteCategory.js')(sequelize);
-//const task = require('../models/sqlite/day.js')(sequelize);
+const Day = require('../models/sqlite/day.js')(sequelize);
+const Note = require('../models/sqlite/note.js')(sequelize);
+//const NoteCategory = require('../models/sqlite/noteCategory.js')(sequelize);
+//const Task = require('../models/sqlite/day.js')(sequelize);
 
 const StorageManager = function() {
   //Days
   let getDays = function (cb) {
-    Day.findAll().then((days) => {
+    Day.findAll().then((dbdays) => {
+      var days = dbdays.map((day) => {
+        return day.dataValues; 
+      });
+      console.log(days);
       cb(days); 
     });
   };
