@@ -1,4 +1,5 @@
-module.exports = function (connection) {
+const Sequelize = require('sequelize');
+module.exports = function (sequelize) {
   const note = sequelize.define('note', {
     date: {
       type: Sequelize.DATE,
@@ -8,5 +9,5 @@ module.exports = function (connection) {
 
   note.sync();
 
-  return day;
+  return note;
 };

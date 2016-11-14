@@ -1,6 +1,6 @@
 //Setup
-var Sequelize = require('sequelize');
-var sequelize = new Sequelize('database', 'username', 'password', {
+const Sequelize = require('sequelize');
+const sequelize = new Sequelize('database', 'username', 'password', {
     dialect: 'sqlite',
     storage: './data.sqlite'
 });
@@ -8,8 +8,8 @@ var sequelize = new Sequelize('database', 'username', 'password', {
 //Models
 const day = require('../models/sqlite/day.js')(sequelize);
 const note = require('../models/sqlite/note.js')(sequelize);
-const noteCategory = require('../models/sqlite/noteCategory.js')(sequelize);
-const task = require('../models/sqlite/day.js')(sequelize);
+//const noteCategory = require('../models/sqlite/noteCategory.js')(sequelize);
+//const task = require('../models/sqlite/day.js')(sequelize);
 
 const StorageManager = function() {
   //Days

@@ -1,6 +1,6 @@
 const settings = require('electron-settings');
 //const StorageManager = require('./storageManager');
-const StorageManager = require('./sqlStorage);
+const StorageManager = require('./sqlStorage');
 
 const { app } = require('electron');
 // settings.set('settings', {});
