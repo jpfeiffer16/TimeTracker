@@ -3,11 +3,10 @@ module.exports = function (sequelize) {
   const note = sequelize.define('note', {
     date: {
       type: Sequelize.DATE,
-      field: 'date' 
+      field: 'date',
+
     }
   });
-
-  note.sync();
 
   return note;
 };

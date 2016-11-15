@@ -1,13 +1,21 @@
 //Setup
-const Sequelize = require('sequelize');
-const sequelize = new Sequelize('database', 'username', 'password', {
-    dialect: 'sqlite',
-    storage: './data.sqlite'
-});
+
+const {
+  Day,
+  Task,
+  Note,
+  NoteCategory
+} = require('../storage/sqlite');
+
+// const Sequelize = require('sequelize');
+// const sequelize = new Sequelize('database', 'username', 'password', {
+//     dialect: 'sqlite',
+//     storage: './data.sqlite'
+// });
 
 //Models
-const Day = require('../models/sqlite/day.js')(sequelize);
-const Note = require('../models/sqlite/note.js')(sequelize);
+// const Day = require('../models/sqlite/day.js')(sequelize);
+// const Note = require('../models/sqlite/note.js')(sequelize);
 //const NoteCategory = require('../models/sqlite/noteCategory.js')(sequelize);
 //const Task = require('../models/sqlite/day.js')(sequelize);
 
@@ -16,10 +24,10 @@ const StorageManager = function() {
   let getDays = function (cb) {
     Day.findAll().then((dbdays) => {
       var days = dbdays.map((day) => {
-        return day.dataValues; 
+        return day.dataValues;
       });
       console.log(days);
-      cb(days); 
+      cb(days);
     });
   };
 
@@ -27,7 +35,7 @@ const StorageManager = function() {
     Day.findOne({
       id: id
     }).then((day) => {
-      cb(day); 
+      cb(day);
     });
   };
 
@@ -40,10 +48,10 @@ const StorageManager = function() {
         dbday.updateAttibutes(day)
           .then(cb);
       } else {
-        //Insert here 
+        //Insert here
         Day.create(day)
           .then(cb);
-      } 
+      }
     });
   };
 
@@ -66,7 +74,7 @@ const StorageManager = function() {
     saveDay,
     getNotes,
     getNote,
-    saveNote, 
+    saveNote,
   }
 };
 
