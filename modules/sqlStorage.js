@@ -22,7 +22,9 @@ const {
 const StorageManager = function() {
   //Days
   let getDays = function (cb) {
-    Day.findAll().then((dbdays) => {
+    Day.findAll({
+      include: Task 
+    }).then((dbdays) => {
       var days = dbdays.map((day) => {
         return day.dataValues;
       });
@@ -40,19 +42,30 @@ const StorageManager = function() {
   };
 
   let saveDay = function (day, cb) {
-    Day.findOne({
-      id: day.id
-    }).then((dbday) => {
-      if (dbday) {
-        //Update here
-        dbday.updateAttibutes(day)
-          .then(cb);
-      } else {
-        //Insert here
-        Day.create(day)
-          .then(cb);
-      }
+    console.log(day);
+    Day.upsert({
+      day 
     });
+    //.then((updatedDay) => {
+    //  day.tasks.forEach((task) => {
+    //    task.dayId = updatedDay.id;
+    //    Task.upsert(task); 
+    //  });
+    //});
+    //Day.create(day);
+    //Day.findOne({
+    //  id: day.id
+    //}).then((dbday) => {
+    //  if (dbday) {
+    //    //Update here
+    //    dbday.updateAttibutes(day)
+    //      .then(cb);
+    //  } else {
+    //    //Insert here
+    //    Day.create(day)
+    //      .then(cb);
+    //  }
+    //});
   };
 
 

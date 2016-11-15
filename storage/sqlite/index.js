@@ -1,9 +1,9 @@
 module.exports = (function () {
   //DB connection
   const Sequelize = require('sequelize');
-  const sequelize = new Sequelize('database', 'username', 'password', {
+  const sequelize = new Sequelize({
       dialect: 'sqlite',
-      storage: '../../data.sqlite'
+      storage: './data.sqlite'
   });
 
   //Pull in models
@@ -13,8 +13,12 @@ module.exports = (function () {
   var Task = require('./task')(sequelize);
 
   //Setup database associations here
-  Task.belongsTo(Day);
-  Note.belongsTo(NoteCategory);
+  Day.hasMany(Task, { as: 'tasks' });
+  //Task.belongsTo(Day);
+  NoteCategory.hasMany(Note, { as: 'notes' });
+  //Note.belongsTo(NoteCategory);
+  //Task.belongsTo(Day);
+  //Note.belongsTo(NoteCategory);
 
   //Sync table schemas
   Day.sync();
