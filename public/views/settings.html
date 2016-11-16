@@ -1,11 +1,20 @@
 <!--<md-subheader class="md-no-sticky">Settings</md-subheader>-->
 
+<!-- Temporary Stuff -->
+<h3>Import Existing Text Documents</h3>
 <md-input-container class="md-block">
-  <label>Mongo URI</label>
-  <input md-no-asterisk name="mongouri" ng-model="settings.mongoURL">
+  <label>Folder Path</label>
+  <input md-no-asterisk name="filepath" ng-model="settings.filepath">
+  <md-button ng-click="doImport()" class="md-raised md-primary">Import</md-button>
+</md-input-container>
+
+
+<!-- <md-input-container class="md-block"> -->
+  <!-- <label>Mongo URI</label> -->
+  <!-- <input md-no-asterisk name="mongouri" ng-model="settings.mongoURL"> -->
   <!--<div ng-messages="projectForm.description.$error">
     <div ng-message="required">This is required.</div>
     <div ng-message="md-maxlength">The description must be less than 30 characters long.</div>
   </div>-->
-</md-input-container>
+<!-- </md-input-container> -->
 <md-button ng-click="save()" class="md-raised md-primary">Save</md-button>

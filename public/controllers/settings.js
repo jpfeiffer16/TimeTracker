@@ -10,6 +10,13 @@ angular.module('app')
       });
     };
 
+    //Temporary
+    $scope.doImport = () => {
+      SettingsManager.doImport($scope.settings.filepath, function () {
+        InfoManager.showMessage('Import Completed');
+      });
+    };
+
     SettingsManager.getSettings((settings) => {
       $scope.settings = settings;
     });

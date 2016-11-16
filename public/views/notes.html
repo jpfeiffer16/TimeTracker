@@ -3,11 +3,11 @@
 <md-input-container class="md-block">
   <label>Search</label>
   <input md-no-asterisk name="search" ng-model="searchText">
-  
+
 </md-input-container>
 <md-input-container class="md-block">
   <md-list>
-    <md-list-item ng-repeat="note in notes" ng-click="navigate('/note/' + note._id)" right-click-navigate="'/note/' + note._id" class="noright">
+    <md-list-item ng-repeat="note in notes" ng-click="navigate('/note/' + note.id)" right-click-navigate="'/note/' + note.id" class="noright">
       <p>{{ note.title }}</p>
     </md-list-item>
   </md-list>

@@ -6,8 +6,14 @@ angular.module('app')
     const saveSettings = (settings, cb) => {
       MessagesService.sendMessage('saveSettings', settings, cb);
     };
+    //Temporary
+    const doImport = (filepath, cb) => {
+      MessagesService.sendMessage('import', filepath, cb);
+    };
+
     return {
       getSettings,
-      saveSettings
+      saveSettings,
+      doImport
     }
   });

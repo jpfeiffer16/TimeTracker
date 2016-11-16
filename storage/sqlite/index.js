@@ -13,18 +13,33 @@ module.exports = (function () {
   var Task = require('./task')(sequelize);
 
   //Setup database associations here
-  Day.hasMany(Task, { as: 'tasks' });
-  //Task.belongsTo(Day);
-  NoteCategory.hasMany(Note, { as: 'notes' });
-  //Note.belongsTo(NoteCategory);
+  Task.belongsTo(Day, {
+    onDelete: "CASCADE",
+    foreignKey: {
+      allowNull: false
+    }
+  });
+  Day.hasMany(Task);
+  // Task.belongsTo(Day);
+  Note.belongsTo(NoteCategory, {
+    onDelete: "CASCADE",
+    foreignKey: {
+      allowNull: false
+    }
+  });
+  NoteCategory.hasMany(Note);
+  // Note.belongsTo(NoteCategory);
   //Task.belongsTo(Day);
   //Note.belongsTo(NoteCategory);
 
   //Sync table schemas
-  Day.sync();
-  Task.sync();
-  Note.sync();
-  NoteCategory.sync();
+  // Day.sync();
+  // Task.sync();
+  // Note.sync();
+  // NoteCategory.sync();
+  sequelize.sync().then(() => {
+    //Do any stuff we need to here
+  });
 
 
   //Exports

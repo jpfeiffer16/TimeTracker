@@ -126,6 +126,13 @@ const MessageManager = function (ipcMain, callbackObj) {
       });
   });
 
+  //Temporary
+  ipcMain.on('import', (event, args) => {
+    StorageManager.doImport(args, () => {
+      event.sender.send('import', {});
+    });
+  });
+
   //App controllers
   ipcMain.on('closeApp', (event, args) => {
     app.quit();
