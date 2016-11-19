@@ -124,6 +124,11 @@ const StorageManager = function() {
                   });
                 }
 
+                //Anomaly tracking
+                if (hoursTotal > 14 || hoursTotal < 8) {
+                  anomWriter.write(file + '\n');
+                }
+
                 let task = {
                   description: parts[0],
                   time: hoursTotal
