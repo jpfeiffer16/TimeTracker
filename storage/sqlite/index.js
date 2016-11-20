@@ -9,7 +9,7 @@ module.exports = (function () {
   //Pull in models
   var Day = require('./day')(sequelize);
   var Note = require('./note')(sequelize);
-  var NoteCategory = require('./noteCategory')(sequelize);
+  var Category = require('./category')(sequelize);
   var Task = require('./task')(sequelize);
 
   //Setup database associations here
@@ -21,22 +21,12 @@ module.exports = (function () {
   });
   Day.hasMany(Task);
   // Task.belongsTo(Day);
-  Note.belongsTo(NoteCategory, {
+  Note.belongsTo(Category, {
     onDelete: "CASCADE",
-    foreignKey: {
-      allowNull: false
-    }
   });
-  NoteCategory.hasMany(Note);
-  // Note.belongsTo(NoteCategory);
-  //Task.belongsTo(Day);
-  //Note.belongsTo(NoteCategory);
+  Category.hasMany(Note);
 
   //Sync table schemas
-  // Day.sync();
-  // Task.sync();
-  // Note.sync();
-  // NoteCategory.sync();
   sequelize.sync().then(() => {
     //Do any stuff we need to here
   });
@@ -47,6 +37,6 @@ module.exports = (function () {
     Day,
     Task,
     Note,
-    NoteCategory
+    Category
   };
 })();

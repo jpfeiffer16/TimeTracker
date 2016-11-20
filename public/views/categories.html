@@ -1,0 +1,14 @@
+<md-button ng-click="navigate('/category')" class="md-raised md-primary">New</md-button>
+
+<md-input-container class="md-block">
+  <label>Search</label>
+  <input md-no-asterisk name="search" ng-model="searchText">
+
+</md-input-container>
+<md-input-container class="md-block">
+  <md-list>
+    <md-list-item ng-repeat="category in categories" ng-click="navigate('/category/' + category.id)" right-click-navigate="'/category/' + category.id" class="noright">
+      <p>{{ category.title }}</p>
+    </md-list-item>
+  </md-list>
+</md-input-container>

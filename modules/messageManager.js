@@ -1,114 +1,62 @@
 const settings = require('electron-settings');
-//const StorageManager = require('./storageManager');
 const StorageManager = require('./sqlStorage');
 
 const { app } = require('electron');
-// settings.set('settings', {});
+
 const MessageManager = function (ipcMain, callbackObj) {
-  let testDay = {
-      id: 123,
-      date: Date.now(),
-      tasks: [
-        {
-          description: 'Test',
-          time: 1
-        },
-        {
-          description: 'Test',
-          time: 1
-        },
-        {
-          description: 'Test',
-          time: 1
-        }
-      ]
-    }
   ipcMain.on('getDays', (event, args) => {
-    //TODO: Mongoose code for pulling days here
-    //event.sender.send('getDays', data); //When done
-    // console.log(storageManager.isReady);
-    // if (storageManager && storageManager.isReady) {
     StorageManager.getDays((days) => {
       event.sender.send('getDays', days);
     });
-    // }
-    // let mockReturn = [];
-    // for (let i = 0; i < 10; i++) {
-    //   mockReturn.push(JSON.parse(JSON.stringify(testDay)));
-    // };
-    // event.sender.send('getDays', mockReturn);
   });
   ipcMain.on('getDay', (event, id) => {
-    // if (storageManager && storageManager.isReady) {
     StorageManager.getDay(id, (day) => {
       event.sender.send('getDay', day);
     });
-    // }
-
-    //TODO: Temp code
-    // event.sender.send('getDay', testDay);
   });
   ipcMain.on('saveDay', (event, day) => {
     console.log('Saving day');
-    // console.log(storageManager.isReady);
     console.log(day);
-    // if (storageManager && storageManager.isReady) {
     StorageManager.saveDay(day, (day) => {
       event.sender.send('saveDay', day);
     });
-    // }
-
-    //TODO: Temp code
-    // event.sender.send('getDay', testDay);
   });
 
 
   ipcMain.on('getNote', (event, id) => {
-    //TODO: Mongoose code for pulling note here
-   //event.sender.send('getDays', data); //When done
-
     StorageManager.getNote(id, (note) => {
       event.sender.send('getNote', note);
     });
   });
   ipcMain.on('getNotes', (event, args) => {
-    //TODO: Mongoose code for pulling notes here
-    //event.sender.send('getDays', data); //When done
-
     StorageManager.getNotes((notes) => {
       event.sender.send('getNotes', notes);
     });
   });
 
   ipcMain.on('saveNote', (event, note) => {
-    console.log('Saving note');
-    // console.log(storageManager.isReady);
-    console.log(note);
-    // if (storageManager && storageManager.isReady) {
     StorageManager.saveNote(note, (note) => {
       event.sender.send('saveNote', note);
     });
-    // }
-
-    //TODO: Temp code
-    // event.sender.send('getDay', testDay);
   });
 
-  ipcMain.on('getNoteCategories', (event, args) => {
-    //TODO: Mongoose code for pulling categories here
-   //event.sender.send('getDays', data); //When done
+  ipcMain.on('getCategories', (event, args) => {
+    StorageManager.getCategories((categories) => {
+      event.sender.send('getCategories', categories);
+    });
   });
 
-  ipcMain.on('getNoteCategory', (event, id) => {
-    //TODO: Mongoose code for pulling categories here
-   //event.sender.send('getDays', data); //When done
+  ipcMain.on('getCategory', (event, id) => {
+    StorageManager.getCategory(id, (category) => {
+      event.sender.send('getCategory', category);
+    });
   });
-  ipcMain.on('saveNoteCategory', (event, category) => {
-    //TODO: Mongoose code for pulling categories here
-   //event.sender.send('getDays', data); //When done
+  ipcMain.on('saveCategory', (event, category) => {
+    StorageManager.saveCategory(category, () => {
+      event.sender.send('saveCategory');
+    });
   });
   ipcMain.on('getNotesByCategory', (event, args) => {
-    //TODO: Mongoose code for pulling notes here
    //event.sender.send('getDays', data); //When done
   });
 

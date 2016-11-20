@@ -9,8 +9,8 @@ angular.module('app')
       MessagesService.sendMessage('getCategories', id, cb);
     }
 
-
     return {
-      getCategories
+      getCategories,
+      getCategory
     };
   });

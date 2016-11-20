@@ -19,7 +19,7 @@ const StorageManager = function() {
     Day,
     Task,
     Note,
-    NoteCategory
+    Category
   } = require('../storage/sqlite');
 
   //Days
@@ -27,15 +27,6 @@ const StorageManager = function() {
     Day.findAll({
       include: Task
     }).then((dbdays) => {
-      // var days = dbdays.map((day) => {
-      //   return day.dataValues.tasks.map((tasks) => {
-      //     if (tasks.length > 0) {
-      //       return tasks.map((task) => {
-      //         return task.dataValues;
-      //       });
-      //     }
-      //   });
-      // });
       cb(dbdays.map((dbday) => {
         return dbday.toJSON();
       }));
@@ -70,14 +61,45 @@ const StorageManager = function() {
 
   //Notes
   let getNotes = function (cb) {
+    Note.findAll().then((dbnotes) => {
+      cb(dbnotes.map((dbnote) => {
+        return dbnote.toJSON();
+      }));
+    });
   };
 
   let getNote = function (id, cb) {
+    Note.findById(id).then((dbnote) => {
+      cb(dbnote.toJSON());
+    });
   };
 
   let saveNote = function (note, cb) {
+    Note.findOrCreate({ where: { id: note.id }, defaults: note }).then((dbnotes, created) => {
+      cb();
+    });
   };
 
+  let getCategories = function (cb) {
+    Category.findAll().then((dbcategories) => {
+      cb(dbcategories.map((dbcategory) => {
+        return dbcategory.toJSON();
+      }));
+    });
+  };
+
+  let getCategory = function (id, cb) {
+    Category.findById(id).then((dbcategory) => {
+      cb(dbcategory.toJSON());
+    });
+  };
+
+  let saveCategory = function (category, cb) {
+    Category.findOrCreate({ where: { id: category.id }, defaults: category })
+      .then((dbcategories, created) => {
+        cb(); 
+      });
+  };
 
   //Temporary
   let doImport = function (filepath, cb) {
@@ -169,6 +191,9 @@ const StorageManager = function() {
     getNotes,
     getNote,
     saveNote,
+    getCategories,
+    getCategory,
+    saveCategory,
     doImport
   }
 };

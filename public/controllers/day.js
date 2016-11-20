@@ -33,10 +33,10 @@ angular.module('app')
       $scope.day.tasks.push({ description: '', time: 0 });
     };
 
-    // $scope.$watch('day', (newValue) => {
-    //   // console.log(newValue);
-    //   $scope.$apply();
-    // });
+    $scope.$watch('day', (newValue) => {
+      console.log(newValue);
+      //$scope.$apply();
+    });
     // $scope.getDate = (ticks) => {
     //   return new Date(ticks);
     // };

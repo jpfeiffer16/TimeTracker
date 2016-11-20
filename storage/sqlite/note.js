@@ -1,10 +1,11 @@
 const Sequelize = require('sequelize');
 module.exports = function (sequelize) {
   const note = sequelize.define('note', {
-    date: {
-      type: Sequelize.DATE,
-      field: 'date',
-
+    title: {
+      type: Sequelize.STRING
+    },
+    text: {
+      type: Sequelize.STRING
     }
   });
 
