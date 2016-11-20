@@ -69,6 +69,15 @@ angular
           ['ctrl+b', 'Back', 'back()']
         ]
       })
+      .when('/category', {
+        templateUrl: 'public/views/category.html',
+        controller: 'CategoryCtrl',
+        page: 'category',
+        hotkeys: [
+          ['ctrl+s', 'Save Category', 'save()'],
+          ['ctrl+b', 'Back', 'back()']
+        ]
+      })
       .when('/category/:id', {
         templateUrl: 'public/views/category.html',
         controller: 'CategoryCtrl',

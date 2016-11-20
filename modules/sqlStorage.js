@@ -81,6 +81,7 @@ const StorageManager = function() {
   };
 
   let getCategories = function (cb) {
+    console.log('getting all categories');
     Category.findAll().then((dbcategories) => {
       cb(dbcategories.map((dbcategory) => {
         return dbcategory.toJSON();

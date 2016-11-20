@@ -6,11 +6,16 @@ angular.module('app')
     }
 
     function getCategory(id, cb) {
-      MessagesService.sendMessage('getCategories', id, cb);
+      MessagesService.sendMessage('getCategory', id, cb);
+    }
+
+    function saveCategory(category, cb) {
+      MessagesService.sendMessage('saveCategory', category, cb);
     }
 
     return {
       getCategories,
-      getCategory
+      getCategory,
+      saveCategory
     };
   });

@@ -1,5 +1,5 @@
 angular.module('app')
-  .controller('CategoryCtrl', function($scope, CategoriesManager) {
+  .controller('CategoryCtrl', function($scope, $routeParams, CategoriesManager) {
     $scope.category = {
       title: ''
     };
@@ -9,4 +9,7 @@ angular.module('app')
         //$scope.$apply();
       });
     }
+    $scope.save = function() {
+      CategoriesManager.saveCategory($scope.category);
+    };
   });
