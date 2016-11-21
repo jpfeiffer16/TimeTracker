@@ -6,7 +6,7 @@ angular.module('app')
     if ($routeParams.id) {
       CategoriesManager.getCategory($routeParams.id, (category) => {
         $scope.category = category;
-        //$scope.$apply();
+        $scope.$apply();
       });
     }
     $scope.save = function() {

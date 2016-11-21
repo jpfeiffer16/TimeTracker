@@ -2,9 +2,9 @@
 
 <md-input-container class="md-block">
   <label>Category</label>
-  <md-select ng-model="ctrl.userState">
+  <md-select ng-model="note.categoryId">
     <!--TODO: Need to repeat out categories here-->
-    <md-option><em>None</em></md-option>
+    <md-option ng-repeat="category in categories" ng-value="category.id"><em>{{ category.name }}</em></md-option>
   </md-select>
 </md-input-container>
 

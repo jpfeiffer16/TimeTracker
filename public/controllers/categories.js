@@ -3,6 +3,6 @@ angular.module('app')
     CategoriesManager.getCategories((categories) => {
       console.log('done getting categories', categories);
       $scope.categories = categories;
-      //$scope.$apply();
+      $scope.$apply();
     });
   });

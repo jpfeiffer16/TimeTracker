@@ -75,9 +75,10 @@ const StorageManager = function() {
   };
 
   let saveNote = function (note, cb) {
-    Note.findOrCreate({ where: { id: note.id }, defaults: note }).then((dbnotes, created) => {
-      cb();
-    });
+    Note.upsert(note).then(cb);
+    //Note.findOrCreate({ where: { id: note.id }, defaults: note }).then((dbnotes, created) => {
+    //  cb();
+    //});
   };
 
   let getCategories = function (cb) {
@@ -96,10 +97,11 @@ const StorageManager = function() {
   };
 
   let saveCategory = function (category, cb) {
-    Category.findOrCreate({ where: { id: category.id }, defaults: category })
-      .then((dbcategories, created) => {
-        cb(); 
-      });
+    Category.upsert(category).then(cb);
+    //Category.findOrCreate({ where: { id: category.id }, defaults: category })
+    //  .then((dbcategories, created) => {
+    //    cb(); 
+    //  });
   };
 
   //Temporary
