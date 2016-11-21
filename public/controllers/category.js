@@ -1,5 +1,5 @@
 angular.module('app')
-  .controller('CategoryCtrl', function($scope, $routeParams, CategoriesManager) {
+  .controller('CategoryCtrl', function($scope, $routeParams, CategoriesManager, InfoManager) {
     $scope.category = {
       title: ''
     };
@@ -10,6 +10,8 @@ angular.module('app')
       });
     }
     $scope.save = function() {
-      CategoriesManager.saveCategory($scope.category);
+      CategoriesManager.saveCategory($scope.category, () => {
+        InfoManager.showMessage('Category Saved');
+      });
     };
   });
