@@ -1,5 +1,23 @@
 angular.module('app')
-  .controller('CategoryCtrl', function($scope, $routeParams, CategoriesManager, InfoManager) {
+  .controller('CategoryCtrl', function($scope, $rootScope, $routeParams, CategoriesManager, InfoManager, hotkeys) {
+    //Hotkey setup
+    hotkeys
+      .bindTo($scope)
+      .add({
+        combo: 'ctrl+s',
+        description: 'Save Category',
+        callback: () => {
+          $scope.save();
+        }
+      })
+      .add({
+        combo: 'ctrl+b',
+        description: 'Back',
+        callback: () => {
+          $scope.back();
+        }
+      });
+
     $scope.category = {
       title: ''
     };
@@ -13,5 +31,9 @@ angular.module('app')
       CategoriesManager.saveCategory($scope.category, () => {
         InfoManager.showMessage('Category Saved');
       });
+    };
+
+    $scope.back = function () {
+      $rootScope.navigate('/categories');
     };
   });

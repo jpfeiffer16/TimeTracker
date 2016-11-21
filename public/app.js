@@ -14,28 +14,17 @@ angular
       .when('/time', {
         templateUrl: 'public/views/time.html',
         controller: 'TimeCtrl',
-        page: 'time',
-        hotkeys: [
-          ['ctrl+n', 'New Day', 'newDay()']
-        ]
+        page: 'time'
       })
       .when('/day/:id', {
         templateUrl: 'public/views/day.html',
         controller: 'DayCtrl',
-        page: 'day',
-        hotkeys: [
-          ['ctrl+s', 'Save Day', 'save()'],
-          ['ctrl+b', 'Back', 'back()']
-        ]
+        page: 'day'
       })
       .when('/day', {
         templateUrl: 'public/views/day.html',
         controller: 'DayCtrl',
-        page: 'day',
-        hotkeys: [
-          ['ctrl+s', 'Save Day', 'save()'],
-          ['ctrl+b', 'Back', 'back()']
-        ]
+        page: 'day'
       })
       .when('/notes', {
         templateUrl: 'public/views/notes.html',
@@ -45,55 +34,32 @@ angular
       .when('/note', {
         templateUrl: 'public/views/note.html',
         controller: 'NoteCtrl',
-        page: 'note',
-        hotkeys: [
-          ['ctrl+s', 'Save Note', 'save()'],
-          ['ctrl+b', 'Back', 'back()']
-        ]
+        page: 'note'
       })
       .when('/note/:id', {
         templateUrl: 'public/views/note.html',
         controller: 'NoteCtrl',
-        page: 'note',
-        hotkeys: [
-          ['ctrl+s', 'Save Note', 'save()'],
-          ['ctrl+b', 'Back', 'back()']
-        ]
+        page: 'note'
       })
       .when('/categories/', {
         templateUrl: 'public/views/categories.html',
         controller: 'CategoriesCtrl',
-        page: 'categories',
-        hotkeys: [
-          ['ctrl+n', 'New Category', 'new()'],
-          ['ctrl+b', 'Back', 'back()']
-        ]
+        page: 'categories'
       })
       .when('/category', {
         templateUrl: 'public/views/category.html',
         controller: 'CategoryCtrl',
-        page: 'category',
-        hotkeys: [
-          ['ctrl+s', 'Save Category', 'save()'],
-          ['ctrl+b', 'Back', 'back()']
-        ]
+        page: 'category'
       })
       .when('/category/:id', {
         templateUrl: 'public/views/category.html',
         controller: 'CategoryCtrl',
-        page: 'category',
-        hotkeys: [
-          ['ctrl+s', 'Save Category', 'save()'],
-          ['ctrl+b', 'Back', 'back()']
-        ]
+        page: 'category'
       })
       .when('/settings', {
         templateUrl: 'public/views/settings.html',
         controller: 'SettingsCtrl',
-        page: 'settings',
-        hotkeys: [
-          ['ctrl+s', 'Save Settings', 'save()']
-        ]
+        page: 'settings'
       });
   })
   .run(($rootScope, $mdSidenav, $location, $route, AppManager, WindowManager) => {

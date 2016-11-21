@@ -1,5 +1,17 @@
 angular.module('app')
-  .controller('SettingsCtrl', function ($scope, $mdSidenav, hotkeys, SettingsManager, InfoManager) {
+  .controller('SettingsCtrl', function ($scope, $rootScope, $mdSidenav, hotkeys, SettingsManager, InfoManager, hotkeys) {
+    //Hotkey setup
+    hotkeys
+      .bindTo($scope)
+      .add({
+        combo: 'ctrl+s',
+        description: 'Save Settings',
+        callback: () => {
+          $scope.save();
+        }
+      });
+
+
     $scope.settings = {
       mongoURL: ''
     };

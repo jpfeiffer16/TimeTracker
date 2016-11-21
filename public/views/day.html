@@ -1,5 +1,5 @@
-<md-button ng-click="back()" class="md-raised md-primary">Back</md-button> 
-<md-button ng-click="newTimeEntry()" class="md-raised md-primary">New</md-button> 
+<md-button ng-click="back()" class="md-raised md-primary">Back</md-button>
+<md-button ng-click="newTimeEntry()" class="md-raised md-primary">New</md-button>
 
 <md-datepicker ng-model="day.date" md-placeholder="Enter date"></md-datepicker>
 
@@ -7,11 +7,11 @@
   <md-list-item ng-repeat="task in day.tasks" class="noright">
     <md-input-container class="md-block">
       <label>Description</label>
-      <input md-no-asterisk ng-model="task.description">
+      <input md-no-asterisk ng-model="task.description" ng-change="applyTask(task, 'description', task.description)">
     </md-input-container>
     <md-input-container class="md-block">
       <label>Hours</label>
-      <input md-no-asterisk type="number" ng-model="task.time">
+      <input md-no-asterisk type="number" ng-model="task.time" ng-change="applyTask(task, 'time', task.time)">
     </md-input-container>
   </md-list-item>
 </md-list>

@@ -1,5 +1,16 @@
 angular.module('app')
-  .controller('TimeCtrl', function ($scope, TimeManager) {
+  .controller('TimeCtrl', function ($scope, $rootScope, TimeManager, hotkeys) {
+    //Hotkey setup
+    hotkeys
+      .bindTo($scope)
+      .add({
+        combo: 'ctrl+n',
+        description: 'New Day',
+        callback: () => {
+          $rootScope.navigate('/day');
+        }
+      });
+
     $scope.days = [];
     $scope.formatDate = (date) => {
       let obj = new Date(date);
