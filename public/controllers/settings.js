@@ -1,5 +1,5 @@
 angular.module('app')
-  .controller('SettingsCtrl', function ($scope, $rootScope, $mdSidenav, hotkeys, SettingsManager, InfoManager, hotkeys) {
+  .controller('SettingsCtrl', function ($scope, $rootScope, hotkeys, SettingsManager, InfoManager, hotkeys) {
     //Hotkey setup
     hotkeys
       .bindTo($scope)
