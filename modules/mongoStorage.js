@@ -5,7 +5,6 @@ const NoteCategory = require('../models/mongo/noteCategory');
 const Task = require('../models/mongo/task');
 
 const StorageManager = function (connectionString) {
-  // let isReady = false;
   let db = null;
 
   let init = function (connectionString) {
@@ -18,22 +17,6 @@ const StorageManager = function (connectionString) {
       db.once('open', function() {
         // we're connected!
         console.log(`Connected to ${ connectionString }`);
-        // isReady = true;
-        // console.log(isReady);
-        // new require('../models/day')({
-        //   date: new Date,
-        //   tasks: [
-        //     {
-        //       description: 'Test',
-        //       time: 1
-        //     },
-        //     {
-        //       description: 'Test',
-        //       time: 1
-        //     }
-        //   ]
-        // }).save();
-
         new Note({
           category: null,
           title: 'test',

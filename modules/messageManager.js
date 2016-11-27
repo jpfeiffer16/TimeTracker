@@ -57,7 +57,7 @@ const MessageManager = function (ipcMain, callbackObj) {
     });
   });
   ipcMain.on('getNotesByCategory', (event, args) => {
-   //event.sender.send('getDays', data); //When done
+   //TODO: Needs to be implemented. Not currently used.
   });
 
   //Settings

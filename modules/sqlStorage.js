@@ -1,17 +1,3 @@
-
-
-// const Sequelize = require('sequelize');
-// const sequelize = new Sequelize('database', 'username', 'password', {
-//     dialect: 'sqlite',
-//     storage: './data.sqlite'
-// });
-
-//Models
-// const Day = require('../models/sqlite/day.js')(sequelize);
-// const Note = require('../models/sqlite/note.js')(sequelize);
-//const NoteCategory = require('../models/sqlite/noteCategory.js')(sequelize);
-//const Task = require('../models/sqlite/day.js')(sequelize);
-
 const StorageManager = function() {
   //Setup
 
@@ -30,7 +16,6 @@ const StorageManager = function() {
       cb(dbdays.map((dbday) => {
         return dbday.toJSON();
       }));
-      // cb(days);
     });
   };
 
@@ -43,13 +28,8 @@ const StorageManager = function() {
   };
 
   let saveDay = function (day, cb) {
-    console.log(day);
-
     Day.findOrCreate({ where: { id: day.id }, defaults: day }).then((dbdays, created) => {
       let dbday = dbdays[0];
-      // console.dir(dbday, { depth: 3 });
-      // console.log();
-      // Task.upsert(day);
       day.tasks.forEach((task) => {
         task.dayId = dbday.dataValues.id;
         Task.upsert(task);
@@ -76,9 +56,6 @@ const StorageManager = function() {
 
   let saveNote = function (note, cb) {
     Note.upsert(note).then(cb);
-    //Note.findOrCreate({ where: { id: note.id }, defaults: note }).then((dbnotes, created) => {
-    //  cb();
-    //});
   };
 
   let getCategories = function (cb) {
@@ -98,16 +75,11 @@ const StorageManager = function() {
 
   let saveCategory = function (category, cb) {
     Category.upsert(category).then(cb);
-    //Category.findOrCreate({ where: { id: category.id }, defaults: category })
-    //  .then((dbcategories, created) => {
-    //    cb(); 
-    //  });
   };
 
   //Temporary
   let doImport = function (filepath, cb) {
     //Do importy stuff here
-    // console.log('Doin importy stuff!', filepath);
     const fs = require('fs');
 
     fs.readdir(filepath, 'utf8', (err, files) => {
@@ -166,24 +138,11 @@ const StorageManager = function() {
               }
             });
           });
-
-          // fs.readFile(`${ filepath }/${ file }`, 'utf8', (err, data) => {
-          //   if (err) throw err;
-          //   // console.log(data);
-          //   // console.log(data.match(/\d?\.?\d+\shours?/));
-          //   let lines = data.replace('\r', '').split('\n');
-          //   console.log(lines);
-          //
-          // });
         })(file);
 
         limiter++;
       });
     });
-
-
-
-
   };
 
   //Exports
