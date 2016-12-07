@@ -52,12 +52,12 @@
           <i class="fa fa-bars fa-2x" style="color:white;" aria-hidden="true"></i>
         </md-button>
         <h2>
-          <span>TimeTracker</span>
+          <span>{{ currentPage.capitalize() }}</span>
         </h2>
         <span flex></span>
-        <md-button ng-click="closeWindow()" class="md-icon-button" aria-label="Settings" style="-webkit-app-region: no-drag;">
+        <!--<md-button ng-click="closeWindow()" class="md-icon-button" aria-label="Settings" style="-webkit-app-region: no-drag;">
           <i class="fa fa-close fa-2x" style="color:white; font-weight: normal;" aria-hidden="true"></i>
-        </md-button>
+        </md-button>-->
       </div>
     </md-toolbar>
     <section layout="row" flex>
@@ -102,7 +102,7 @@
       </md-sidenav>
       <md-content flex layout-padding class="main-content">
         <!--<ng-view></ng-view>-->
-        <md-subheader class="md-no-sticky">{{ currentPage.capitalize() }}</md-subheader>
+        <!--<md-subheader class="md-no-sticky">{{ currentPage.capitalize() }}</md-subheader>-->
         <div ng-view class="view-container">
         </div>
       </md-content>
