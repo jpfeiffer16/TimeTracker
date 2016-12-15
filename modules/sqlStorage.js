@@ -97,6 +97,7 @@ const StorageManager = function() {
               input: fs.createReadStream(`${ filepath }/${ file }`)
             });
 
+            let dayTotal = 0;
             lineReader.on('line', function (line) {
               if (!line.trim().length == 0) {
                 let parts = line.split(' - ');
@@ -122,9 +123,7 @@ const StorageManager = function() {
                 }
 
                 //Anomaly tracking
-                if (hoursTotal > 14 || hoursTotal < 8) {
-                  anomWriter.write(file + '\n');
-                }
+                dayTotal += hoursTotal;
 
                 let task = {
                   description: parts[0],
@@ -137,6 +136,11 @@ const StorageManager = function() {
 
               }
             });
+            //Anomaly tracking
+            if (dayTotal > 14 || dayTotal < 8) {
+              anomWriter.write(file + '\n');
+            }
+
           });
         })(file);
 
