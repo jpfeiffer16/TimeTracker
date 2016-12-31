@@ -137,7 +137,7 @@ const StorageManager = function() {
               }
             });
             //Anomaly tracking
-            lineReader.on('close', () => {\
+            lineReader.on('close', () => {
               if (dayTotal > 14 || dayTotal < 8) {
                 anomWriter.write(file + '\n');
               }
