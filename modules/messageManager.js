@@ -1,4 +1,4 @@
-const settings = require('electron-settings');
+const SettingsManager = require('./settingsManager');
 const StorageManager = require('./sqlStorage');
 
 const { app } = require('electron');
@@ -62,16 +62,22 @@ const MessageManager = function (ipcMain, callbackObj) {
 
   //Settings
   ipcMain.on('getSettings', (event, args) => {
-    settings.get('settings')
-      .then(val => {
-        event.sender.send('getSettings', val);
-      });
+    SettingsManager.getSettings(val => {
+      event.sender.send('getSettings', val);
+    });
+    // settings.get('settings')
+    //   .then(val => {
+    //     event.sender.send('getSettings', val);
+    //   });
   });
   ipcMain.on('saveSettings', (event, args) => {
-    settings.set('settings', args)
-      .then(val => {
-        event.sender.send('saveSettings', val);
-      });
+    SettingsManager.saveSettings(args, val => {
+      event.sender.send('saveSettings', val);
+    });
+    // settings.set('settings', args)
+    //   .then(val => {
+    //     event.sender.send('saveSettings', val);
+    //   });
   });
 
   //Temporary
