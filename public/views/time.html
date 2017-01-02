@@ -2,6 +2,10 @@
 
 <md-button ng-click="navigate('/day')" class="md-raised md-primary">New</md-button>
 
+<label>Filter:</label>
+<md-button ng-click="filterWeek()" class="md-raised md-primary">This week</md-button>
+<md-button ng-click="filterMonth()" class="md-raised md-primary">This month</md-button>
+
 <md-list>
   <md-list-item ng-repeat="day in days" ng-click="navigate('/day/' + day.id)" right-click-navigate="'/day/' + day.id" class="noright">
     <p>{{ formatDate(day.date) }}</p>
