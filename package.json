@@ -7,6 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "./node_modules/.bin/electron-rebuild"
   },
+  "bin": {
+    "timetracker": "./node_modules/.bin/electron ./app.js"
+  },
   "author": "Joe Pfeiffer",
   "license": "ISC",
   "dependencies": {
