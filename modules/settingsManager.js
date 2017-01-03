@@ -8,7 +8,8 @@ const path = require('path');
 
 settings.defaults({
   settings: {
-    dbPath: path.join(__dirname, '..', 'data.sqlite')
+    dbPath: path.join(__dirname, '..', 'data.sqlite'),
+    selectedFilter: 'all'
   }
 });
 

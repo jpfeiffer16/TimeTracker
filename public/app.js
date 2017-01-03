@@ -1,6 +1,6 @@
 //Create and configure app here
 angular
-  .module('app', ['ngRoute', 'ngMaterial', 'ngAnimate', 'cfp.hotkeys'])
+  .module('app', ['ngRoute', 'ngMaterial', 'ngAnimate', 'cfp.hotkeys', 'md.data.table'])
   .config(($routeProvider, $locationProvider) => {
     //$locationProvider
     //  .html5Mode({

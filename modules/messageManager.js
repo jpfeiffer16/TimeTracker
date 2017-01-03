@@ -22,6 +22,11 @@ const MessageManager = function (ipcMain, callbackObj) {
     });
   });
 
+  ipcMain.on('removeTask', (event, id) => {
+    StorageManager.removeTask(id, () => {
+      event.sender.send('removeTask', {});
+    });
+  });
 
   ipcMain.on('getNote', (event, id) => {
     StorageManager.getNote(id, (note) => {

@@ -14,9 +14,14 @@ angular.module('app')
         cb(day);
       });
     };
+
+    const removeTask = (id, cb) => {
+      MessagesService.sendMessage('removeTask', id, cb);
+    };
     return {
       getDays,
       getDay,
-      saveDay
+      saveDay,
+      removeTask
     }
   });

@@ -2,16 +2,64 @@
 
 <md-button ng-click="navigate('/day')" class="md-raised md-primary">New</md-button>
 
-<label>Filter:</label>
+<!--<label>Filter:</label>
 <md-button ng-click="filterWeek()" class="md-raised md-primary">This week</md-button>
 <md-button ng-click="filterMonth()" class="md-raised md-primary">This month</md-button>
 <md-button ng-click="filterAll()" class="md-raised md-primary">All</md-button>
 <md-button ng-click="filterLastMonth()" class="md-raised md-primary">Last Month</md-button>
-<md-button ng-click="filterLastWeek()" class="md-raised md-primary">Last Week</md-button>
+<md-button ng-click="filterLastWeek()" class="md-raised md-primary">Last Week</md-button>-->
+<md-input-container>
+  <label>Filter</label>
+  <md-select ng-model="selectedFilter" ng-change="filter()">
+    <md-option ng-repeat="filter in filters" ng-value="filter.codeName">
+      {{ filter.name }}
+    </md-option>
+  </md-select>
+</md-input-container>
 
 <md-list>
-  <md-list-item ng-repeat="day in days" ng-click="navigate('/day/' + day.id)" right-click-navigate="'/day/' + day.id" class="noright">
-    <p>{{ formatDate(day.date) }}</p>
+  <md-list-item ng-repeat="day in days | orderBy:'date':true" ng-click="navigate('/day/' + day.id)" right-click-navigate="'/day/' + day.id" class="noright">
+    <p>{{ day.date | date:'MM/dd/yyyy' }}</p>
     <p>{{ getHours(day) }} Hours</p>
   </md-list-item>
 </md-list>
+
+<!--<table class="table">
+  <thead>
+    <tr>
+      <td>
+        Date
+      </td>
+      <td>
+        Hours
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="day in days">
+      <td>
+        {{ day.date | date:'MM/dd/yyyy' }}
+      </td>
+      <td>
+        {{ getHours(day) }}
+      </td>
+    </tr>
+  </tbody>
+</table>-->
+
+<!--<md-table-container>
+  <table md-table md-row-select multiple ng-model="selected" md-progress="promise">
+    <thead md-head md-order="query.order" md-on-reorder="getDesserts">
+      <tr md-row>
+        <th md-column md-order-by="date"><span>Date</span></th>
+        <th md-column md-numeric md-order-by="getHours(day)"><span>Hours</span></th>
+      </tr>
+    </thead>
+    <tbody md-body>
+      <tr md-row md-select-id="_id" md-auto-select ng-repeat="day in days">
+        <td md-cell>{{ formatDate(day.date) }}</td>
+        <td md-cell>{{ getHours(day) }}</td>
+      </tr>
+    </tbody>
+  </table>
+</md-table-container>-->

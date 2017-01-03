@@ -16,7 +16,7 @@ angular.module('app')
 
 
     $scope.settings = {
-      mongoURL: ''
+      
     };
 
     $scope.save = () => {
@@ -33,8 +33,15 @@ angular.module('app')
     };
 
     $scope.selectFile = () => {
-      let selectedPath = dialog.showOpenDialog({properties: ['openFile']});
-      if (selectedPath.length != 0) {
+      let selectedPath = dialog.showOpenDialog({
+        filters: [
+          {name: 'SQLite Databases', extensions: ['sqlite']},
+        ],
+        title: 'Select DB',
+        properties: ['openFile']
+      });
+      
+      if (selectedPath && selectedPath.length != 0) {
         $scope.settings.dbPath = selectedPath[0];
       }
     };

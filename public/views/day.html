@@ -1,3 +1,7 @@
+<md-input-container class="md-block" ng-show="hours > 0">
+  <span><b>Hours: </b>{{ hours }}</span>
+</md-input-container>
+
 <md-button ng-click="back()" class="md-raised md-primary">Back</md-button>
 <md-button ng-click="newTimeEntry()" class="md-raised md-primary">New</md-button>
 
@@ -11,7 +15,7 @@
     </md-input-container>
     <md-input-container class="md-block">
       <label>Hours</label>
-      <input md-no-asterisk type="number" ng-model="task.time" ng-change="applyTask(task, 'time', task.time)">
+      <input md-no-asterisk type="number" ng-keydown="checkShift($event)" ng-keyup="checkClearShift($event)" ng-model="task.time" ng-change="applyTask(task, 'time', task.time)">
     </md-input-container>
   </md-list-item>
 </md-list>
