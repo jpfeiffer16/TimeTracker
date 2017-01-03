@@ -1,16 +1,18 @@
-module.exports = (function () {
+const SettingsManager = require('../../modules/settingsManager');
+
+module.exports = function (initDBPath) {
   //DB connection
   const Sequelize = require('sequelize');
   const sequelize = new Sequelize({
-      dialect: 'sqlite',
-      storage: './data.sqlite'
+    dialect: 'sqlite',
+    storage: initDBPath
   });
 
   //Pull in models
-  var Day = require('./day')(sequelize);
-  var Note = require('./note')(sequelize);
-  var Category = require('./category')(sequelize);
-  var Task = require('./task')(sequelize);
+  let Day = require('./day')(sequelize);
+  let Note = require('./note')(sequelize);
+  let Category = require('./category')(sequelize);
+  let Task = require('./task')(sequelize);
 
   //Setup database associations here
   Task.belongsTo(Day, {
@@ -39,4 +41,4 @@ module.exports = (function () {
     Note,
     Category
   };
-})();
+};

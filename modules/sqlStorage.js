@@ -1,12 +1,29 @@
+let SettingsManager = require('./settingsManager');
+
 const StorageManager = function() {
   //Setup
 
-  const {
-    Day,
+  var Day,
     Task,
     Note,
     Category
-  } = require('../storage/sqlite');
+
+  SettingsManager.getSettings((settings) => {
+    let models = require('../storage/sqlite')(settings.dbPath);
+    Day = models.Day;
+    Task = models.Task;
+    Note = models.Note;
+    Category = models.Category;
+  });
+
+  SettingsManager.on('settingChanged-dbPath', (info) => {
+    console.log(`dbPath changed to ${ info.newValue }`);
+    let models = require('../storage/sqlite')(info.newValue);
+    Day = models.Day;
+    Task = models.Task;
+    Note = models.Note;
+    Category = models.Category;
+  });
 
   //Days
   let getDays = function (cb) {
@@ -28,7 +45,8 @@ const StorageManager = function() {
   };
 
   let saveDay = function (day, cb) {
-    Day.findOrCreate({ where: { id: day.id }, defaults: day }).then((dbdays, created) => {
+    Day.findOrCreate({ where: { id: day.id }, defaults: day })
+    .then((dbdays, created) => {
       let dbday = dbdays[0];
       day.tasks.forEach((task) => {
         task.dayId = dbday.dataValues.id;
