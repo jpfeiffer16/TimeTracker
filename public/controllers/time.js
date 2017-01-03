@@ -35,6 +35,19 @@ angular.module('app')
       });
     };
 
+    $scope.filterLastWeek = () => {
+      let beginDate = new Date();
+      beginDate.setDate(beginDate.getDate() - 7);
+      // dat.setDate(dat.getDate() + days);
+      let firstOfWeek = new Date(beginDate.getFullYear(), beginDate.getMonth(), beginDate.getDate() - beginDate.getDay());
+      let lastOfWeek = new Date(beginDate.getFullYear(), beginDate.getMonth(), firstOfWeek.getDate() + 6);
+
+      $scope.days = internalDays.filter((day) => {
+        let dayMSeconds = new Date(day.date).getTime();
+        return dayMSeconds > firstOfWeek.getTime() && dayMSeconds < lastOfWeek.getTime();
+      });
+    };
+
     $scope.filterMonth = () => {
       let currentDate = new Date();
       let firstOfWeek = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() - currentDate.getDay());
@@ -45,6 +58,21 @@ angular.module('app')
         return dayMSeconds > firstOfWeek.getTime() && dayMSeconds < lastOfWeek.getTime();
       });
     };
+
+    //TODO: Needs some work
+    $scope.filterLastMonth = () => {
+      let beginDate = new Date();
+      beginDate.setMonth(beginDate.getMonth() - 1);
+      let firstOfWeek = new Date(beginDate.getFullYear(), beginDate.getMonth(), beginDate.getDate() - beginDate.getDay());
+      let lastOfWeek = new Date(beginDate.getFullYear(), beginDate.getMonth(), firstOfWeek.getDate() + 6);
+
+      $scope.days = internalDays.filter((day) => {
+        let dayMSeconds = new Date(day.date).getTime();
+        return dayMSeconds > firstOfWeek.getTime() && dayMSeconds < lastOfWeek.getTime();
+      });
+    };
+
+    
 
 
     $scope.filterAll = () => {

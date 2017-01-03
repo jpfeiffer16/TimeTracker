@@ -5,6 +5,9 @@
 <label>Filter:</label>
 <md-button ng-click="filterWeek()" class="md-raised md-primary">This week</md-button>
 <md-button ng-click="filterMonth()" class="md-raised md-primary">This month</md-button>
+<md-button ng-click="filterAll()" class="md-raised md-primary">All</md-button>
+<md-button ng-click="filterLastMonth()" class="md-raised md-primary">Last Month</md-button>
+<md-button ng-click="filterLastWeek()" class="md-raised md-primary">Last Week</md-button>
 
 <md-list>
   <md-list-item ng-repeat="day in days" ng-click="navigate('/day/' + day.id)" right-click-navigate="'/day/' + day.id" class="noright">
