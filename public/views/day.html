@@ -17,5 +17,8 @@
       <label>Hours</label>
       <input md-no-asterisk type="number" ng-keydown="checkShift($event)" ng-keyup="checkClearShift($event)" ng-model="task.time" ng-change="applyTask(task, 'time', task.time)">
     </md-input-container>
+      <md-button ng-click="removeTask(task.id, $index)" class="md-raised md-primary">X</md-button>
+    <md-input-container>
+    </md-input-container>
   </md-list-item>
 </md-list>

@@ -58,8 +58,10 @@ angular.module('app')
       $scope.day.tasks.splice(index, 1);
       if (!id) return;
       TimeManager.removeTask(id, () => {
-        InfoManager.showMessage('Task Removed');
+        InfoManager.showMessage('Task Removed from DB');
       });
+      $scope.hours = getHours();
+      // $scope.$apply();
     }
 
     $scope.applyTask = function(taskRef, prop, value) {

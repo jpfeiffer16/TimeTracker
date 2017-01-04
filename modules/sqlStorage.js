@@ -4,9 +4,9 @@ const StorageManager = function() {
   //Setup
 
   var Day,
-    Task,
-    Note,
-    Category
+      Task,
+      Note,
+      Category
 
   SettingsManager.getSettings((settings) => {
     let models = require('../storage/sqlite')(settings.dbPath);
@@ -114,9 +114,7 @@ const StorageManager = function() {
     fs.readdir(filepath, 'utf8', (err, files) => {
       if (err) throw err;
       let anomWriter = fs.createWriteStream(`${ filepath }/anom.txt`);
-      let limiter = 0;
       files.forEach((file) => {
-        // if (limiter > 5) return;
         (function (file) {
           let day = {
             date: new Date(file.replace('.txt', ''))
@@ -173,8 +171,6 @@ const StorageManager = function() {
             });
           });
         })(file);
-
-        limiter++;
       });
     });
   };
@@ -196,4 +192,3 @@ const StorageManager = function() {
 };
 
 module.exports = StorageManager();
-removeTask
