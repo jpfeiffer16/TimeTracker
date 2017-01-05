@@ -1,6 +1,8 @@
 const {app, BrowserWindow, Tray, Menu, ipcMain} = require('electron');
 const MessageManager = require('./modules/messageManager');
 const path = require('path');
+// var ESI = require('electron-single-instance');
+// ESI.ensureSingleInstance('TimeTracker');
 
 // var Sequelize = require('sequelize');
 // var sequelize = new Sequelize('database', 'username', 'password', {
@@ -17,7 +19,8 @@ MessageManager(ipcMain, {
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let win
+// let win
+let windows = [];
 let tray
 const iconPath = path.join(__dirname, 'images','icon.png');
 
@@ -27,7 +30,7 @@ function createWindow (path) {
   //TODO: Do more calculations here. If the screen is small, the window should be bigger.
   const {width, height} = require('electron').screen.getPrimaryDisplay().workAreaSize;
   // win = new BrowserWindow({width: width / 2, height:  height / 2, frame: false, icon: iconPath});
-  win = new BrowserWindow({width: width / 2, height:  height / 2, icon: iconPath});
+  let win = new BrowserWindow({width: width / 2, height:  height / 2, icon: iconPath});
   win.setMenu(null);
 
   // and load the index.html of the app.
@@ -41,8 +44,27 @@ function createWindow (path) {
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
-    win = null
+    // win = null
+    cleanUpWindow(win);
   });
+  windows.push({
+    window: win
+  });
+}
+
+// function closeWindow(windowRef) {
+//   windowRef.close();
+//   cleanUpWindow(windowRef);
+// }
+
+function cleanUpWindow(windowRef) {
+  //Remove the window from the windows array
+  for (let i = 0; i < windows.length; i++) {
+    let currentWindow = windows[i].window;
+    if (currentWindow === windowRef) {
+      windows.splice(i, 1);
+    }
+  }
 }
 
 // This method will be called when Electron has finished
@@ -53,29 +75,67 @@ app.on('ready', function () {
 
   tray = new Tray(iconPath);
   const contextMenu = Menu.buildFromTemplate([
-    {label: 'Item1', type: 'radio'},
-    {label: 'Item2', type: 'radio'},
-    {label: 'Item3', type: 'radio', checked: true},
-    {label: 'Item4', type: 'radio'}
+    {
+      label: 'Close All Windows',
+      click() {
+        windows.forEach((window) => {
+          window.window.close();
+        });
+      }
+    },
+    {
+      type: 'separator'
+    },
+    {
+      label: 'Quit',
+      click() {
+        app.quit();
+      }
+    }
   ]);
   tray.setToolTip('TimeTracker');
   tray.setContextMenu(contextMenu);
+  tray.on('click', () => {
+    // console.log('Clicked');
+    // console.log(windows.length);
+    //TODO: If there is one window, focus it. If there are more than one,
+    //focus the last used one. If there are none, create one.
+    // createWindow('');
+    //One window
+    if (windows.length == 1) {
+      windows[0].window.focus();
+    }
+    //More than one window
+    if (windows.length > 1) {
+      windows.forEach((window) => {
+        window.window.focus();
+      });
+      // windows[windows.length - 1].window.focus();
+    }
+    //No windows
+    if (windows.length == 0) {
+      createWindow('');
+    }
+
+  });
 });
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
   // On macOS it is common for applications and their menu bar
   // to stay active until the user quits explicitly with Cmd + Q
-  if (process.platform !== 'darwin') {
-    app.quit()
-  }
+  // if (process.platform !== 'darwin') {
+  //   app.quit()
+  // }
 })
 
 app.on('activate', () => {
   // On macOS it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
-  if (win === null) {
-    createWindow()
+  if (windows.length == 0) {
+    createWindow('');
+  } else {
+    windows[windows.length - 1].window.focus();
   }
 })
 
