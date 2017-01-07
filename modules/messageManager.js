@@ -15,8 +15,8 @@ const MessageManager = function (ipcMain, callbackObj) {
     });
   });
   ipcMain.on('saveDay', (event, day) => {
-    console.log('Saving day');
-    console.log(day);
+    // console.log('Saving day');
+    // console.log(day);
     StorageManager.saveDay(day, (day) => {
       event.sender.send('saveDay', day);
     });

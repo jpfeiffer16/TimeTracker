@@ -17,21 +17,14 @@ let emitter = new (require('events').EventEmitter)();
 
 
 emitter.saveSettings = function(settingsObj, cb) {
-  console.log('Saving settings');
-  // console.log(settings); 
   settings.get('settings')
     .then(originalVal => {
       //Do our own low level error handling here as the electron-settings
       //library seems to swallow them silently. Nice job guys.
       try {
-        console.log('In callback');
-        console.log(settingsObj, originalVal);
         //TODO: Diff the object and emit app. events here.
         let differentProps = diffObjects(settingsObj, originalVal);
-        console.log('Getting here');
-        console.log(differentProps.length);
         if (differentProps.length > 0) {
-          console.log('Diff detected');
           differentProps.forEach((prop) => {
             emitter.emit(`settingChanged-${ prop.name }`, {
               oldValue: prop.oldValue,
@@ -59,10 +52,8 @@ emitter.getSettings = function(cb) {
 };
 
 function diffObjects(objA, objB) {
-  console.log('Diffing');
   let diffProps = [];
   for (var propA in objA) {
-    console.log('Loop');
     if (objA[propA] != objB[propA])
       diffProps.push({
         name: propA,
