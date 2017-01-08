@@ -1,4 +1,4 @@
-const SettingsManager = require('../../modules/settingsManager');
+const SettingsManager = require('../modules/settingsManager');
 
 module.exports = function (initDBPath) {
   //DB connection

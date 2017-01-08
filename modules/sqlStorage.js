@@ -9,7 +9,7 @@ const StorageManager = function() {
       Category
 
   SettingsManager.getSettings((settings) => {
-    let models = require('../storage/sqlite')(settings.dbPath);
+    let models = require('../storage/index.js')(settings.dbPath);
     Day = models.Day;
     Task = models.Task;
     Note = models.Note;
@@ -18,7 +18,7 @@ const StorageManager = function() {
 
   SettingsManager.on('settingChanged-dbPath', (info) => {
     console.log(`dbPath changed to ${ info.newValue }`);
-    let models = require('../storage/sqlite')(info.newValue);
+    let models = require('../storage')(info.newValue);
     Day = models.Day;
     Task = models.Task;
     Note = models.Note;
