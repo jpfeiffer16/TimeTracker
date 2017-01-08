@@ -78,8 +78,10 @@ app.on('ready', function () {
     {
       label: 'Close All Windows',
       click() {
-        windows.forEach((window) => {
-          window.window.close();
+        windows.map((window) => {
+          return window.window;
+        }).forEach((window) => {
+          window.close();
         });
       }
     },
