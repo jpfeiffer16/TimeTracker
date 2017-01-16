@@ -1,6 +1,13 @@
-const {app, BrowserWindow, Tray, Menu, ipcMain} = require('electron');
+const {app, BrowserWindow, Tray, Menu, ipcMain, Notification} = require('electron');
 const MessageManager = require('./modules/messageManager');
 const path = require('path');
+const Scheduler = require('./modules/scheduler');
+const notify = require('electron-main-notification');
+Scheduler.register(new Date(new Date().getTime() + 10000), () => {
+  notify('This is a notification!', { body: 'See? Really easy to use!' }, () => {
+    console.log('Scheduler callback! Notification has been clicked.');
+  });
+});
 // var ESI = require('electron-single-instance');
 // ESI.ensureSingleInstance('TimeTracker');
 

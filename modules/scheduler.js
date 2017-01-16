@@ -9,25 +9,34 @@ const settings = require('electron-settings');
 let Scheduler = function() {
   
 
-  let lastCheck;
+  let lastCheck = new Date();
   let registeredEvents = [];
 
-  settings.get('values.scheduler')
+  settings.get('values.scheduler.lastCheck')
     .then((val) => {
       if (val) {
-        lastCheck = val;
-        console.log('Got persisted lastCheck value');
-        console.log(`Type: ${ typeof val }`);
+        if (val) {
+          console.log('Persistant lastcheck found');
+          console.log(val);
+          lastCheck = new Date(val);
+        } else {
+          lastCheck = new Date();
+        }
       }
     });
 
   this.check = function() {
+    console.log('checking');
     let now = new Date();
 
     registeredEvents.forEach((event) => {
+      console.log(event.date);
+      console.log(lastCheck);
       if (event.date > lastCheck && event.date < now) {
         event.cb();
       }
+      lastCheck = now;
+      settings.set('values.scheduler.lastCheck', now);
     });
   };
 
