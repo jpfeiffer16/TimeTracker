@@ -3,7 +3,7 @@ const MessageManager = require('./modules/messageManager');
 const path = require('path');
 const Scheduler = require('./modules/scheduler');
 const notify = require('electron-main-notification');
-Scheduler.register(new Date(new Date().getTime() + 10000), () => {
+Scheduler.register(new Date(new Date().getTime() + 60000), () => {
   notify('This is a notification!', { body: 'See? Really easy to use!' }, () => {
     console.log('Scheduler callback! Notification has been clicked.');
   });
