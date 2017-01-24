@@ -11,6 +11,7 @@ let Scheduler = function() {
 
   let lastCheck = new Date();
   let registeredEvents = [];
+  let registeredEventsFirstOfDay = [];
 
   settings.get('values.scheduler.lastCheck')
     .then((val) => {
@@ -28,16 +29,21 @@ let Scheduler = function() {
   this.check = function() {
     console.log('checking');
     let now = new Date();
+    //Fire off first-of-day tasks here
+    console.log(now.getDay(), lastCheck.getDay());
+    if (now.getDay() != lastCheck.getDay()) {
+      registeredEventsFirstOfDay.forEach((event) => {
+        event.cb();
+      });
+    }
 
     registeredEvents.forEach((event) => {
-      console.log(event.date);
-      console.log(lastCheck);
       if (event.date > lastCheck && event.date < now) {
         event.cb();
       }
-      lastCheck = now;
-      settings.set('values.scheduler.lastCheck', now);
     });
+    lastCheck = now;
+    settings.set('values.scheduler.lastCheck', now);
   };
 
 
@@ -48,9 +54,11 @@ let Scheduler = function() {
     });
   };
 
-  // this.registerFirstTaskOfDay = function(cb) {
-    
-  // };
+  this.registerFirstTaskOfDay = function(cb) {
+    if (typeof cb === 'function') registeredEventsFirstOfDay.push({
+      cb
+    });
+  };
 
 
   setInterval(this.check, 60000);
