@@ -4,6 +4,9 @@ const path = require('path');
 const Scheduler = require('./modules/scheduler');
 const notify = require('electron-main-notification');
 const databacker = require('databacker-client');
+
+const SettingsManager = require('./modules/settingsManager');
+const fs = require('fs');
 // Scheduler.register(new Date(new Date().getTime() + 60000), () => {
 //   notify('This is a notification!', { body: 'See? Really easy to use!' }, () => {
 //     console.log('Scheduler callback! Notification has been clicked.');
@@ -15,18 +18,33 @@ const databacker = require('databacker-client');
 
 Scheduler.registerFirstTaskOfDay(() => {
   console.log('FirstDay Task!');
-  require('./modules/settingsManager').getSettings((settings) => {
+  SettingsManager.getSettings((settings) => {
     // console.log(settings);
-    require('fs').readFile(settings.dbPath, (err, file) => {
-      if (err) throw err;
-      console.log(file);
+    if (!settings || !settings.dbPath) return;
+    fs.readFile(settings.dbPath, (err, file) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
       try {
         //Do databacker push here.
-        console.log('Need to push to databacker here');
+        if (
+          !settings.databacker ||
+          !settings.databacker.username ||
+          !settings.databacker.password
+        ) {
+          return;
+        }
+        databacker.push(
+          settings.databacker.username,
+          settings.databacker.password,
+          'TimeTrackerBackup',
+          file
+        );
       } catch (e) {
-        console.log(e);
+        console.error(e);
+        return;
       }
-      // databacker.push('jpfeiffer', 'test', 'testbackup', 'file');
     });
   });
 });

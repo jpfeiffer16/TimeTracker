@@ -9,7 +9,11 @@ const path = require('path');
 settings.defaults({
   settings: {
     dbPath: path.join(__dirname, '..', 'data.sqlite'),
-    selectedFilter: 'all'
+    selectedFilter: 'all',
+    databacker: {
+      username: '',
+      password: ''
+    }
   }
 });
 

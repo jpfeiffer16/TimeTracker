@@ -15,6 +15,16 @@
   <md-button ng-click="selectFile()" class="md-raised md-primary">Select</md-button>
 </md-input-container>
 
+<md-input-container class="md-block">
+  <label>Databacker Username</label>
+  <input md-no-asterisk name="databackerusername" ng-model="settings.databacker.username">
+</md-input-container>
+
+<md-input-container class="md-block">
+  <label>Databacker Password</label>
+  <input md-no-asterisk name="databackerpassword" type="password" ng-model="settings.databacker.password">
+</md-input-container>
+
 
 <!-- <md-input-container class="md-block"> -->
   <!-- <label>Mongo URI</label> -->
