@@ -3,11 +3,34 @@ const MessageManager = require('./modules/messageManager');
 const path = require('path');
 const Scheduler = require('./modules/scheduler');
 const notify = require('electron-main-notification');
-Scheduler.register(new Date(new Date().getTime() + 60000), () => {
-  notify('This is a notification!', { body: 'See? Really easy to use!' }, () => {
-    console.log('Scheduler callback! Notification has been clicked.');
+const databacker = require('databacker-client');
+// Scheduler.register(new Date(new Date().getTime() + 60000), () => {
+//   notify('This is a notification!', { body: 'See? Really easy to use!' }, () => {
+//     console.log('Scheduler callback! Notification has been clicked.');
+//   });
+// });
+
+
+
+
+Scheduler.registerFirstTaskOfDay(() => {
+  console.log('FirstDay Task!');
+  require('./modules/settingsManager').getSettings((settings) => {
+    // console.log(settings);
+    require('fs').readFile(settings.dbPath, (err, file) => {
+      if (err) throw err;
+      console.log(file);
+      try {
+        //Do databacker push here.
+        console.log('Need to push to databacker here');
+      } catch (e) {
+        console.log(e);
+      }
+      // databacker.push('jpfeiffer', 'test', 'testbackup', 'file');
+    });
   });
 });
+
 // var ESI = require('electron-single-instance');
 // ESI.ensureSingleInstance('TimeTracker');
 
