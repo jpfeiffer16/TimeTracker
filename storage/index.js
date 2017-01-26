@@ -33,7 +33,6 @@ module.exports = function (initDBPath) {
     //Do any stuff we need to here
   });
 
-
   //Exports
   return {
     Day,

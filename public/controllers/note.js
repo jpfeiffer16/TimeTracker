@@ -18,7 +18,6 @@ angular.module('app')
         }
       });
 
-
     $scope.note = {};
     if ($routeParams.id) {
       NoteManager.getNote($routeParams.id, (note) => {

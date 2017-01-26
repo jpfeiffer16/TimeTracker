@@ -1,5 +1,3 @@
-
-
 angular.module('app')
   .controller('SettingsCtrl', function ($scope, $rootScope, hotkeys, SettingsManager, InfoManager) {
     const { dialog } = require('electron').remote;

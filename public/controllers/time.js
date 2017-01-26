@@ -119,13 +119,13 @@ angular.module('app')
       });
     };
 
-
     $scope.selectedFilter = 'all';
 
     //Get settings for last used filter
     SettingsManager.getSettings((settings) => {
       if (settings && settings.selectedFilter && settings.selectedFilter != '') {
         $scope.selectedFilter = settings.selectedFilter;
+        //TODO: This is bad. Make it immediate
         setTimeout(() => {
           $scope.filter(settings.selectedFilter);
           $scope.$apply();
@@ -133,13 +133,7 @@ angular.module('app')
       }
     });
 
-    // $scope.query = {
-    //   order: 'date',
-    //   limit: 5,
-    //   page: 1
-    // };
     $scope.sortType = 'date';
-
     $scope.searchDay = '';
 
     TimeManager.getDays((days) => {

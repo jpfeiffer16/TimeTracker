@@ -20,9 +20,6 @@ angular.module('app')
         }
       });
 
-    var localCopy = {};
-    
-
     $scope.day = {
       date: new Date(),
       tasks: []
@@ -41,14 +38,10 @@ angular.module('app')
     };
 
     $scope.save = function() {
-      // console.log(localCopy);
-      // console.log('------------------------');
-      // console.log($scope);
       //TODO: Change this as it's probably not very performant:
       $scope.day.date = new Date($scope.day.date.toDateString());
 
       TimeManager.saveDay($scope.day, (day) => {
-        // $scope.day = day;
         InfoManager.showMessage('Day Saved');
       });
     };
@@ -61,23 +54,9 @@ angular.module('app')
         InfoManager.showMessage('Task Removed from DB');
       });
       $scope.hours = getHours();
-      // $scope.$apply();
     }
 
     $scope.applyTask = function(taskRef, prop, value) {
-      // $scope.$apply();
-      // console.log(`TestValue: ${ value }`);
-      // // $scope.task[prop] = value;
-      // $scope.day.tasks.forEach((task) => {
-      //   if (task === taskRef) {
-      //     console.log(`Value was ${ task[prop] }`);
-      //     task[prop] = value;
-      //     console.log(`Updating Value to ${ value }`);
-      //   }
-      // });
-      // localCopy.day = JSON.parse(JSON.stringify($scope.day));
-      // console.log('LocalCopy:', localCopy.day);
-
       $scope.hours = getHours();
     };
 
@@ -96,16 +75,6 @@ angular.module('app')
         event.srcElement.step = 1;
       }
     }
-
-    // $scope.$watch('day', (newValue) => {
-    //   console.log(newValue);
-    //   //$scope.$apply();
-    //   $scope.hours = getHours();
-    // });
-    // $scope.getDate = (ticks) => {
-    //   return new Date(ticks);
-    // };
-
 
     function getHours() {
       if (!$scope.day.tasks || $scope.day.tasks.length == 0) return 0;
