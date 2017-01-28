@@ -146,9 +146,7 @@ app.on('ready', function () {
   tray.setToolTip('TimeTracker');
   tray.setContextMenu(contextMenu);
   tray.on('click', () => {
-    // console.log('Clicked');
-    // console.log(windows.length);
-    //TODO: If there is one window, focus it. If there are more than one,
+    //If there is one window, focus it. If there are more than one,
     //focus the last used one. If there are none, create one.
     // createWindow('');
     //One window

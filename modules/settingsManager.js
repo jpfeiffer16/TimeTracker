@@ -26,7 +26,7 @@ emitter.saveSettings = function(settingsObj, cb) {
       //Do our own low level error handling here as the electron-settings
       //library seems to swallow them silently. Nice job guys.
       try {
-        //TODO: Diff the object and emit app. events here.
+        //Diff the object and emit app. events here.
         let differentProps = diffObjects(settingsObj, originalVal);
         if (differentProps.length > 0) {
           differentProps.forEach((prop) => {
