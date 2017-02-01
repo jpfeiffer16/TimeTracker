@@ -57,7 +57,9 @@ const StorageManager = function() {
   };
 
   let removeDay = function(id, cb) {
-    Day.findById(id)
+    Day.findById(id, {
+      include: Task
+    })
     .then((dbTask) => {
       if (dbTask) {
         return dbTask.destroy({ force: true });

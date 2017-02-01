@@ -1,5 +1,5 @@
 angular.module('app')
-  .controller('TimeCtrl', function ($scope, $rootScope, TimeManager, hotkeys, SettingsManager, InfoManager) {
+  .controller('TimeCtrl', function ($scope, $rootScope, $mdDialog,TimeManager, hotkeys, SettingsManager, InfoManager) {
     //Hotkey setup
     hotkeys
       .bindTo($scope)
@@ -23,13 +23,20 @@ angular.module('app')
       });
       return total;
     };
-    $scope.removeDay = function(id, index) {
+    $scope.removeDay = function(id, index, ev) {
       console.log(id, index);
       // if (index == undefined) return;
       // $scope.days.splice(index, 1);
       if (!id) return;
       //TODO: Remove day here
       // console.log('Removing day!');
+      // var confirm = $mdDialog.confirm()
+      //   .title('Would you like to delete your debt?')
+      //   .textContent('All of the banks have agreed to forgive you your debts.')
+      //   .ariaLabel('Lucky day')
+      //   .targetEvent(ev)
+      //   .ok('Please do it!')
+        .cancel('Sounds like a scam');
       TimeManager.removeDay(id, () => {
         InfoManager.showMessage('Day has been removed from the db');
         getDays(() => {
