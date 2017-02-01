@@ -56,6 +56,18 @@ const StorageManager = function() {
     });
   };
 
+  let removeDay = function(id, cb) {
+    Day.findById(id)
+    .then((dbTask) => {
+      if (dbTask) {
+        return dbTask.destroy({ force: true });
+      }
+    })
+    .then(() => {
+      cb();
+    });
+  };
+
   let removeTask = function(id, cb) {
     Task.findById(id)
     .then((dbTask) => {
@@ -180,6 +192,7 @@ const StorageManager = function() {
     getDays,
     getDay,
     saveDay,
+    removeDay,
     removeTask,
     getNotes,
     getNote,

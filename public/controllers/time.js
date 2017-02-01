@@ -1,5 +1,5 @@
 angular.module('app')
-  .controller('TimeCtrl', function ($scope, $rootScope, TimeManager, hotkeys, SettingsManager) {
+  .controller('TimeCtrl', function ($scope, $rootScope, TimeManager, hotkeys, SettingsManager, InfoManager) {
     //Hotkey setup
     hotkeys
       .bindTo($scope)
@@ -22,6 +22,20 @@ angular.module('app')
         total += task.time;
       });
       return total;
+    };
+    $scope.removeDay = function(id, index) {
+      console.log(id, index);
+      // if (index == undefined) return;
+      // $scope.days.splice(index, 1);
+      if (!id) return;
+      //TODO: Remove day here
+      // console.log('Removing day!');
+      TimeManager.removeDay(id, () => {
+        InfoManager.showMessage('Day has been removed from the db');
+        getDays(() => {
+          $scope.filter();
+        });
+      });
     };
 
     $scope.filters = [
@@ -96,8 +110,10 @@ angular.module('app')
     $scope.filter = function(codeName) {
       if (codeName) {
         runFilter(codeName);
+        $scope.$apply();
       } else {
         runFilter($scope.selectedFilter);
+        $scope.$apply();
       }
     };
 
@@ -122,23 +138,32 @@ angular.module('app')
     $scope.selectedFilter = 'all';
 
     //Get settings for last used filter
-    SettingsManager.getSettings((settings) => {
-      if (settings && settings.selectedFilter && settings.selectedFilter != '') {
-        $scope.selectedFilter = settings.selectedFilter;
-        //TODO: This is bad. Make it immediate
-        setTimeout(() => {
-          $scope.filter(settings.selectedFilter);
-          $scope.$apply();
-        }, 300);
-      }
-    });
+
 
     $scope.sortType = 'date';
     $scope.searchDay = '';
 
-    TimeManager.getDays((days) => {
-      internalDays = days;
-      $scope.days = days;
-      $scope.$apply();
+    function getDays(cb) {
+      TimeManager.getDays((days) => {
+        internalDays = days;
+        $scope.days = days;
+        $scope.$apply();
+        cb();
+      });
+    }
+
+    // TimeManager.getDays((days) => {
+    //   internalDays = days;
+    //   $scope.days = days;
+    //   $scope.$apply();
+    // });
+
+    getDays(() => {
+      SettingsManager.getSettings((settings) => {
+        if (settings && settings.selectedFilter && settings.selectedFilter != '') {
+          $scope.selectedFilter = settings.selectedFilter;
+          $scope.filter(settings.selectedFilter);
+        }
+      });
     });
   });

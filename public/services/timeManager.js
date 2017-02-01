@@ -15,6 +15,10 @@ angular.module('app')
       });
     };
 
+    const removeDay = (id, cb) => {
+      MessagesService.sendMessage('removeDay', id, cb);
+    };
+
     const removeTask = (id, cb) => {
       MessagesService.sendMessage('removeTask', id, cb);
     };
@@ -22,6 +26,7 @@ angular.module('app')
       getDays,
       getDay,
       saveDay,
+      removeDay,
       removeTask
     }
   });

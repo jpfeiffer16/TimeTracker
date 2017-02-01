@@ -21,6 +21,7 @@
   <md-list-item ng-repeat="day in days | orderBy:'date':true" ng-click="navigate('/day/' + day.id)" right-click-navigate="'/day/' + day.id" class="noright">
     <p>{{ day.date | date:'MM/dd/yyyy' }}</p>
     <p>{{ getHours(day) }} Hours</p>
+    <md-icon ng-click="removeDay(day.id, $index)" aria-label="Remove Day" class="md-secondary md-hue-3" >X</md-icon>
   </md-list-item>
 </md-list>
 

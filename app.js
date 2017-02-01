@@ -85,7 +85,7 @@ function createWindow (path) {
   win.loadURL(`file://${__dirname}/index.html#${path}`);
 
   // Open the DevTools.
-  // win.webContents.openDevTools();
+  win.webContents.openDevTools();
 
   // Emitted when the window is closed.
   win.on('closed', () => {
@@ -149,17 +149,12 @@ app.on('ready', function () {
     //If there is one window, focus it. If there are more than one,
     //focus the last used one. If there are none, create one.
     // createWindow('');
-    //One window
-    if (windows.length == 1) {
-      windows[0].window.focus();
-    }
-    //More than one window
-    if (windows.length > 1) {
-      windows.forEach((window) => {
-        window.window.focus();
-      });
-      // windows[windows.length - 1].window.focus();
-    }
+    //One or more windows
+
+    windows.forEach((window) => {
+      window.window.focus();
+    });
+
     //No windows
     if (windows.length == 0) {
       createWindow('');
