@@ -36,7 +36,7 @@ angular.module('app')
       //   .ariaLabel('Lucky day')
       //   .targetEvent(ev)
       //   .ok('Please do it!')
-        .cancel('Sounds like a scam');
+      //   .cancel('Sounds like a scam');
       TimeManager.removeDay(id, () => {
         InfoManager.showMessage('Day has been removed from the db');
         getDays(() => {
