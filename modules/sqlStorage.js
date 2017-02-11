@@ -37,10 +37,13 @@ const StorageManager = function() {
   };
 
   let getDay = function (id, cb) {
+    console.log('getDay, ', id);
     Day.findById(id, {
       include: Task
     }).then((dbday) => {
-      cb(dbday.toJSON());
+      if (dbday) {
+        cb(dbday.toJSON());
+      }
     });
   };
 
@@ -48,11 +51,13 @@ const StorageManager = function() {
     Day.findOrCreate({ where: { id: day.id }, defaults: day })
     .then((dbdays, created) => {
       let dbday = dbdays[0];
+      console.log('saveDay, ');
+      console.log(dbday.dataValues);
       day.tasks.forEach((task) => {
         task.dayId = dbday.dataValues.id;
         Task.upsert(task);
       });
-      cb();
+      cb(dbday.dataValues);
     });
   };
 

@@ -25,12 +25,7 @@ angular.module('app')
       tasks: []
     };
     if ($routeParams.id) {
-      TimeManager.getDay($routeParams.id, (day) => {
-        $scope.day = day;
-        $scope.$apply();
-        $scope.hours = getHours();
-        $scope.$apply();
-      });
+      getDay($routeParams.id);
     }
 
     $scope.back = function() {
@@ -42,6 +37,9 @@ angular.module('app')
       $scope.day.date = new Date($scope.day.date.toDateString());
 
       TimeManager.saveDay($scope.day, (day) => {
+        console.log('Save Day:');        
+        console.log(day);
+        getDay(day.id);
         InfoManager.showMessage('Day Saved');
       });
     };
@@ -74,6 +72,15 @@ angular.module('app')
       if (event.key === 'Shift') {
         event.srcElement.step = 1;
       }
+    }
+
+    function getDay(id) {
+      TimeManager.getDay(id, (day) => {
+        $scope.day = day;
+        $scope.$apply();
+        $scope.hours = getHours();
+        $scope.$apply();
+      });
     }
 
     function getHours() {
