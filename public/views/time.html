@@ -16,6 +16,7 @@
     </md-option>
   </md-select>
 </md-input-container>
+<label>{{ totalHours }} Total Hours</label>
 
 <md-list>
   <md-list-item ng-repeat="day in days | orderBy:'date':true" ng-click="navigate('/day/' + day.id)" right-click-navigate="'/day/' + day.id" class="noright">

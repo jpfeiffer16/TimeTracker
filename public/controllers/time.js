@@ -11,6 +11,7 @@ angular.module('app')
         }
       });
     let internalDays = [];
+    $scope.totalHours = 0;
     $scope.days = [];
     $scope.formatDate = (date) => {
       let obj = new Date(date);
@@ -130,6 +131,7 @@ angular.module('app')
         if (filter.codeName === codeName) {
           console.log('Filtering');
           filter.fn();
+          $scope.totalHours = getTotalHours();          
           console.log($scope.days);
           SettingsManager.getSettings((settings) => {
             settings.selectedFilter = codeName;
@@ -157,6 +159,17 @@ angular.module('app')
         $scope.$apply();
         cb();
       });
+    }
+
+    function getTotalHours() {
+      let total = 0;
+      $scope.days.forEach((day) => { 
+        // let total = 0;
+        day.tasks.forEach(function(task) {
+          total += task.time;
+        });
+      });
+      return total;
     }
 
     // TimeManager.getDays((days) => {
