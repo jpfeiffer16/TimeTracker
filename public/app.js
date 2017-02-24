@@ -60,6 +60,10 @@ angular
         templateUrl: 'public/views/settings.html',
         controller: 'SettingsCtrl',
         page: 'settings'
+      }).when('/textView/:id', {
+        templateUrl: 'public/views/textView.html',
+        controller: 'TextViewCtrl',
+        page: 'textview'
       });
   })
   .run(($rootScope, $mdSidenav, $location, $route, AppManager, WindowManager) => {

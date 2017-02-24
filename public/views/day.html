@@ -4,6 +4,7 @@
 
 <md-button ng-click="back()" class="md-raised md-primary">Back</md-button>
 <md-button ng-click="newTimeEntry()" class="md-raised md-primary">New</md-button>
+<md-button ng-click="navigate('/textView/' + day.id)" right-click-navigate="'/textView/' + day.id" class="md-raised md-primary">Text</md-button>
 
 <md-datepicker ng-model="day.date" md-placeholder="Enter date"></md-datepicker>
 
