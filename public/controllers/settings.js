@@ -23,13 +23,6 @@ angular.module('app')
       });
     };
 
-    //Temporary
-    $scope.doImport = () => {
-      SettingsManager.doImport($scope.settings.filepath, function () {
-        InfoManager.showMessage('Import Completed');
-      });
-    };
-
     $scope.selectFile = () => {
       let selectedPath = dialog.showOpenDialog({
         filters: [
