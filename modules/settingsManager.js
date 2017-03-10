@@ -13,7 +13,10 @@ settings.defaults({
     databacker: {
       username: '',
       password: ''
-    }
+    },
+    jiraBaseUrl: '',
+    jiraUsername: '',
+    jiraPassword: ''
   }
 });
 
