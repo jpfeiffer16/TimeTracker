@@ -1,7 +1,11 @@
+let jiraIntegration = require('./modules/jira');
+// setInterval(() => {
+  
+// }, 1000);
 
 
 angular.module('app')
-  .controller('DayCtrl', function ($scope, $rootScope, $routeParams, TimeManager, InfoManager, hotkeys) {
+  .controller('DayCtrl', function ($scope, $rootScope, $routeParams, $q, $timeout, TimeManager, InfoManager, hotkeys) {
     //HotkeySetup
     hotkeys
       .bindTo($scope)
@@ -72,6 +76,42 @@ angular.module('app')
       if (event.key === 'Shift') {
         event.srcElement.step = 1;
       }
+    }
+
+    setTimeout(() => {
+      jiraIntegration.jira.searchJira('(assignee was jpfeiffer and updatedDate > startOfWeek()) or project = "BlueModus Overhead"', { maxResults: 1000 })
+        .then(function(result) {
+          // console.dir(issues, { depth: 30 });
+          // console.log(result.issues.map((issue) => {
+          //   return issue.fields;
+          // }));
+          $scope.jiraTickets = result.issues.map((issue) => {
+            return {
+              ticket: issue.key,
+              summary: issue.fields.summary,
+              searchText: `${ issue.key }: ${ issue.fields.summary }`,
+            }
+          });
+          $scope.jiraTicketLabels = $scope.jiraTickets.map((issue) => {
+            return {
+              value: issue.ticket,
+              display: issue.searchText
+            };
+          });
+        })
+        .catch(function(err) {
+          console.error(err);
+        });
+    }, 1000);
+
+    $scope.ticketQuerySearch = function (query) {
+      var results = $scope.jiraTicketLabels.filter((ticket) => {
+        return ~(ticket.display.toLowerCase().indexOf(query.toLowerCase()));
+      });
+      return results;
+      // var deferred = $q.defer();
+      // $timeout(function () { deferred.resolve( results ); }, Math.random() * 1000, false);
+      // return deferred.promise;
     }
 
     function getDay(id) {

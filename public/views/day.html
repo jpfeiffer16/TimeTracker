@@ -33,10 +33,48 @@
     </md-autocomplete>-->
     <!--</md-input-container>-->
         <!--<md-item-template>-->
-    <md-input-container class="md-block">
+        <!--<md-input-container flex>
+          <label>Description</label>
+          <input type="text"/>
+        </md-input-container>-->
+        <!--<md-autocomplete flex required
+            md-input-name="autocompleteField"
+            md-input-minlength="2"
+            md-input-maxlength="18"
+            md-no-cache="ctrl.noCache"
+            md-selected-item="ctrl.selectedItem"
+            md-search-text="ctrl.searchText"
+            md-items="item in ctrl.querySearch(ctrl.searchText)"
+            md-item-text="item.display"
+            md-require-match
+            md-floating-label="Description">
+          <md-item-template>
+            <span md-highlight-text="ctrl.searchText">{{item.display}}</span>
+          </md-item-template>
+          <div ng-messages="searchForm.autocompleteField.$error" ng-if="searchForm.autocompleteField.$touched">
+            <div ng-message="required">You <b>must</b> have a favorite state.</div>
+            <div ng-message="md-require-match">Please select an existing state.</div>
+            <div ng-message="minlength">Your entry is not long enough.</div>
+            <div ng-message="maxlength">Your entry is too long.</div>
+          </div>
+        </md-autocomplete>-->
+    <md-autocomplete flex
+        md-input-name="description"
+        md-no-cache="ctrl.noCache"
+        md-selected-item="selectedDiscription"
+        md-search-text="task.description"
+        md-items="item in ticketQuerySearch(task.description)"
+        md-item-text="item.value"
+
+        md-floating-label="Description">
+      <md-item-template>
+        <span md-highlight-text="task.searchText">{{item.display}}</span>
+      </md-item-template>
+    </md-autocomplete>
+    <!--<md-input-container class="md-block">
       <label>Description</label>
       <input md-no-asterisk ng-model="task.description" ng-change="applyTask(task, 'description', task.description)">
-    </md-input-container>
+    </md-input-container>-->
     <md-input-container class="md-block">
       <label>Hours</label>
       <input md-no-asterisk type="number" ng-keydown="checkShift($event)" ng-keyup="checkClearShift($event)" ng-model="task.time" ng-change="applyTask(task, 'time', task.time)">

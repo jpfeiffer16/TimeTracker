@@ -6,20 +6,26 @@ var SettingManager = require('./settingsManager');
 //TODO: Need hot-reload for this
 var JiraApi = require('jira-client')
 var jira = null;
-
+console.log('Constructing jira');
 
 SettingManager.getSettings((settings) => {
+  console.log('Got settings');
   jira = new JiraApi({
     protocol: 'http',
-    host: settings.jiraBaseUrl,
-    username: settings.jiraUsername,
-    password: settings.jiraPassword,
+    host: settings.jira.baseUrl,
+    username: settings.jira.username,
+    password: settings.jira.password,
     apiVersion: '2'
     // strictSSL: true
   });
+  console.log(jira);
 });
 
-module.exports = jira;
+module.exports = {
+  get jira() {
+    return jira;
+  }
+};
 
 // jira.searchJira('assignee = jpfeiffer AND status != Closed')
 //   .then(function(result) {

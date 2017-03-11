@@ -17,6 +17,7 @@
     "electron-settings": "2.2.1",
     "electron-single-instance": "0.0.2",
     "jira-client": "^5.0.1",
+    "jira-connector": "^2.6.0",
     "node-outlook": "1.1.6",
     "sequelize": "3.24.8",
     "sqlite3": "3.1.8",

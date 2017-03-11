@@ -11,12 +11,16 @@ settings.defaults({
     dbPath: path.join(__dirname, '..', 'data.sqlite'),
     selectedFilter: 'all',
     databacker: {
+      enabled: false,
       username: '',
       password: ''
     },
-    jiraBaseUrl: '',
-    jiraUsername: '',
-    jiraPassword: ''
+    jira: {
+      enabled: false,
+      baseUrl: '',
+      username: '',
+      password: ''
+    }
   }
 });
 
