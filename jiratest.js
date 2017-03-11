@@ -66,22 +66,29 @@ var jira = new JiraClient( {
 
 
 
+// jira.issue.getWorkLogs({
+//     issueKey: 'OH-12'
+// }, function(error, workLogs) {
+//     console.log(error);
+//     // console.log(issue.fields.summary);
+//     // console.dir(workLogs, { depth: 30 });
+//     console.log(workLogs);
+// });
 
-
-
-
-
-
-
-
-
-jira.issue.getWorkLogs({
-    issueKey: 'OH-12'
+jira.issue.addWorkLog({
+    issueKey: 'MSSS-124',
+    worklog: { 
+        comment: 'Test',
+        started: '2017-03-10T22:42:14.287+0000',
+        timeSpentSeconds: 1800,
+    }
 }, function(error, workLogs) {
     console.log(error);
     // console.log(issue.fields.summary);
+    // console.dir(workLogs, { depth: 30 });
     console.log(workLogs);
 });
+
 
 
 

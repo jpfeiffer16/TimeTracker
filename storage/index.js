@@ -29,6 +29,7 @@ module.exports = function (initDBPath) {
   Category.hasMany(Note);
 
   //Sync table schemas
+  // sequelize.sync({ force: true }).then(() => {
   sequelize.sync().then(() => {
     //Do any stuff we need to here
   });

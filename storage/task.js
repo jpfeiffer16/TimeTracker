@@ -8,6 +8,10 @@ module.exports = function (sequelize) {
     time: {
       type: Sequelize.INTEGER,
       field: 'time'
+    },
+    synced: {
+      type: Sequelize.BOOLEAN,
+      field: 'synced'
     }
   });
 
