@@ -75,19 +75,33 @@ var jira = new JiraClient( {
 //     console.log(workLogs);
 // });
 
-jira.issue.addWorkLog({
-    issueKey: 'MSSS-124',
-    worklog: { 
-        comment: 'Test',
-        started: '2017-03-10T22:42:14.287+0000',
-        timeSpentSeconds: 1800,
-    }
-}, function(error, workLogs) {
-    console.log(error);
-    // console.log(issue.fields.summary);
-    // console.dir(workLogs, { depth: 30 });
-    console.log(workLogs);
-});
+// jira.issue.addWorkLog({
+//     issueKey: 'MSSS-123',
+//     worklog: { 
+//         comment: '',
+//         started: '2017-03-10T22:42:14.287+0000',
+//         timeSpentSeconds: 1800,
+//     }
+// }, function(error, workLogs) {
+//     console.log(error);
+//     // console.log(issue.fields.summary);
+//     // console.dir(workLogs, { depth: 30 });
+//     console.log(workLogs);
+// });
+
+// jira.issue.addWorkLog({
+//     issueKey: 'MSSS-124',
+//     worklog: { 
+//         comment: '',
+//         started: '2017-03-09T07:00:00.000+0000',
+//         timeSpentSeconds: 1800,
+//     }
+// }, function(error, workLogs) {
+//     console.log(error);
+//     // console.log(issue.fields.summary);
+//     // console.dir(workLogs, { depth: 30 });
+//     console.log(workLogs);
+// });
 
 
 
@@ -99,8 +113,21 @@ jira.issue.addWorkLog({
 
 
 
+// function reverse(s){
+//     return s.split("").reverse().join("");
+// }
 
+// var jira_matcher = /\d+-[A-Z]+(?!-?[a-zA-Z]{1,10})/g
+// var s = "BF-18 abc-123 X-88 ABCDEFGHIJKL-999 abc XY-Z-333 abcDEF-33 ABC-1"
+// s = reverse(s)
+// var m = s.match(jira_matcher);
 
+// // Also need to reverse all the results!
+// for (var i = 0; i < m.length; i++) {
+//  m[i] = reverse(m[i])
+// }
+// m.reverse()
+// console.log(m)
 
 
 

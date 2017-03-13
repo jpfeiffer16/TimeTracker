@@ -80,6 +80,16 @@
       <input md-no-asterisk type="number" ng-keydown="checkShift($event)" ng-keyup="checkClearShift($event)" ng-model="task.time" ng-change="applyTask(task, 'time', task.time)">
     </md-input-container>
       <md-button ng-click="removeTask(task.id, $index)" class="md-raised md-primary">X</md-button>
+      <md-button ng-if="task.syncing == false || task.syncing == undefined" ng-click="syncTask(task, day)" class="md-raised md-primary">
+        <span ng-if="task.synced">
+          /
+        </span>
+        <span ng-if="task.synced == false || task.synced == null">
+          .
+        </span>
+        
+      </md-button>
+      <md-progress-circular ng-if="task.syncing" md-mode="indeterminate"></md-progress-circular>
     <md-input-container>
     </md-input-container>
   </md-list-item>

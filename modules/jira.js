@@ -5,20 +5,29 @@ var SettingManager = require('./settingsManager');
 
 //TODO: Need hot-reload for this
 var JiraApi = require('jira-client')
+var JiraClient = require('jira-connector');
 var jira = null;
 console.log('Constructing jira');
 
 SettingManager.getSettings((settings) => {
   console.log('Got settings');
-  jira = new JiraApi({
-    protocol: 'http',
-    host: settings.jira.baseUrl,
-    username: settings.jira.username,
-    password: settings.jira.password,
-    apiVersion: '2'
-    // strictSSL: true
+  // jira = new JiraApi({
+  //   protocol: 'http',
+  //   host: settings.jira.baseUrl,
+  //   username: settings.jira.username,
+  //   password: settings.jira.password,
+  //   apiVersion: '2'
+  //   // strictSSL: true
+  // });
+  jira = new JiraClient( {
+      host: 'jira.bluemodus.com',
+      protocol: 'http',
+      basic_auth: {
+          username: settings.jira.username,
+          password: settings.jira.password
+      }
   });
-  console.log(jira);
+  // console.log(jira);
 });
 
 module.exports = {
