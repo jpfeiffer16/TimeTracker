@@ -32,7 +32,7 @@ Currently only macOS and Linux are supported.
 
 Destop launcher only works on linux currently.
 
-### Exiting pre-Jira-Integration DB migrations:
+### Existing pre-Jira-Integration DB migrations:
 If you have a sqlite db used by the app that is older than the jira-integration addition,
 you will need to execute the sql in the file ~/dbscripts/addSyncedToTasks.sql on your db before 
 it will work with the app again.
