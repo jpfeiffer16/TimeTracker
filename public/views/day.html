@@ -2,9 +2,20 @@
   <span><b>Hours: </b>{{ hours }}</span>
 </md-input-container>
 
-<md-button ng-click="back()" class="md-raised md-primary">Back</md-button>
-<md-button ng-click="newTimeEntry()" class="md-raised md-primary">New</md-button>
-<md-button ng-click="navigate('/textView/' + day.id)" right-click-navigate="'/textView/' + day.id" class="md-raised md-primary">Text</md-button>
+<!--<md-input-container>-->
+  <md-button ng-click="back()" class="md-secondary md-hue-3">
+    <md-tooltip md-direction="top">Back</md-tooltip>
+    <i class="material-icons">arrow_back</i>
+  </md-button>
+  <md-button ng-click="newTimeEntry()" class="md-secondary md-hue-3">
+    <md-tooltip md-direction="top">New Task</md-tooltip>
+    <i class="material-icons">create</i>
+  </md-button>
+  <md-button ng-click="navigate('/textView/' + day.id)" right-click-navigate="'/textView/' + day.id" class="md-secondary md-hue-3">
+  <md-tooltip md-direction="top">Text View</md-tooltip>
+    <i class="material-icons">text_fields</i>
+  </md-button>
+<!--</md-input-container>-->
 
 <md-datepicker ng-model="day.date" md-placeholder="Enter date"></md-datepicker>
 
@@ -17,7 +28,6 @@
         md-search-text="task.description"
         md-items="item in ticketQuerySearch(task.description)"
         md-item-text="item.value"
-
         md-floating-label="Description">
       <md-item-template>
         <span md-highlight-text="task.searchText">{{item.display}}</span>
