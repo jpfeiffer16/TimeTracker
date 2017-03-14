@@ -13,7 +13,7 @@ Comment=Time tracking app
 Path=<TimeTrackerPath>
 
 # The executable of the application, possibly with arguments.
-Exec=electron .
+Exec=npm start
 
 # The name of the icon that will be used to display this entry
 Icon=<TimeTrackerPath>/images/icon.png
