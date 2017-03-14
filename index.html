@@ -53,9 +53,9 @@
   </head>
 
   <body ng-app="app" ng-controller="MainCtrl">
-    <md-toolbar class="md-hue-2 top-bar" style="-webkit-app-region: drag;" scoll>
+    <md-toolbar class="md-hue-2 top-bar" style="-webkit-app-region: drag;" scroll>
       <div class="md-toolbar-tools">
-        <md-button ng-click="toggleMenu()" class="md-icon-button" aria-label="Menu" style="-webkit-app-region: no-drag;">
+        <md-button ng-click="toggleMenu()" class="md-icon-button nav-button" aria-label="Menu" style="-webkit-app-region: no-drag;">
           <i class="material-icons">menu</i>
         </md-button>
         <h2>
@@ -69,7 +69,7 @@
     </md-toolbar>
     <section layout="row" flex>
       <md-sidenav
-        class="md-sidenav-left"
+        class="md-sidenav-left side-bar"
         md-component-id="left"
         md-is-locked-open="$mdMedia('gt-md')"
         md-whiteframe="4"

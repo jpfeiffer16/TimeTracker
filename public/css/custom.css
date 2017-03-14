@@ -6,15 +6,36 @@
   background-color: red;
 }
 
-md-toolbar.top-bar {
-  position: fixed;
+md-toolbar.top-bar, md-sidenav.side-bar, md-sidenav.locked-open.side-bar, md-backdrop {
+  position: fixed !important;
+}
+
+md-sidenav.md-locked-open.side-bar {
+  /*padding-right: 100px;*/
 }
 
 md-content.main-content {
   margin-top: 56px;
 }
 
+md-content.main-content, md-toolbar.top-bar {
+  margin-left: 0;
+  transition-property: margin-left;
+  transition-duration: 600ms;
+}
+
 #text-view {
   width: 100%;
   height: 84vh;
+}
+
+@media (min-width: 1279px) {
+  md-content.main-content, md-toolbar.top-bar {
+    margin-left: 320px;
+    transition-property: margin-left;
+    transition-duration: 600ms;
+  }
+  button.nav-button {
+    display: none;
+  }
 }
