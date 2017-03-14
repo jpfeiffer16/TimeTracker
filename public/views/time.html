@@ -1,13 +1,5 @@
-<!--<md-subheader class="md-no-sticky">Time</md-subheader>-->
-
 <md-button ng-click="navigate('/day')" class="md-raised md-primary">New</md-button>
 
-<!--<label>Filter:</label>
-<md-button ng-click="filterWeek()" class="md-raised md-primary">This week</md-button>
-<md-button ng-click="filterMonth()" class="md-raised md-primary">This month</md-button>
-<md-button ng-click="filterAll()" class="md-raised md-primary">All</md-button>
-<md-button ng-click="filterLastMonth()" class="md-raised md-primary">Last Month</md-button>
-<md-button ng-click="filterLastWeek()" class="md-raised md-primary">Last Week</md-button>-->
 <md-input-container>
   <label>Filter</label>
   <md-select ng-model="selectedFilter" ng-change="filter()">
@@ -22,7 +14,10 @@
   <md-list-item ng-repeat="day in days | orderBy:'date':true" ng-click="navigate('/day/' + day.id)" right-click-navigate="'/day/' + day.id" class="noright">
     <p>{{ day.date | date:'MM/dd/yyyy' }}</p>
     <p>{{ getHours(day) }} Hours</p>
-    <md-icon ng-click="removeDay(day.id, $index, $event)" aria-label="Remove Day" class="md-secondary md-hue-3" >X</md-icon>
+    <md-icon ng-click="removeDay(day.id, $index, $event)" aria-label="Remove Day" class="md-secondary md-hue-3" >
+      <!--<md-tooltip md-direction="left">Delete day</md-tooltip>-->
+      <i class="material-icons">clear</i>
+    </md-icon>
   </md-list-item>
 </md-list>
 

@@ -10,4 +10,7 @@ angular.module('app')
       decription: 'Toggle Menu',
       callback: $rootScope.toggleMenu
     });
+    // $mdIconProvider
+    //   .iconSet('navigation', 'img/icons/sets/social-icons.svg', 24)
+    //   .defaultIconSet('img/icons/sets/core-icons.svg', 24);
   });

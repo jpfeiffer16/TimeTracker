@@ -85,34 +85,33 @@ angular.module('app')
       if (descriptionData.length > 1) {
         logDescription = descriptionData[1].trim();
       }
-      // jiraIntegration.jira.addWorkLog\
       let workLog = {
           issueKey: issueKey,
           worklog: { 
               comment: logDescription,
-              // started: day.date.toISOString().slice(0, -1) + '+0000',
-              started: day.date.toISOString(),
+              started: day.date.toISOString().slice(0, -1) + '+0000',
+              // started: day.date.toISOString(),
               timeSpentSeconds: task.time * 60 * 60,
           }
       };
-      // console.log(workLog);
       task.syncing = true;
       jiraIntegration.jira.issue.addWorkLog(
         workLog, 
         function(err, result) {
-          // console.log(error);
           if (err) {
             console.error(err);
             task.synced = false;
             task.syncing = false;
             $scope.$apply();
+            InfoManager.showMessage(`Error: ${ err.errorMessages[0] }`);
             return;
           }
           task.synced = true;
           task.syncing = false;
           $scope.$apply();
-          // console.log(issue.fields.summary);
-          // console.dir(workLogs, { depth: 30 });
+          TimeManager.saveDay($scope.day, (day) => {
+            InfoManager.showMessage('Task Synced');
+          });
           console.log(result);
       });
 
@@ -120,31 +119,8 @@ angular.module('app')
     }
 
     setTimeout(() => {
-      // jiraIntegration.jira.searchJira('(assignee was jpfeiffer and updatedDate > startOfWeek()) or project = "BlueModus Overhead"', { maxResults: 1000 })
-      //   .then(function(result) {
-      //     // console.dir(issues, { depth: 30 });
-      //     // console.log(result.issues.map((issue) => {
-      //     //   return issue.fields;
-      //     // }));
-      //     $scope.jiraTickets = result.issues.map((issue) => {
-      //       return {
-      //         ticket: issue.key,
-      //         summary: issue.fields.summary,
-      //         searchText: `${ issue.key }: ${ issue.fields.summary }`,
-      //       }
-      //     });
-      //     $scope.jiraTicketLabels = $scope.jiraTickets.map((issue) => {
-      //       return {
-      //         value: issue.ticket,
-      //         display: issue.searchText
-      //       };
-      //     });
-      //   })
-      //   .catch(function(err) {
-      //     console.error(err);
-      //   });
       jiraIntegration.jira.search.search({
-        jql: '(assignee was jpfeiffer and updatedDate > startOfMonth()) or project = "BlueModus Overhead"',
+        jql: '((assignee was currentUser() or assignee = currentUser() ) and updatedDate > startOfMonth()) or project = "BlueModus Overhead"',
         maxResults: 1000
       }, function(err, result) {
         if (err) {

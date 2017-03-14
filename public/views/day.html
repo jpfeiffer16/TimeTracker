@@ -10,54 +10,6 @@
 
 <md-list>
   <md-list-item ng-repeat="task in day.tasks" class="noright">
-    <!--<md-input-container class="md-block">-->
-    <!--<label>Hours</label>-->
-    <!--<md-autocomplete
-        ng-disabled="ctrl.isDisabled"
-        md-no-cache="ctrl.noCache"
-        md-selected-item="ctrl.selectedItem"
-        md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
-        md-search-text="ctrl.searchText"
-        md-selected-item-change="ctrl.selectedItemChange(item)"
-        md-items="item in ctrl.querySearch(ctrl.searchText)"
-        md-item-text="item.display"
-        md-min-length="0"
-        placeholder="Description">
-      <md-item-template>
-        <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
-      </md-item-template>
-      <md-not-found>
-        No states matching "{{ctrl.searchText}}" were found.
-        <a ng-click="ctrl.newState(ctrl.searchText)">Create a new one!</a>
-      </md-not-found>
-    </md-autocomplete>-->
-    <!--</md-input-container>-->
-        <!--<md-item-template>-->
-        <!--<md-input-container flex>
-          <label>Description</label>
-          <input type="text"/>
-        </md-input-container>-->
-        <!--<md-autocomplete flex required
-            md-input-name="autocompleteField"
-            md-input-minlength="2"
-            md-input-maxlength="18"
-            md-no-cache="ctrl.noCache"
-            md-selected-item="ctrl.selectedItem"
-            md-search-text="ctrl.searchText"
-            md-items="item in ctrl.querySearch(ctrl.searchText)"
-            md-item-text="item.display"
-            md-require-match
-            md-floating-label="Description">
-          <md-item-template>
-            <span md-highlight-text="ctrl.searchText">{{item.display}}</span>
-          </md-item-template>
-          <div ng-messages="searchForm.autocompleteField.$error" ng-if="searchForm.autocompleteField.$touched">
-            <div ng-message="required">You <b>must</b> have a favorite state.</div>
-            <div ng-message="md-require-match">Please select an existing state.</div>
-            <div ng-message="minlength">Your entry is not long enough.</div>
-            <div ng-message="maxlength">Your entry is too long.</div>
-          </div>
-        </md-autocomplete>-->
     <md-autocomplete flex
         md-input-name="description"
         md-no-cache="ctrl.noCache"
@@ -79,17 +31,25 @@
       <label>Hours</label>
       <input md-no-asterisk type="number" ng-keydown="checkShift($event)" ng-keyup="checkClearShift($event)" ng-model="task.time" ng-change="applyTask(task, 'time', task.time)">
     </md-input-container>
-      <md-button ng-click="removeTask(task.id, $index)" class="md-raised md-primary">X</md-button>
-      <md-button ng-if="task.syncing == false || task.syncing == undefined" ng-click="syncTask(task, day)" class="md-raised md-primary">
+      <!--<md-button ng-click="removeTask(task.id, $index)" class="md-raised md-primary">X</md-button>-->
+      <!--<md-button ng-if="task.syncing == false || task.syncing == undefined" ng-click="syncTask(task, day)" class="md-raised md-primary">-->
+      <md-icon ng-if="task.syncing == false || task.syncing == undefined" ng-click="syncTask(task, day)" class="md-secondary md-hue-3" >
+        <md-tooltip md-direction="left">Sync to Jira</md-tooltip>
         <span ng-if="task.synced">
-          /
+          <i class="material-icons">done</i>
         </span>
         <span ng-if="task.synced == false || task.synced == null">
-          .
+          <i class="material-icons">autorenew</i>
         </span>
-        
-      </md-button>
+      </md-icon>
+      <!--</md-button>-->
       <md-progress-circular ng-if="task.syncing" md-mode="indeterminate"></md-progress-circular>
+      <md-icon ng-click="removeTask(task.id, $index)" class="md-secondary md-hue-3" >
+        <md-tooltip md-direction="left">Delete task</md-tooltip>
+        <i class="material-icons">clear</i>
+      </md-icon>
+      <!--<md-icon ng-click="removeDay(day.id, $index, $event)" aria-label="Remove Day" class="md-secondary md-hue-3" >X</md-icon>-->
+      
     <md-input-container>
     </md-input-container>
   </md-list-item>

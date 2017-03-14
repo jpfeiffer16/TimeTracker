@@ -20,21 +20,24 @@ Now install front-end deps with bower.
 
 Now run `electron .` to launch the app.
 
-To install the app globally and add a desktop file on Linux:
+### Manually adding a desktop file.
+If you would like to be able to run the program from your desktop launcher,
+copy the file ~/install/TimeTracker.desktop to your ~/.local/share/applications
+folder.
 
-`$ sudo npm install -g --unsafe-perm .`
-
-Now you should see a launcher icon for the app in your 
-Free Desktop Org compliant desktop.
+Will work on a global install option in the future.
 
 ### Notes:
-Currently only macOS and Linux are supported. Windows support is currently being
-worked on.
+Currently only macOS and Linux are supported.
 
 Destop launcher only works on linux currently.
+
+### Exiting pre-Jira-Integration DB migrations:
+If you have a sqlite db used by the app that is older than the jira-integration addition,
+you will need to execute the sql in the file ~/dbscripts/addSyncedToTasks.sql on your db before 
+it will work with the app again.
 
 ### Technical Details
 
 Time, Notes and stats are stored in a SQLite DB the path to which is specified in
 Settings > DB Path
-

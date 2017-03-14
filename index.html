@@ -4,7 +4,10 @@
     <title>TimeTracker</title> 
     <!--Required Css-->
     <link rel="stylesheet" href="public/components/angular-material/angular-material.min.css">
-    <link rel="stylesheet" href="public/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="public/css/font-awesome.min.css">-->
+    <!--<link href="public/components/mdi/css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />-->
+    <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+    <link href="public/components/material-design-icons/iconfont/material-icons.css?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="public/css/custom.css">
     <!-- data-grid style sheet -->
     <link href="public/components/angular-material-data-table/dist/md-data-table.min.css" rel="stylesheet" type="text/css"/>
@@ -53,7 +56,7 @@
     <md-toolbar class="md-hue-2 top-bar" style="-webkit-app-region: drag;" scoll>
       <div class="md-toolbar-tools">
         <md-button ng-click="toggleMenu()" class="md-icon-button" aria-label="Menu" style="-webkit-app-region: no-drag;">
-          <i class="fa fa-bars fa-2x" style="color:white;" aria-hidden="true"></i>
+          <i class="material-icons">menu</i>
         </md-button>
         <h2>
           <span>{{ currentPage.capitalize() }}</span>
@@ -108,8 +111,6 @@
         </md-content>
       </md-sidenav>
       <md-content flex layout-padding class="main-content">
-        <!--<ng-view></ng-view>-->
-        <!--<md-subheader class="md-no-sticky">{{ currentPage.capitalize() }}</md-subheader>-->
         <div ng-view class="view-container">
         </div>
       </md-content>
