@@ -30,13 +30,9 @@
   <label>Jira Password</label>
   <input md-no-asterisk name="jiraPassword" type="password" ng-model="settings.jira.password">
 </md-input-container>
-
-<!-- <md-input-container class="md-block"> -->
-  <!-- <label>Mongo URI</label> -->
-  <!-- <input md-no-asterisk name="mongouri" ng-model="settings.mongoURL"> -->
-  <!--<div ng-messages="projectForm.description.$error">
-    <div ng-message="required">This is required.</div>
-    <div ng-message="md-maxlength">The description must be less than 30 characters long.</div>
-  </div>-->
-<!-- </md-input-container> -->
+<md-input-container class="md-block">
+  <label>Auto-Complete JQL</label>
+  <textarea md-no-asterisk name="autoCompleteJql" type="text" ng-model="settings.jira.autoCompleteJql"></textarea>
+  <div class="hint">This is the JQL query that is used to populate the search-as-you-type list when entering time</div>
+</md-input-container>
 <md-button ng-click="save()" class="md-raised md-primary">Save</md-button>

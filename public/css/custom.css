@@ -39,3 +39,8 @@ md-content.main-content, md-toolbar.top-bar {
     display: none;
   }
 }
+
+md-input-container div.hint {
+  color: grey;
+  padding: 10px 20px;
+}

@@ -19,7 +19,8 @@ settings.defaults({
       enabled: false,
       baseUrl: '',
       username: '',
-      password: ''
+      password: '',
+      autoCompleteJql: '((assignee was currentUser() or assignee = currentUser() ) and updatedDate > startOfMonth()) or project = "BlueModus Overhead"'
     }
   }
 });

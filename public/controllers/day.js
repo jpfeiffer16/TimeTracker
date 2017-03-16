@@ -5,7 +5,7 @@ let jiraIntegration = require('./modules/jira');
 
 
 angular.module('app')
-  .controller('DayCtrl', function ($scope, $rootScope, $routeParams, $q, $timeout, TimeManager, InfoManager, hotkeys) {
+  .controller('DayCtrl', function ($scope, $rootScope, $routeParams, $q, $timeout, TimeManager, InfoManager, SettingsManager, hotkeys) {
     //HotkeySetup
     hotkeys
       .bindTo($scope)
@@ -118,27 +118,30 @@ angular.module('app')
 
     }
 
+    //TODO: Need to fix this. Not very performant, or user-friendly.
     setTimeout(() => {
-      jiraIntegration.jira.search.search({
-        jql: '((assignee was currentUser() or assignee = currentUser() ) and updatedDate > startOfMonth()) or project = "BlueModus Overhead"',
-        maxResults: 1000
-      }, function(err, result) {
-        if (err) {
-          console.error(err);
-          return;
-        }
-        $scope.jiraTickets = result.issues.map((issue) => {
-          return {
-            ticket: issue.key,
-            summary: issue.fields.summary,
-            searchText: `${ issue.key }: ${ issue.fields.summary }`,
+      SettingsManager.getSettings((settings) => {
+        jiraIntegration.jira.search.search({
+          jql: settings.jira.autoCompleteJql,
+          maxResults: 1000
+        }, function(err, result) {
+          if (err) {
+            console.error(err);
+            return;
           }
-        });
-        $scope.jiraTicketLabels = $scope.jiraTickets.map((issue) => {
-          return {
-            value: issue.ticket,
-            display: issue.searchText
-          };
+          $scope.jiraTickets = result.issues.map((issue) => {
+            return {
+              ticket: issue.key,
+              summary: issue.fields.summary,
+              searchText: `${ issue.key }: ${ issue.fields.summary }`,
+            }
+          });
+          $scope.jiraTicketLabels = $scope.jiraTickets.map((issue) => {
+            return {
+              value: issue.ticket,
+              display: issue.searchText
+            };
+          });
         });
       });
     }, 1000);
