@@ -1,5 +1,15 @@
 #! /bin/bash
-./node_modules/.bin/electron-packager ./ --platform linux --arch x64 --icon images/icon.png
+
+if [ ! -d "build" ]; then
+  mkdir build
+fi
+
+rm build/* -r
+
+./node_modules/.bin/electron-packager ./ --platform linux --arch x64 --icon images/icon.png --out build/
+
+cd build
+
+
 tar -cvzf timetracker-linux-x64.tar.gz timetracker-linux-x64
-zip -r build/timetracker-linux-x64.zip build/timetracker-linux-x64/*
-# zip 
+zip -r timetracker-linux-x64.zip timetracker-linux-x64/*
