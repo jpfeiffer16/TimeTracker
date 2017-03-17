@@ -7,7 +7,7 @@
     <!--<link rel="stylesheet" href="public/css/font-awesome.min.css">-->
     <!--<link href="public/components/mdi/css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />-->
     <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
-    <link href="public/components/material-design-icons/iconfont/material-icons.css?family=Material+Icons" rel="stylesheet">
+    <!--<link href="public/components/material-design-icons/iconfont/material-icons.css?family=Material+Icons" rel="stylesheet">-->
     <link rel="stylesheet" href="public/css/custom.css">
     <!-- data-grid style sheet -->
     <link href="public/components/angular-material-data-table/dist/md-data-table.min.css" rel="stylesheet" type="text/css"/>
@@ -56,7 +56,9 @@
     <md-toolbar class="md-hue-2 top-bar" style="-webkit-app-region: drag;" scroll>
       <div class="md-toolbar-tools">
         <md-button ng-click="toggleMenu()" class="md-icon-button nav-button" aria-label="Menu" style="-webkit-app-region: no-drag;">
-          <i class="material-icons">menu</i>
+          <!--<i class="material-icons">menu</i>-->
+          <md-icon md-svg-src="images/ic_menu_black_24px.svg">
+          </md-icon>
         </md-button>
         <h2>
           <span>{{ currentPage.capitalize() }}</span>
