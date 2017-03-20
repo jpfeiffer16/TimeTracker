@@ -47,23 +47,27 @@
       <label>Hours</label>
       <input md-no-asterisk type="number" ng-keydown="checkShift($event)" ng-keyup="checkClearShift($event)" ng-model="task.time" ng-change="applyTask(task, 'time', task.time)">
     </md-input-container>
-      <!--<md-button ng-click="removeTask(task.id, $index)" class="md-raised md-primary">X</md-button>-->
-      <!--<md-button ng-if="task.syncing == false || task.syncing == undefined" ng-click="syncTask(task, day)" class="md-raised md-primary">-->
-      <md-icon ng-if="task.syncing == false || task.syncing == undefined" ng-click="syncTask(task, day)" class="md-secondary md-hue-3" md-svg-src="images/ic_autorenew_black_24px.svg">
+
+      <md-button ng-if="task.syncing == false || task.syncing == undefined" ng-click="syncTask(task, day)" class="md-icon-button md-secondary">
         <md-tooltip md-direction="left">Sync to Jira</md-tooltip>
         <span ng-if="task.synced">
-          <i class="material-icons">done</i>
+          <md-icon md-svg-src="images/ic_done_black_24px.svg">
+          </md-icon>
         </span>
         <span ng-if="task.synced == false || task.synced == null">
-          <!--<i class="material-icons">autorenew</i>-->
+          <md-icon md-svg-src="images/ic_autorenew_black_24px.svg">
+          </md-icon>
         </span>
-      </md-icon>
-      <!--</md-button>-->
-      <md-progress-circular ng-if="task.syncing" md-mode="indeterminate"></md-progress-circular>
-      <md-icon ng-click="removeTask(task.id, $index)" class="md-secondary md-hue-3" md-svg-src="images/ic_clear_black_24px.svg">
-        <md-tooltip md-direction="left">Delete task</md-tooltip>
-        <!--<i class="material-icons">clear</i>-->
-      </md-icon>
+      </md-button>
+      <md-progress-circular ng-if="task.syncing" md-mode="indeterminate" md-diameter="25px"></md-progress-circular>
+      <!--<md-progress-circular ng-if="task.syncing" md-mode="indeterminate"></md-progress-circular>-->
+      <!--<md-progress-circular md-mode="indeterminate"></md-progress-circular>-->
+      <md-button ng-click="removeTask(task.id, $index)" class="md-icon-button md-secondary">
+        <md-icon md-svg-src="images/ic_clear_black_24px.svg">
+          <md-tooltip md-direction="left">Delete task</md-tooltip>
+          <!--<i class="material-icons">clear</i>-->
+        </md-icon>
+      </md-button>
       <!--<md-icon ng-click="removeDay(day.id, $index, $event)" aria-label="Remove Day" class="md-secondary md-hue-3" >X</md-icon>-->
       
     <md-input-container>
