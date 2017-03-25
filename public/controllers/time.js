@@ -60,7 +60,7 @@ angular.module('app')
         fn: function() {
           let currentDate = new Date();
           let firstOfWeek = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() - currentDate.getDay());
-          let lastOfWeek = new Date(currentDate.getFullYear(), currentDate.getMonth(), firstOfWeek.getDate() + 6);
+          let lastOfWeek = new Date(currentDate.getFullYear(), currentDate.getMonth(), firstOfWeek.getDate() + 7);
 
           $scope.days = internalDays.filter((day) => {
             let dayMSeconds = new Date(day.date).getTime();
