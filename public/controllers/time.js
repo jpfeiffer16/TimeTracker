@@ -76,7 +76,7 @@ angular.module('app')
           beginDate.setDate(beginDate.getDate() - 7);
           // dat.setDate(dat.getDate() + days);
           let firstOfWeek = new Date(beginDate.getFullYear(), beginDate.getMonth(), beginDate.getDate() - beginDate.getDay());
-          let lastOfWeek = new Date(firstOfWeek.getTime() + 6*24*60*60*1000);
+          let lastOfWeek = new Date(firstOfWeek.getTime() + 7*24*60*60*1000);
 
           $scope.days = internalDays.filter((day) => {
             let dayMSeconds = new Date(day.date).getTime();
