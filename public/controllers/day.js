@@ -1,4 +1,4 @@
-let jiraIntegration = require('./modules/jira');
+
 // setInterval(() => {
   
 // }, 1000);
@@ -6,6 +6,7 @@ let jiraIntegration = require('./modules/jira');
 
 angular.module('app')
   .controller('DayCtrl', function ($scope, $rootScope, $routeParams, $q, $timeout, TimeManager, InfoManager, SettingsManager, hotkeys) {
+    let jiraIntegration = require('./modules/jira')();
     //HotkeySetup
     hotkeys
       .bindTo($scope)

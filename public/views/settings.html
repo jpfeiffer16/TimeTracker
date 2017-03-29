@@ -18,17 +18,20 @@
 </md-input-container>
 
 <h3>Jira Integration</h3>
+<md-progress-circular ng-if="jira.verifying" md-mode="indeterminate" md-diameter="25px"></md-progress-circular>
+<md-icon ng-if="jira.verified" md-svg-src="images/ic_done_black_24px.svg">
+</md-icon>
 <md-input-container class="md-block">
   <label>Jira Base URL</label>
-  <input md-no-asterisk name="jiraBaseUrl" ng-model="settings.jira.baseUrl">
+  <input md-no-asterisk name="jiraBaseUrl" ng-change="verifyJira()" ng-model="settings.jira.baseUrl">
 </md-input-container>
 <md-input-container class="md-block">
   <label>Jira Username</label>
-  <input md-no-asterisk name="jiraUsername" ng-model="settings.jira.username">
+  <input md-no-asterisk name="jiraUsername" ng-change="verifyJira()" ng-model="settings.jira.username">
 </md-input-container>
 <md-input-container class="md-block">
   <label>Jira Password</label>
-  <input md-no-asterisk name="jiraPassword" type="password" ng-model="settings.jira.password">
+  <input md-no-asterisk name="jiraPassword" ng-change="verifyJira()" type="password" ng-model="settings.jira.password">
 </md-input-container>
 <md-input-container class="md-block">
   <label>Auto-Complete JQL</label>

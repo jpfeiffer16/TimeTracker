@@ -1,5 +1,6 @@
 angular.module('app')
   .controller('SettingsCtrl', function ($scope, $rootScope, hotkeys, SettingsManager, InfoManager) {
+    let jiraIntegration = require('./modules/jira');
     const { dialog } = require('electron').remote;
     //Hotkey setup
     hotkeys
@@ -17,7 +18,27 @@ angular.module('app')
       
     };
 
-    $scope.save = () => {
+    $scope.jira = {
+      verifying: false,
+      verified: false
+    };
+
+    $scope.verifyJira = function() {
+      $scope.verifying = true;
+      try {
+        var jira = jiraIntegration(
+          $scope.settings.jira.baseUrl,
+          $scope.settings.jira.username,
+          $scope.settings.jira.password
+        );
+        $scope.jira.verified = true;
+      } catch (err) {
+        $scope.jira.verified = false;
+      }
+      $scope.verifying = false;
+    };
+
+    $scope.save = function() {
       SettingsManager.saveSettings($scope.settings, function () {
         InfoManager.showMessage('Settings Saved');
       });
