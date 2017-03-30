@@ -1,6 +1,6 @@
 angular.module('app')
   .controller('SettingsCtrl', function ($scope, $rootScope, hotkeys, SettingsManager, InfoManager) {
-    let jiraIntegration = require('./modules/jira');
+    const jiraIntegration = require('./modules/jira');
     const { dialog } = require('electron').remote;
     //Hotkey setup
     hotkeys
@@ -31,7 +31,13 @@ angular.module('app')
           $scope.settings.jira.username,
           $scope.settings.jira.password
         );
-        $scope.jira.verified = true;
+        // console.log(jira.jira);
+        if (jira.jira == null) {
+          $scope.verifying = false;
+        } else {
+          
+        }
+        //$scope.jira.verified = true;
       } catch (err) {
         $scope.jira.verified = false;
       }
@@ -44,7 +50,7 @@ angular.module('app')
       });
     };
 
-    $scope.selectFile = () => {
+    $scope.selectFile = function() {
       let selectedPath = dialog.showOpenDialog({
         filters: [
           {name: 'SQLite Databases', extensions: ['sqlite']},
@@ -60,5 +66,6 @@ angular.module('app')
 
     SettingsManager.getSettings((settings) => {
       $scope.settings = settings;
+      $scope.verifyJira();
     });
   });

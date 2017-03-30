@@ -11,7 +11,7 @@ switch (os.type()) {
   case 'Linux':
     moveFiles(
         path.join(__dirname, 'TimeTracker.desktop'),
-        path.join(os.homedir(), '.local/share/applications/TimeTracker.desktop')
+        path.join(os.homedir(), '~/.local/share/applications/TimeTracker.desktop')
       );
   break;
   //macOS

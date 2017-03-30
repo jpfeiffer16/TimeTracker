@@ -3,11 +3,11 @@ var SettingManager = require('./settingsManager');
 //TODO: Need hot-reload for this
 var JiraClient = require('jira-connector');
 
-var Jira = function(jiraDomain, username, password) {
+var Jira = function(jiraDomain, directUsername, password) {
   var jira = null;
   var username = '';
   console.log('Constructing jira');
-  if (!jiraDomain || !username || !password) {
+  if (!jiraDomain || !directUsername || !password) {
     SettingManager.getSettings((settings) => {
       console.log('Got settings');
       username = settings.jira.username;
@@ -25,7 +25,7 @@ var Jira = function(jiraDomain, username, password) {
         host: jiraDomain,
         protocol: 'http',
         basic_auth: {
-            username: username,
+            username: directUsername,
             password: password
         }
     });
