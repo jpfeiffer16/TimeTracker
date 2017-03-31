@@ -33,15 +33,26 @@ angular.module('app')
         );
         // console.log(jira.jira);
         if (jira.jira == null) {
-          $scope.verifying = false;
+          $scope.verified = false;
         } else {
-          
+          jira.jira.search.search({
+            jql: $scope.settings.jira.autoCompleteJql,
+            maxResults: 1000
+          }, function(err, result) {
+            if (err) {
+              // console.error(err);
+              $scope.jira.verified = false;
+            } else { 
+              $scope.jira.verified = true;
+            }
+          });
         }
         //$scope.jira.verified = true;
       } catch (err) {
         $scope.jira.verified = false;
       }
       $scope.verifying = false;
+      // $scope.$apply();
     };
 
     $scope.save = function() {
@@ -67,5 +78,6 @@ angular.module('app')
     SettingsManager.getSettings((settings) => {
       $scope.settings = settings;
       $scope.verifyJira();
+      $scope.$apply();
     });
   });
