@@ -17,12 +17,14 @@
   <input md-no-asterisk name="databackerpassword" type="password" ng-model="settings.databacker.password">
 </md-input-container>
 
-<h3>Jira Integration</h3>
-<md-progress-circular ng-if="jira.verifying" md-mode="indeterminate" md-diameter="25px"></md-progress-circular>
-<md-icon ng-if="jira.verified" md-svg-src="images/ic_done_black_24px.svg">
-</md-icon>
-<md-icon ng-if="!jira.verified" md-svg-src="images/ic_clear_black_24px.svg">
-</md-icon>
+<h3>
+  Jira Integration
+  <md-progress-circular ng-if="jira.verifying" md-mode="indeterminate" md-diameter="25px"></md-progress-circular>
+  <md-icon ng-if="jira.verified" md-svg-src="images/ic_done_black_24px.svg">
+  </md-icon>
+  <md-icon ng-if="!jira.verified" md-svg-src="images/ic_clear_black_24px.svg">
+  </md-icon>
+</h3>
 <md-input-container class="md-block">
   <label>Jira Base URL</label>
   <input md-no-asterisk name="jiraBaseUrl" ng-change="verifyJira()" type="text" ng-model="settings.jira.baseUrl">
