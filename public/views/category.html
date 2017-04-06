@@ -1,6 +1,12 @@
-<md-button ng-click="navigate('/categories')" class="md-raised md-primary">Back</md-button> 
+<!--<md-button ng-click="navigate('/categories')" class="md-raised md-primary">Back</md-button>-->
+<md-button ng-click="navigate('/categories')" class="md-icon-button md-secondary">
+  <md-tooltip md-direction="top">Back</md-tooltip>
+  <md-icon md-svg-src="images/ic_arrow_back_black_24px.svg">
+  </md-icon>
+</md-button>
 
 <md-input-container class="md-block">
   <label>Title</label>
   <input md-no-asterisk ng-model="category.name">
 </md-input-container>
+<md-button ng-click="save()" class="md-raised md-primary">Save</md-button>

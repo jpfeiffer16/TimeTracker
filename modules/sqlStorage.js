@@ -1,12 +1,11 @@
 let SettingsManager = require('./settingsManager');
 
 const StorageManager = function() {
-  //Setup
 
-  var Day,
+  let Day,
       Task,
       Note,
-      Category
+      Category;
 
   SettingsManager.getSettings((settings) => {
     let models = require('../storage/index.js')(settings.dbPath);

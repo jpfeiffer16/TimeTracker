@@ -1,10 +1,15 @@
-<md-button ng-click="back()" class="md-raised md-primary">Back</md-button> 
+<!--<md-button ng-click="back()" class="md-raised md-primary">Back</md-button>-->
+<md-button ng-click="back()" class="md-icon-button md-secondary">
+  <md-tooltip md-direction="top">Back</md-tooltip>
+  <md-icon md-svg-src="images/ic_arrow_back_black_24px.svg">
+  </md-icon>
+</md-button>
 
 <md-input-container class="md-block">
   <label>Category</label>
   <md-select ng-model="note.categoryId">
     <!--TODO: Need to repeat out categories here-->
-    <md-option ng-repeat="category in categories" ng-value="category.id"><em>{{ category.name }}</em></md-option>
+    <md-option ng-repeat="category in categories" ng-value="category.id">{{ category.name }}</md-option>
   </md-select>
 </md-input-container>
 
@@ -16,5 +21,7 @@
 
 <md-input-container class="md-block">
   <label>Text</label>
-  <input md-no-asterisk name="text" ng-model="note.text">
+  <textarea md-no-asterisk name="text" type="text" ng-model="note.text"></textarea>
+  <!--<input md-no-asterisk name="text" ng-model="note.text">-->
 </md-input-container>
+<md-button ng-click="save()" class="md-raised md-primary">Save</md-button>

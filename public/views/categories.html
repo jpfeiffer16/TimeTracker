@@ -1,4 +1,10 @@
-<md-button ng-click="navigate('/category')" class="md-raised md-primary">New</md-button>
+<!--<md-button ng-click="navigate('/category')" class="md-raised md-primary">New</md-button>-->
+<md-button ng-click="navigate('/category')" class="md-icon-button md-secondary">
+  <md-tooltip md-direction="top">New Category</md-tooltip>
+  <md-icon md-svg-src="images/ic_create_black_24px.svg">
+    <!--<i class="material-icons">create</i>-->
+  </md-icon>
+</md-button>
 
 <md-input-container class="md-block">
   <label>Search</label>
@@ -7,7 +13,7 @@
 </md-input-container>
 <md-input-container class="md-block">
   <md-list>
-    <md-list-item ng-repeat="category in categories" ng-click="navigate('/category/' + category.id)" right-click-navigate="'/category/' + category.id" class="noright">
+    <md-list-item ng-repeat="category in categories | filter: searchText" ng-click="navigate('/category/' + category.id)" right-click-navigate="'/category/' + category.id" class="noright">
       <p>{{ category.name }}</p>
     </md-list-item>
   </md-list>

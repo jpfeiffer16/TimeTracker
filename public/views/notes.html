@@ -1,4 +1,11 @@
-<md-button ng-click="navigate('/note')" class="md-raised md-primary">New</md-button>
+<!--<md-button ng-click="navigate('/note')" class="md-raised md-primary">New</md-button>-->
+
+<md-button ng-click="navigate('/note')" class="md-icon-button md-secondary">
+  <md-tooltip md-direction="top">New Note</md-tooltip>
+  <md-icon md-svg-src="images/ic_create_black_24px.svg">
+    <!--<i class="material-icons">create</i>-->
+  </md-icon>
+</md-button>
 
 <md-input-container class="md-block">
   <label>Search</label>
@@ -7,7 +14,7 @@
 </md-input-container>
 <md-input-container class="md-block">
   <md-list>
-    <md-list-item ng-repeat="note in notes" ng-click="navigate('/note/' + note.id)" right-click-navigate="'/note/' + note.id" class="noright">
+    <md-list-item ng-repeat="note in notes | filter: searchText" ng-click="navigate('/note/' + note.id)" right-click-navigate="'/note/' + note.id" class="noright">
       <p>{{ note.title }}</p>
     </md-list-item>
   </md-list>
