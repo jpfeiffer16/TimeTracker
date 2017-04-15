@@ -51,6 +51,12 @@ const MessageManager = function (ipcMain, callbackObj) {
     });
   });
 
+  ipcMain.on('removeNote', (event, noteId) => {
+    StorageManager.removeNote(noteId, () => {
+      event.sender.send('removeNote');
+    });
+  });
+
   ipcMain.on('getCategories', (event, args) => {
     StorageManager.getCategories((categories) => {
       event.sender.send('getCategories', categories);
@@ -62,11 +68,19 @@ const MessageManager = function (ipcMain, callbackObj) {
       event.sender.send('getCategory', category);
     });
   });
+
   ipcMain.on('saveCategory', (event, category) => {
     StorageManager.saveCategory(category, () => {
       event.sender.send('saveCategory');
     });
   });
+
+  ipcMain.on('removeCategory', (event, id) => {
+    StorageManager.removeCategory(id, (err) => {
+      event.sender.send('removeCategory', err);
+    });
+  });
+
   ipcMain.on('getNotesByCategory', (event, args) => {
    //TODO: Needs to be implemented. Not currently used.
   });

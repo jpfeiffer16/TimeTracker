@@ -12,7 +12,7 @@ angular.module('app')
         cb = rest[0];
       }
 
-      ipcRenderer.once(eventName, function(event, args) {
+      ipcRenderer.once(eventName, (event, args) => {
         if (cb) cb(args);
       });
       console.log(args);

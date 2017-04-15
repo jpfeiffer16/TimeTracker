@@ -14,9 +14,13 @@ angular.module('app')
         cb(day);
       });
     };
+    const removeNote = (noteId, cb) => {
+      MessagesService.sendMessage('removeNote', noteId, cb);
+    }
     return {
       getNotes,
       getNote,
-      saveNote
+      saveNote,
+      removeNote
     }
   });

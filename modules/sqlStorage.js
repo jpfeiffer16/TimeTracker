@@ -105,6 +105,18 @@ const StorageManager = function() {
     Note.upsert(note).then(cb);
   };
 
+  let removeNote = function(id, cb) {
+    Note.findById(id)
+    .then((dbNote) => {
+      if (dbNote) {
+        return dbNote.destroy({ force: true });
+      }
+    })
+    .then(() => {
+      cb();
+    });
+  }
+
   let getCategories = function (cb) {
     console.log('getting all categories');
     Category.findAll().then((dbcategories) => {
@@ -123,6 +135,37 @@ const StorageManager = function() {
   let saveCategory = function (category, cb) {
     Category.upsert(category).then(cb);
   };
+
+  let removeCategory = function(id, cb) {
+    Note.findAll({ where: { categoryId: id } })
+      .then((dbCategories) => {
+        console.log(dbCategories.length);
+        if (dbCategories.length != 0) {
+          cb({
+            message: 'Unable to delete category. There are notes using this category'
+          });
+        } else {
+          Category.findById(id)
+            .then((dbCategory) => {
+              if (dbCategory != null) {
+                dbCategory.destroy({ force: true })
+                  .then(() => {
+                    cb();
+                  });
+              }
+            });
+        }
+      });
+    // Note.findById(id)
+    // .then((dbCategory) => {
+    //   if (dbCategory) {
+    //     return dbCategory.destroy({ force: true });
+    //   }
+    // })
+    // .then(() => {
+    //   cb();
+    // });
+  }
 
   //Temporary
   let doImport = function (filepath, cb) {
@@ -203,9 +246,11 @@ const StorageManager = function() {
     getNotes,
     getNote,
     saveNote,
+    removeNote,
     getCategories,
     getCategory,
     saveCategory,
+    removeCategory,
     doImport
   }
 };

@@ -13,9 +13,14 @@ angular.module('app')
       MessagesService.sendMessage('saveCategory', category, cb);
     }
 
+    function removeCategory(id, cb) {
+      MessagesService.sendMessage('removeCategory', id, cb);
+    }
+
     return {
       getCategories,
       getCategory,
-      saveCategory
+      saveCategory,
+      removeCategory
     };
   });
