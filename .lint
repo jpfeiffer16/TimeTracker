@@ -1,0 +1,2965 @@
+
+/home/jpfeiffer/Source/TimeTracker/app.js
+  1:49  warning  'Notification' is assigned a value but never used  no-unused-vars
+  5:7   warning  'notify' is assigned a value but never used        no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/modules/messageManager.js
+    7:33  warning  'args' is defined but never used  no-unused-vars
+   42:34  warning  'args' is defined but never used  no-unused-vars
+   60:39  warning  'args' is defined but never used  no-unused-vars
+   84:44  warning  'args' is defined but never used  no-unused-vars
+   89:37  warning  'args' is defined but never used  no-unused-vars
+  116:34  warning  'args' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/modules/sqlStorage.js
+   51:20  warning  'created' is defined but never used    no-unused-vars
+  171:38  warning  'cb' is defined but never used         no-unused-vars
+  221:41  warning  'savedtask' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/app.js
+  2:1   warning  'angular' is not defined                       no-undef
+  4:28  warning  '$locationProvider' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-animate/angular-animate.js
+     9:5   warning  'COMMENT_NODE' is assigned a value but never used  no-unused-vars
+    21:5   warning  'CSS_PREFIX' is assigned a value but never used    no-unused-vars
+   861:70  warning  '$animateProvider' is defined but never used       no-unused-vars
+  2185:51  warning  'currentAnimation' is defined but never used       no-unused-vars
+  2190:51  warning  'currentAnimation' is defined but never used       no-unused-vars
+  2240:83  warning  '$$forceReflow' is defined but never used          no-unused-vars
+  2756:59  warning  'event' is defined but never used                  no-unused-vars
+  2859:70  warning  '$animateProvider' is defined but never used       no-unused-vars
+  3127:49  warning  'key' is defined but never used                    no-unused-vars
+  3353:76  warning  '$rootScope' is defined but never used             no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-animate/angular-animate.min.js
+  14:286  warning  'b' is defined but never used  no-unused-vars
+  17:90   warning  'c' is defined but never used  no-unused-vars
+  17:146  warning  'c' is defined but never used  no-unused-vars
+  18:290  warning  'T' is defined but never used  no-unused-vars
+  27:189  warning  'a' is defined but never used  no-unused-vars
+  29:489  warning  'k' is defined but never used  no-unused-vars
+  34:87   warning  'a' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-aria/angular-aria.js
+  240:27  warning  'elem' is defined but never used        no-unused-vars
+  272:37  warning  'newVal' is defined but never used      no-unused-vars
+  357:39  warning  'ngMessages' is defined but never used  no-unused-vars
+  399:32  warning  'attr' is defined but never used        no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-aria/angular-aria.min.js
+   8:386  warning  'c' is defined but never used  no-unused-vars
+   9:306  warning  'a' is defined but never used  no-unused-vars
+  12:21   warning  'k' is defined but never used  no-unused-vars
+  13:93   warning  'k' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-hotkeys/build/hotkeys.js
+   20:3   warning  'angular' is not defined               no-undef
+   95:7   warning  'Mousetrap' is not defined             no-undef
+  247:13  warning  'angular' is not defined               no-undef
+  271:24  warning  'angular' is not defined               no-undef
+  279:9   warning  'angular' is not defined               no-undef
+  366:20  warning  'angular' is not defined               no-undef
+  431:11  warning  'Mousetrap' is not defined             no-undef
+  433:11  warning  'Mousetrap' is not defined             no-undef
+  450:9   warning  'Mousetrap' is not defined             no-undef
+  452:13  warning  'angular' is not defined               no-undef
+  469:15  warning  'angular' is not defined               no-undef
+  566:34  warning  'event' is defined but never used      no-unused-vars
+  611:9   warning  'angular' is not defined               no-undef
+  628:11  warning  'angular' is not defined               no-undef
+  634:29  warning  'hotkeys' is defined but never used    no-unused-vars
+  663:29  warning  'undefined' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-hotkeys/build/hotkeys.min.js
+  7:26     warning  'angular' is not defined       no-undef
+  7:2105   warning  'angular' is not defined       no-undef
+  7:2562   warning  'Mousetrap' is not defined     no-undef
+  7:2587   warning  'Mousetrap' is not defined     no-undef
+  7:2710   warning  'Mousetrap' is not defined     no-undef
+  7:2730   warning  'angular' is not defined       no-undef
+  7:2932   warning  'angular' is not defined       no-undef
+  7:3495   warning  'a' is defined but never used  no-unused-vars
+  7:3558   warning  'Mousetrap' is not defined     no-undef
+  7:4124   warning  'angular' is not defined       no-undef
+  7:4301   warning  'angular' is not defined       no-undef
+  7:4429   warning  'angular' is not defined       no-undef
+  7:4876   warning  'angular' is not defined       no-undef
+  7:5127   warning  'angular' is not defined       no-undef
+  7:5183   warning  'a' is defined but never used  no-unused-vars
+  7:5206   warning  'c' is defined but never used  no-unused-vars
+  7:10044  warning  'define' is not defined        no-undef
+  7:10056  warning  'define' is not defined        no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-hotkeys/src/hotkeys.js
+   14:3   warning  'angular' is not defined             no-undef
+   89:7   warning  'Mousetrap' is not defined           no-undef
+  241:13  warning  'angular' is not defined             no-undef
+  265:24  warning  'angular' is not defined             no-undef
+  273:9   warning  'angular' is not defined             no-undef
+  360:20  warning  'angular' is not defined             no-undef
+  425:11  warning  'Mousetrap' is not defined           no-undef
+  427:11  warning  'Mousetrap' is not defined           no-undef
+  444:9   warning  'Mousetrap' is not defined           no-undef
+  446:13  warning  'angular' is not defined             no-undef
+  463:15  warning  'angular' is not defined             no-undef
+  560:34  warning  'event' is defined but never used    no-unused-vars
+  605:9   warning  'angular' is not defined             no-undef
+  622:11  warning  'angular' is not defined             no-undef
+  628:17  warning  'hotkeys' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material-data-table/dist/md-data-table.js
+     7:29  warning  'undefined' is defined but never used  no-unused-vars
+  1486:12  warning  'angular' is not defined               no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material-data-table/dist/md-data-table.min.js
+  1:15     warning  'c' is defined but never used  no-unused-vars
+  1:21373  warning  'angular' is not defined       no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/angular-material-mocks.js
+   15:28  warning  'undefined' is defined but never used      no-unused-vars
+  108:68  warning  'wind' is assigned a value but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/angular-material.js
+    302:47  warning  '$document' is defined but never used                   no-unused-vars
+   1836:87  warning  '$interpolate' is defined but never used                no-unused-vars
+   2301:30  warning  'pointer' is defined but never used                     no-unused-vars
+   2304:28  warning  'pointer' is defined but never used                     no-unused-vars
+   2379:26  warning  'ev' is defined but never used                          no-unused-vars
+   2421:28  warning  'pointer' is defined but never used                     no-unused-vars
+   2965:14  warning  'addPresetMethod' is defined but never used             no-unused-vars
+   4393:6   warning  Unreachable code                                        no-unreachable
+   4432:6   warning  Unreachable code                                        no-unreachable
+   4472:6   warning  Unreachable code                                        no-unreachable
+   4980:6   warning  Unreachable code                                        no-unreachable
+   6151:9   warning  'match' is assigned a value but never used              no-unused-vars
+   6188:37  warning  'name' is defined but never used                        no-unused-vars
+   6380:35  warning  'reject' is defined but never used                      no-unused-vars
+   6598:7   warning  'TRANSITION_PROP' is assigned a value but never used    no-unused-vars
+   6599:7   warning  'ANIMATION_PROP' is assigned a value but never used     no-unused-vars
+   7065:39  warning  'attrs' is defined but never used                       no-unused-vars
+   7283:46  warning  'controller' is defined but never used                  no-unused-vars
+   7383:28  warning  'ev' is defined but never used                          no-unused-vars
+   7598:28  warning  'ev' is defined but never used                          no-unused-vars
+   7737:39  warning  'attr' is defined but never used                        no-unused-vars
+   9199:46  warning  'controller' is defined but never used                  no-unused-vars
+   9852:34  warning  'attributes' is defined but never used                  no-unused-vars
+  10529:35  warning  'attributes' is defined but never used                  no-unused-vars
+  10541:47  warning  'done' is defined but never used                        no-unused-vars
+  10562:13  warning  'height' is assigned a value but never used             no-unused-vars
+  11801:31  warning  'ev' is defined but never used                          no-unused-vars
+  11806:30  warning  'ev' is defined but never used                          no-unused-vars
+  12006:28  warning  'ev' is defined but never used                          no-unused-vars
+  12199:37  warning  'attr' is defined but never used                        no-unused-vars
+  16260:57  warning  '$log' is defined but never used                        no-unused-vars
+  16277:38  warning  'transclude' is defined but never used                  no-unused-vars
+  16351:13  warning  'info' is assigned a value but never used               no-unused-vars
+  16488:33  warning  'event' is defined but never used                       no-unused-vars
+  16962:7   warning  'NAVIGATION_KEYS' is assigned a value but never used    no-unused-vars
+  17152:33  warning  'ev' is defined but never used                          no-unused-vars
+  18663:42  warning  'sidenavCtrl' is defined but never used                 no-unused-vars
+  19216:9   warning  'container' is assigned a value but never used          no-unused-vars
+  19228:9   warning  'content' is assigned a value but never used            no-unused-vars
+  19244:9   warning  'stopDisabledWatch' is assigned a value but never used  no-unused-vars
+  20813:38  warning  'gesture' is defined but never used                     no-unused-vars
+  22481:10  warning  'abstractMethod' is defined but never used              no-unused-vars
+  23829:46  warning  'attr' is defined but never used                        no-unused-vars
+  24316:29  warning  'attr' is defined but never used                        no-unused-vars
+  24389:34  warning  'event' is defined but never used                       no-unused-vars
+  25597:33  warning  'attrs' is defined but never used                       no-unused-vars
+  25619:53  warning  'controllers' is defined but never used                 no-unused-vars
+  27076:9   warning  'monthCell' is defined but never used                   no-unused-vars
+  28763:56  warning  '$sce' is defined but never used                        no-unused-vars
+  28787:9   warning  'originalSvgSrc' is assigned a value but never used     no-unused-vars
+  30997:7   warning  '$element' is assigned a value but never used           no-unused-vars
+  31040:53  warning  'e' is defined but never used                           no-unused-vars
+  31184:58  warning  '$log' is defined but never used                        no-unused-vars
+  31224:13  warning  'info' is assigned a value but never used               no-unused-vars
+  31788:7   warning  'elements' is assigned a value but never used           no-unused-vars
+  31936:31  warning  'stretchTabs' is defined but never used                 no-unused-vars
+  31942:30  warning  'newValue' is defined but never used                    no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/angular-material.min.js
+   7:3437   warning  'o' is defined but never used            no-unused-vars
+   7:16930  warning  'r' is defined but never used            no-unused-vars
+   7:20609  warning  't' is defined but never used            no-unused-vars
+   7:20668  warning  't' is defined but never used            no-unused-vars
+   7:21534  warning  'e' is defined but never used            no-unused-vars
+   7:22336  warning  't' is defined but never used            no-unused-vars
+   8:23025  warning  'n' is defined but never used            no-unused-vars
+   8:27329  warning  'd' is defined but never used            no-unused-vars
+   9:2673   warning  'u' is defined but never used            no-unused-vars
+   9:3507   warning  'm' is defined but never used            no-unused-vars
+   9:4684   warning  't' is defined but never used            no-unused-vars
+   9:6851   warning  'e' is defined but never used            no-unused-vars
+   9:7206   warning  'o' is defined but never used            no-unused-vars
+   9:15246  warning  'r' is defined but never used            no-unused-vars
+   9:22598  warning  'n' is defined but never used            no-unused-vars
+   9:27945  warning  'n' is defined but never used            no-unused-vars
+   9:28375  warning  'i' is defined but never used            no-unused-vars
+  10:6179   warning  'e' is defined but never used            no-unused-vars
+  10:8094   warning  't' is defined but never used            no-unused-vars
+  10:8159   warning  't' is defined but never used            no-unused-vars
+  10:9539   warning  'o' is defined but never used            no-unused-vars
+  11:10362  warning  'o' is defined but never used            no-unused-vars
+  11:10380  warning  'n' is defined but never used            no-unused-vars
+  11:12680  warning  'e' is defined but never used            no-unused-vars
+  11:19385  warning  'e' is defined but never used            no-unused-vars
+  12:3290   warning  'o' is defined but never used            no-unused-vars
+  12:11693  warning  'ae' is assigned a value but never used  no-unused-vars
+  12:19145  warning  't' is defined but never used            no-unused-vars
+  13:22154  warning  'i' is defined but never used            no-unused-vars
+  13:26843  warning  'i' is defined but never used            no-unused-vars
+  13:27468  warning  'e' is defined but never used            no-unused-vars
+  14:8143   warning  'a' is defined but never used            no-unused-vars
+  14:8233   warning  't' is defined but never used            no-unused-vars
+  15:12465  warning  'o' is defined but never used            no-unused-vars
+  16:5002   warning  'e' is defined but never used            no-unused-vars
+  16:6241   warning  'a' is defined but never used            no-unused-vars
+  16:11879  warning  'e' is defined but never used            no-unused-vars
+  16:11964  warning  'e' is defined but never used            no-unused-vars
+  16:19054  warning  'ue' is assigned a value but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/autocomplete/autocomplete.js
+     7:1    warning  'goog' is not defined             no-undef
+     8:1    warning  'goog' is not defined             no-undef
+     9:1    warning  'goog' is not defined             no-undef
+    10:1    warning  'goog' is not defined             no-undef
+    18:1    warning  'angular' is not defined          no-undef
+    25:156  warning  'angular' is not defined          no-undef
+   211:5    warning  'angular' is not defined          no-undef
+   223:5    warning  'angular' is not defined          no-undef
+   226:7    warning  'angular' is not defined          no-undef
+   259:11   warning  'angular' is not defined          no-undef
+   272:54   warning  'angular' is not defined          no-undef
+   290:55   warning  'angular' is not defined          no-undef
+   375:5    warning  'angular' is not defined          no-undef
+   382:5    warning  'angular' is not defined          no-undef
+   555:12   warning  'angular' is not defined          no-undef
+   565:24   warning  'angular' is not defined          no-undef
+   789:18   warning  'angular' is not defined          no-undef
+   953:46   warning  'angular' is not defined          no-undef
+  1267:68   warning  'angular' is not defined          no-undef
+  1280:46   warning  'attr' is defined but never used  no-unused-vars
+  1343:60   warning  'angular' is not defined          no-undef
+  1405:21   warning  'angular' is not defined          no-undef
+  1463:50   warning  'angular' is not defined          no-undef
+  1511:1    warning  'ngmaterial' is not defined       no-undef
+  1511:38   warning  'angular' is not defined          no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/autocomplete/autocomplete.min.js
+  7:1857   warning  'angular' is not defined       no-undef
+  7:1958   warning  'angular' is not defined       no-undef
+  7:2047   warning  'angular' is not defined       no-undef
+  7:2501   warning  'angular' is not defined       no-undef
+  7:2643   warning  'angular' is not defined       no-undef
+  7:2741   warning  'angular' is not defined       no-undef
+  7:3279   warning  'angular' is not defined       no-undef
+  7:3358   warning  'angular' is not defined       no-undef
+  7:4673   warning  'angular' is not defined       no-undef
+  7:4839   warning  'angular' is not defined       no-undef
+  7:6457   warning  'angular' is not defined       no-undef
+  7:14460  warning  'i' is defined but never used  no-unused-vars
+  7:15144  warning  'goog' is not defined          no-undef
+  7:15195  warning  'goog' is not defined          no-undef
+  7:15238  warning  'goog' is not defined          no-undef
+  7:15290  warning  'goog' is not defined          no-undef
+  7:15322  warning  'angular' is not defined       no-undef
+  7:15597  warning  'angular' is not defined       no-undef
+  7:15820  warning  'angular' is not defined       no-undef
+  7:15978  warning  'angular' is not defined       no-undef
+  7:16156  warning  'angular' is not defined       no-undef
+  7:16859  warning  'angular' is not defined       no-undef
+  7:17585  warning  'angular' is not defined       no-undef
+  7:17677  warning  'ngmaterial' is not defined    no-undef
+  7:17712  warning  'angular' is not defined       no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/backdrop/backdrop.js
+   7:1   warning  'goog' is not defined              no-undef
+   8:1   warning  'goog' is not defined              no-undef
+  28:1   warning  'angular' is not defined           no-undef
+  38:39  warning  'attrs' is defined but never used  no-unused-vars
+  57:11  warning  'angular' is not defined           no-undef
+  60:13  warning  'angular' is not defined           no-undef
+  93:1   warning  'ngmaterial' is not defined        no-undef
+  93:34  warning  'angular' is not defined           no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/backdrop/backdrop.min.js
+  7:1    warning  'goog' is not defined          no-undef
+  7:48   warning  'goog' is not defined          no-undef
+  7:80   warning  'angular' is not defined       no-undef
+  7:296  warning  'm' is defined but never used  no-unused-vars
+  7:567  warning  'angular' is not defined       no-undef
+  7:629  warning  'angular' is not defined       no-undef
+  7:954  warning  'ngmaterial' is not defined    no-undef
+  7:985  warning  'angular' is not defined       no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/bottomSheet/bottomSheet.js
+    7:1   warning  'goog' is not defined                   no-undef
+    8:1   warning  'goog' is not defined                   no-undef
+    9:1   warning  'goog' is not defined                   no-undef
+   18:1   warning  'angular' is not defined                no-undef
+  169:46  warning  'controller' is defined but never used  no-unused-vars
+  215:63  warning  'angular' is not defined                no-undef
+  269:28  warning  'ev' is defined but never used          no-unused-vars
+  301:1   warning  'ngmaterial' is not defined             no-undef
+  301:37  warning  'angular' is not defined                no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/bottomSheet/bottomSheet.min.js
+  7:216   warning  'd' is defined but never used  no-unused-vars
+  7:891   warning  'angular' is not defined       no-undef
+  7:1399  warning  'o' is defined but never used  no-unused-vars
+  7:2473  warning  'goog' is not defined          no-undef
+  7:2523  warning  'goog' is not defined          no-undef
+  7:2570  warning  'goog' is not defined          no-undef
+  7:2711  warning  'angular' is not defined       no-undef
+  7:2909  warning  'ngmaterial' is not defined    no-undef
+  7:2943  warning  'angular' is not defined       no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/button/button.js
+    7:1    warning  'goog' is not defined           no-undef
+    8:1    warning  'goog' is not defined           no-undef
+   18:1    warning  'angular' is not defined        no-undef
+  138:12   warning  'angular' is not defined        no-undef
+  138:44   warning  'angular' is not defined        no-undef
+  138:78   warning  'angular' is not defined        no-undef
+  138:112  warning  'angular' is not defined        no-undef
+  160:27   warning  'angular' is not defined        no-undef
+  188:28   warning  'ev' is defined but never used  no-unused-vars
+  197:1    warning  'ngmaterial' is not defined     no-undef
+  197:32   warning  'angular' is not defined        no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/button/button.min.js
+  7:134   warning  'angular' is not defined       no-undef
+  7:161   warning  'angular' is not defined       no-undef
+  7:190   warning  'angular' is not defined       no-undef
+  7:219   warning  'angular' is not defined       no-undef
+  7:518   warning  'angular' is not defined       no-undef
+  7:923   warning  't' is defined but never used  no-unused-vars
+  7:1022  warning  'goog' is not defined          no-undef
+  7:1067  warning  'goog' is not defined          no-undef
+  7:1223  warning  'angular' is not defined       no-undef
+  7:1359  warning  'ngmaterial' is not defined    no-undef
+  7:1388  warning  'angular' is not defined       no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/card/card.js
+    7:1   warning  'goog' is not defined             no-undef
+    8:1   warning  'goog' is not defined             no-undef
+   17:1   warning  'angular' is not defined          no-undef
+  135:39  warning  'attr' is defined but never used  no-unused-vars
+  142:1   warning  'ngmaterial' is not defined       no-undef
+  142:30  warning  'angular' is not defined          no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/card/card.min.js
+  7:67   warning  'i' is defined but never used  no-unused-vars
+  7:95   warning  'goog' is not defined          no-undef
+  7:138  warning  'goog' is not defined          no-undef
+  7:209  warning  'angular' is not defined       no-undef
+  7:306  warning  'ngmaterial' is not defined    no-undef
+  7:333  warning  'angular' is not defined       no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/checkbox/checkbox.js
+    7:1   warning  'goog' is not defined        no-undef
+    8:1   warning  'goog' is not defined        no-undef
+   15:1   warning  'angular' is not defined     no-undef
+  138:13  warning  'angular' is not defined     no-undef
+  213:1   warning  'ngmaterial' is not defined  no-undef
+  213:34  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/checkbox/checkbox.min.js
+  7:967   warning  'angular' is not defined     no-undef
+  7:1696  warning  'goog' is not defined        no-undef
+  7:1743  warning  'goog' is not defined        no-undef
+  7:1880  warning  'angular' is not defined     no-undef
+  7:1989  warning  'ngmaterial' is not defined  no-undef
+  7:2020  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/chips/chips.js
+     7:1    warning  'goog' is not defined                    no-undef
+     8:1    warning  'goog' is not defined                    no-undef
+     9:1    warning  'goog' is not defined                    no-undef
+    17:1    warning  'angular' is not defined                 no-undef
+    23:83   warning  'angular' is not defined                 no-undef
+   101:10   warning  'angular' is not defined                 no-undef
+   109:10   warning  'angular' is not defined                 no-undef
+   217:44   warning  'angular' is not defined                 no-undef
+   262:29   warning  'attr' is defined but never used         no-unused-vars
+   274:9    warning  'angular' is not defined                 no-undef
+   287:37   warning  'angular' is not defined                 no-undef
+   331:34   warning  'event' is defined but never used        no-unused-vars
+   347:41   warning  'angular' is not defined                 no-undef
+   374:102  warning  'angular' is not defined                 no-undef
+   580:10   warning  'angular' is not defined                 no-undef
+   638:17   warning  'angular' is not defined                 no-undef
+   677:9    warning  'angular' is not defined                 no-undef
+   683:7    warning  'angular' is not defined                 no-undef
+   685:14   warning  'angular' is not defined                 no-undef
+   781:7    warning  'angular' is not defined                 no-undef
+   941:22   warning  'angular' is not defined                 no-undef
+   956:38   warning  'angular' is not defined                 no-undef
+   967:21   warning  'angular' is not defined                 no-undef
+   968:21   warning  'angular' is not defined                 no-undef
+   977:98   warning  'angular' is not defined                 no-undef
+  1380:1    warning  'angular' is not defined                 no-undef
+  1402:22   warning  'angular' is not defined                 no-undef
+  1416:52   warning  'angular' is not defined                 no-undef
+  1519:33   warning  'attrs' is defined but never used        no-unused-vars
+  1541:53   warning  'controllers' is defined but never used  no-unused-vars
+  1551:1    warning  'ngmaterial' is not defined              no-undef
+  1551:31   warning  'angular' is not defined                 no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/chips/chips.min.js
+  7:217    warning  's' is defined but never used  no-unused-vars
+  7:323    warning  'angular' is not defined       no-undef
+  7:648    warning  't' is defined but never used  no-unused-vars
+  7:4109   warning  'r' is defined but never used  no-unused-vars
+  7:4199   warning  'e' is defined but never used  no-unused-vars
+  7:4602   warning  'goog' is not defined          no-undef
+  7:4646   warning  'goog' is not defined          no-undef
+  7:4697   warning  'goog' is not defined          no-undef
+  7:4729   warning  'angular' is not defined       no-undef
+  7:4902   warning  'angular' is not defined       no-undef
+  7:5427   warning  'angular' is not defined       no-undef
+  7:5507   warning  'angular' is not defined       no-undef
+  7:7224   warning  'angular' is not defined       no-undef
+  7:7469   warning  'angular' is not defined       no-undef
+  7:7590   warning  'angular' is not defined       no-undef
+  7:7774   warning  'angular' is not defined       no-undef
+  7:9044   warning  'angular' is not defined       no-undef
+  7:10201  warning  'angular' is not defined       no-undef
+  7:10573  warning  'angular' is not defined       no-undef
+  7:10604  warning  'angular' is not defined       no-undef
+  7:10666  warning  'angular' is not defined       no-undef
+  7:11662  warning  'angular' is not defined       no-undef
+  7:13896  warning  'angular' is not defined       no-undef
+  7:14189  warning  'angular' is not defined       no-undef
+  7:14346  warning  'angular' is not defined       no-undef
+  7:14394  warning  'angular' is not defined       no-undef
+  7:14612  warning  'angular' is not defined       no-undef
+  7:16919  warning  'angular' is not defined       no-undef
+  7:17141  warning  'angular' is not defined       no-undef
+  7:17419  warning  'angular' is not defined       no-undef
+  7:19449  warning  'ngmaterial' is not defined    no-undef
+  7:19477  warning  'angular' is not defined       no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/colors/colors.js
+    7:1   warning  'goog' is not defined        no-undef
+    8:1   warning  'goog' is not defined        no-undef
+   28:3   warning  'angular' is not defined     no-undef
+  157:7   warning  'angular' is not defined     no-undef
+  177:14  warning  'angular' is not defined     no-undef
+  185:22  warning  'angular' is not defined     no-undef
+  341:18  warning  'angular' is not defined     no-undef
+  359:35  warning  'angular' is not defined     no-undef
+  373:41  warning  'angular' is not defined     no-undef
+  397:30  warning  'angular' is not defined     no-undef
+  410:1   warning  'ngmaterial' is not defined  no-undef
+  410:32  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/colors/colors.min.js
+  7:1     warning  'goog' is not defined        no-undef
+  7:46    warning  'goog' is not defined        no-undef
+  7:440   warning  'angular' is not defined     no-undef
+  7:572   warning  'angular' is not defined     no-undef
+  7:652   warning  'angular' is not defined     no-undef
+  7:1908  warning  'angular' is not defined     no-undef
+  7:2277  warning  'angular' is not defined     no-undef
+  7:2402  warning  'angular' is not defined     no-undef
+  7:2532  warning  'angular' is not defined     no-undef
+  7:2806  warning  'angular' is not defined     no-undef
+  7:2919  warning  'ngmaterial' is not defined  no-undef
+  7:2948  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/content/content.js
+    7:1   warning  'goog' is not defined        no-undef
+    8:1   warning  'goog' is not defined        no-undef
+   17:1   warning  'angular' is not defined     no-undef
+   87:3   warning  'angular' is not defined     no-undef
+  102:1   warning  'ngmaterial' is not defined  no-undef
+  102:33  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/content/content.min.js
+  7:256  warning  'angular' is not defined     no-undef
+  7:476  warning  'goog' is not defined        no-undef
+  7:522  warning  'goog' is not defined        no-undef
+  7:596  warning  'angular' is not defined     no-undef
+  7:702  warning  'ngmaterial' is not defined  no-undef
+  7:732  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/core/core.js
+     7:1   warning  'goog' is not defined                                 no-undef
+    20:1   warning  'angular' is not defined                              no-undef
+    95:1   warning  'angular' is not defined                              no-undef
+   210:1   warning  'angular' is not defined                              no-undef
+   278:66  warning  'angular' is not defined                              no-undef
+   285:47  warning  '$document' is defined but never used                 no-unused-vars
+   304:12  warning  'angular' is not defined                              no-undef
+   396:3   warning  'angular' is not defined                              no-undef
+   420:19  warning  'angular' is not defined                              no-undef
+   444:13  warning  'angular' is not defined                              no-undef
+   445:17  warning  'angular' is not defined                              no-undef
+   532:12  warning  'angular' is not defined                              no-undef
+   616:13  warning  'angular' is not defined                              no-undef
+   625:67  warning  'angular' is not defined                              no-undef
+   736:9   warning  'angular' is not defined                              no-undef
+   741:9   warning  'angular' is not defined                              no-undef
+   794:11  warning  'angular' is not defined                              no-undef
+   796:44  warning  'angular' is not defined                              no-undef
+   801:13  warning  'angular' is not defined                              no-undef
+   803:46  warning  'angular' is not defined                              no-undef
+   820:1   warning  'angular' is not defined                              no-undef
+   849:18  warning  'angular' is not defined                              no-undef
+   861:18  warning  'angular' is not defined                              no-undef
+   931:1   warning  'angular' is not defined                              no-undef
+   956:18  warning  'angular' is not defined                              no-undef
+   979:7   warning  'angular' is not defined                              no-undef
+   994:18  warning  'angular' is not defined                              no-undef
+   996:19  warning  'angular' is not defined                              no-undef
+   999:25  warning  'angular' is not defined                              no-undef
+  1007:18  warning  'angular' is not defined                              no-undef
+  1009:19  warning  'angular' is not defined                              no-undef
+  1013:25  warning  'angular' is not defined                              no-undef
+  1057:17  warning  'angular' is not defined                              no-undef
+  1100:27  warning  'angular' is not defined                              no-undef
+  1101:18  warning  'angular' is not defined                              no-undef
+  1140:19  warning  'angular' is not defined                              no-undef
+  1146:24  warning  'angular' is not defined                              no-undef
+  1208:24  warning  'angular' is not defined                              no-undef
+  1280:22  warning  'angular' is not defined                              no-undef
+  1294:18  warning  'angular' is not defined                              no-undef
+  1426:12  warning  'angular' is not defined                              no-undef
+  1433:25  warning  'angular' is not defined                              no-undef
+  1451:34  warning  'angular' is not defined                              no-undef
+  1451:70  warning  'angular' is not defined                              no-undef
+  1474:14  warning  'angular' is not defined                              no-undef
+  1522:7   warning  'angular' is not defined                              no-undef
+  1523:33  warning  'angular' is not defined                              no-undef
+  1524:31  warning  'angular' is not defined                              no-undef
+  1525:24  warning  'angular' is not defined                              no-undef
+  1594:27  warning  'angular' is not defined                              no-undef
+  1628:20  warning  'angular' is not defined                              no-undef
+  1674:27  warning  'angular' is not defined                              no-undef
+  1743:1   warning  'angular' is not defined                              no-undef
+  1743:35  warning  'angular' is not defined                              no-undef
+  1749:1   warning  'angular' is not defined                              no-undef
+  1749:34  warning  'angular' is not defined                              no-undef
+  1763:1   warning  'angular' is not defined                              no-undef
+  1799:87  warning  '$interpolate' is defined but never used              no-unused-vars
+  1838:16  warning  'angular' is not defined                              no-undef
+  1846:22  warning  'angular' is not defined                              no-undef
+  1936:96  warning  'angular' is not defined                              no-undef
+  2007:19  warning  'angular' is not defined                              no-undef
+  2008:18  warning  'angular' is not defined                              no-undef
+  2009:58  warning  'angular' is not defined                              no-undef
+  2015:5   warning  'angular' is not defined                              no-undef
+  2016:11  warning  'angular' is not defined                              no-undef
+  2024:5   warning  'angular' is not defined                              no-undef
+  2040:40  warning  'angular' is not defined                              no-undef
+  2054:15  warning  'angular' is not defined                              no-undef
+  2093:1   warning  'angular' is not defined                              no-undef
+  2150:63  warning  'angular' is not defined                              no-undef
+  2238:5   warning  'angular' is not defined                              no-undef
+  2256:30  warning  'pointer' is defined but never used                   no-unused-vars
+  2259:28  warning  'pointer' is defined but never used                   no-unused-vars
+  2284:39  warning  'angular' is not defined                              no-undef
+  2334:26  warning  'ev' is defined but never used                        no-unused-vars
+  2376:28  warning  'pointer' is defined but never used                   no-unused-vars
+  2416:11  warning  'angular' is not defined                              no-undef
+  2441:63  warning  'angular' is not defined                              no-undef
+  2450:14  warning  'angular' is not defined                              no-undef
+  2451:16  warning  'angular' is not defined                              no-undef
+  2452:14  warning  'angular' is not defined                              no-undef
+  2453:13  warning  'angular' is not defined                              no-undef
+  2454:12  warning  'angular' is not defined                              no-undef
+  2455:15  warning  'angular' is not defined                              no-undef
+  2468:18  warning  'angular' is not defined                              no-undef
+  2535:24  warning  'angular' is not defined                              no-undef
+  2541:5   warning  'angular' is not defined                              no-undef
+  2553:5   warning  'angular' is not defined                              no-undef
+  2649:3   warning  'angular' is not defined                              no-undef
+  2813:1   warning  'angular' is not defined                              no-undef
+  2916:14  warning  'addPresetMethod' is defined but never used           no-unused-vars
+  2950:7   warning  'angular' is not defined                              no-undef
+  2954:7   warning  'angular' is not defined                              no-undef
+  2961:9   warning  'angular' is not defined                              no-undef
+  2979:27  warning  'angular' is not defined                              no-undef
+  2981:9   warning  'angular' is not defined                              no-undef
+  3005:16  warning  'angular' is not defined                              no-undef
+  3005:42  warning  'angular' is not defined                              no-undef
+  3028:11  warning  'angular' is not defined                              no-undef
+  3193:47  warning  'angular' is not defined                              no-undef
+  3202:20  warning  'angular' is not defined                              no-undef
+  3202:53  warning  'angular' is not defined                              no-undef
+  3279:21  warning  'angular' is not defined                              no-undef
+  3330:18  warning  'angular' is not defined                              no-undef
+  3332:30  warning  'angular' is not defined                              no-undef
+  3375:11  warning  'angular' is not defined                              no-undef
+  3394:15  warning  'angular' is not defined                              no-undef
+  3396:22  warning  'angular' is not defined                              no-undef
+  3397:22  warning  'angular' is not defined                              no-undef
+  3399:22  warning  'angular' is not defined                              no-undef
+  3413:20  warning  'angular' is not defined                              no-undef
+  3423:47  warning  'angular' is not defined                              no-undef
+  3445:52  warning  'angular' is not defined                              no-undef
+  3447:54  warning  'angular' is not defined                              no-undef
+  3470:56  warning  'angular' is not defined                              no-undef
+  3544:22  warning  'angular' is not defined                              no-undef
+  3597:5   warning  'angular' is not defined                              no-undef
+  3600:7   warning  'angular' is not defined                              no-undef
+  3606:7   warning  'angular' is not defined                              no-undef
+  3619:18  warning  'angular' is not defined                              no-undef
+  3732:39  warning  'angular' is not defined                              no-undef
+  3790:28  warning  'angular' is not defined                              no-undef
+  3837:28  warning  'angular' is not defined                              no-undef
+  3872:12  warning  'angular' is not defined                              no-undef
+  3888:14  warning  'angular' is not defined                              no-undef
+  3962:22  warning  'angular' is not defined                              no-undef
+  4072:1   warning  'angular' is not defined                              no-undef
+  4074:16  warning  'angular' is not defined                              no-undef
+  4094:28  warning  'angular' is not defined                              no-undef
+  4116:23  warning  'angular' is not defined                              no-undef
+  4154:12  warning  'angular' is not defined                              no-undef
+  4169:3   warning  'angular' is not defined                              no-undef
+  4222:31  warning  'angular' is not defined                              no-undef
+  4303:3   warning  'angular' is not defined                              no-undef
+  4309:19  warning  'angular' is not defined                              no-undef
+  4328:6   warning  Unreachable code                                      no-unreachable
+  4349:3   warning  'angular' is not defined                              no-undef
+  4358:50  warning  'angular' is not defined                              no-undef
+  4363:6   warning  Unreachable code                                      no-unreachable
+  4384:3   warning  'angular' is not defined                              no-undef
+  4393:50  warning  'angular' is not defined                              no-undef
+  4399:6   warning  Unreachable code                                      no-unreachable
+  4411:1   warning  'angular' is not defined                              no-undef
+  4455:17  warning  'angular' is not defined                              no-undef
+  4526:73  warning  'angular' is not defined                              no-undef
+  4570:61  warning  'angular' is not defined                              no-undef
+  4571:57  warning  'angular' is not defined                              no-undef
+  4585:28  warning  'angular' is not defined                              no-undef
+  4599:7   warning  'angular' is not defined                              no-undef
+  4649:33  warning  'angular' is not defined                              no-undef
+  4650:40  warning  'angular' is not defined                              no-undef
+  4651:34  warning  'angular' is not defined                              no-undef
+  4652:33  warning  'angular' is not defined                              no-undef
+  4722:19  warning  'angular' is not defined                              no-undef
+  4739:20  warning  'angular' is not defined                              no-undef
+  4766:21  warning  'angular' is not defined                              no-undef
+  4864:24  warning  'angular' is not defined                              no-undef
+  4884:3   warning  'angular' is not defined                              no-undef
+  4893:50  warning  'angular' is not defined                              no-undef
+  4899:6   warning  Unreachable code                                      no-unreachable
+  4903:1   warning  'angular' is not defined                              no-undef
+  6062:9   warning  'match' is assigned a value but never used            no-unused-vars
+  6099:37  warning  'name' is defined but never used                      no-unused-vars
+  6233:1   warning  'angular' is not defined                              no-undef
+  6287:35  warning  'reject' is defined but never used                    no-unused-vars
+  6374:23  warning  'angular' is not defined                              no-undef
+  6385:24  warning  'angular' is not defined                              no-undef
+  6397:7   warning  'angular' is not defined                              no-undef
+  6398:14  warning  'angular' is not defined                              no-undef
+  6423:9   warning  'angular' is not defined                              no-undef
+  6434:7   warning  'angular' is not defined                              no-undef
+  6454:7   warning  'angular' is not defined                              no-undef
+  6468:20  warning  'angular' is not defined                              no-undef
+  6493:5   warning  'angular' is not defined                              no-undef
+  6494:3   warning  'angular' is not defined                              no-undef
+  6498:17  warning  'angular' is not defined                              no-undef
+  6500:16  warning  'angular' is not defined                              no-undef
+  6501:7   warning  'TRANSITION_PROP' is assigned a value but never used  no-unused-vars
+  6502:7   warning  'ANIMATION_PROP' is assigned a value but never used   no-unused-vars
+  6552:17  warning  'angular' is not defined                              no-undef
+  6644:3   warning  'angular' is not defined                              no-undef
+  6919:1   warning  'angular' is not defined                              no-undef
+  6923:1   warning  'ngmaterial' is not defined                           no-undef
+  6923:19  warning  'angular' is not defined                              no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/core/core.min.js
+   7:1564   warning  'r' is defined but never used  no-unused-vars
+   7:1696   warning  'angular' is not defined       no-undef
+   7:3661   warning  'angular' is not defined       no-undef
+   7:4084   warning  'angular' is not defined       no-undef
+   7:4150   warning  'angular' is not defined       no-undef
+   7:4329   warning  'angular' is not defined       no-undef
+   7:4362   warning  'angular' is not defined       no-undef
+   7:4467   warning  'angular' is not defined       no-undef
+   7:4523   warning  'angular' is not defined       no-undef
+   7:5043   warning  'angular' is not defined       no-undef
+   7:5088   warning  'angular' is not defined       no-undef
+   7:5154   warning  'angular' is not defined       no-undef
+   7:5199   warning  'angular' is not defined       no-undef
+   7:5471   warning  'angular' is not defined       no-undef
+   7:5585   warning  'angular' is not defined       no-undef
+   7:6345   warning  'angular' is not defined       no-undef
+   7:6427   warning  'angular' is not defined       no-undef
+   7:6652   warning  'angular' is not defined       no-undef
+   7:6674   warning  'angular' is not defined       no-undef
+   7:6713   warning  'angular' is not defined       no-undef
+   7:6830   warning  'angular' is not defined       no-undef
+   7:6852   warning  'angular' is not defined       no-undef
+   7:6905   warning  'angular' is not defined       no-undef
+   7:7371   warning  'angular' is not defined       no-undef
+   7:7647   warning  'angular' is not defined       no-undef
+   7:7679   warning  'angular' is not defined       no-undef
+   7:7958   warning  'angular' is not defined       no-undef
+   7:8030   warning  'angular' is not defined       no-undef
+   7:9218   warning  'angular' is not defined       no-undef
+   7:10265  warning  'angular' is not defined       no-undef
+   7:10497  warning  'angular' is not defined       no-undef
+   7:11698  warning  'angular' is not defined       no-undef
+   7:11794  warning  'angular' is not defined       no-undef
+   7:12010  warning  'angular' is not defined       no-undef
+   7:12037  warning  'angular' is not defined       no-undef
+   7:12581  warning  'angular' is not defined       no-undef
+   7:12651  warning  'angular' is not defined       no-undef
+   7:12716  warning  'angular' is not defined       no-undef
+   7:12749  warning  'angular' is not defined       no-undef
+   7:12787  warning  'angular' is not defined       no-undef
+   7:13207  warning  'angular' is not defined       no-undef
+   7:13578  warning  'angular' is not defined       no-undef
+   7:13964  warning  'angular' is not defined       no-undef
+   7:14500  warning  'n' is defined but never used  no-unused-vars
+   7:14602  warning  'angular' is not defined       no-undef
+   7:14691  warning  'angular' is not defined       no-undef
+   7:15824  warning  'angular' is not defined       no-undef
+   7:15859  warning  'angular' is not defined       no-undef
+   7:15914  warning  'angular' is not defined       no-undef
+   7:15959  warning  'angular' is not defined       no-undef
+   7:15991  warning  'angular' is not defined       no-undef
+   7:16044  warning  'angular' is not defined       no-undef
+   7:16197  warning  'angular' is not defined       no-undef
+   7:16339  warning  'angular' is not defined       no-undef
+   7:16905  warning  'angular' is not defined       no-undef
+   7:17098  warning  'angular' is not defined       no-undef
+   7:17292  warning  'angular' is not defined       no-undef
+   7:18124  warning  't' is defined but never used  no-unused-vars
+   7:18183  warning  't' is defined but never used  no-unused-vars
+   7:18438  warning  'angular' is not defined       no-undef
+   7:19055  warning  'e' is defined but never used  no-unused-vars
+   7:19906  warning  't' is defined but never used  no-unused-vars
+   7:20625  warning  'angular' is not defined       no-undef
+   7:20690  warning  'angular' is not defined       no-undef
+   7:20850  warning  'angular' is not defined       no-undef
+   7:21312  warning  'angular' is not defined       no-undef
+   7:21416  warning  'angular' is not defined       no-undef
+   7:21439  warning  'angular' is not defined       no-undef
+   7:21460  warning  'angular' is not defined       no-undef
+   7:21480  warning  'angular' is not defined       no-undef
+   7:21499  warning  'angular' is not defined       no-undef
+   7:21521  warning  'angular' is not defined       no-undef
+   7:21684  warning  'angular' is not defined       no-undef
+   7:23744  warning  'angular' is not defined       no-undef
+   7:25358  warning  'angular' is not defined       no-undef
+   7:25605  warning  'angular' is not defined       no-undef
+   7:25646  warning  'angular' is not defined       no-undef
+   7:25714  warning  'angular' is not defined       no-undef
+   7:25797  warning  'angular' is not defined       no-undef
+   7:25825  warning  'angular' is not defined       no-undef
+   7:26084  warning  'angular' is not defined       no-undef
+   7:26106  warning  'angular' is not defined       no-undef
+   7:27117  warning  'angular' is not defined       no-undef
+   7:27181  warning  'angular' is not defined       no-undef
+   7:27207  warning  'angular' is not defined       no-undef
+   7:27706  warning  'angular' is not defined       no-undef
+   7:28086  warning  'angular' is not defined       no-undef
+   7:28134  warning  'angular' is not defined       no-undef
+   7:28438  warning  'angular' is not defined       no-undef
+   7:28577  warning  'angular' is not defined       no-undef
+   7:28614  warning  'angular' is not defined       no-undef
+   7:28634  warning  'angular' is not defined       no-undef
+   7:28673  warning  'angular' is not defined       no-undef
+   7:28841  warning  'angular' is not defined       no-undef
+   7:28890  warning  'angular' is not defined       no-undef
+   7:29062  warning  'angular' is not defined       no-undef
+   7:29091  warning  'angular' is not defined       no-undef
+   7:29285  warning  'angular' is not defined       no-undef
+   7:30315  warning  'angular' is not defined       no-undef
+   7:30559  warning  'angular' is not defined       no-undef
+   7:30827  warning  'angular' is not defined       no-undef
+   7:31288  warning  'angular' is not defined       no-undef
+   7:31368  warning  'angular' is not defined       no-undef
+   7:31506  warning  'angular' is not defined       no-undef
+   7:31574  warning  'angular' is not defined       no-undef
+   7:31962  warning  'a' is defined but never used  no-unused-vars
+   8:866    warning  'angular' is not defined       no-undef
+   8:1031   warning  'angular' is not defined       no-undef
+   8:1142   warning  'angular' is not defined       no-undef
+   8:1293   warning  'angular' is not defined       no-undef
+   8:1329   warning  'angular' is not defined       no-undef
+   8:1634   warning  'angular' is not defined       no-undef
+   8:1822   warning  'angular' is not defined       no-undef
+   8:2026   warning  'angular' is not defined       no-undef
+   8:2263   warning  'goog' is not defined          no-undef
+   8:2431   warning  'angular' is not defined       no-undef
+   8:2616   warning  'angular' is not defined       no-undef
+   8:2789   warning  'angular' is not defined       no-undef
+   8:2923   warning  'angular' is not defined       no-undef
+   8:2996   warning  'angular' is not defined       no-undef
+   8:3205   warning  'angular' is not defined       no-undef
+   8:3272   warning  'angular' is not defined       no-undef
+   8:3576   warning  'angular' is not defined       no-undef
+   8:3639   warning  'angular' is not defined       no-undef
+   8:3671   warning  'angular' is not defined       no-undef
+   8:3757   warning  'angular' is not defined       no-undef
+   8:3788   warning  'angular' is not defined       no-undef
+   8:3936   warning  'angular' is not defined       no-undef
+   8:4092   warning  'angular' is not defined       no-undef
+   8:4386   warning  'angular' is not defined       no-undef
+   8:4721   warning  'angular' is not defined       no-undef
+   8:5172   warning  'angular' is not defined       no-undef
+   8:5202   warning  'angular' is not defined       no-undef
+   8:5275   warning  'angular' is not defined       no-undef
+   8:5397   warning  'angular' is not defined       no-undef
+   8:6703   warning  'angular' is not defined       no-undef
+   8:7024   warning  'angular' is not defined       no-undef
+   8:7262   warning  'angular' is not defined       no-undef
+   8:7337   warning  'angular' is not defined       no-undef
+   8:7566   warning  'angular' is not defined       no-undef
+   8:8342   warning  'angular' is not defined       no-undef
+   8:9330   warning  'angular' is not defined       no-undef
+   8:9380   warning  'angular' is not defined       no-undef
+   8:9538   warning  'angular' is not defined       no-undef
+   8:9624   warning  'angular' is not defined       no-undef
+   8:9898   warning  'angular' is not defined       no-undef
+   8:9965   warning  'angular' is not defined       no-undef
+   8:10056  warning  'angular' is not defined       no-undef
+   8:10385  warning  'angular' is not defined       no-undef
+   8:10453  warning  'angular' is not defined       no-undef
+   8:10596  warning  'angular' is not defined       no-undef
+   8:10701  warning  'angular' is not defined       no-undef
+   8:10846  warning  'angular' is not defined       no-undef
+   8:10967  warning  'angular' is not defined       no-undef
+   8:11211  warning  'angular' is not defined       no-undef
+   8:11689  warning  'angular' is not defined       no-undef
+   8:12192  warning  'angular' is not defined       no-undef
+   8:12269  warning  'angular' is not defined       no-undef
+   8:12338  warning  'angular' is not defined       no-undef
+   8:12406  warning  'angular' is not defined       no-undef
+   8:13370  warning  'angular' is not defined       no-undef
+   8:13704  warning  'angular' is not defined       no-undef
+   8:14152  warning  'angular' is not defined       no-undef
+   8:15593  warning  'angular' is not defined       no-undef
+   8:15714  warning  'angular' is not defined       no-undef
+   8:15778  warning  'angular' is not defined       no-undef
+   8:27102  warning  'r' is defined but never used  no-unused-vars
+   8:31037  warning  'angular' is not defined       no-undef
+   8:31211  warning  'angular' is not defined       no-undef
+   8:31236  warning  'angular' is not defined       no-undef
+   8:31385  warning  'angular' is not defined       no-undef
+   8:31403  warning  'angular' is not defined       no-undef
+   9:12     warning  'angular' is not defined       no-undef
+   9:931    warning  'angular' is not defined       no-undef
+   9:3800   warning  'angular' is not defined       no-undef
+  10:5      warning  'ngmaterial' is not defined    no-undef
+  10:21     warning  'angular' is not defined       no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/core/default-theme.js
+  2:1  warning  'angular' is not defined  no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/datepicker/datepicker.js
+     7:1   warning  'goog' is not defined                  no-undef
+     8:1   warning  'goog' is not defined                  no-undef
+     9:1   warning  'goog' is not defined                  no-undef
+    10:1   warning  'goog' is not defined                  no-undef
+    17:1   warning  'angular' is not defined               no-undef
+    47:3   warning  'angular' is not defined               no-undef
+   221:27  warning  'angular' is not defined               no-undef
+   225:5   warning  'angular' is not defined               no-undef
+   228:7   warning  'angular' is not defined               no-undef
+   300:28  warning  'angular' is not defined               no-undef
+   477:3   warning  'angular' is not defined               no-undef
+   735:50  warning  'angular' is not defined               no-undef
+   783:3   warning  'angular' is not defined               no-undef
+   940:13  warning  'angular' is not defined               no-undef
+  1085:3   warning  'angular' is not defined               no-undef
+  1288:50  warning  'angular' is not defined               no-undef
+  1296:3   warning  'angular' is not defined               no-undef
+  1450:9   warning  'monthCell' is defined but never used  no-unused-vars
+  1561:3   warning  'angular' is not defined               no-undef
+  1784:3   warning  'angular' is not defined               no-undef
+  1995:11  warning  'angular' is not defined               no-undef
+  2103:3   warning  'angular' is not defined               no-undef
+  2236:27  warning  'angular' is not defined               no-undef
+  2342:28  warning  'angular' is not defined               no-undef
+  2351:27  warning  'angular' is not defined               no-undef
+  2366:22  warning  'angular' is not defined               no-undef
+  2385:46  warning  'angular' is not defined               no-undef
+  2407:29  warning  'angular' is not defined               no-undef
+  2417:48  warning  'angular' is not defined               no-undef
+  2420:30  warning  'angular' is not defined               no-undef
+  2442:16  warning  'angular' is not defined               no-undef
+  2486:11  warning  'angular' is not defined               no-undef
+  2487:12  warning  'angular' is not defined               no-undef
+  2510:46  warning  'angular' is not defined               no-undef
+  2531:37  warning  'angular' is not defined               no-undef
+  2533:28  warning  'angular' is not defined               no-undef
+  2554:39  warning  'angular' is not defined               no-undef
+  2555:7   warning  'angular' is not defined               no-undef
+  2558:9   warning  'angular' is not defined               no-undef
+  2636:11  warning  'angular' is not defined               no-undef
+  2699:13  warning  'angular' is not defined               no-undef
+  2710:5   warning  'angular' is not defined               no-undef
+  2788:5   warning  'angular' is not defined               no-undef
+  2871:12  warning  'angular' is not defined               no-undef
+  2948:1   warning  'ngmaterial' is not defined            no-undef
+  2948:36  warning  'angular' is not defined               no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/datepicker/datepicker.min.js
+  7:1      warning  'goog' is not defined        no-undef
+  7:50     warning  'goog' is not defined        no-undef
+  7:93     warning  'goog' is not defined        no-undef
+  7:145    warning  'goog' is not defined        no-undef
+  7:177    warning  'angular' is not defined     no-undef
+  7:1488   warning  'angular' is not defined     no-undef
+  7:1527   warning  'angular' is not defined     no-undef
+  7:1602   warning  'angular' is not defined     no-undef
+  7:2033   warning  'angular' is not defined     no-undef
+  7:2755   warning  'angular' is not defined     no-undef
+  7:6047   warning  'angular' is not defined     no-undef
+  7:8082   warning  'angular' is not defined     no-undef
+  7:9488   warning  'angular' is not defined     no-undef
+  7:11053  warning  'angular' is not defined     no-undef
+  7:13881  warning  'angular' is not defined     no-undef
+  7:15762  warning  'angular' is not defined     no-undef
+  7:16371  warning  'angular' is not defined     no-undef
+  7:18435  warning  'angular' is not defined     no-undef
+  7:20495  warning  'angular' is not defined     no-undef
+  7:21683  warning  'angular' is not defined     no-undef
+  7:24654  warning  'angular' is not defined     no-undef
+  7:25308  warning  'angular' is not defined     no-undef
+  7:25438  warning  'angular' is not defined     no-undef
+  7:25694  warning  'angular' is not defined     no-undef
+  7:25891  warning  'angular' is not defined     no-undef
+  7:26125  warning  'angular' is not defined     no-undef
+  7:26271  warning  'angular' is not defined     no-undef
+  7:26341  warning  'angular' is not defined     no-undef
+  7:26565  warning  'angular' is not defined     no-undef
+  7:27097  warning  'angular' is not defined     no-undef
+  7:27470  warning  'angular' is not defined     no-undef
+  7:27487  warning  'angular' is not defined     no-undef
+  7:27910  warning  'angular' is not defined     no-undef
+  7:28285  warning  'angular' is not defined     no-undef
+  7:28329  warning  'angular' is not defined     no-undef
+  7:28729  warning  'angular' is not defined     no-undef
+  7:28765  warning  'angular' is not defined     no-undef
+  7:28851  warning  'angular' is not defined     no-undef
+  7:29885  warning  'angular' is not defined     no-undef
+  7:30802  warning  'angular' is not defined     no-undef
+  7:31054  warning  'angular' is not defined     no-undef
+  8:197    warning  'angular' is not defined     no-undef
+  8:1489   warning  'angular' is not defined     no-undef
+  8:2319   warning  'ngmaterial' is not defined  no-undef
+  8:2352   warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/dialog/dialog.js
+     7:1   warning  'goog' is not defined                   no-undef
+     8:1   warning  'goog' is not defined                   no-undef
+     9:1   warning  'goog' is not defined                   no-undef
+    16:1   warning  'angular' is not defined                no-undef
+    76:11  warning  'angular' is not defined                no-undef
+   719:46  warning  'controller' is defined but never used  no-unused-vars
+   720:7   warning  'angular' is not defined                no-undef
+   814:9   warning  'angular' is not defined                no-undef
+   834:24  warning  'angular' is not defined                no-undef
+   851:11  warning  'angular' is not defined                no-undef
+   869:25  warning  'angular' is not defined                no-undef
+   899:28  warning  'angular' is not defined                no-undef
+   902:20  warning  'angular' is not defined                no-undef
+   919:26  warning  'angular' is not defined                no-undef
+   927:27  warning  'angular' is not defined                no-undef
+   929:22  warning  'angular' is not defined                no-undef
+   931:73  warning  'angular' is not defined                no-undef
+   932:29  warning  'angular' is not defined                no-undef
+   942:17  warning  'angular' is not defined                no-undef
+   947:20  warning  'angular' is not defined                no-undef
+   956:20  warning  'angular' is not defined                no-undef
+  1295:1   warning  'ngmaterial' is not defined             no-undef
+  1295:32  warning  'angular' is not defined                no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/dialog/dialog.min.js
+  7:278   warning  'angular' is not defined       no-undef
+  7:2487  warning  'a' is defined but never used  no-unused-vars
+  7:2863  warning  'angular' is not defined       no-undef
+  7:3216  warning  'angular' is not defined       no-undef
+  7:3687  warning  'angular' is not defined       no-undef
+  7:3947  warning  'angular' is not defined       no-undef
+  7:4094  warning  'angular' is not defined       no-undef
+  7:4168  warning  'angular' is not defined       no-undef
+  7:4247  warning  'angular' is not defined       no-undef
+  7:4301  warning  'angular' is not defined       no-undef
+  7:4380  warning  'angular' is not defined       no-undef
+  7:4412  warning  'angular' is not defined       no-undef
+  7:4462  warning  'angular' is not defined       no-undef
+  7:4509  warning  'angular' is not defined       no-undef
+  7:4540  warning  'angular' is not defined       no-undef
+  7:4587  warning  'angular' is not defined       no-undef
+  7:4773  warning  'angular' is not defined       no-undef
+  7:9425  warning  'goog' is not defined          no-undef
+  7:9470  warning  'goog' is not defined          no-undef
+  7:9517  warning  'goog' is not defined          no-undef
+  7:9664  warning  'angular' is not defined       no-undef
+  7:9837  warning  'ngmaterial' is not defined    no-undef
+  7:9866  warning  'angular' is not defined       no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/divider/divider.js
+   7:1   warning  'goog' is not defined        no-undef
+   8:1   warning  'goog' is not defined        no-undef
+  15:1   warning  'angular' is not defined     no-undef
+  45:1   warning  'ngmaterial' is not defined  no-undef
+  45:33  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/divider/divider.min.js
+  7:60   warning  'goog' is not defined        no-undef
+  7:106  warning  'goog' is not defined        no-undef
+  7:180  warning  'angular' is not defined     no-undef
+  7:286  warning  'ngmaterial' is not defined  no-undef
+  7:316  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/fabActions/fabActions.js
+   7:1   warning  'goog' is not defined                   no-undef
+   8:1   warning  'goog' is not defined                   no-undef
+  17:3   warning  'angular' is not defined                no-undef
+  42:34  warning  'attributes' is defined but never used  no-unused-vars
+  60:1   warning  'ngmaterial' is not defined             no-undef
+  60:36  warning  'angular' is not defined                no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/fabActions/fabActions.min.js
+  7:1    warning  'goog' is not defined          no-undef
+  7:50   warning  'goog' is not defined          no-undef
+  7:205  warning  't' is defined but never used  no-unused-vars
+  7:372  warning  'angular' is not defined       no-undef
+  7:470  warning  'ngmaterial' is not defined    no-undef
+  7:503  warning  'angular' is not defined       no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/fabSpeedDial/fabSpeedDial.js
+    7:1   warning  'goog' is not defined        no-undef
+    8:1   warning  'goog' is not defined        no-undef
+   13:3   warning  'angular' is not defined     no-undef
+   65:7   warning  'angular' is not defined     no-undef
+   71:9   warning  'angular' is not defined     no-undef
+  175:9   warning  'angular' is not defined     no-undef
+  185:7   warning  'angular' is not defined     no-undef
+  226:27  warning  'angular' is not defined     no-undef
+  227:7   warning  'angular' is not defined     no-undef
+  240:7   warning  'angular' is not defined     no-undef
+  241:9   warning  'angular' is not defined     no-undef
+  241:25  warning  'angular' is not defined     no-undef
+  323:3   warning  'angular' is not defined     no-undef
+  451:7   warning  'angular' is not defined     no-undef
+  467:9   warning  'angular' is not defined     no-undef
+  536:7   warning  'angular' is not defined     no-undef
+  563:1   warning  'ngmaterial' is not defined  no-undef
+  563:35  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/fabSpeedDial/fabSpeedDial.min.js
+  7:1     warning  'goog' is not defined        no-undef
+  7:49    warning  'goog' is not defined        no-undef
+  7:286   warning  'angular' is not defined     no-undef
+  7:356   warning  'angular' is not defined     no-undef
+  7:1103  warning  'angular' is not defined     no-undef
+  7:1186  warning  'angular' is not defined     no-undef
+  7:1864  warning  'angular' is not defined     no-undef
+  7:1919  warning  'angular' is not defined     no-undef
+  7:2088  warning  'angular' is not defined     no-undef
+  7:2118  warning  'angular' is not defined     no-undef
+  7:2134  warning  'angular' is not defined     no-undef
+  7:2950  warning  'angular' is not defined     no-undef
+  7:3641  warning  'angular' is not defined     no-undef
+  7:3815  warning  'angular' is not defined     no-undef
+  7:4549  warning  'angular' is not defined     no-undef
+  7:4904  warning  'angular' is not defined     no-undef
+  7:5205  warning  'ngmaterial' is not defined  no-undef
+  7:5237  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/fabToolbar/fabToolbar.js
+    7:1   warning  'goog' is not defined                        no-undef
+    8:1   warning  'goog' is not defined                        no-undef
+    9:1   warning  'goog' is not defined                        no-undef
+   10:1   warning  'goog' is not defined                        no-undef
+   18:3   warning  'angular' is not defined                     no-undef
+  104:35  warning  'attributes' is defined but never used       no-unused-vars
+  116:47  warning  'done' is defined but never used             no-unused-vars
+  137:13  warning  'height' is assigned a value but never used  no-unused-vars
+  160:11  warning  'angular' is not defined                     no-undef
+  188:11  warning  'angular' is not defined                     no-undef
+  209:1   warning  'ngmaterial' is not defined                  no-undef
+  209:36  warning  'angular' is not defined                     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/fabToolbar/fabToolbar.min.js
+  7:1     warning  'goog' is not defined          no-undef
+  7:50    warning  'goog' is not defined          no-undef
+  7:99    warning  'goog' is not defined          no-undef
+  7:147   warning  'goog' is not defined          no-undef
+  7:231   warning  'o' is defined but never used  no-unused-vars
+  7:661   warning  'o' is defined but never used  no-unused-vars
+  7:1320  warning  'angular' is not defined       no-undef
+  7:1665  warning  'angular' is not defined       no-undef
+  7:1829  warning  'angular' is not defined       no-undef
+  7:2058  warning  'ngmaterial' is not defined    no-undef
+  7:2091  warning  'angular' is not defined       no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/fabTrigger/fabTrigger.js
+   7:1   warning  'goog' is not defined     no-undef
+   8:1   warning  'goog' is not defined     no-undef
+  16:3   warning  'angular' is not defined  no-undef
+  46:1   warning  'ng' is not defined       no-undef
+  46:37  warning  'angular' is not defined  no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/fabTrigger/fabTrigger.min.js
+  7:1    warning  'goog' is not defined     no-undef
+  7:51   warning  'goog' is not defined     no-undef
+  7:188  warning  'angular' is not defined  no-undef
+  7:286  warning  'ng' is not defined       no-undef
+  7:320  warning  'angular' is not defined  no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/gridList/gridList.js
+    7:1   warning  'goog' is not defined        no-undef
+    8:1   warning  'goog' is not defined        no-undef
+   17:1   warning  'angular' is not defined     no-undef
+  127:28  warning  'angular' is not defined     no-undef
+  145:29  warning  'angular' is not defined     no-undef
+  189:32  warning  'angular' is not defined     no-undef
+  204:28  warning  'angular' is not defined     no-undef
+  375:20  warning  'angular' is not defined     no-undef
+  440:25  warning  'angular' is not defined     no-undef
+  454:20  warning  'angular' is not defined     no-undef
+  476:24  warning  'angular' is not defined     no-undef
+  742:16  warning  'angular' is not defined     no-undef
+  754:9   warning  'angular' is not defined     no-undef
+  774:1   warning  'ngmaterial' is not defined  no-undef
+  774:34  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/gridList/gridList.min.js
+  7:244   warning  'angular' is not defined     no-undef
+  7:493   warning  'angular' is not defined     no-undef
+  7:684   warning  'angular' is not defined     no-undef
+  7:1971  warning  'angular' is not defined     no-undef
+  7:2954  warning  'angular' is not defined     no-undef
+  7:3477  warning  'angular' is not defined     no-undef
+  7:4700  warning  'angular' is not defined     no-undef
+  7:4869  warning  'angular' is not defined     no-undef
+  7:5002  warning  'angular' is not defined     no-undef
+  7:5401  warning  'goog' is not defined        no-undef
+  7:5448  warning  'goog' is not defined        no-undef
+  7:5680  warning  'angular' is not defined     no-undef
+  7:6183  warning  'angular' is not defined     no-undef
+  7:6344  warning  'ngmaterial' is not defined  no-undef
+  7:6375  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/icon/icon.js
+    7:1   warning  'goog' is not defined                                no-undef
+    8:1   warning  'goog' is not defined                                no-undef
+   15:1   warning  'angular' is not defined                             no-undef
+   17:1   warning  'angular' is not defined                             no-undef
+  190:56  warning  '$sce' is defined but never used                     no-unused-vars
+  214:9   warning  'originalSvgSrc' is assigned a value but never used  no-unused-vars
+  296:89  warning  'angular' is not defined                             no-undef
+  720:10  warning  'angular' is not defined                             no-undef
+  749:22  warning  'angular' is not defined                             no-undef
+  753:5   warning  'angular' is not defined                             no-undef
+  768:5   warning  'angular' is not defined                             no-undef
+  834:22  warning  'angular' is not defined                             no-undef
+  842:23  warning  'angular' is not defined                             no-undef
+  848:31  warning  'angular' is not defined                             no-undef
+  866:12  warning  'angular' is not defined                             no-undef
+  866:49  warning  'angular' is not defined                             no-undef
+  874:12  warning  'angular' is not defined                             no-undef
+  893:5   warning  'angular' is not defined                             no-undef
+  916:1   warning  'ngmaterial' is not defined                          no-undef
+  916:30  warning  'angular' is not defined                             no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/icon/icon.min.js
+  7:32    warning  'i' is defined but never used  no-unused-vars
+  7:1145  warning  'angular' is not defined       no-undef
+  7:1360  warning  'angular' is not defined       no-undef
+  7:1443  warning  'angular' is not defined       no-undef
+  7:1591  warning  'angular' is not defined       no-undef
+  7:2200  warning  'angular' is not defined       no-undef
+  7:2284  warning  'angular' is not defined       no-undef
+  7:2380  warning  'angular' is not defined       no-undef
+  7:2517  warning  'angular' is not defined       no-undef
+  7:2547  warning  'angular' is not defined       no-undef
+  7:2615  warning  'angular' is not defined       no-undef
+  7:2901  warning  'angular' is not defined       no-undef
+  7:3355  warning  'goog' is not defined          no-undef
+  7:3398  warning  'goog' is not defined          no-undef
+  7:3430  warning  'angular' is not defined       no-undef
+  7:3491  warning  'angular' is not defined       no-undef
+  7:3693  warning  'angular' is not defined       no-undef
+  7:6614  warning  'ngmaterial' is not defined    no-undef
+  7:6641  warning  'angular' is not defined       no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/input/input.js
+     7:1   warning  'goog' is not defined             no-undef
+     8:1   warning  'goog' is not defined             no-undef
+    22:1   warning  'angular' is not defined          no-undef
+   322:22  warning  'angular' is not defined          no-undef
+   343:24  warning  'angular' is not defined          no-undef
+   391:31  warning  'ev' is defined but never used    no-unused-vars
+   396:30  warning  'ev' is defined but never used    no-unused-vars
+   469:7   warning  'angular' is not defined          no-undef
+   527:9   warning  'angular' is not defined          no-undef
+   545:22  warning  'angular' is not defined          no-undef
+   596:28  warning  'ev' is defined but never used    no-unused-vars
+   647:22  warning  'angular' is not defined          no-undef
+   648:21  warning  'angular' is not defined          no-undef
+   665:13  warning  'angular' is not defined          no-undef
+   676:14  warning  'angular' is not defined          no-undef
+   729:22  warning  'angular' is not defined          no-undef
+   789:37  warning  'attr' is defined but never used  no-unused-vars
+   977:3   warning  'angular' is not defined          no-undef
+   978:28  warning  'angular' is not defined          no-undef
+   990:3   warning  'angular' is not defined          no-undef
+   991:28  warning  'angular' is not defined          no-undef
+  1051:12  warning  'angular' is not defined          no-undef
+  1057:10  warning  'angular' is not defined          no-undef
+  1066:1   warning  'ngmaterial' is not defined       no-undef
+  1066:31  warning  'angular' is not defined          no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/input/input.min.js
+  7:2108   warning  'angular' is not defined       no-undef
+  7:2532   warning  'e' is defined but never used  no-unused-vars
+  7:2621   warning  'angular' is not defined       no-undef
+  7:3327   warning  'angular' is not defined       no-undef
+  7:3618   warning  'angular' is not defined       no-undef
+  7:3965   warning  'angular' is not defined       no-undef
+  7:4471   warning  'n' is defined but never used  no-unused-vars
+  7:4536   warning  'n' is defined but never used  no-unused-vars
+  7:4929   warning  'angular' is not defined       no-undef
+  7:4996   warning  'angular' is not defined       no-undef
+  7:5218   warning  'angular' is not defined       no-undef
+  7:5345   warning  'angular' is not defined       no-undef
+  7:5701   warning  'angular' is not defined       no-undef
+  7:6007   warning  'i' is defined but never used  no-unused-vars
+  7:7683   warning  'angular' is not defined       no-undef
+  7:7738   warning  'angular' is not defined       no-undef
+  7:7870   warning  'angular' is not defined       no-undef
+  7:7925   warning  'angular' is not defined       no-undef
+  7:8792   warning  'angular' is not defined       no-undef
+  7:8903   warning  'angular' is not defined       no-undef
+  7:9048   warning  'goog' is not defined          no-undef
+  7:9092   warning  'goog' is not defined          no-undef
+  7:9675   warning  'angular' is not defined       no-undef
+  7:10674  warning  'ngmaterial' is not defined    no-undef
+  7:10702  warning  'angular' is not defined       no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/list/list.js
+    7:1   warning  'goog' is not defined        no-undef
+    8:1   warning  'goog' is not defined        no-undef
+   18:1   warning  'angular' is not defined     no-undef
+  284:22  warning  'angular' is not defined     no-undef
+  314:27  warning  'angular' is not defined     no-undef
+  319:27  warning  'angular' is not defined     no-undef
+  326:28  warning  'angular' is not defined     no-undef
+  353:37  warning  'angular' is not defined     no-undef
+  355:9   warning  'angular' is not defined     no-undef
+  368:31  warning  'angular' is not defined     no-undef
+  384:11  warning  'angular' is not defined     no-undef
+  409:9   warning  'angular' is not defined     no-undef
+  450:11  warning  'angular' is not defined     no-undef
+  451:21  warning  'angular' is not defined     no-undef
+  474:13  warning  'angular' is not defined     no-undef
+  478:15  warning  'angular' is not defined     no-undef
+  491:41  warning  'angular' is not defined     no-undef
+  543:15  warning  'angular' is not defined     no-undef
+  548:19  warning  'angular' is not defined     no-undef
+  580:1   warning  'ngmaterial' is not defined  no-undef
+  580:30  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/list/list.min.js
+  7:496   warning  'angular' is not defined     no-undef
+  7:853   warning  'angular' is not defined     no-undef
+  7:976   warning  'angular' is not defined     no-undef
+  7:1084  warning  'angular' is not defined     no-undef
+  7:1411  warning  'angular' is not defined     no-undef
+  7:1467  warning  'angular' is not defined     no-undef
+  7:1606  warning  'angular' is not defined     no-undef
+  7:1794  warning  'angular' is not defined     no-undef
+  7:2083  warning  'angular' is not defined     no-undef
+  7:2498  warning  'angular' is not defined     no-undef
+  7:2528  warning  'angular' is not defined     no-undef
+  7:2693  warning  'angular' is not defined     no-undef
+  7:3128  warning  'angular' is not defined     no-undef
+  7:3160  warning  'angular' is not defined     no-undef
+  7:3846  warning  'angular' is not defined     no-undef
+  7:3955  warning  'angular' is not defined     no-undef
+  7:4573  warning  'goog' is not defined        no-undef
+  7:4616  warning  'goog' is not defined        no-undef
+  7:4828  warning  'angular' is not defined     no-undef
+  7:5017  warning  'ngmaterial' is not defined  no-undef
+  7:5044  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/menu/menu.js
+     7:1   warning  'goog' is not defined        no-undef
+     8:1   warning  'goog' is not defined        no-undef
+     9:1   warning  'goog' is not defined        no-undef
+    15:1   warning  'angular' is not defined     no-undef
+    23:1   warning  'angular' is not defined     no-undef
+    62:5   warning  'angular' is not defined     no-undef
+    67:28  warning  'angular' is not defined     no-undef
+    91:17  warning  'angular' is not defined     no-undef
+   112:22  warning  'angular' is not defined     no-undef
+   171:7   warning  'angular' is not defined     no-undef
+   207:24  warning  'angular' is not defined     no-undef
+   213:25  warning  'angular' is not defined     no-undef
+   417:1   warning  'angular' is not defined     no-undef
+   460:7   warning  'angular' is not defined     no-undef
+   475:25  warning  'angular' is not defined     no-undef
+   497:53  warning  'angular' is not defined     no-undef
+   543:37  warning  'angular' is not defined     no-undef
+   658:9   warning  'angular' is not defined     no-undef
+   661:19  warning  'angular' is not defined     no-undef
+   662:19  warning  'angular' is not defined     no-undef
+   663:26  warning  'angular' is not defined     no-undef
+  1018:23  warning  'angular' is not defined     no-undef
+  1025:1   warning  'ngmaterial' is not defined  no-undef
+  1025:30  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/menu/menu.min.js
+  7:577    warning  'angular' is not defined     no-undef
+  7:658    warning  'angular' is not defined     no-undef
+  7:1126   warning  'angular' is not defined     no-undef
+  7:1592   warning  'angular' is not defined     no-undef
+  7:2569   warning  'angular' is not defined     no-undef
+  7:3222   warning  'angular' is not defined     no-undef
+  7:3364   warning  'angular' is not defined     no-undef
+  7:4300   warning  'angular' is not defined     no-undef
+  7:4550   warning  'angular' is not defined     no-undef
+  7:5063   warning  'angular' is not defined     no-undef
+  7:6006   warning  'angular' is not defined     no-undef
+  7:6059   warning  'angular' is not defined     no-undef
+  7:6092   warning  'angular' is not defined     no-undef
+  7:6132   warning  'angular' is not defined     no-undef
+  7:11284  warning  'angular' is not defined     no-undef
+  7:11493  warning  'goog' is not defined        no-undef
+  7:11536  warning  'goog' is not defined        no-undef
+  7:11583  warning  'goog' is not defined        no-undef
+  7:11615  warning  'angular' is not defined     no-undef
+  7:11810  warning  'angular' is not defined     no-undef
+  7:11927  warning  'angular' is not defined     no-undef
+  7:12054  warning  'angular' is not defined     no-undef
+  7:12130  warning  'ngmaterial' is not defined  no-undef
+  7:12157  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/menuBar/menuBar.js
+    7:1   warning  'goog' is not defined                          no-undef
+    8:1   warning  'goog' is not defined                          no-undef
+    9:1   warning  'goog' is not defined                          no-undef
+   10:1   warning  'goog' is not defined                          no-undef
+   16:1   warning  'angular' is not defined                       no-undef
+   24:1   warning  'angular' is not defined                       no-undef
+   44:3   warning  'angular' is not defined                       no-undef
+   45:24  warning  'angular' is not defined                       no-undef
+  118:7   warning  'angular' is not defined                       no-undef
+  122:3   warning  'angular' is not defined                       no-undef
+  141:5   warning  'angular' is not defined                       no-undef
+  144:3   warning  'angular' is not defined                       no-undef
+  150:16  warning  'angular' is not defined                       no-undef
+  193:23  warning  'angular' is not defined                       no-undef
+  201:23  warning  'angular' is not defined                       no-undef
+  237:11  warning  'angular' is not defined                       no-undef
+  274:5   warning  'angular' is not defined                       no-undef
+  375:1   warning  'angular' is not defined                       no-undef
+  390:7   warning  'angular' is not defined                       no-undef
+  400:11  warning  'angular' is not defined                       no-undef
+  428:1   warning  'angular' is not defined                       no-undef
+  446:1   warning  'angular' is not defined                       no-undef
+  483:3   warning  'angular' is not defined                       no-undef
+  493:7   warning  '$element' is assigned a value but never used  no-unused-vars
+  496:22  warning  'angular' is not defined                       no-undef
+  499:16  warning  'angular' is not defined                       no-undef
+  536:53  warning  'e' is defined but never used                  no-unused-vars
+  552:1   warning  'angular' is not defined                       no-undef
+  570:24  warning  'angular' is not defined                       no-undef
+  577:27  warning  'angular' is not defined                       no-undef
+  597:27  warning  'angular' is not defined                       no-undef
+  608:9   warning  'angular' is not defined                       no-undef
+  620:1   warning  'ngmaterial' is not defined                    no-undef
+  620:33  warning  'angular' is not defined                       no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/menuBar/menuBar.min.js
+  7:185   warning  'angular' is not defined       no-undef
+  7:237   warning  'angular' is not defined       no-undef
+  7:439   warning  'angular' is not defined       no-undef
+  7:726   warning  'angular' is not defined       no-undef
+  7:1360  warning  'angular' is not defined       no-undef
+  7:1459  warning  'angular' is not defined       no-undef
+  7:1762  warning  'angular' is not defined       no-undef
+  7:1925  warning  'angular' is not defined       no-undef
+  7:2130  warning  'goog' is not defined          no-undef
+  7:2176  warning  'goog' is not defined          no-undef
+  7:2219  warning  'goog' is not defined          no-undef
+  7:2262  warning  'goog' is not defined          no-undef
+  7:2294  warning  'angular' is not defined       no-undef
+  7:2529  warning  'angular' is not defined       no-undef
+  7:4086  warning  'angular' is not defined       no-undef
+  7:4157  warning  'angular' is not defined       no-undef
+  7:4551  warning  'angular' is not defined       no-undef
+  7:4624  warning  'angular' is not defined       no-undef
+  7:4768  warning  'angular' is not defined       no-undef
+  7:5495  warning  'angular' is not defined       no-undef
+  7:5617  warning  'angular' is not defined       no-undef
+  7:6140  warning  'angular' is not defined       no-undef
+  7:6940  warning  'angular' is not defined       no-undef
+  7:7039  warning  'angular' is not defined       no-undef
+  7:7125  warning  'angular' is not defined       no-undef
+  7:7277  warning  'angular' is not defined       no-undef
+  7:7743  warning  'angular' is not defined       no-undef
+  7:8120  warning  'angular' is not defined       no-undef
+  7:8176  warning  'angular' is not defined       no-undef
+  7:8491  warning  'e' is defined but never used  no-unused-vars
+  7:8723  warning  'angular' is not defined       no-undef
+  7:8811  warning  'ngmaterial' is not defined    no-undef
+  7:8841  warning  'angular' is not defined       no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/navBar/navBar.js
+    7:1   warning  'goog' is not defined        no-undef
+    8:1   warning  'goog' is not defined        no-undef
+   19:1   warning  'angular' is not defined     no-undef
+  134:52  warning  'angular' is not defined     no-undef
+  200:18  warning  'angular' is not defined     no-undef
+  272:12  warning  'angular' is not defined     no-undef
+  439:28  warning  'angular' is not defined     no-undef
+  443:25  warning  'angular' is not defined     no-undef
+  551:1   warning  'ngmaterial' is not defined  no-undef
+  551:32  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/navBar/navBar.min.js
+  7:555   warning  'angular' is not defined     no-undef
+  7:1900  warning  'angular' is not defined     no-undef
+  7:1981  warning  'angular' is not defined     no-undef
+  7:2446  warning  'goog' is not defined        no-undef
+  7:2491  warning  'goog' is not defined        no-undef
+  7:2708  warning  'angular' is not defined     no-undef
+  7:3004  warning  'angular' is not defined     no-undef
+  7:3983  warning  'angular' is not defined     no-undef
+  7:5828  warning  'ngmaterial' is not defined  no-undef
+  7:5857  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/panel/panel.js
+     7:1   warning  'goog' is not defined        no-undef
+     8:1   warning  'goog' is not defined        no-undef
+     9:1   warning  'goog' is not defined        no-undef
+    15:1   warning  'angular' is not defined     no-undef
+   681:27  warning  'angular' is not defined     no-undef
+   711:24  warning  'angular' is not defined     no-undef
+   766:7   warning  'angular' is not defined     no-undef
+   776:3   warning  'angular' is not defined     no-undef
+   978:51  warning  'angular' is not defined     no-undef
+  1008:53  warning  'angular' is not defined     no-undef
+  1079:59  warning  'angular' is not defined     no-undef
+  1111:51  warning  'angular' is not defined     no-undef
+  1254:26  warning  'angular' is not defined     no-undef
+  1530:24  warning  'angular' is not defined     no-undef
+  1810:27  warning  'angular' is not defined     no-undef
+  2347:7   warning  'angular' is not defined     no-undef
+  2347:42  warning  'angular' is not defined     no-undef
+  2429:11  warning  'angular' is not defined     no-undef
+  2492:11  warning  'angular' is not defined     no-undef
+  2540:26  warning  'angular' is not defined     no-undef
+  2559:21  warning  'angular' is not defined     no-undef
+  2561:10  warning  'angular' is not defined     no-undef
+  2564:1   warning  'ngmaterial' is not defined  no-undef
+  2564:31  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/panel/panel.min.js
+  7:235    warning  'angular' is not defined     no-undef
+  7:1494   warning  'angular' is not defined     no-undef
+  7:1549   warning  'angular' is not defined     no-undef
+  7:1568   warning  'goog' is not defined        no-undef
+  7:1612   warning  'goog' is not defined        no-undef
+  7:1659   warning  'goog' is not defined        no-undef
+  7:1766   warning  'angular' is not defined     no-undef
+  7:1970   warning  'angular' is not defined     no-undef
+  7:2098   warning  'angular' is not defined     no-undef
+  7:2316   warning  'angular' is not defined     no-undef
+  7:3454   warning  'angular' is not defined     no-undef
+  7:3753   warning  'angular' is not defined     no-undef
+  7:4782   warning  'angular' is not defined     no-undef
+  7:5227   warning  'angular' is not defined     no-undef
+  7:7435   warning  'angular' is not defined     no-undef
+  7:10736  warning  'angular' is not defined     no-undef
+  7:13447  warning  'angular' is not defined     no-undef
+  7:18625  warning  'angular' is not defined     no-undef
+  7:18651  warning  'angular' is not defined     no-undef
+  7:19543  warning  'angular' is not defined     no-undef
+  7:20456  warning  'angular' is not defined     no-undef
+  7:21162  warning  'angular' is not defined     no-undef
+  7:21233  warning  'ngmaterial' is not defined  no-undef
+  7:21261  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/progressCircular/progressCircular.js
+    7:1   warning  'goog' is not defined                      no-undef
+    8:1   warning  'goog' is not defined                      no-undef
+   15:1   warning  'angular' is not defined                   no-undef
+   63:1   warning  'angular' is not defined                   no-undef
+   69:58  warning  '$log' is defined but never used           no-unused-vars
+   75:13  warning  'angular' is not defined                   no-undef
+   80:13  warning  'angular' is not defined                   no-undef
+  106:11  warning  'angular' is not defined                   no-undef
+  107:24  warning  'angular' is not defined                   no-undef
+  109:13  warning  'info' is assigned a value but never used  no-unused-vars
+  123:15  warning  'angular' is not defined                   no-undef
+  124:16  warning  'angular' is not defined                   no-undef
+  158:14  warning  'angular' is not defined                   no-undef
+  423:1   warning  'angular' is not defined                   no-undef
+  447:24  warning  'angular' is not defined                   no-undef
+  466:1   warning  'ngmaterial' is not defined                no-undef
+  466:42  warning  'angular' is not defined                   no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/progressCircular/progressCircular.min.js
+  7:48    warning  'i' is defined but never used  no-unused-vars
+  7:591   warning  'angular' is not defined       no-undef
+  7:633   warning  'angular' is not defined       no-undef
+  7:921   warning  'angular' is not defined       no-undef
+  7:1923  warning  'angular' is not defined       no-undef
+  7:2029  warning  'angular' is not defined       no-undef
+  7:2386  warning  'angular' is not defined       no-undef
+  7:2423  warning  'angular' is not defined       no-undef
+  7:2904  warning  'angular' is not defined       no-undef
+  7:2956  warning  'goog' is not defined          no-undef
+  7:3011  warning  'goog' is not defined          no-undef
+  7:3043  warning  'angular' is not defined       no-undef
+  7:3228  warning  'angular' is not defined       no-undef
+  7:3343  warning  'angular' is not defined       no-undef
+  7:3457  warning  'ngmaterial' is not defined    no-undef
+  7:3496  warning  'angular' is not defined       no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/progressLinear/progressLinear.js
+    7:1   warning  'goog' is not defined                      no-undef
+    8:1   warning  'goog' is not defined                      no-undef
+   15:1   warning  'angular' is not defined                   no-undef
+   69:57  warning  '$log' is defined but never used           no-unused-vars
+   86:38  warning  'transclude' is defined but never used     no-unused-vars
+   99:16  warning  'angular' is not defined                   no-undef
+  100:16  warning  'angular' is not defined                   no-undef
+  101:21  warning  'angular' is not defined                   no-undef
+  129:24  warning  'angular' is not defined                   no-undef
+  157:12  warning  'angular' is not defined                   no-undef
+  158:24  warning  'angular' is not defined                   no-undef
+  160:13  warning  'info' is assigned a value but never used  no-unused-vars
+  198:7   warning  'angular' is not defined                   no-undef
+  213:1   warning  'ngmaterial' is not defined                no-undef
+  213:40  warning  'angular' is not defined                   no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/progressLinear/progressLinear.min.js
+  7:40    warning  'r' is defined but never used  no-unused-vars
+  7:58    warning  'r' is defined but never used  no-unused-vars
+  7:375   warning  'angular' is not defined       no-undef
+  7:614   warning  'angular' is not defined       no-undef
+  7:651   warning  'angular' is not defined       no-undef
+  7:944   warning  'angular' is not defined       no-undef
+  7:1038  warning  'angular' is not defined       no-undef
+  7:1088  warning  'angular' is not defined       no-undef
+  7:1138  warning  'angular' is not defined       no-undef
+  7:1554  warning  'goog' is not defined          no-undef
+  7:1607  warning  'goog' is not defined          no-undef
+  7:1705  warning  'angular' is not defined       no-undef
+  7:1832  warning  'ngmaterial' is not defined    no-undef
+  7:1869  warning  'angular' is not defined       no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/radioButton/radioButton.js
+    7:1   warning  'goog' is not defined              no-undef
+    8:1   warning  'goog' is not defined              no-undef
+   16:1   warning  'angular' is not defined           no-undef
+   89:33  warning  'event' is defined but never used  no-unused-vars
+  142:22  warning  'angular' is not defined           no-undef
+  161:37  warning  'angular' is not defined           no-undef
+  210:17  warning  'angular' is not defined           no-undef
+  217:7   warning  'angular' is not defined           no-undef
+  377:1   warning  'ngmaterial' is not defined        no-undef
+  377:37  warning  'angular' is not defined           no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/radioButton/radioButton.min.js
+  7:451   warning  'angular' is not defined       no-undef
+  7:720   warning  'e' is defined but never used  no-unused-vars
+  7:1059  warning  'angular' is not defined       no-undef
+  7:1838  warning  'angular' is not defined       no-undef
+  7:1969  warning  'angular' is not defined       no-undef
+  7:3181  warning  'goog' is not defined          no-undef
+  7:3231  warning  'goog' is not defined          no-undef
+  7:3409  warning  'angular' is not defined       no-undef
+  7:3575  warning  'ngmaterial' is not defined    no-undef
+  7:3609  warning  'angular' is not defined       no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/select/select.js
+     7:1   warning  'goog' is not defined                                 no-undef
+     8:1   warning  'goog' is not defined                                 no-undef
+     9:1   warning  'goog' is not defined                                 no-undef
+    29:3   warning  'angular' is not defined                              no-undef
+    31:1   warning  'angular' is not defined                              no-undef
+   192:7   warning  'NAVIGATION_KEYS' is assigned a value but never used  no-unused-vars
+   204:19  warning  'angular' is not defined                              no-undef
+   213:22  warning  'angular' is not defined                              no-undef
+   224:18  warning  'angular' is not defined                              no-undef
+   237:27  warning  'angular' is not defined                              no-undef
+   244:7   warning  'angular' is not defined                              no-undef
+   245:21  warning  'angular' is not defined                              no-undef
+   290:24  warning  'angular' is not defined                              no-undef
+   323:23  warning  'angular' is not defined                              no-undef
+   382:33  warning  'ev' is defined but never used                        no-unused-vars
+   469:13  warning  'angular' is not defined                              no-undef
+   534:27  warning  'angular' is not defined                              no-undef
+   560:30  warning  'angular' is not defined                              no-undef
+   628:34  warning  'angular' is not defined                              no-undef
+   636:24  warning  'angular' is not defined                              no-undef
+   658:23  warning  'angular' is not defined                              no-undef
+   702:16  warning  'angular' is not defined                              no-undef
+   727:9   warning  'angular' is not defined                              no-undef
+   762:15  warning  'angular' is not defined                              no-undef
+   825:11  warning  'angular' is not defined                              no-undef
+   833:11  warning  'angular' is not defined                              no-undef
+   840:13  warning  'angular' is not defined                              no-undef
+   874:27  warning  'angular' is not defined                              no-undef
+   882:12  warning  'angular' is not defined                              no-undef
+   918:20  warning  'angular' is not defined                              no-undef
+   945:9   warning  'angular' is not defined                              no-undef
+   947:16  warning  'angular' is not defined                              no-undef
+   965:14  warning  'angular' is not defined                              no-undef
+  1055:24  warning  'angular' is not defined                              no-undef
+  1255:9   warning  'angular' is not defined                              no-undef
+  1257:19  warning  'angular' is not defined                              no-undef
+  1258:19  warning  'angular' is not defined                              no-undef
+  1284:22  warning  'angular' is not defined                              no-undef
+  1604:20  warning  'angular' is not defined                              no-undef
+  1613:20  warning  'angular' is not defined                              no-undef
+  1626:19  warning  'angular' is not defined                              no-undef
+  1662:1   warning  'ngmaterial' is not defined                           no-undef
+  1662:32  warning  'angular' is not defined                              no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/select/select.min.js
+  7:63     warning  'angular' is not defined       no-undef
+  7:342    warning  'angular' is not defined       no-undef
+  7:438    warning  'angular' is not defined       no-undef
+  7:668    warning  'angular' is not defined       no-undef
+  7:806    warning  'angular' is not defined       no-undef
+  7:842    warning  'angular' is not defined       no-undef
+  7:1863   warning  'angular' is not defined       no-undef
+  7:2358   warning  'angular' is not defined       no-undef
+  7:2914   warning  'angular' is not defined       no-undef
+  7:3397   warning  'angular' is not defined       no-undef
+  7:4120   warning  'e' is defined but never used  no-unused-vars
+  7:4772   warning  'angular' is not defined       no-undef
+  7:5847   warning  'angular' is not defined       no-undef
+  7:6002   warning  'angular' is not defined       no-undef
+  7:6349   warning  'angular' is not defined       no-undef
+  7:6696   warning  'angular' is not defined       no-undef
+  7:6891   warning  'angular' is not defined       no-undef
+  7:7492   warning  'angular' is not defined       no-undef
+  7:7886   warning  'angular' is not defined       no-undef
+  7:8720   warning  'angular' is not defined       no-undef
+  7:8879   warning  'angular' is not defined       no-undef
+  7:8934   warning  'angular' is not defined       no-undef
+  7:9332   warning  'angular' is not defined       no-undef
+  7:9594   warning  'angular' is not defined       no-undef
+  7:10239  warning  'angular' is not defined       no-undef
+  7:10290  warning  'angular' is not defined       no-undef
+  7:10520  warning  'angular' is not defined       no-undef
+  7:11267  warning  'angular' is not defined       no-undef
+  7:12873  warning  'angular' is not defined       no-undef
+  7:12911  warning  'angular' is not defined       no-undef
+  7:12944  warning  'angular' is not defined       no-undef
+  7:13255  warning  'angular' is not defined       no-undef
+  7:17536  warning  'angular' is not defined       no-undef
+  7:17701  warning  'angular' is not defined       no-undef
+  7:18041  warning  'angular' is not defined       no-undef
+  7:18578  warning  'goog' is not defined          no-undef
+  7:18623  warning  'goog' is not defined          no-undef
+  7:18670  warning  'goog' is not defined          no-undef
+  7:19061  warning  'angular' is not defined       no-undef
+  7:19140  warning  'angular' is not defined       no-undef
+  7:19485  warning  'ngmaterial' is not defined    no-undef
+  7:19514  warning  'angular' is not defined       no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/showHide/showHide.js
+   7:1   warning  'goog' is not defined        no-undef
+   8:1   warning  'goog' is not defined        no-undef
+  17:1   warning  'angular' is not defined     no-undef
+  58:1   warning  'ngmaterial' is not defined  no-undef
+  58:34  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/showHide/showHide.min.js
+  7:461  warning  'goog' is not defined        no-undef
+  7:508  warning  'goog' is not defined        no-undef
+  7:540  warning  'angular' is not defined     no-undef
+  7:703  warning  'ngmaterial' is not defined  no-undef
+  7:734  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/sidenav/sidenav.js
+    7:1   warning  'goog' is not defined                    no-undef
+    8:1   warning  'goog' is not defined                    no-undef
+    9:1   warning  'goog' is not defined                    no-undef
+   20:1   warning  'angular' is not defined                 no-undef
+   99:10  warning  'angular' is not defined                 no-undef
+  104:26  warning  'angular' is not defined                 no-undef
+  117:14  warning  'angular' is not defined                 no-undef
+  123:24  warning  'angular' is not defined                 no-undef
+  126:31  warning  'angular' is not defined                 no-undef
+  184:42  warning  'sidenavCtrl' is defined but never used  no-unused-vars
+  297:31  warning  'angular' is not defined                 no-undef
+  437:18  warning  'angular' is not defined                 no-undef
+  536:1   warning  'ngmaterial' is not defined              no-undef
+  536:33  warning  'angular' is not defined                 no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/sidenav/sidenav.min.js
+  7:135   warning  'angular' is not defined       no-undef
+  7:207   warning  'angular' is not defined       no-undef
+  7:257   warning  'angular' is not defined       no-undef
+  7:526   warning  'angular' is not defined       no-undef
+  7:614   warning  'angular' is not defined       no-undef
+  7:741   warning  'o' is defined but never used  no-unused-vars
+  7:1768  warning  'angular' is not defined       no-undef
+  7:2425  warning  'angular' is not defined       no-undef
+  7:3484  warning  'goog' is not defined          no-undef
+  7:3530  warning  'goog' is not defined          no-undef
+  7:3577  warning  'goog' is not defined          no-undef
+  7:3894  warning  'angular' is not defined       no-undef
+  7:4169  warning  'ngmaterial' is not defined    no-undef
+  7:4199  warning  'angular' is not defined       no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/slider/slider.js
+    7:1   warning  'goog' is not defined                                   no-undef
+    8:1   warning  'goog' is not defined                                   no-undef
+   14:3   warning  'angular' is not defined                                no-undef
+   65:33  warning  'angular' is not defined                                no-undef
+  177:19  warning  'angular' is not defined                                no-undef
+  206:9   warning  'container' is assigned a value but never used          no-unused-vars
+  206:21  warning  'angular' is not defined                                no-undef
+  207:40  warning  'angular' is not defined                                no-undef
+  211:17  warning  'angular' is not defined                                no-undef
+  212:21  warning  'angular' is not defined                                no-undef
+  214:26  warning  'angular' is not defined                                no-undef
+  215:23  warning  'angular' is not defined                                no-undef
+  216:25  warning  'angular' is not defined                                no-undef
+  217:19  warning  'angular' is not defined                                no-undef
+  218:9   warning  'content' is assigned a value but never used            no-unused-vars
+  218:19  warning  'angular' is not defined                                no-undef
+  223:20  warning  'angular' is not defined                                no-undef
+  224:20  warning  'angular' is not defined                                no-undef
+  225:18  warning  'angular' is not defined                                no-undef
+  226:5   warning  'angular' is not defined                                no-undef
+  227:5   warning  'angular' is not defined                                no-undef
+  228:5   warning  'angular' is not defined                                no-undef
+  229:5   warning  'angular' is not defined                                no-undef
+  234:9   warning  'stopDisabledWatch' is assigned a value but never used  no-unused-vars
+  234:29  warning  'angular' is not defined                                no-undef
+  262:5   warning  'angular' is not defined                                no-undef
+  265:7   warning  'angular' is not defined                                no-undef
+  307:12  warning  'angular' is not defined                                no-undef
+  317:22  warning  'angular' is not defined                                no-undef
+  437:11  warning  'angular' is not defined                                no-undef
+  438:20  warning  'angular' is not defined                                no-undef
+  439:20  warning  'angular' is not defined                                no-undef
+  446:11  warning  'angular' is not defined                                no-undef
+  606:1   warning  'ngmaterial' is not defined                             no-undef
+  606:32  warning  'angular' is not defined                                no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/slider/slider.min.js
+  7:349   warning  'angular' is not defined                 no-undef
+  7:796   warning  'angular' is not defined                 no-undef
+  7:1307  warning  'angular' is not defined                 no-undef
+  7:1483  warning  'angular' is not defined                 no-undef
+  7:2813  warning  'angular' is not defined                 no-undef
+  7:2842  warning  'angular' is not defined                 no-undef
+  7:2869  warning  'angular' is not defined                 no-undef
+  7:2937  warning  'angular' is not defined                 no-undef
+  7:4492  warning  'angular' is not defined                 no-undef
+  7:4564  warning  'angular' is not defined                 no-undef
+  7:4661  warning  'angular' is not defined                 no-undef
+  7:4712  warning  'angular' is not defined                 no-undef
+  7:4781  warning  'angular' is not defined                 no-undef
+  7:4842  warning  'angular' is not defined                 no-undef
+  7:4898  warning  'angular' is not defined                 no-undef
+  7:4955  warning  'angular' is not defined                 no-undef
+  7:5025  warning  'angular' is not defined                 no-undef
+  7:5118  warning  'angular' is not defined                 no-undef
+  7:5153  warning  'angular' is not defined                 no-undef
+  7:5188  warning  'angular' is not defined                 no-undef
+  7:5218  warning  'angular' is not defined                 no-undef
+  7:5268  warning  'angular' is not defined                 no-undef
+  7:5320  warning  'angular' is not defined                 no-undef
+  7:5372  warning  'angular' is not defined                 no-undef
+  7:5431  warning  're' is assigned a value but never used  no-unused-vars
+  7:5434  warning  'angular' is not defined                 no-undef
+  7:5755  warning  'angular' is not defined                 no-undef
+  7:5818  warning  'angular' is not defined                 no-undef
+  7:6515  warning  'goog' is not defined                    no-undef
+  7:6560  warning  'goog' is not defined                    no-undef
+  7:6723  warning  'angular' is not defined                 no-undef
+  7:6880  warning  'ngmaterial' is not defined              no-undef
+  7:6909  warning  'angular' is not defined                 no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/sticky/sticky.js
+    7:1   warning  'goog' is not defined        no-undef
+    8:1   warning  'goog' is not defined        no-undef
+    9:1   warning  'goog' is not defined        no-undef
+   18:1   warning  'angular' is not defined     no-undef
+  364:1   warning  'ngmaterial' is not defined  no-undef
+  364:32  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/sticky/sticky.min.js
+  7:2676  warning  'goog' is not defined        no-undef
+  7:2721  warning  'goog' is not defined        no-undef
+  7:2767  warning  'goog' is not defined        no-undef
+  7:2861  warning  'angular' is not defined     no-undef
+  7:2984  warning  'ngmaterial' is not defined  no-undef
+  7:3013  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/subheader/subheader.js
+    7:1   warning  'goog' is not defined        no-undef
+    8:1   warning  'goog' is not defined        no-undef
+    9:1   warning  'goog' is not defined        no-undef
+   29:1   warning  'angular' is not defined     no-undef
+   88:16  warning  'angular' is not defined     no-undef
+  126:1   warning  'ngmaterial' is not defined  no-undef
+  126:35  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/subheader/subheader.min.js
+  7:265  warning  'angular' is not defined     no-undef
+  7:603  warning  'goog' is not defined        no-undef
+  7:651  warning  'goog' is not defined        no-undef
+  7:696  warning  'goog' is not defined        no-undef
+  7:805  warning  'angular' is not defined     no-undef
+  7:946  warning  'ngmaterial' is not defined  no-undef
+  7:978  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/swipe/swipe.js
+    7:1   warning  'goog' is not defined        no-undef
+    8:1   warning  'goog' is not defined        no-undef
+   79:1   warning  'angular' is not defined     no-undef
+  106:1   warning  'ngmaterial' is not defined  no-undef
+  106:31  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/swipe/swipe.min.js
+  7:232  warning  'goog' is not defined        no-undef
+  7:276  warning  'goog' is not defined        no-undef
+  7:308  warning  'angular' is not defined     no-undef
+  7:572  warning  'ngmaterial' is not defined  no-undef
+  7:600  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/switch/switch.js
+    7:1   warning  'goog' is not defined        no-undef
+    8:1   warning  'goog' is not defined        no-undef
+    9:1   warning  'goog' is not defined        no-undef
+   16:1   warning  'angular' is not defined     no-undef
+   93:28  warning  'angular' is not defined     no-undef
+   94:29  warning  'angular' is not defined     no-undef
+  177:1   warning  'ngmaterial' is not defined  no-undef
+  177:32  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/switch/switch.min.js
+  7:861   warning  'angular' is not defined     no-undef
+  7:922   warning  'angular' is not defined     no-undef
+  7:1476  warning  'goog' is not defined        no-undef
+  7:1521  warning  'goog' is not defined        no-undef
+  7:1568  warning  'goog' is not defined        no-undef
+  7:1706  warning  'angular' is not defined     no-undef
+  7:1831  warning  'ngmaterial' is not defined  no-undef
+  7:1863  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/tabs/tabs.js
+     7:1    warning  'goog' is not defined                          no-undef
+     8:1    warning  'goog' is not defined                          no-undef
+     9:1    warning  'goog' is not defined                          no-undef
+    33:1    warning  'angular' is not defined                       no-undef
+    89:1    warning  'angular' is not defined                       no-undef
+   102:17   warning  'angular' is not defined                       no-undef
+   108:26   warning  'angular' is not defined                       no-undef
+   140:38   warning  'angular' is not defined                       no-undef
+   141:40   warning  'angular' is not defined                       no-undef
+   161:59   warning  'angular' is not defined                       no-undef
+   163:12   warning  'angular' is not defined                       no-undef
+   167:1    warning  'angular' is not defined                       no-undef
+   181:1    warning  'angular' is not defined                       no-undef
+   191:34   warning  'angular' is not defined                       no-undef
+   209:158  warning  'angular' is not defined                       no-undef
+   221:7    warning  'elements' is assigned a value but never used  no-unused-vars
+   306:20   warning  'angular' is not defined                       no-undef
+   317:5    warning  'angular' is not defined                       no-undef
+   360:5    warning  'angular' is not defined                       no-undef
+   369:31   warning  'stretchTabs' is defined but never used        no-unused-vars
+   371:5    warning  'angular' is not defined                       no-undef
+   375:30   warning  'newValue' is defined but never used           no-unused-vars
+   383:7    warning  'angular' is not defined                       no-undef
+   417:5    warning  'angular' is not defined                       no-undef
+   593:5    warning  'angular' is not defined                       no-undef
+   645:21   warning  'angular' is not defined                       no-undef
+   646:9    warning  'angular' is not defined                       no-undef
+   737:5    warning  'angular' is not defined                       no-undef
+   798:7    warning  'angular' is not defined                       no-undef
+   800:7    warning  'angular' is not defined                       no-undef
+   815:5    warning  'angular' is not defined                       no-undef
+   898:5    warning  'angular' is not defined                       no-undef
+   983:7    warning  'angular' is not defined                       no-undef
+  1007:5    warning  'angular' is not defined                       no-undef
+  1017:20   warning  'angular' is not defined                       no-undef
+  1018:10   warning  'angular' is not defined                       no-undef
+  1047:35   warning  'angular' is not defined                       no-undef
+  1151:1    warning  'angular' is not defined                       no-undef
+  1268:53   warning  'angular' is not defined                       no-undef
+  1325:50   warning  'angular' is not defined                       no-undef
+  1365:1    warning  'ngmaterial' is not defined                    no-undef
+  1365:30   warning  'angular' is not defined                       no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/tabs/tabs.min.js
+  7:249    warning  'angular' is not defined                 no-undef
+  7:285    warning  'angular' is not defined                 no-undef
+  7:663    warning  'angular' is not defined                 no-undef
+  7:689    warning  'angular' is not defined                 no-undef
+  7:833    warning  'angular' is not defined                 no-undef
+  7:973    warning  'angular' is not defined                 no-undef
+  7:1781   warning  'angular' is not defined                 no-undef
+  7:1907   warning  'angular' is not defined                 no-undef
+  7:2253   warning  'angular' is not defined                 no-undef
+  7:2299   warning  'e' is defined but never used            no-unused-vars
+  7:2312   warning  'angular' is not defined                 no-undef
+  7:2390   warning  'e' is defined but never used            no-unused-vars
+  7:2453   warning  'angular' is not defined                 no-undef
+  7:2805   warning  'angular' is not defined                 no-undef
+  7:4586   warning  'angular' is not defined                 no-undef
+  7:5375   warning  'angular' is not defined                 no-undef
+  7:5402   warning  'angular' is not defined                 no-undef
+  7:6449   warning  'angular' is not defined                 no-undef
+  7:6934   warning  'angular' is not defined                 no-undef
+  7:6976   warning  'angular' is not defined                 no-undef
+  7:7088   warning  'angular' is not defined                 no-undef
+  7:7951   warning  'angular' is not defined                 no-undef
+  7:8730   warning  'angular' is not defined                 no-undef
+  7:9044   warning  'angular' is not defined                 no-undef
+  7:9170   warning  'angular' is not defined                 no-undef
+  7:9196   warning  'angular' is not defined                 no-undef
+  7:9508   warning  'angular' is not defined                 no-undef
+  7:9569   warning  'le' is assigned a value but never used  no-unused-vars
+  7:14725  warning  'goog' is not defined                    no-undef
+  7:14768  warning  'goog' is not defined                    no-undef
+  7:14811  warning  'goog' is not defined                    no-undef
+  7:14843  warning  'angular' is not defined                 no-undef
+  7:14931  warning  'angular' is not defined                 no-undef
+  7:14999  warning  'angular' is not defined                 no-undef
+  7:15075  warning  'angular' is not defined                 no-undef
+  7:15184  warning  'angular' is not defined                 no-undef
+  7:15410  warning  'angular' is not defined                 no-undef
+  7:15536  warning  'angular' is not defined                 no-undef
+  7:15655  warning  'angular' is not defined                 no-undef
+  7:15795  warning  'angular' is not defined                 no-undef
+  7:15881  warning  'ngmaterial' is not defined              no-undef
+  7:15908  warning  'angular' is not defined                 no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/textField/textField.js
+    7:1   warning  'goog' is not defined          no-undef
+    8:1   warning  'goog' is not defined          no-undef
+   18:1   warning  'ng' is not defined            no-undef
+   18:36  warning  'angular' is not defined       no-undef
+   40:12  warning  'angular' is not defined       no-undef
+  119:31  warning  'e' is defined but never used  no-unused-vars
+  123:30  warning  'e' is defined but never used  no-unused-vars
+  136:17  warning  'angular' is not defined       no-undef
+  137:17  warning  'angular' is not defined       no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/toast/toast.js
+    7:1   warning  'goog' is not defined                no-undef
+    8:1   warning  'goog' is not defined                no-undef
+    9:1   warning  'goog' is not defined                no-undef
+   18:1   warning  'angular' is not defined             no-undef
+  393:29  warning  'angular' is not defined             no-undef
+  397:30  warning  'angular' is not defined             no-undef
+  421:38  warning  'gesture' is defined but never used  no-unused-vars
+  490:1   warning  'ngmaterial' is not defined          no-undef
+  490:31  warning  'angular' is not defined             no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/toast/toast.min.js
+  7:342   warning  'o' is defined but never used  no-unused-vars
+  7:1819  warning  'angular' is not defined       no-undef
+  7:1878  warning  'angular' is not defined       no-undef
+  7:3137  warning  'goog' is not defined          no-undef
+  7:3181  warning  'goog' is not defined          no-undef
+  7:3226  warning  'goog' is not defined          no-undef
+  7:3349  warning  'angular' is not defined       no-undef
+  7:3515  warning  'ngmaterial' is not defined    no-undef
+  7:3543  warning  'angular' is not defined       no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/toolbar/toolbar.js
+    7:1   warning  'goog' is not defined        no-undef
+    8:1   warning  'goog' is not defined        no-undef
+    9:1   warning  'goog' is not defined        no-undef
+   15:1   warning  'angular' is not defined     no-undef
+   74:20  warning  'angular' is not defined     no-undef
+   89:11  warning  'angular' is not defined     no-undef
+   97:35  warning  'angular' is not defined     no-undef
+  205:43  warning  'angular' is not defined     no-undef
+  248:1   warning  'ngmaterial' is not defined  no-undef
+  248:33  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/toolbar/toolbar.min.js
+  7:46    warning  'angular' is not defined     no-undef
+  7:806   warning  'angular' is not defined     no-undef
+  7:929   warning  'angular' is not defined     no-undef
+  7:1243  warning  'angular' is not defined     no-undef
+  7:1286  warning  'goog' is not defined        no-undef
+  7:1332  warning  'goog' is not defined        no-undef
+  7:1378  warning  'goog' is not defined        no-undef
+  7:1495  warning  'angular' is not defined     no-undef
+  7:1631  warning  'ngmaterial' is not defined  no-undef
+  7:1661  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/tooltip/tooltip.js
+    7:1   warning  'goog' is not defined        no-undef
+    8:1   warning  'goog' is not defined        no-undef
+   14:1   warning  'angular' is not defined     no-undef
+   79:25  warning  'angular' is not defined     no-undef
+   80:25  warning  'angular' is not defined     no-undef
+  220:7   warning  'angular' is not defined     no-undef
+  226:9   warning  'angular' is not defined     no-undef
+  399:1   warning  'ngmaterial' is not defined  no-undef
+  399:33  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/tooltip/tooltip.min.js
+  7:1463  warning  'angular' is not defined     no-undef
+  7:1579  warning  'angular' is not defined     no-undef
+  7:3506  warning  'angular' is not defined     no-undef
+  7:3570  warning  'angular' is not defined     no-undef
+  7:4052  warning  'goog' is not defined        no-undef
+  7:4098  warning  'goog' is not defined        no-undef
+  7:4269  warning  'angular' is not defined     no-undef
+  7:4375  warning  'ngmaterial' is not defined  no-undef
+  7:4405  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/virtualRepeat/virtualRepeat.js
+    7:1   warning  'goog' is not defined                       no-undef
+    8:1   warning  'goog' is not defined                       no-undef
+    9:1   warning  'goog' is not defined                       no-undef
+   17:1   warning  'angular' is not defined                    no-undef
+  147:10  warning  'angular' is not defined                    no-undef
+  152:43  warning  'angular' is not defined                    no-undef
+  167:25  warning  'angular' is not defined                    no-undef
+  169:9   warning  'angular' is not defined                    no-undef
+  173:19  warning  'angular' is not defined                    no-undef
+  197:3   warning  'angular' is not defined                    no-undef
+  198:46  warning  'angular' is not defined                    no-undef
+  393:13  warning  'angular' is not defined                    no-undef
+  544:27  warning  'angular' is not defined                    no-undef
+  554:26  warning  'angular' is not defined                    no-undef
+  584:31  warning  'angular' is not defined                    no-undef
+  592:3   warning  'angular' is not defined                    no-undef
+  651:59  warning  'angular' is not defined                    no-undef
+  656:9   warning  'angular' is not defined                    no-undef
+  672:9   warning  'angular' is not defined                    no-undef
+  766:36  warning  'angular' is not defined                    no-undef
+  825:19  warning  'angular' is not defined                    no-undef
+  949:8   warning  'angular' is not defined                    no-undef
+  950:8   warning  'angular' is not defined                    no-undef
+  969:10  warning  'abstractMethod' is defined but never used  no-unused-vars
+  973:1   warning  'ngmaterial' is not defined                 no-undef
+  973:39  warning  'angular' is not defined                    no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/virtualRepeat/virtualRepeat.min.js
+  7:1095   warning  'angular' is not defined                    no-undef
+  7:1224   warning  'angular' is not defined                    no-undef
+  7:1527   warning  'angular' is not defined                    no-undef
+  7:1564   warning  'angular' is not defined                    no-undef
+  7:1630   warning  'angular' is not defined                    no-undef
+  7:2667   warning  'angular' is not defined                    no-undef
+  7:2733   warning  'angular' is not defined                    no-undef
+  7:2817   warning  'angular' is not defined                    no-undef
+  7:2856   warning  'angular' is not defined                    no-undef
+  7:3053   warning  'abstractMethod' is defined but never used  no-unused-vars
+  7:3124   warning  'goog' is not defined                       no-undef
+  7:3176   warning  'goog' is not defined                       no-undef
+  7:3223   warning  'goog' is not defined                       no-undef
+  7:3536   warning  'angular' is not defined                    no-undef
+  7:3880   warning  'angular' is not defined                    no-undef
+  7:3948   warning  'angular' is not defined                    no-undef
+  7:6723   warning  'angular' is not defined                    no-undef
+  7:7795   warning  'angular' is not defined                    no-undef
+  7:7932   warning  'angular' is not defined                    no-undef
+  7:8932   warning  'angular' is not defined                    no-undef
+  7:9413   warning  'angular' is not defined                    no-undef
+  7:9528   warning  'angular' is not defined                    no-undef
+  7:10654  warning  'angular' is not defined                    no-undef
+  7:11491  warning  'angular' is not defined                    no-undef
+  7:12991  warning  'ngmaterial' is not defined                 no-undef
+  7:13027  warning  'angular' is not defined                    no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/whiteframe/whiteframe.js
+   7:1   warning  'goog' is not defined        no-undef
+   8:1   warning  'goog' is not defined        no-undef
+  14:1   warning  'angular' is not defined     no-undef
+  81:1   warning  'ngmaterial' is not defined  no-undef
+  81:36  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/closure/whiteframe/whiteframe.min.js
+  7:345  warning  'goog' is not defined        no-undef
+  7:394  warning  'goog' is not defined        no-undef
+  7:465  warning  'angular' is not defined     no-undef
+  7:580  warning  'ngmaterial' is not defined  no-undef
+  7:613  warning  'angular' is not defined     no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/autocomplete/autocomplete.js
+  1279:46  warning  'attr' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/autocomplete/autocomplete.min.js
+  7:14281  warning  'i' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/backdrop/backdrop.js
+   7:29  warning  'undefined' is defined but never used  no-unused-vars
+  39:39  warning  'attrs' is defined but never used      no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/backdrop/backdrop.min.js
+  7:15   warning  'n' is defined but never used  no-unused-vars
+  7:241  warning  'm' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/bottomSheet/bottomSheet.js
+    7:29  warning  'undefined' is defined but never used   no-unused-vars
+  169:46  warning  'controller' is defined but never used  no-unused-vars
+  269:28  warning  'ev' is defined but never used          no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/bottomSheet/bottomSheet.min.js
+  7:15    warning  'o' is defined but never used  no-unused-vars
+  7:205   warning  'm' is defined but never used  no-unused-vars
+  7:1382  warning  't' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/button/button.js
+    7:29  warning  'undefined' is defined but never used  no-unused-vars
+  189:28  warning  'ev' is defined but never used         no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/button/button.min.js
+  7:15   warning  'e' is defined but never used  no-unused-vars
+  7:891  warning  'n' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/card/card.js
+    7:29  warning  'undefined' is defined but never used  no-unused-vars
+  136:39  warning  'attr' is defined but never used       no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/card/card.min.js
+  7:15  warning  't' is defined but never used  no-unused-vars
+  7:83  warning  'e' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/checkbox/checkbox.js
+  7:29  warning  'undefined' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/checkbox/checkbox.min.js
+  7:15  warning  'n' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/chips/chips.js
+   262:29  warning  'attr' is defined but never used         no-unused-vars
+   331:34  warning  'event' is defined but never used        no-unused-vars
+  1519:33  warning  'attrs' is defined but never used        no-unused-vars
+  1541:53  warning  'controllers' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/chips/chips.min.js
+  7:228   warning  'o' is defined but never used  no-unused-vars
+  7:623   warning  't' is defined but never used  no-unused-vars
+  7:3950  warning  'r' is defined but never used  no-unused-vars
+  7:4040  warning  'e' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/colors/colors.js
+  7:29  warning  'undefined' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/colors/colors.min.js
+  7:15  warning  'o' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/content/content.js
+  7:29  warning  'undefined' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/content/content.min.js
+  7:15  warning  'o' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/core/core.js
+   282:47  warning  '$document' is defined but never used                 no-unused-vars
+  1796:87  warning  '$interpolate' is defined but never used              no-unused-vars
+  2253:30  warning  'pointer' is defined but never used                   no-unused-vars
+  2256:28  warning  'pointer' is defined but never used                   no-unused-vars
+  2331:26  warning  'ev' is defined but never used                        no-unused-vars
+  2373:28  warning  'pointer' is defined but never used                   no-unused-vars
+  2913:14  warning  'addPresetMethod' is defined but never used           no-unused-vars
+  4325:6   warning  Unreachable code                                      no-unreachable
+  4360:6   warning  Unreachable code                                      no-unreachable
+  4396:6   warning  Unreachable code                                      no-unreachable
+  4896:6   warning  Unreachable code                                      no-unreachable
+  6059:9   warning  'match' is assigned a value but never used            no-unused-vars
+  6096:37  warning  'name' is defined but never used                      no-unused-vars
+  6284:35  warning  'reject' is defined but never used                    no-unused-vars
+  6498:7   warning  'TRANSITION_PROP' is assigned a value but never used  no-unused-vars
+  6499:7   warning  'ANIMATION_PROP' is assigned a value but never used   no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/core/core.min.js
+  7:1482   warning  'r' is defined but never used  no-unused-vars
+  7:14056  warning  'n' is defined but never used  no-unused-vars
+  7:17483  warning  't' is defined but never used  no-unused-vars
+  7:17542  warning  't' is defined but never used  no-unused-vars
+  7:18408  warning  'e' is defined but never used  no-unused-vars
+  7:19210  warning  't' is defined but never used  no-unused-vars
+  7:30258  warning  'm' is defined but never used  no-unused-vars
+  8:23998  warning  'o' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/core/default-theme.js
+  2:1  warning  'angular' is not defined  no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/datepicker/datepicker.js
+     7:29  warning  'undefined' is defined but never used  no-unused-vars
+  1449:9   warning  'monthCell' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/datepicker/datepicker.min.js
+  7:15  warning  'a' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/dialog/dialog.js
+  719:46  warning  'controller' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/dialog/dialog.min.js
+  7:2480  warning  'a' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/divider/divider.js
+  7:29  warning  'undefined' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/divider/divider.min.js
+  7:15  warning  'n' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/fabActions/fabActions.js
+   7:29  warning  'undefined' is defined but never used   no-unused-vars
+  43:34  warning  'attributes' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/fabActions/fabActions.min.js
+  7:15   warning  'e' is defined but never used  no-unused-vars
+  7:142  warning  'e' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/fabSpeedDial/fabSpeedDial.js
+  7:29  warning  'undefined' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/fabSpeedDial/fabSpeedDial.min.js
+  7:15  warning  't' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/fabToolbar/fabToolbar.js
+    7:29  warning  'undefined' is defined but never used        no-unused-vars
+  103:35  warning  'attributes' is defined but never used       no-unused-vars
+  115:47  warning  'done' is defined but never used             no-unused-vars
+  136:13  warning  'height' is assigned a value but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/fabToolbar/fabToolbar.min.js
+  7:15   warning  'o' is defined but never used  no-unused-vars
+  7:71   warning  'o' is defined but never used  no-unused-vars
+  7:501  warning  'r' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/fabTrigger/fabTrigger.js
+  7:29  warning  'undefined' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/fabTrigger/fabTrigger.min.js
+  7:15  warning  'i' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/gridList/gridList.js
+  7:29  warning  'undefined' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/gridList/gridList.min.js
+  7:15  warning  'n' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/icon/icon.js
+    7:29  warning  'undefined' is defined but never used                no-unused-vars
+  191:56  warning  '$sce' is defined but never used                     no-unused-vars
+  215:9   warning  'originalSvgSrc' is assigned a value but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/icon/icon.min.js
+  7:15  warning  'n' is defined but never used  no-unused-vars
+  7:48  warning  'i' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/input/input.js
+    7:29  warning  'undefined' is defined but never used  no-unused-vars
+  392:31  warning  'ev' is defined but never used         no-unused-vars
+  397:30  warning  'ev' is defined but never used         no-unused-vars
+  597:28  warning  'ev' is defined but never used         no-unused-vars
+  790:37  warning  'attr' is defined but never used       no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/input/input.min.js
+  7:15    warning  'n' is defined but never used  no-unused-vars
+  7:2498  warning  'e' is defined but never used  no-unused-vars
+  7:4413  warning  't' is defined but never used  no-unused-vars
+  7:4478  warning  't' is defined but never used  no-unused-vars
+  7:5858  warning  'i' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/list/list.js
+  7:29  warning  'undefined' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/list/list.min.js
+  7:15  warning  'n' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/menuBar/menuBar.js
+  492:7   warning  '$element' is assigned a value but never used  no-unused-vars
+  535:53  warning  'e' is defined but never used                  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/menuBar/menuBar.min.js
+  7:7657  warning  'e' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/progressCircular/progressCircular.js
+    7:29  warning  'undefined' is defined but never used      no-unused-vars
+   70:58  warning  '$log' is defined but never used           no-unused-vars
+  110:13  warning  'info' is assigned a value but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/progressCircular/progressCircular.min.js
+  7:15  warning  'r' is defined but never used  no-unused-vars
+  7:52  warning  'o' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/progressLinear/progressLinear.js
+    7:29  warning  'undefined' is defined but never used      no-unused-vars
+   70:57  warning  '$log' is defined but never used           no-unused-vars
+   87:38  warning  'transclude' is defined but never used     no-unused-vars
+  161:13  warning  'info' is assigned a value but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/progressLinear/progressLinear.min.js
+  7:15  warning  'r' is defined but never used  no-unused-vars
+  7:46  warning  't' is defined but never used  no-unused-vars
+  7:64  warning  'r' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/radioButton/radioButton.js
+   7:29  warning  'undefined' is defined but never used  no-unused-vars
+  90:33  warning  'event' is defined but never used      no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/radioButton/radioButton.min.js
+  7:15   warning  'n' is defined but never used  no-unused-vars
+  7:724  warning  'e' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/select/select.js
+  192:7   warning  'NAVIGATION_KEYS' is assigned a value but never used  no-unused-vars
+  382:33  warning  'ev' is defined but never used                        no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/select/select.min.js
+  7:4076  warning  'e' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/showHide/showHide.js
+  7:29  warning  'undefined' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/showHide/showHide.min.js
+  7:15  warning  'i' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/sidenav/sidenav.js
+  184:42  warning  'sidenavCtrl' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/sidenav/sidenav.min.js
+  7:707  warning  'o' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/slider/slider.js
+  207:9  warning  'container' is assigned a value but never used          no-unused-vars
+  219:9  warning  'content' is assigned a value but never used            no-unused-vars
+  235:9  warning  'stopDisabledWatch' is assigned a value but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/slider/slider.min.js
+  7:5279  warning  'oe' is assigned a value but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/subheader/subheader.js
+  7:29  warning  'undefined' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/subheader/subheader.min.js
+  7:15  warning  't' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/swipe/swipe.js
+  7:29  warning  'undefined' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/swipe/swipe.min.js
+  7:15  warning  'n' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/switch/switch.js
+  7:29  warning  'undefined' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/switch/switch.min.js
+  7:15  warning  'n' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/tabs/tabs.js
+  221:7   warning  'elements' is assigned a value but never used  no-unused-vars
+  369:31  warning  'stretchTabs' is defined but never used        no-unused-vars
+  375:30  warning  'newValue' is defined but never used           no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/tabs/tabs.min.js
+  7:2230  warning  'e' is defined but never used            no-unused-vars
+  7:2315  warning  'e' is defined but never used            no-unused-vars
+  7:9405  warning  'be' is assigned a value but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/textField/textField.js
+   16:1   warning  'angular' is not defined       no-undef
+   38:12  warning  'angular' is not defined       no-undef
+  117:31  warning  'e' is defined but never used  no-unused-vars
+  121:30  warning  'e' is defined but never used  no-unused-vars
+  134:17  warning  'angular' is not defined       no-undef
+  135:17  warning  'angular' is not defined       no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/textField/textField.min.js
+  7:354   warning  'angular' is not defined       no-undef
+  7:1289  warning  'angular' is not defined       no-undef
+  7:1322  warning  'angular' is not defined       no-undef
+  7:1871  warning  't' is defined but never used  no-unused-vars
+  7:1912  warning  't' is defined but never used  no-unused-vars
+  7:2021  warning  'angular' is not defined       no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/toast/toast.js
+    7:29  warning  'undefined' is defined but never used  no-unused-vars
+  421:38  warning  'gesture' is defined but never used    no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/toast/toast.min.js
+  7:15   warning  'n' is defined but never used  no-unused-vars
+  7:343  warning  'e' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/toolbar/toolbar.js
+  7:29  warning  'undefined' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/toolbar/toolbar.min.js
+  7:15  warning  'o' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/tooltip/tooltip.js
+  7:29  warning  'undefined' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/tooltip/tooltip.min.js
+  7:15  warning  'i' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/virtualRepeat/virtualRepeat.js
+    7:29  warning  'undefined' is defined but never used       no-unused-vars
+  969:10  warning  'abstractMethod' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/virtualRepeat/virtualRepeat.min.js
+  7:15  warning  'i' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/whiteframe/whiteframe.js
+  7:29  warning  'undefined' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-material/modules/js/whiteframe/whiteframe.min.js
+  7:15  warning  'a' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-route/angular-route.js
+   35:11  warning  'shallowCopy' is defined but never used     no-unused-vars
+   57:12  warning  '-ngRouteModule' is defined but never used  no-unused-vars
+  705:47  warning  'path' is defined but never used            no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular-route/angular-route.min.js
+  12:371  warning  'g' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular/angular.js
+    810:10  warning  'includes' is defined but never used                            no-unused-vars
+   2398:11  warning  'shallowCopy' is defined but never used                         no-unused-vars
+   2425:11  warning  'toDebugString' is defined but never used                       no-unused-vars
+   2454:3   warning  'version' is defined but never used                             no-unused-vars
+   2456:3   warning  '$CompileProvider' is defined but never used                    no-unused-vars
+   2458:3   warning  'htmlAnchorDirective' is defined but never used                 no-unused-vars
+   2459:3   warning  'inputDirective' is defined but never used                      no-unused-vars
+   2461:3   warning  'formDirective' is defined but never used                       no-unused-vars
+   2462:3   warning  'scriptDirective' is defined but never used                     no-unused-vars
+   2465:3   warning  'ngBindDirective' is defined but never used                     no-unused-vars
+   2466:3   warning  'ngBindHtmlDirective' is defined but never used                 no-unused-vars
+   2467:3   warning  'ngBindTemplateDirective' is defined but never used             no-unused-vars
+   2471:3   warning  'ngCloakDirective' is defined but never used                    no-unused-vars
+   2472:3   warning  'ngControllerDirective' is defined but never used               no-unused-vars
+   2473:3   warning  'ngFormDirective' is defined but never used                     no-unused-vars
+   2474:3   warning  'ngHideDirective' is defined but never used                     no-unused-vars
+   2475:3   warning  'ngIfDirective' is defined but never used                       no-unused-vars
+   2476:3   warning  'ngIncludeDirective' is defined but never used                  no-unused-vars
+   2477:3   warning  'ngIncludeFillContentDirective' is defined but never used       no-unused-vars
+   2478:3   warning  'ngInitDirective' is defined but never used                     no-unused-vars
+   2479:3   warning  'ngNonBindableDirective' is defined but never used              no-unused-vars
+   2480:3   warning  'ngPluralizeDirective' is defined but never used                no-unused-vars
+   2482:3   warning  'ngShowDirective' is defined but never used                     no-unused-vars
+   2483:3   warning  'ngStyleDirective' is defined but never used                    no-unused-vars
+   2484:3   warning  'ngSwitchDirective' is defined but never used                   no-unused-vars
+   2485:3   warning  'ngSwitchWhenDirective' is defined but never used               no-unused-vars
+   2486:3   warning  'ngSwitchDefaultDirective' is defined but never used            no-unused-vars
+   2488:3   warning  'ngTranscludeDirective' is defined but never used               no-unused-vars
+   2489:3   warning  'ngModelDirective' is defined but never used                    no-unused-vars
+   2490:3   warning  'ngListDirective' is defined but never used                     no-unused-vars
+   2491:3   warning  'ngChangeDirective' is defined but never used                   no-unused-vars
+   2492:3   warning  'patternDirective' is defined but never used                    no-unused-vars
+   2494:3   warning  'requiredDirective' is defined but never used                   no-unused-vars
+   2496:3   warning  'minlengthDirective' is defined but never used                  no-unused-vars
+   2498:3   warning  'maxlengthDirective' is defined but never used                  no-unused-vars
+   2500:3   warning  'ngValueDirective' is defined but never used                    no-unused-vars
+   2501:3   warning  'ngModelOptionsDirective' is defined but never used             no-unused-vars
+   2502:3   warning  'ngAttributeAliasDirectives' is defined but never used          no-unused-vars
+   2503:3   warning  'ngEventDirectives' is defined but never used                   no-unused-vars
+   2505:3   warning  '$AnchorScrollProvider' is defined but never used               no-unused-vars
+   2506:3   warning  '$AnimateProvider' is defined but never used                    no-unused-vars
+   2508:3   warning  '$$CoreAnimateJsProvider' is defined but never used             no-unused-vars
+   2509:3   warning  '$$CoreAnimateQueueProvider' is defined but never used          no-unused-vars
+   2510:3   warning  '$$AnimateRunnerFactoryProvider' is defined but never used      no-unused-vars
+   2511:3   warning  '$$AnimateAsyncRunFactoryProvider' is defined but never used    no-unused-vars
+   2512:3   warning  '$BrowserProvider' is defined but never used                    no-unused-vars
+   2513:3   warning  '$CacheFactoryProvider' is defined but never used               no-unused-vars
+   2514:3   warning  '$ControllerProvider' is defined but never used                 no-unused-vars
+   2515:3   warning  '$DateProvider' is defined but never used                       no-unused-vars
+   2516:3   warning  '$DocumentProvider' is defined but never used                   no-unused-vars
+   2517:3   warning  '$ExceptionHandlerProvider' is defined but never used           no-unused-vars
+   2518:3   warning  '$FilterProvider' is defined but never used                     no-unused-vars
+   2519:3   warning  '$$ForceReflowProvider' is defined but never used               no-unused-vars
+   2520:3   warning  '$InterpolateProvider' is defined but never used                no-unused-vars
+   2521:3   warning  '$IntervalProvider' is defined but never used                   no-unused-vars
+   2522:3   warning  '$$HashMapProvider' is defined but never used                   no-unused-vars
+   2523:3   warning  '$HttpProvider' is defined but never used                       no-unused-vars
+   2524:3   warning  '$HttpParamSerializerProvider' is defined but never used        no-unused-vars
+   2525:3   warning  '$HttpParamSerializerJQLikeProvider' is defined but never used  no-unused-vars
+   2526:3   warning  '$HttpBackendProvider' is defined but never used                no-unused-vars
+   2527:3   warning  '$xhrFactoryProvider' is defined but never used                 no-unused-vars
+   2528:3   warning  '$jsonpCallbacksProvider' is defined but never used             no-unused-vars
+   2529:3   warning  '$LocationProvider' is defined but never used                   no-unused-vars
+   2530:3   warning  '$LogProvider' is defined but never used                        no-unused-vars
+   2531:3   warning  '$ParseProvider' is defined but never used                      no-unused-vars
+   2532:3   warning  '$RootScopeProvider' is defined but never used                  no-unused-vars
+   2533:3   warning  '$QProvider' is defined but never used                          no-unused-vars
+   2534:3   warning  '$$QProvider' is defined but never used                         no-unused-vars
+   2535:3   warning  '$$SanitizeUriProvider' is defined but never used               no-unused-vars
+   2539:3   warning  '$TemplateCacheProvider' is defined but never used              no-unused-vars
+   2540:3   warning  '$TemplateRequestProvider' is defined but never used            no-unused-vars
+   2541:3   warning  '$$TestabilityProvider' is defined but never used               no-unused-vars
+   2542:3   warning  '$TimeoutProvider' is defined but never used                    no-unused-vars
+   2543:3   warning  '$$RAFProvider' is defined but never used                       no-unused-vars
+   2544:3   warning  '$WindowProvider' is defined but never used                     no-unused-vars
+   2545:3   warning  '$$jqLiteProvider' is defined but never used                    no-unused-vars
+   2546:3   warning  '$$CookieReaderProvider' is defined but never used              no-unused-vars
+   2726:11  warning  'JQLitePrototype' is defined but never used                     no-unused-vars
+   2727:3   warning  'addEventListenerFn' is defined but never used                  no-unused-vars
+   2728:3   warning  'removeEventListenerFn' is defined but never used               no-unused-vars
+   2729:3   warning  'BOOLEAN_ATTR' is defined but never used                        no-unused-vars
+   2730:3   warning  'ALIASED_ATTR' is defined but never used                        no-unused-vars
+   5989:11  warning  'stripHash' is defined but never used                           no-unused-vars
+  10325:10  warning  'nodesetLinkingFn' is defined but never used                    no-unused-vars
+  10329:28  warning  'boundTranscludeFn' is defined but never used                   no-unused-vars
+  10332:10  warning  'directiveLinkingFn' is defined but never used                  no-unused-vars
+  10337:28  warning  'boundTranscludeFn' is defined but never used                   no-unused-vars
+  10632:32  warning  'cause' is defined but never used                               no-unused-vars
+  11866:33  warning  'names' is defined but never used                               no-unused-vars
+  11878:41  warning  'name' is defined but never used                                no-unused-vars
+  12892:32  warning  'url' is defined but never used                                 no-unused-vars
+  13223:39  warning  'relHref' is defined but never used                             no-unused-vars
+  15832:44  warning  'inputs' is defined but never used                              no-unused-vars
+  18135:29  warning  'args' is defined but never used                                no-unused-vars
+  18207:34  warning  'args' is defined but never used                                no-unused-vars
+  18624:48  warning  'html' is defined but never used                                no-unused-vars
+  20250:5   warning  'currencyFilter' is defined but never used                      no-unused-vars
+  20251:5   warning  'dateFilter' is defined but never used                          no-unused-vars
+  20252:5   warning  'filterFilter' is defined but never used                        no-unused-vars
+  20253:5   warning  'jsonFilter' is defined but never used                          no-unused-vars
+  20254:5   warning  'limitToFilter' is defined but never used                       no-unused-vars
+  20255:5   warning  'lowercaseFilter' is defined but never used                     no-unused-vars
+  20256:5   warning  'numberFilter' is defined but never used                        no-unused-vars
+  20257:5   warning  'orderByFilter' is defined but never used                       no-unused-vars
+  20258:5   warning  'uppercaseFilter' is defined but never used                     no-unused-vars
+  22547:11  warning  '-nullFormCtrl' is defined but never used                       no-unused-vars
+  22547:26  warning  '-SUBMITTED_CLASS' is defined but never used                    no-unused-vars
+  22547:44  warning  'addSetValidityMethod' is defined but never used                no-unused-vars
+  23102:3   warning  'ngModelMinErr' is defined but never used                       no-unused-vars
+  25533:41  warning  'value' is defined but never used                               no-unused-vars
+  27541:11  warning  'VALID_CLASS' is defined but never used                         no-unused-vars
+  27542:3   warning  'INVALID_CLASS' is defined but never used                       no-unused-vars
+  27543:3   warning  'PRISTINE_CLASS' is defined but never used                      no-unused-vars
+  27544:3   warning  'DIRTY_CLASS' is defined but never used                         no-unused-vars
+  27545:3   warning  'UNTOUCHED_CLASS' is defined but never used                     no-unused-vars
+  27546:3   warning  'TOUCHED_CLASS' is defined but never used                       no-unused-vars
+  29007:11  warning  'jqLiteRemove' is defined but never used                        no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular/angular.min.js
+   91:294  warning  'd' is defined but never used  no-unused-vars
+  101:14   warning  'a' is defined but never used  no-unused-vars
+  101:145  warning  'a' is defined but never used  no-unused-vars
+  112:432  warning  'd' is defined but never used  no-unused-vars
+  147:481  warning  'b' is defined but never used  no-unused-vars
+  148:407  warning  'b' is defined but never used  no-unused-vars
+  152:216  warning  'a' is defined but never used  no-unused-vars
+  185:226  warning  'b' is defined but never used  no-unused-vars
+  261:401  warning  'k' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/components/angular/index.js
+  2:18  warning  'angular' is not defined  no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/dist/core.js
+  5:1  warning  'define' is not defined  no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/dist/jquery.js
+  10179:38  warning  'define' is not defined  no-undef
+  10180:2   warning  'define' is not defined  no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/dist/jquery.min.js
+  4:22413  warning  'define' is not defined  no-undef
+  4:22425  warning  'define' is not defined  no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/dist/jquery.slim.js
+  8066:38  warning  'define' is not defined  no-undef
+  8067:2   warning  'define' is not defined  no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/dist/jquery.slim.min.js
+  4:4765  warning  'define' is not defined  no-undef
+  4:4777  warning  'define' is not defined  no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/external/sizzle/dist/sizzle.js
+  2262:38  warning  'define' is not defined  no-undef
+  2263:2   warning  'define' is not defined  no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/external/sizzle/dist/sizzle.min.js
+  2:19679  warning  'define' is not defined  no-undef
+  2:19690  warning  'define' is not defined  no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/ajax.js
+  16:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/ajax/jsonp.js
+  8:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/ajax/load.js
+  11:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/ajax/parseXML.js
+  5:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/ajax/script.js
+  7:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/ajax/var/location.js
+  2:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/ajax/var/nonce.js
+  4:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/ajax/var/rquery.js
+  2:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/ajax/xhr.js
+  7:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/attributes.js
+  9:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/attributes/attr.js
+  9:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/attributes/classes.js
+  9:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/attributes/prop.js
+  8:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/attributes/support.js
+  6:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/attributes/val.js
+  8:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/callbacks.js
+  6:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/core.js
+  24:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/core/access.js
+  5:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/core/DOMEval.js
+  4:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/core/init.js
+  9:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/core/parseHTML.js
+  11:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/core/ready-no-deferred.js
+  6:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/core/ready.js
+  8:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/core/readyException.js
+  5:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/core/stripAndCollapse.js
+  4:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/core/support.js
+  6:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/core/var/rsingleTag.js
+  2:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/css.js
+  23:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/css/addGetHookIf.js
+  3:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/css/adjustCSS.js
+  6:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/css/curCSS.js
+  10:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/css/hiddenVisibleSelectors.js
+  6:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/css/showHide.js
+  7:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/css/support.js
+  8:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/css/var/cssExpand.js
+  2:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/css/var/getStyles.js
+  2:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/css/var/isHiddenWithinTree.js
+  7:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/css/var/rmargin.js
+  2:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/css/var/rnumnonpx.js
+  4:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/css/var/swap.js
+  3:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/data.js
+  8:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/data/Data.js
+  7:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/data/var/acceptData.js
+  3:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/data/var/dataPriv.js
+  4:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/data/var/dataUser.js
+  4:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/deferred.js
+  7:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/deferred/exceptionHook.js
+  6:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/deprecated.js
+  5:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/dimensions.js
+  7:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/effects.js
+  23:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/effects/animatedSelector.js
+  7:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/effects/Tween.js
+  6:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/event.js
+  13:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/event/ajax.js
+  6:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/event/alias.js
+  8:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/event/focusin.js
+  10:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/event/support.js
+  5:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/event/trigger.js
+  11:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/exports/amd.js
+  5:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/exports/global.js
+  5:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/jquery.js
+  37:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/manipulation.js
+  29:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/manipulation/_evalUrl.js
+  5:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/manipulation/buildFragment.js
+  10:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/manipulation/getAll.js
+  5:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/manipulation/setGlobalEval.js
+  5:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/manipulation/support.js
+  6:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/manipulation/var/rcheckableType.js
+  2:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/manipulation/var/rscriptType.js
+  2:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/manipulation/var/rtagName.js
+  2:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/manipulation/wrapMap.js
+  3:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/offset.js
+  16:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/queue.js
+  8:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/queue/delay.js
+  7:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/selector-native.js
+  9:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/selector-sizzle.js
+  6:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/selector.js
+  2:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/serialize.js
+  9:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/traversing.js
+  12:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/traversing/findFilter.js
+  8:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/traversing/var/dir.js
+  5:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/traversing/var/rneedsContext.js
+  5:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/traversing/var/siblings.js
+  3:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/var/arr.js
+  2:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/var/class2type.js
+  2:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/var/concat.js
+  4:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/var/document.js
+  2:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/var/documentElement.js
+  4:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/var/fnToString.js
+  4:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/var/getProto.js
+  2:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/var/hasOwn.js
+  4:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/var/indexOf.js
+  4:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/var/ObjectFunctionString.js
+  4:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/var/pnum.js
+  2:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/var/push.js
+  4:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/var/rcssNum.js
+  5:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/var/rnothtmlwhite.js
+  2:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/var/slice.js
+  4:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/var/support.js
+  2:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/var/toString.js
+  4:2  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/components/jquery/src/wrap.js
+  8:1  error  'use strict' is unnecessary inside of modules  strict
+
+/home/jpfeiffer/Source/TimeTracker/public/controllers/categories.js
+  1:1  warning  'angular' is not defined  no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/controllers/category.js
+  1:1  warning  'angular' is not defined  no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/controllers/day.js
+    7:1   warning  'angular' is not defined           no-undef
+   61:48  warning  'value' is defined but never used  no-unused-vars
+  112:44  warning  'day' is defined but never used    no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/controllers/home.js
+  1:1   warning  'angular' is not defined            no-undef
+  2:37  warning  '$scope' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/controllers/main.js
+  1:1  warning  'angular' is not defined  no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/controllers/misc.js
+  1:1   warning  'angular' is not defined      no-undef
+  7:11  warning  'InfoManager' is not defined  no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/controllers/note.js
+   1:1   warning  'angular' is not defined          no-undef
+  34:42  warning  'note' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/controllers/notes.js
+  1:1  warning  'angular' is not defined  no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/controllers/settings.js
+  1:1  warning  'angular' is not defined  no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/controllers/sidebar.js
+  1:1  warning  'angular' is not defined  no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/controllers/textView.js
+  1:1  warning  'angular' is not defined  no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/controllers/time.js
+   1:1   warning  'angular' is not defined        no-undef
+  27:44  warning  'ev' is defined but never used  no-unused-vars
+
+/home/jpfeiffer/Source/TimeTracker/public/directives/rightClickNavigate.js
+  1:1  warning  'angular' is not defined  no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/services/appManager.js
+  2:1  warning  'angular' is not defined  no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/services/categoriesManager.js
+  2:1  warning  'angular' is not defined  no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/services/infoManager.js
+  2:1  warning  'angular' is not defined  no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/services/messages.js
+  2:1  warning  'angular' is not defined  no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/services/noteManager.js
+  1:1  warning  'angular' is not defined  no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/services/settingsManager.js
+  1:1  warning  'angular' is not defined  no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/services/timeManager.js
+  1:1  warning  'angular' is not defined  no-undef
+
+/home/jpfeiffer/Source/TimeTracker/public/services/windowManager.js
+  4:1  warning  'angular' is not defined  no-undef
+
+/home/jpfeiffer/Source/TimeTracker/storage/index.js
+  1:7  warning  'SettingsManager' is assigned a value but never used  no-unused-vars
+
+✖ 2330 problems (101 errors, 2229 warnings)
+
