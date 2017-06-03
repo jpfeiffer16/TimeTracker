@@ -1,7 +1,7 @@
 angular.module('app')
   .factory('TimeManager', function(MessagesService) {
-    const getDays = (cb) => {
-      MessagesService.sendMessage('getDays', cb);
+    const getDays = (args, cb) => {
+      MessagesService.sendMessage('getDays', args, cb);
     };
     const getDay = (id, cb) => {
       MessagesService.sendMessage('getDay', id, function(day) {

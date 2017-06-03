@@ -2,8 +2,6 @@ const {ipcRenderer} = require('electron')
 angular.module('app')
   .factory('MessagesService', function() {
     const sendMessage = (eventName, ...rest) => {
-      console.log('Rest', rest);
-      console.log('Test');
       let cb = function () {}
       let args = null;
       if (rest.length == 2) {
@@ -17,7 +15,6 @@ angular.module('app')
       ipcRenderer.once(eventName, (event, args) => {
         if (cb) cb(args);
       });
-      console.log(args);
       ipcRenderer.send(eventName, args);
     };
     return {

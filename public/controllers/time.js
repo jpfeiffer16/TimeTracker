@@ -61,7 +61,8 @@ angular.module('app')
         name: 'All',
         codeName: 'all',
         fn: function() {
-          $scope.days = internalDays;
+          // $scope.days = internalDays;
+          return {};
         }
       },
       {
@@ -80,11 +81,10 @@ angular.module('app')
             firstOfWeek.getDate() + 7
           );
 
-          $scope.days = internalDays.filter((day) => {
-            let dayMSeconds = new Date(day.date).getTime();
-            return dayMSeconds > firstOfWeek.getTime() && 
-                   dayMSeconds < lastOfWeek.getTime();
-          });
+          return {
+            dateFrom: firstOfWeek,
+            dateTo: lastOfWeek
+          };
         }
       },
       {
@@ -100,11 +100,10 @@ angular.module('app')
           );
           let lastOfWeek = new Date(firstOfWeek.getTime() + 7*24*60*60*1000);
 
-          $scope.days = internalDays.filter((day) => {
-            let dayMSeconds = new Date(day.date).getTime();
-            return dayMSeconds > firstOfWeek.getTime() && 
-                   dayMSeconds < lastOfWeek.getTime();
-          });
+          return {
+            dateFrom: firstOfWeek,
+            dateTo: lastOfWeek
+          };
         }
       },
       {
@@ -116,11 +115,10 @@ angular.module('app')
             currentDate.getTime() - currentDate.getDate()*24*60*60*1000
           );
 
-          $scope.days = internalDays.filter((day) => {
-            let dayMSeconds = new Date(day.date).getTime();
-            return dayMSeconds < currentDate.getTime() &&
-                   dayMSeconds > firstOfMonth.getTime();
-          });
+         return {
+           dateFrom: firstOfMonth,
+           dateTo: currentDate
+         };
         }
       },
       {
@@ -139,11 +137,10 @@ angular.module('app')
             beginDate.getMonth() + 1, 1).getTime() - 1*24*60*60*1000
           );
 
-          $scope.days = internalDays.filter((day) => {
-            let dayMSeconds = new Date(day.date).getTime();
-            return dayMSeconds > firstOfMonth.getTime() && 
-                   dayMSeconds < lastOfMonth.getTime();
-          });
+          return {
+            dateFrom: firstOfMonth,
+            dateTo: lastOfMonth
+          };
         }
       }
     ];
@@ -163,14 +160,15 @@ angular.module('app')
       $scope.filters.forEach((filter) => {
         if (filter.codeName === codeName) {
           console.log('Filtering');
-          filter.fn();
-          $scope.totalHours = getTotalHours();
-          console.log($scope.days);
-          SettingsManager.getSettings((settings) => {
-            settings.selectedFilter = codeName;
-            console.log(settings);
-            SettingsManager.saveSettings(settings, () => {
-              console.log('Filter Saved.');
+          let { dateFrom, dateTo } = filter.fn();
+          getDays(dateFrom, dateTo, () => {
+            $scope.totalHours = getTotalHours();
+            SettingsManager.getSettings((settings) => {
+              settings.selectedFilter = codeName;
+              console.log(settings);
+              SettingsManager.saveSettings(settings, () => {
+                console.log('Filter Saved.');
+              });
             });
           });
         }
@@ -179,16 +177,13 @@ angular.module('app')
 
     $scope.selectedFilter = 'all';
 
-    //Get settings for last used filter
-
-
     $scope.sortType = 'date';
     $scope.searchDay = '';
 
-    function getDays(cb) {
+    function getDays(dateFrom, dateTo, cb) {
       TimeManager.getDays({
-        dateFrom: new Date(),
-        dateTo: new Date()
+        dateFrom: dateFrom,
+        dateTo: dateTo
       },(days) => {
         internalDays = days;
         $scope.days = days;
@@ -208,18 +203,14 @@ angular.module('app')
       return total;
     }
 
-    // TimeManager.getDays((days) => {
-    //   internalDays = days;
-    //   $scope.days = days;
-    //   $scope.$apply();
-    // });
+    SettingsManager.getSettings((settings) => {
+      if (settings && settings.selectedFilter && settings.selectedFilter != '') {
+        $scope.selectedFilter = settings.selectedFilter;
+        $scope.filter();
+      }
+    });
 
-    getDays(() => {
-      SettingsManager.getSettings((settings) => {
-        if (settings && settings.selectedFilter && settings.selectedFilter != '') {
-          $scope.selectedFilter = settings.selectedFilter;
-          $scope.filter(settings.selectedFilter);
-        }
-      });
+    $scope.$watch('selectedFilter', (newVal, oldVal) => {
+      console.log('Changed');
     });
   });
