@@ -8,9 +8,11 @@ An electron app for tracking time
 
 `$ cd TimeTracker`
 
-Install bower and electron globally if you don't have them:
+Install bower if you don't have it:
 
-`$ sudo npm install -g bower electron`
+`$ npm install -g bower`
+
+Install deps:
 
 `$ npm install`
 
@@ -18,7 +20,7 @@ Now install front-end deps with bower.
 
 `$ bower install`
 
-Now run `electron .` to launch the app.
+Now run `npm start` to launch the app.
 
 ### Manually adding a desktop file.
 If you would like to be able to run the program from your desktop launcher,
