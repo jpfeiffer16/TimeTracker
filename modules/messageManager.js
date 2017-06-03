@@ -5,7 +5,9 @@ const { app } = require('electron');
 
 const MessageManager = function (ipcMain, callbackObj) {
   ipcMain.on('getDays', (event, args) => {
-    StorageManager.getDays((days) => {
+    // let { dateFrom, dateTo } = args;
+    console.log(args);
+    StorageManager.getDays((days, dateFrom, dateTo) => {
       event.sender.send('getDays', days);
     });
   });

@@ -155,7 +155,10 @@ angular.module('app')
     $scope.searchDay = '';
 
     function getDays(cb) {
-      TimeManager.getDays((days) => {
+      TimeManager.getDays({
+        dateFrom: new Date(),
+        dateTo: new Date()
+      },(days) => {
         internalDays = days;
         $scope.days = days;
         $scope.$apply();

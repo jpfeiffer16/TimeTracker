@@ -1,5 +1,6 @@
 //NOTE: There is probably a library somewhere that will simplify some of this
 //But as of writing this, I was unable to find one.
+//UPDATE: chronoscript might be a good fit for this.
 
 const settings = require('electron-settings');
 

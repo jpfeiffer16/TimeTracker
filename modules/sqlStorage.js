@@ -25,9 +25,20 @@ const StorageManager = function() {
   });
 
   //Days
-  let getDays = function (cb) {
+  let getDays = function (cb, dateFrom, dateTo) {
+    let where = {};
+    if (dateFrom != undefined && dateTo != undefined) {
+      where = {
+        date: {
+          $gt: dateFrom,
+          $lt: dateTo
+        }
+      };
+    }
+    console.log(where);
     Day.findAll({
-      include: Task
+      include: Task,
+      where
     }).then((dbdays) => {
       cb(dbdays.map((dbday) => {
         return dbday.toJSON();
