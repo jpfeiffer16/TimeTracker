@@ -10,6 +10,7 @@ angular.module('app')
     hotkeys
       .bindTo($scope)
       .add({
+        allowIn: ['INPUT', 'SELECT', 'TEXTAREA'],
         combo: 'ctrl+s',
         decription: 'Save the current day',
         callback: () => {
@@ -17,6 +18,7 @@ angular.module('app')
         }
       })
       .add({
+        allowIn: ['INPUT', 'SELECT', 'TEXTAREA'],
         combo: 'ctrl+b',
         description: 'Back to day list',
         callback: () => {
