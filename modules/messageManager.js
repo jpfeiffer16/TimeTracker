@@ -6,8 +6,6 @@ const { app } = require('electron');
 const MessageManager = function (ipcMain, callbackObj) {
   ipcMain.on('getDays', (event, args) => {
     let { dateFrom, dateTo } = args;
-    console.log('Destructure, pre-pass: ', dateFrom, dateTo);
-    // console.log(args);
     StorageManager.getDays(dateFrom, dateTo, (days) => {
       event.sender.send('getDays', days);
     });
@@ -18,8 +16,6 @@ const MessageManager = function (ipcMain, callbackObj) {
     });
   });
   ipcMain.on('saveDay', (event, day) => {
-    // console.log('Saving day');
-    // console.log(day);
     StorageManager.saveDay(day, (day) => {
       event.sender.send('saveDay', day);
     });
