@@ -210,3 +210,9 @@ app.on('activate', () => {
 //       });
 //     }
 //   });
+
+
+console.log('test');
+process.on('message', (data) => {
+  console.log(`Recieved Data: ${ data }`);
+});
