@@ -10,9 +10,9 @@ let { spawn, fork } = require('child_process');
 //   shell: true
 // });
 
-// process.on('message', (data) => {
-//   console.log(`Recieved Data: ${ data }`);
-// });
+process.on('message', (data) => {
+  console.log(`Recieved Data: ${ data }`);
+});
 
 // gui.send('test');
 

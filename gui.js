@@ -225,10 +225,17 @@ app.on('activate', () => {
 //
 //test.send('test');
 
+
+
+
+
+
 let forkProc = require('./modules/fork.js');
 
-let app = forkProc('node ./app.js');
+let application = forkProc('./app.js');
 
-app.emitter.on('test', (data) => {
+application.emitter.on('test', (data) => {
   console.log(`Recived data: ${ data }`);
 });
+
+application.process.send('test', 'This is test');

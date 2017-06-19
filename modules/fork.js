@@ -1,12 +1,15 @@
 let { fork, spawn } = require('child_process');
-let EventEmitter = require('events');
+let { EventEmitter } = require('events');
 
 
 module.exports = function(command) {
   //Setup
+
+  let emitter = new EventEmitter();
+
   process.on('message', (data) => {
     if (data.event) {
-      emmitter.emit(data.event, data.data);
+      emitter.emit(data.event, data.data);
     }
   });
 
@@ -14,8 +17,10 @@ module.exports = function(command) {
     stdio: 'inherit',
     shell: true
   });
-
-  let emmitter = new EventEmitter();
+  
+  child_proc.on('message', (data) => {
+    emitter.emit(data.event, data.data);
+  });
 
   //Methods, props
   function send(data) {
@@ -25,6 +30,6 @@ module.exports = function(command) {
   return {
     send,
     process: child_proc,
-    emmitter
+    emitter
   };
 };
