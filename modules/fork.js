@@ -7,24 +7,43 @@ module.exports = function(command) {
 
   let emitter = new EventEmitter();
 
-  process.on('message', (data) => {
-    if (data.event) {
-      emitter.emit(data.event, data.data);
-    }
-  });
+  // process.on('message', (data) => {
+  //   if (data.event) {
+  //     emitter.emit(data.event, data.data);
+  //   }
+  // });
 
-  let child_proc = fork(command, {
-    stdio: 'inherit',
-    shell: true
-  });
+  let child_proc = null;
+
+  if (command) {
+    let proc = fork(command, {
+      stdio: 'inherit',
+      shell: true
+    });
+    bindTo(proc);
+  } else {
+    //NOTE: If we need anything, do it here.
+  }
+
   
-  child_proc.on('message', (data) => {
-    emitter.emit(data.event, data.data);
-  });
+  function bindTo(proc) {
+    child_proc = proc;
+
+    proc.on('message', (data) => {
+      if (data.event) {
+        emitter.emit(data.event, data.data);
+      }
+    });
+  }
+
 
   //Methods, props
   function send(data) {
-    child_proc.send(data);
+    if (data.event) {
+      child_proc.send(data);
+    } else {
+      console.error('Must pass an event to send');
+    }
   }
 
   return {

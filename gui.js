@@ -238,4 +238,4 @@ application.emitter.on('test', (data) => {
   console.log(`Recived data: ${ data }`);
 });
 
-application.process.send('test', 'This is test');
+application.process.send('test');
