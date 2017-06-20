@@ -1,4 +1,9 @@
-let { spawn, fork } = require('child_process');
+const { spawn, fork } = require('child_process');
+
+const forkProc = require('./modules/fork.js');
+
+let application = forkProc();
+application.bindTo(process);
 
 // let gui = fork('./node_modules/.bin/electron gui.js', {
 //   stdio: 'inherit',
@@ -10,7 +15,10 @@ let { spawn, fork } = require('child_process');
 //   shell: true
 // });
 
-process.on('message', (data) => {
+// process.on('message', (data) => {
+//   console.log(`Recieved Data: ${ data }`);
+// });
+application.emitter.on('message', (data) => {
   console.log(`Recieved Data: ${ data }`);
 });
 
@@ -19,7 +27,12 @@ process.on('message', (data) => {
 //console.log('This is in the test proc');
 
 
-process.send({
+// process.send({
+//   event: 'test',
+//   data: 'This is a test'
+// });
+
+application.send({
   event: 'test',
   data: 'This is a test'
 });

@@ -4,8 +4,14 @@ let { EventEmitter } = require('events');
 
 module.exports = function(command) {
   //Setup
-
   let emitter = new EventEmitter();
+  let child_proc = null;
+  let retunObj =  {
+    send,
+    process: child_proc,
+    emitter,
+    bindTo
+  };
 
   // process.on('message', (data) => {
   //   if (data.event) {
@@ -13,7 +19,6 @@ module.exports = function(command) {
   //   }
   // });
 
-  let child_proc = null;
 
   if (command) {
     let proc = fork(command, {
@@ -34,6 +39,8 @@ module.exports = function(command) {
         emitter.emit(data.event, data.data);
       }
     });
+
+    return retunObj;
   }
 
 
@@ -46,9 +53,5 @@ module.exports = function(command) {
     }
   }
 
-  return {
-    send,
-    process: child_proc,
-    emitter
-  };
+  return retunObj;
 };
