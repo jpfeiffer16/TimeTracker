@@ -2,8 +2,7 @@ const { spawn, fork } = require('child_process');
 
 const forkProc = require('./modules/fork.js');
 
-let application = forkProc();
-application.bindTo(process);
+let application = forkProc().bindTo(process);
 
 application.emitter.on('test', (data) => {
   console.log(`Recieved Data: ${ data }`);
