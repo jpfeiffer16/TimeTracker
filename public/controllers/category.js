@@ -1,5 +1,6 @@
 angular.module('app')
-  .controller('CategoryCtrl', function($scope, $rootScope, $routeParams, CategoriesManager, InfoManager, hotkeys) {
+  .controller('CategoryCtrl',
+    function($scope, $rootScope, $routeParams, CategoriesManager, InfoManager, hotkeys) {
     //Hotkey setup
     hotkeys
       .bindTo($scope)

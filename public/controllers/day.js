@@ -5,7 +5,15 @@ let jiraIntegration = require('./modules/jira');
 
 
 angular.module('app')
-  .controller('DayCtrl', function ($scope, $rootScope, $routeParams, $q, $timeout, TimeManager, InfoManager, SettingsManager, hotkeys) {
+  .controller('DayCtrl',
+    function (
+      $scope,
+      $rootScope,
+      $routeParams,
+      $q,
+      $timeout,
+      TimeManager, InfoManager, SettingsManager, hotkeys
+    ) {
     //HotkeySetup
     hotkeys
       .bindTo($scope)
