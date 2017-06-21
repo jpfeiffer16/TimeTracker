@@ -16,10 +16,18 @@
 <label>{{ totalHours }} Total Hours</label>
 
 <md-list>
-  <md-list-item ng-repeat="day in days | orderBy:'date':true" ng-click="navigate('/day/' + day.id)" right-click-navigate="'/day/' + day.id" class="noright">
+  <md-list-item 
+      ng-repeat="day in days | orderBy:'date':true"
+      ng-click="navigate('/day/' + day.id)"
+      right-click-navigate="'/day/' + day.id" 
+      class="noright">
     <p>{{ day.date | date:'MM/dd/yyyy' }}</p>
     <p>{{ getHours(day) }} Hours</p>
-    <md-icon ng-click="removeDay(day.id, $index, $event)" aria-label="Remove Day" class="md-secondary md-hue-3" md-svg-src="images/ic_clear_black_24px.svg">
+    <md-icon 
+        ng-click="removeDay(day.id, $index, $event)"
+        aria-label="Remove Day" 
+        class="md-secondary md-hue-3"
+        md-svg-src="images/ic_clear_black_24px.svg">
       <!--<md-tooltip md-direction="left">Delete day</md-tooltip>-->
       <!--<i class="material-icons">clear</i>-->
     </md-icon>
@@ -50,11 +58,18 @@
 </table>-->
 
 <!--<md-table-container>
-  <table md-table md-row-select multiple ng-model="selected" md-progress="promise">
+  <table
+  md-table
+  md-row-select
+  multiple
+  ng-model="selected"
+  md-progress="promise">
     <thead md-head md-order="query.order" md-on-reorder="getDesserts">
       <tr md-row>
         <th md-column md-order-by="date"><span>Date</span></th>
-        <th md-column md-numeric md-order-by="getHours(day)"><span>Hours</span></th>
+        <th md-column md-numeric md-order-by="getHours(day)">
+          <span>Hours</span>
+        </th>
       </tr>
     </thead>
     <tbody md-body>
