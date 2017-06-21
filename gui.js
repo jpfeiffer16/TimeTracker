@@ -211,25 +211,6 @@ app.on('activate', () => {
 //     }
 //   });
 
-//let { spawn, fork } = require('child_process');
-//
-//console.log('test');
-//process.on('message', (data) => {
-//  console.log(`Recieved Data: ${ data }`);
-//});
-//
-//let test = fork('app.js', {
-//  stdio: 'inherit',
-//  shell: true
-//});
-//
-//test.send('test');
-
-
-
-
-
-
 let forkProc = require('./modules/fork.js');
 
 let application = forkProc('./app.js');
@@ -238,4 +219,7 @@ application.emitter.on('test', (data) => {
   console.log(`Recived data: ${ data }`);
 });
 
-application.process.send('test');
+application.send({
+  event: 'test',
+  data: 'test'
+});

@@ -1,7 +1,6 @@
 let { fork, spawn } = require('child_process');
 let { EventEmitter } = require('events');
 
-
 module.exports = function(command) {
   //Setup
   let emitter = new EventEmitter();
@@ -12,13 +11,6 @@ module.exports = function(command) {
     emitter,
     bindTo
   };
-
-  // process.on('message', (data) => {
-  //   if (data.event) {
-  //     emitter.emit(data.event, data.data);
-  //   }
-  // });
-
 
   if (command) {
     let proc = fork(command, {
@@ -39,10 +31,8 @@ module.exports = function(command) {
         emitter.emit(data.event, data.data);
       }
     });
-
     return retunObj;
   }
-
 
   //Methods, props
   function send(data) {
