@@ -1,3 +1,11 @@
-//TODO: Message recieving here.
+const forkProc = require('./modules/fork.js');
+let application = forkProc().bindTo(process);
 
-console.log('This is a sub proc.');
+application.emitter.on('test', (data) => {
+  application.reply({
+    event: 'test',
+    data: 'I recieve your test loud and clear'
+  }, () => {
+    console.log('Response sent');
+  });
+});

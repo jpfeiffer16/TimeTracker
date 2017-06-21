@@ -9,7 +9,9 @@ module.exports = function(command) {
     send,
     process: child_proc,
     emitter,
-    bindTo
+    bindTo,
+    shell,
+    reply
   };
 
   if (command) {
@@ -22,7 +24,6 @@ module.exports = function(command) {
     //NOTE: If we need anything, do it here.
   }
 
-  
   function bindTo(proc) {
     child_proc = proc;
 
@@ -41,6 +42,19 @@ module.exports = function(command) {
     } else {
       console.error('Must pass an event to send');
     }
+  }
+
+  function shell(data, cb) {
+    console.log('Shell', data);
+    emitter.once(`${ data.event }-reply`, cb);
+    child_proc.send(data);
+    // child_proc.send(data.event, data.data);
+  }
+
+  function reply(data, cb) {
+    data.event += '-reply';
+    child_proc.send(data);
+    cb();
   }
 
   return retunObj;
