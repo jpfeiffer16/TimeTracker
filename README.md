@@ -1,6 +1,8 @@
 # TimeTracker
 An electron app for tracking time
 
+![Image of Yaktocat](images/screenshots/TimeTrackerMain.png)
+
 ## Usage
 
 ### Installing
