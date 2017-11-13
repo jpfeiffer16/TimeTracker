@@ -211,13 +211,15 @@ app.on('activate', () => {
 //     }
 //   });
 
-let forkProc = require('./modules/fork.js');
 
-let application = forkProc('./hub.js');
+const forkProc = require('./modules/fork.js');
+let application = forkProc().bindTo(process);
 
-application.shell({
-  event: 'test',
-  data: 'test'
-}, (data) => {
-  console.log(`Recived back data: ${ data }`);      
+application.emitter.on('test', (data) => {
+  application.reply({
+    event: 'test',
+    data: 'I recieve your test loud and clear'
+  }, () => {
+    console.log('Response sent');
+  });
 });

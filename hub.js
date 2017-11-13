@@ -1,11 +1,10 @@
-const forkProc = require('./modules/fork.js');
-let application = forkProc().bindTo(process);
+let forkProc = require('./modules/fork.js');
 
-application.emitter.on('test', (data) => {
-  application.reply({
-    event: 'test',
-    data: 'I recieve your test loud and clear'
-  }, () => {
-    console.log('Response sent');
-  });
+let application = forkProc('./node_modules/.bin/electron app.js');
+
+application.shell({
+  event: 'test',
+  data: 'test'
+}, (data) => {
+  console.log(`Recived back data: ${ data }`);      
 });
