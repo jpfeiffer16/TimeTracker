@@ -2,6 +2,7 @@ angular.module('app')
   .controller('TimeCtrl', function (
       $scope,
       $rootScope,
+      $window,
       $mdDialog,
       TimeManager,
       hotkeys,
@@ -145,17 +146,20 @@ angular.module('app')
       }
     ];
 
-    $scope.filter = function(codeName) {
+    $scope.filter = function(codeName, cb) {
       if (codeName) {
-        runFilter(codeName);
+        runFilter(codeName, cb);
         $scope.$apply();
       } else {
-        runFilter($scope.selectedFilter);
+        runFilter($scope.selectedFilter, cb);
         $scope.$apply();
       }
+      // if (cb) {
+      //   cb();
+      // }
     };
 
-    function runFilter(codeName) {
+    function runFilter(codeName, cb) {
       console.log(codeName);
       $scope.filters.forEach((filter) => {
         if (filter.codeName === codeName) {
@@ -168,6 +172,7 @@ angular.module('app')
               console.log(settings);
               SettingsManager.saveSettings(settings, () => {
                 console.log('Filter Saved.');
+                if (cb) cb();
               });
             });
           });
@@ -206,7 +211,16 @@ angular.module('app')
     SettingsManager.getSettings((settings) => {
       if (settings && settings.selectedFilter && settings.selectedFilter != '') {
         $scope.selectedFilter = settings.selectedFilter;
-        $scope.filter();
+        $scope.filter(null, () => {
+          let scrollY = $rootScope.viewDataScroll[$rootScope.currentPage];
+          if (scrollY) {
+            // angular.element..animate({ scrollTop: scrollY });
+            $window.scrollTo(scrollY, scrollY);
+          }
+        });
+        // setTimeout(() => {
+
+        // }, 500);
       }
     });
 

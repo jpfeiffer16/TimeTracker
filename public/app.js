@@ -70,7 +70,8 @@ angular
         page: 'textview'
       });
   })
-  .run(($rootScope, $mdSidenav, $location, $route, AppManager, WindowManager) => {
+  .run(($rootScope, $mdSidenav, $location, $route, $window, AppManager, WindowManager) => {
+    $rootScope.viewDataScroll = {};
     $rootScope.toggleMenu = () => {
       $mdSidenav('left').toggle();
     };
@@ -80,6 +81,8 @@ angular
     };
 
     $rootScope.navigate = (url) => {
+      $rootScope.viewDataScroll[$rootScope.currentPage] = $window.scrollY;
+      console.log($window.scrollY);
       $location.path(url);
     };
 
