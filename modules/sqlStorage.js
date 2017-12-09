@@ -1,4 +1,6 @@
 let SettingsManager = require('./settingsManager');
+let { Cache, Touch, Clear } = require('./cache');
+
 
 const StorageManager = function() {
 
@@ -35,14 +37,18 @@ const StorageManager = function() {
         }
       };
     }
-    Day.findAll({
-      include: Task,
-      where
-    }).then((dbdays) => {
-      cb(dbdays.map((dbday) => {
-        return dbday.toJSON();
-      }));
-    });
+    Cache((cache) =>
+      Day.findAll({
+        include: Task,
+        where
+      }).then((dbdays) => {
+        cache(dbdays.map((dbday) => {
+          return dbday.toJSON();
+        }));
+      }),
+      cb,
+      `${ dateFrom }-${ dateTo }`
+    )
   };
 
   let getDay = function (id, cb) {
@@ -66,6 +72,7 @@ const StorageManager = function() {
         task.dayId = dbday.dataValues.id;
         Task.upsert(task);
       });
+      Clear();
       cb(dbday.dataValues);
     });
   };
