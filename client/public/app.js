@@ -60,10 +60,6 @@ angular
         templateUrl: 'public/views/settings.html',
         controller: 'SettingsCtrl',
         page: 'settings'
-      }).when('/misc', {
-        templateUrl: 'public/views/misc.html',
-        controller: 'MiscCtrl',
-        page: 'misc'
       }).when('/textView/:id', {
         templateUrl: 'public/views/textView.html',
         controller: 'TextViewCtrl',
