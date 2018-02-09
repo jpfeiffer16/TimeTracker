@@ -10,8 +10,8 @@ SettingManager.getSettings((settings) => {
   console.log('Got settings');
   username = settings.jira.username;
   jira = new JiraClient( {
-      host: 'jira.bluemodus.com',
-      protocol: 'http',
+      host: settings.jira.baseUrl,
+      protocol: 'https',
       basic_auth: {
           username: settings.jira.username,
           password: settings.jira.password
