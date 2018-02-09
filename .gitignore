@@ -3,3 +3,4 @@ public/components/*
 *.swp
 *.sqlite
 build/
+.vscode/

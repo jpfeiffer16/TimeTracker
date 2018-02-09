@@ -20,7 +20,7 @@ settings.defaults({
       baseUrl: '',
       username: '',
       password: '',
-      autoCompleteJql: '((assignee was currentUser() or assignee = currentUser() ) and updatedDate > -35d) or project = "BlueModus Overhead"'
+      autoCompleteJql: '((assignee was currentUser() or assignee = currentUser() ) and updatedDate > -35d)'
     }
   }
 });
