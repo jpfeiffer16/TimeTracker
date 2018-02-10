@@ -4,7 +4,6 @@ angular.module('app')
       $rootScope,
       $window,
       $mdDialog,
-      TimeManager,
       hotkeys,
       SettingsManager,
       InfoManager,
@@ -193,15 +192,6 @@ angular.module('app')
         $scope.$apply();
         cb();
       });
-      // TimeManager.getDays({
-      //   dateFrom: dateFrom,
-      //   dateTo: dateTo
-      // },(days) => {
-      //   internalDays = days;
-      //   $scope.days = days;
-      //   $scope.$apply();
-      //   cb();
-      // });
     }
 
     function getTotalHours() {

@@ -1,6 +1,6 @@
 angular.module('app')
   .controller('CategoryCtrl',
-    function($scope, $rootScope, $routeParams, CategoriesManager, InfoManager, hotkeys) {
+    function($scope, $rootScope, $routeParams, StorageManager, InfoManager, hotkeys) {
     //Hotkey setup
     hotkeys
       .bindTo($scope)
@@ -23,13 +23,13 @@ angular.module('app')
       title: ''
     };
     if ($routeParams.id) {
-      CategoriesManager.getCategory($routeParams.id, (category) => {
+      StorageManager.query('getCategory', $routeParams.id, (category) => {
         $scope.category = category;
         $scope.$apply();
       });
     }
     $scope.save = function() {
-      CategoriesManager.saveCategory($scope.category, () => {
+      StorageManager.query('saveCategory', $scope.category, () => {
         InfoManager.showMessage('Category Saved');
       });
     };

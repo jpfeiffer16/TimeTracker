@@ -65,9 +65,9 @@ angular.module('app')
       if (index == undefined) return;
       $scope.day.tasks.splice(index, 1);
       if (!id) return;
-      StorageManager.query('removeTask', (id, () => {
+      StorageManager.query('removeTask', id, () => {
         InfoManager.showMessage('Task Removed from DB');
-      }));
+      });
       $scope.hours = getHours();
     }
 

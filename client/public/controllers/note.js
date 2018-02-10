@@ -1,5 +1,12 @@
 angular.module('app')
-  .controller('NoteCtrl', function($scope, $rootScope, $routeParams, NoteManager, InfoManager, CategoriesManager, hotkeys) {
+  .controller('NoteCtrl', function(
+    $scope,
+    $rootScope,
+    $routeParams,
+    InfoManager,
+    StorageManager,
+    hotkeys
+  ) {
     //HotkeySetup
     hotkeys
       .bindTo($scope)
@@ -20,18 +27,18 @@ angular.module('app')
 
     $scope.note = {};
     if ($routeParams.id) {
-      NoteManager.getNote($routeParams.id, (note) => {
+      StorageManager.query('getNote', $routeParams.id, (note) => {
         $scope.note = note;
       });
     }
 
-    CategoriesManager.getCategories((categories) => {
+    StorageManager.query('getCategories', null, (categories) => {
       $scope.categories = categories;
       $scope.$apply();
     });
 
     $scope.save = function () {
-      NoteManager.saveNote($scope.note, (note) => {
+      StorageManager.query('saveNote', $scope.note, (note) => {
         InfoManager.showMessage('Note has been saved');
       });
     }

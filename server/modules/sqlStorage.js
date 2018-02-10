@@ -71,6 +71,7 @@ const SqlStorageManager = function(models, Cache, Touch, Clear) {
       }
     })
     .then(() => {
+      Clear();
       cb();
     });
   };
@@ -83,6 +84,7 @@ const SqlStorageManager = function(models, Cache, Touch, Clear) {
       }
     })
     .then(() => {
+      Clear();
       cb();
     });
   };
@@ -114,6 +116,7 @@ const SqlStorageManager = function(models, Cache, Touch, Clear) {
       }
     })
     .then(() => {
+      Clear();
       cb();
     });
   }
@@ -151,6 +154,7 @@ const SqlStorageManager = function(models, Cache, Touch, Clear) {
               if (dbCategory != null) {
                 dbCategory.destroy({ force: true })
                   .then(() => {
+                    Clear();
                     cb();
                   });
               }

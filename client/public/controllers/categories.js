@@ -1,6 +1,6 @@
 angular.module('app')
   .controller('CategoriesCtrl',
-    function($scope, $rootScope, CategoriesManager, InfoManager, hotkeys) {
+    function($scope, $rootScope, StorageManager, InfoManager, hotkeys) {
     //Hotkey setup
     hotkeys
       .bindTo($scope)
@@ -12,14 +12,14 @@ angular.module('app')
         }
       });
 
-    CategoriesManager.getCategories((categories) => {
+    StorageManager.query('getCategories', null, (categories) => {
       console.log('done getting categories', categories);
       $scope.categories = categories;
       $scope.$apply();
     });
 
     $scope.removeCategory = function(categoryId, index) {
-      CategoriesManager.removeCategory(categoryId, (err) => {
+      StorageManager.query('removeCategory', null, categoryId, (err) => {
         if (err) {
           InfoManager.showMessage(err.message);
         } else {
