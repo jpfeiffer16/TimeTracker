@@ -11,8 +11,8 @@ test_script:
   - npm --version
 
 artifacts:
-  - path: .\build\timetracker-win32-x64.zip
+  - path: .\build\timetracker-win32-x64
     name: WindowsBuild
 
 # Don't actually build.
-build: off
+build: on
