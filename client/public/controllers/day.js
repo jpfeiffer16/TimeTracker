@@ -12,7 +12,10 @@ angular.module('app')
       $routeParams,
       $q,
       $timeout,
-      TimeManager, InfoManager, SettingsManager, hotkeys
+      InfoManager,
+      SettingsManager,
+      StorageManager,
+      hotkeys
     ) {
     //HotkeySetup
     hotkeys
@@ -48,9 +51,9 @@ angular.module('app')
 
     $scope.save = function() {
       //TODO: Change this as it's probably not very performant:
-      $scope.day.date = new Date($scope.day.date.toDateString());
+      $scope.day.date = new Date($scope.day.date);
 
-      TimeManager.saveDay($scope.day, (day) => {
+      StorageManager.query('saveDay', $scope.day, (day) => {
         console.log('Save Day:');        
         console.log(day);
         getDay(day.id);
@@ -62,9 +65,9 @@ angular.module('app')
       if (index == undefined) return;
       $scope.day.tasks.splice(index, 1);
       if (!id) return;
-      TimeManager.removeTask(id, () => {
+      StorageManager.query('removeTask', (id, () => {
         InfoManager.showMessage('Task Removed from DB');
-      });
+      }));
       $scope.hours = getHours();
     }
 
@@ -119,7 +122,7 @@ angular.module('app')
           task.synced = true;
           task.syncing = false;
           $scope.$apply();
-          TimeManager.saveDay($scope.day, (day) => {
+          StorageManager.query('saveDay', $scope.day, (day) => {
             InfoManager.showMessage('Task Synced');
           });
           console.log(result);
@@ -167,7 +170,7 @@ angular.module('app')
     }
 
     function getDay(id) {
-      TimeManager.getDay(id, (day) => {
+      StorageManager.query('getDay', id, (day) => {
         $scope.day = day;
         $scope.$apply();
         $scope.hours = getHours();

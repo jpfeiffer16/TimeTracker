@@ -7,7 +7,8 @@ angular.module('app')
       TimeManager,
       hotkeys,
       SettingsManager,
-      InfoManager
+      InfoManager,
+      StorageManager
     ) {
     //Hotkey setup
     hotkeys
@@ -49,7 +50,7 @@ angular.module('app')
       //   .targetEvent(ev)
       //   .ok('Please do it!')
       //   .cancel('Sounds like a scam');
-      TimeManager.removeDay(id, () => {
+      StorageManager.query('removeDay', id, () => {
         InfoManager.showMessage('Day has been removed from the db');
         getDays(() => {
           $scope.filter();
@@ -186,15 +187,21 @@ angular.module('app')
     $scope.searchDay = '';
 
     function getDays(dateFrom, dateTo, cb) {
-      TimeManager.getDays({
-        dateFrom: dateFrom,
-        dateTo: dateTo
-      },(days) => {
+      StorageManager.query('getDays', {dateFrom, dateTo}, (days) => {
         internalDays = days;
         $scope.days = days;
         $scope.$apply();
         cb();
       });
+      // TimeManager.getDays({
+      //   dateFrom: dateFrom,
+      //   dateTo: dateTo
+      // },(days) => {
+      //   internalDays = days;
+      //   $scope.days = days;
+      //   $scope.$apply();
+      //   cb();
+      // });
     }
 
     function getTotalHours() {
