@@ -1,13 +1,18 @@
 environment:
-  nodejs_version: "7"
+  nodejs_version: "8.9.4"
 
 install:
   - ps: Install-Product node $env:nodejs_version
   - npm install
+  - ps: powershell build.ps1
 
 test_script:
   - node --version
   - npm --version
+
+artifacts:
+  - path: build\timetracker-win32-x64.zip
+    name: WindowsBuild
 
 # Don't actually build.
 build: off
