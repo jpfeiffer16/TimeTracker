@@ -6,8 +6,8 @@ fi
 
 rm build/* -r
 
-./node_modules/.bin/electron-packager ./ --platform linux --arch x64 --icon images/icon.png --out build/
-./node_modules/.bin/electron-packager ./ --platform darwin --arch x64 --icon images/icon.png --out build/
+./node_modules/.bin/electron-packager ./client --platform linux --arch x64 --icon images/icon.png --out build/
+./node_modules/.bin/electron-packager ./client --platform darwin --arch x64 --icon images/icon.png --out build/
 
 cd build
 
