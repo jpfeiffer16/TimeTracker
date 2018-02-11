@@ -32,7 +32,7 @@ folder.
 Will work on a global install option in the future.
 
 ### Notes:
-Currently only macOS and Linux are supported.
+Currently only Windows and Linux are supported.
 
 Destop launcher only works on linux currently.
 

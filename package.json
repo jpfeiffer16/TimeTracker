@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "./node_modules/.bin/electron client/app.js;node server/hub.js",
+    "start": "./node_modules/.bin/electron client/app.js&node server/hub.js&",
     "start-server": "node server/hub.js",
     "start-app": "./node_modules/.bin/electron client/app.js"
   },
