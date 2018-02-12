@@ -29,6 +29,10 @@ jobs:
       - run: npm install
       - run: ./node_modules/.bin/electron-packager ./client --platform linux --arch x64 --icon images/icon.png --out build/
 
+      - store_artifacts:
+        path: ./build/timetracker-linux-x64.tar.gz
+        destination: Linux-Build
+
       - save_cache:
           paths:
             - node_modules
