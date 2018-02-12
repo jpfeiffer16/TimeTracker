@@ -27,6 +27,7 @@ jobs:
           - v1-dependencies-
 
       - run: npm install
+      - run: ./node_modules/.bin/electron-packager ./client --platform linux --arch x64 --icon images/icon.png --out build/
 
       - save_cache:
           paths:
