@@ -11,7 +11,7 @@ test_script:
   - npm --version
 
 artifacts:
-  - path: .\build\timetracker-win32-x64
+  - path: .\build\timetracker-win32-x64.zip
 
 # Don't actually build.
 build: off
