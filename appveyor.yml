@@ -12,7 +12,6 @@ test_script:
 
 artifacts:
   - path: .\build\timetracker-win32-x64
-    name: WindowsBuild
 
 # Don't actually build.
 build: off
