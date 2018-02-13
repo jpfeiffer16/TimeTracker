@@ -1,5 +1,4 @@
 const SettingsManager = require('./settingsManager');
-const StorageManager = require('./Storage');
 
 const { app } = require('electron');
 
