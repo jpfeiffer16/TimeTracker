@@ -1,7 +1,7 @@
 # TimeTracker
 An electron app for tracking time
 
-![TimeTracker Screenshot](images/screenshots/TimeTrackerMain.png)
+![TimeTracker Screenshot](client/images/screenshots/TimeTrackerMain.png)
 
 ## Usage
 
