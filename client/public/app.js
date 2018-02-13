@@ -2,11 +2,6 @@
 angular
   .module('app', ['ngRoute', 'ngMaterial', 'ngAnimate', 'cfp.hotkeys'])
   .config(($routeProvider, $locationProvider) => {
-    //$locationProvider
-    //  .html5Mode({
-    //    enabled: true,
-    //    requireBase: false
-    //  });
     $routeProvider
       .when('/', {
         redirectTo: '/time'
