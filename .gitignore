@@ -4,3 +4,4 @@ client/public/components/*
 *.sqlite
 build/
 .vscode/
+.env
