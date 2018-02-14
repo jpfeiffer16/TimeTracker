@@ -189,8 +189,8 @@ angular.module('app')
       StorageManager.query('getDays', {dateFrom, dateTo}, (days) => {
         internalDays = days;
         $scope.days = days;
-        $scope.$apply();
         cb();
+        $scope.$apply();
       });
     }
 
