@@ -14,8 +14,9 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "databacker-client": "^1.0.0",
-    "electron-main-notification": "1.0.0",
+    "dotenv": "^5.0.0",
     "electron": "1.4.1",
+    "electron-main-notification": "1.0.0",
     "electron-settings": "2.2.1",
     "electron-single-instance": "0.0.2",
     "express": "^4.16.2",
