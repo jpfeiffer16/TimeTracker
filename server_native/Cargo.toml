@@ -1,0 +1,9 @@
+[package]
+name = "server_native"
+version = "0.1.0"
+authors = ["jpfeiffer16 <joepfeiffer16@gmail.com>"]
+
+[dependencies]
+rocket = "0.3.6"
+rocket_codegen = "0.3.6"
+rustc-serialize = "0.3"
