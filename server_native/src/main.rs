@@ -1,5 +1,6 @@
 #![feature(plugin)]
 #![plugin(rocket_codegen)]
+#![plugin(serde_macros)]
 
 mod models;
 mod types;
