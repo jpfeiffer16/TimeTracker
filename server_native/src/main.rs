@@ -2,11 +2,14 @@
 #![plugin(rocket_codegen)]
 
 mod models;
+mod types;
 
+extern crate rocket_contrib;
 extern crate rustc_serialize;
 extern crate rocket;
 
 use rustc_serialize::json;
+use rocket_contrib::Json;
 
 #[get("/<name>/<age>")]
 fn hello(name: String, age: u8) -> String {
@@ -14,7 +17,7 @@ fn hello(name: String, age: u8) -> String {
 }
 
 #[get("/")]
-fn get_days() -> String {
+fn get_days(data: Json<types::body::Body>) -> String {
     let mut data: Vec<models::day::Day> = vec!();
     for i in 1..11 {
         data.push(
