@@ -23,14 +23,19 @@ fn get_days() -> Json<Vec<models::day::Day>> {
     let mut stmnt = conn.prepare("select * from days").unwrap();
     let day_iter = stmnt.query_map(&[], |row| {
         models::day::Day {
+            id: row.get(0),
             date: row.get(1),
+            created_at: row.get(2),
+            updated_at: row.get(3),
             tasks: vec!{
                 models::task::Task {
                     id: 1,
-                    day_id: 1,
                     description: "test".to_string(),
+                    time: 4,
+                    created_at: "test".to_string(),
+                    updated_at: "test".to_string(),
                     synced: false,
-                    time: 4
+                    day_id: 1,
                 }
             }
         }
