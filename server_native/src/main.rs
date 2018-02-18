@@ -1,51 +1,61 @@
 #![feature(plugin)]
 #![plugin(rocket_codegen)]
-#![plugin(serde_macros)]
+
+extern crate rusqlite;
+
+use rusqlite::Connection;
+
+extern crate rocket;
+#[macro_use] extern crate rocket_contrib;
+#[macro_use] extern crate serde_derive;
+
+use rocket_contrib::{Json, Value};
+use rocket::State;
+use std::collections::HashMap;
+use std::sync::Mutex;
 
 mod models;
 mod types;
 
-extern crate rocket_contrib;
-extern crate rustc_serialize;
-extern crate rocket;
-
-use rustc_serialize::json;
-use rocket_contrib::Json;
-
-#[get("/<name>/<age>")]
-fn hello(name: String, age: u8) -> String {
-    format!("Hello, {} year old named {}!", age, name)
-}
-
-#[get("/")]
-fn get_days(data: Json<types::body::Body>) -> String {
-    let mut data: Vec<models::day::Day> = vec!();
-    for i in 1..11 {
-        data.push(
-            models::day::Day{
-                date: i.to_string(),
-                tasks: vec! {
-                    models::task::Task {
-                        id: 1,
-                        day_id: 1,
-                        description: "Test".to_string(),
-                        synced: false,
-                        time: 3
-                    }
+#[post("/", format = "application/json")]
+fn get_days() -> Json<Vec<models::day::Day>> {
+    let conn = Connection::open("../data.sqlite").unwrap();
+    let mut stmnt = conn.prepare("select * from days").unwrap();
+    let day_iter = stmnt.query_map(&[], |row| {
+        models::day::Day {
+            date: row.get(1),
+            tasks: vec!{
+                models::task::Task {
+                    id: 1,
+                    day_id: 1,
+                    description: "test".to_string(),
+                    synced: false,
+                    time: 4
                 }
             }
-        );
+        }
+    }).unwrap();
+    let mut final_result = Vec::new();
+    for day_result in day_iter {
+        final_result.push(day_result.unwrap());
     }
-    json::encode(&data).unwrap()
+    Json(final_result)
+}
+
+#[error(404)]
+fn not_found() -> Json<Value> {
+    Json(json!({
+        "status": "error",
+        "reason": "Resource was not found."
+    }))
+}
+
+fn rocket() -> rocket::Rocket {
+    rocket::ignite()
+        .mount("/getDays", routes![get_days])
+        .catch(errors![not_found])
 }
 
 fn main() {
-    rocket::ignite()
-        .mount("/hello", routes![hello])
-        .mount("/getDays", routes![get_days])
-        .launch();
-    // rocket::ignite().mount("/getDays", routes![getDays]).launch();
-    // let test = TestStruct { test: "test".to_string() };
-    // let result = json::encode(&test).unwrap();
-    // println!("{}", result);
+    rocket().launch();
 }

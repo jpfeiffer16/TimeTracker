@@ -1,8 +1,4 @@
-extern crate rustc_serialize;
-
-// mod task;
-
-#[derive(RustcDecodable, RustcEncodable)]
+#[derive(Serialize, Deserialize)]
 pub struct Day  {
     // pub id: i64,
     // pub created_at: String,

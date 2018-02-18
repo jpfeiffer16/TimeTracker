@@ -1,11 +1,9 @@
-#[macro_use]
+// #[macro_use]
+extern crate rocket;
 use std::collections::HashMap;
+use rocket::data::FromData;
 
-extern crate serde;
-extern crate serde_derive;
-extern crate serde_json;
-
-#[derive(Deserialize, Debug)]
+#[derive(Deserialize)]
 pub struct Body  {
   pub params: HashMap<String, String>
 }
