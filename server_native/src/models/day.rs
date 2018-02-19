@@ -1,4 +1,5 @@
 #[derive(Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct Day  {
     pub id: i64,
     pub date: String,
