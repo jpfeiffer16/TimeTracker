@@ -22,7 +22,7 @@ fn get_days() -> Json<Vec<models::day::Day>> {
     let conn = Connection::open("../data.sqlite").unwrap();
     let mut stmnt = conn.prepare("select * from days limit 10").unwrap();
     let day_iter = stmnt.query_map(&[], |row| {
-        // let id_string: String = row.get(0);
+        // let id_string: i64 = row.get(0);
         // println!("{}", &format!("select * from tasks where dayId = {}", id_string));
         // let mut task_stmnt = conn.prepare(&format!("select * from tasks where dayId = {}", id_string)).unwrap();
         // let task_iter = task_stmnt.query_map(&[], |task_row| {
@@ -32,7 +32,7 @@ fn get_days() -> Json<Vec<models::day::Day>> {
         //         time: task_row.get(2),
         //         created_at: task_row.get(3),
         //         updated_at: task_row.get(4),
-        //         day_id: task_row.get(5),
+        //         day_id: task_row.get(5)
         //         synced: task_row.get(6)
         //     }
         // }).unwrap();
@@ -54,8 +54,8 @@ fn get_days() -> Json<Vec<models::day::Day>> {
                     time: 4,
                     created_at: "test".to_string(),
                     updated_at: "test".to_string(),
-                    synced: false,
-                    day_id: 1,
+                    synced: 1,
+                    day_id: 1
                 }
             )
         }
