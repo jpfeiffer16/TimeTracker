@@ -7,5 +7,5 @@ pub struct Task  {
     pub created_at: String,
     pub updated_at: String,
     pub day_id: i64,
-    pub synced: Option<i64>
+    pub synced: Option<bool>
 }

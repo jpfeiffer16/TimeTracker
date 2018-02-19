@@ -2,7 +2,6 @@
 #![plugin(rocket_codegen)]
 
 extern crate rusqlite;
-
 use rusqlite::Connection;
 
 extern crate rocket;
@@ -30,10 +29,10 @@ fn get_days() -> Json<Vec<models::day::Day>> {
                 id: task_row.get(0),
                 description: task_row.get(1),
                 time: task_row.get(2),
-                created_at: task_row.get(3),
-                updated_at: task_row.get(4),
+                created_at: get_iso_date(task_row.get(3)),
+                updated_at: get_iso_date(task_row.get(4)),
                 day_id: task_row.get(5),
-                synced: Some(1)
+                synced: task_row.get(6)
             }
         }).unwrap();
         let mut final_task_vec = Vec::new();
@@ -44,9 +43,9 @@ fn get_days() -> Json<Vec<models::day::Day>> {
         // println!("{}", row.get(0));
         models::day::Day {
             id: row.get(0),
-            date: row.get(1),
-            created_at: row.get(2),
-            updated_at: row.get(3),
+            date: get_iso_date(row.get(1)),
+            created_at: get_iso_date(row.get(2)),
+            updated_at: get_iso_date(row.get(3)),
             tasks: final_task_vec
             // vec!(
             //     models::task::Task {
@@ -84,4 +83,9 @@ fn rocket() -> rocket::Rocket {
 
 fn main() {
     rocket().launch();
+}
+
+fn get_iso_date(original_str: String) -> String {
+    let mut parts = original_str.split(" ");
+    format!("{}T{}", parts.nth(0).unwrap(), parts.nth(0).unwrap())
 }
