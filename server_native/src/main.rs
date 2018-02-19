@@ -39,25 +39,12 @@ fn get_days() -> Json<Vec<models::day::Day>> {
         for task in task_iter {
             final_task_vec.push(task.unwrap());
         }
-        // let test: String = row.get(0);
-        // println!("{}", row.get(0));
         models::day::Day {
             id: row.get(0),
             date: get_iso_date(row.get(1)),
             created_at: get_iso_date(row.get(2)),
             updated_at: get_iso_date(row.get(3)),
             tasks: final_task_vec
-            // vec!(
-            //     models::task::Task {
-            //         id: 1,
-            //         description: "test".to_string(),
-            //         // time: 4,
-            //         // created_at: "test".to_string(),
-            //         // updated_at: "test".to_string(),
-            //         // synced: 1,
-            //         day_id: 1
-            //     }
-            // )
         }
     }).unwrap();
     let mut final_result = Vec::new();
