@@ -2,7 +2,6 @@
 #![plugin(rocket_codegen)]
 
 extern crate rusqlite;
-// use rusqlite::Connection;
 
 extern crate rocket;
 #[macro_use] extern crate rocket_contrib;
