@@ -17,6 +17,8 @@ mod types;
 mod routes;
 mod helpers;
 
+mod sql;
+
 #[error(404)]
 fn not_found() -> Json<Value> {
     Json(json!({
@@ -28,6 +30,7 @@ fn not_found() -> Json<Value> {
 fn rocket() -> rocket::Rocket {
     rocket::ignite()
         .mount("/getDays", routes![routes::get_days::get_days])
+        .mount("/getDay", routes![routes::get_day::get_day])
         .catch(errors![not_found])
 }
 
