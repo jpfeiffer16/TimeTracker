@@ -17,44 +17,6 @@ mod types;
 mod routes;
 mod helpers;
 
-// #[post("/", format = "application/json")]
-// fn get_days() -> Json<Vec<models::day::Day>> {
-//     let conn = Connection::open("../data.sqlite").unwrap();
-//     let mut stmnt = conn.prepare("select * from days").unwrap();
-//     let day_iter = stmnt.query_map(&[], |row| {
-//         let id_string: i64 = row.get(0);
-//         println!("{}", &format!("select * from tasks where dayId = {}", id_string));
-//         let mut task_stmnt = conn.prepare(&format!("select * from tasks where dayId = {}", id_string)).unwrap();
-//         let task_iter = task_stmnt.query_map(&[], |task_row| {
-//             models::task::Task {
-//                 id: task_row.get(0),
-//                 description: task_row.get(1),
-//                 time: task_row.get(2),
-//                 created_at: get_iso_date(task_row.get(3)),
-//                 updated_at: get_iso_date(task_row.get(4)),
-//                 day_id: task_row.get(5),
-//                 synced: task_row.get(6)
-//             }
-//         }).unwrap();
-//         let mut final_task_vec = Vec::new();
-//         for task in task_iter {
-//             final_task_vec.push(task.unwrap());
-//         }
-//         models::day::Day {
-//             id: row.get(0),
-//             date: get_iso_date(row.get(1)),
-//             created_at: get_iso_date(row.get(2)),
-//             updated_at: get_iso_date(row.get(3)),
-//             tasks: final_task_vec
-//         }
-//     }).unwrap();
-//     let mut final_result = Vec::new();
-//     for day_result in day_iter {
-//         final_result.push(day_result.unwrap());
-//     }
-//     Json(final_result)
-// }
-
 #[error(404)]
 fn not_found() -> Json<Value> {
     Json(json!({
