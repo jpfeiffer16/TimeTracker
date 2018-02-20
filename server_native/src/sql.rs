@@ -55,6 +55,10 @@ pub fn get_day(id: i64) -> Day {
     day_iter.nth(0).unwrap().unwrap()
 }
 
+pub fn save_day(day: Day) -> Result {
+    
+}
+
 pub fn get_tasks_for_day(day_id: i64) -> Vec<Task> {
     let conn = Connection::open("../data.sqlite").unwrap();
     let mut task_stmnt =
