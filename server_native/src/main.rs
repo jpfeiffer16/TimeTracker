@@ -30,6 +30,7 @@ fn rocket() -> rocket::Rocket {
     rocket::ignite()
         .mount("/getDays", routes![routes::get_days::get_days])
         .mount("/getDay", routes![routes::get_day::get_day])
+        .mount("/saveDay", routes![routes::save_day::save_day])
         .catch(errors![not_found])
 }
 

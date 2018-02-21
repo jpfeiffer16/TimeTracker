@@ -1,9 +1,10 @@
 #[derive(Serialize, Deserialize)]
+#[derive(Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Day  {
-    pub id: i64,
+    pub id: Option<i64>,
     pub date: String,
-    pub created_at: String,
-    pub updated_at: String,
+    pub created_at: Option<String>,
+    pub updated_at: Option<String>,
     pub tasks: Vec<super::task::Task>
 }
