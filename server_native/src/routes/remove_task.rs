@@ -3,6 +3,9 @@ use super::super::types::single_value_body::SingleValueBody;
 use super::super::sql;
 
 #[post("/", format = "application/json", data = "<data>")]
-pub fn get_day(data: Json<Option<SingleValueBody>>) -> Json<super::super::models::day::Day> {
-  Json(sql::get_day(data.0.unwrap().params))
+pub fn remove_task(data: Json<Option<SingleValueBody>>) -> Json<Value> {
+  sql::remove_task(data.0.unwrap().params);
+  Json(json!({
+    "Success": "true"
+  }))
 }

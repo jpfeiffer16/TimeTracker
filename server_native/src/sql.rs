@@ -1,4 +1,5 @@
 use rusqlite::Connection;
+use chrono::prelude::*;
 use super::helpers;
 use super::models::day::Day;
 use super::models::task::Task;
@@ -55,34 +56,51 @@ pub fn get_day(id: i64) -> Day {
     day_iter.nth(0).unwrap().unwrap()
 }
 
-pub fn save_day(day: Day) -> Result<(), ()> {
+pub fn save_day(day: Day) -> Result<i64, ()> {
     let conn = Connection::open("../data.sqlite").unwrap();
     let mut query;
     match day.id {
         Some(id) => query = format!(
-            "UPDATE tasks SET date='{}',updatedAt='{}' WHERE (id = {})",
+            "UPDATE days SET date='{}',updatedAt='{}' WHERE (id = {})",
             helpers::get_sqlite_date(day.date),
             //TODO: Fix this, we need to actually update the timestamp
-            day.updated_at.unwrap(),
+            Local::now(),
             id
         ),
         None => query = format!(
-            "INSERT INTO tasks (date, updatedAt) VALUES ('{}', '{}')",
+            "INSERT INTO days (date, createdAt, updatedAt) VALUES ('{}', '{}', '{}')",
             helpers::get_sqlite_date(day.date),
-            "TODO"
+            Local::now(),
+            Local::now()
             //TODO: Fix this, we need to actually update the timestamp
             // day.updated_at,
         )
     }
     println!("{}", query);
     conn.execute(&query, &[]);
+    let last_row = conn.last_insert_rowid();
     for task in day.tasks {
-        save_task(task);
+        save_task(task, match day.id { Some(id) => id, None => last_row });
     }
-    Ok(())
+    Ok(match day.id {
+        Some(id) => id,
+        None => last_row
+    })
 }
 
-pub fn save_task(task:Task) -> Result<(), ()> {
+pub fn remove_day(id: i64) {
+    let conn = Connection::open("../data.sqlite").unwrap();
+    conn.execute(&format!(
+        "delete from tasks where dayId = {}",
+        id
+    ), &[]);
+    conn.execute(&format!(
+        "delete from days where id = {}",
+        id
+    ), &[]);
+}
+
+pub fn save_task(task:Task, day_id: i64) -> Result<(), ()> {
     let conn = Connection::open("../data.sqlite").unwrap();
     let mut query;
     println!("{:?}", task);
@@ -91,24 +109,30 @@ pub fn save_task(task:Task) -> Result<(), ()> {
             "UPDATE tasks SET description='{}',time={},dayId={},updatedAt='{}' WHERE (id = {})",
             task.description,
             task.time,
-            task.day_id,
-            //TODO: Fix this, we need to actually update the timestamp
-            helpers::get_sqlite_date(task.updated_at.unwrap()),
+            day_id,
+            Local::now(),
             id
         ),
         None => query = format!(
-            "INSERT INTO tasks (description, time, dayId, updatedAt) VALUES ('{}', {}, {}, '{}')",
+            "INSERT INTO tasks (description, time, dayId, createdAt, updatedAt) VALUES ('{}', {}, {}, '{}', '{}')",
             task.description,
             task.time,
-            task.day_id,
-            "TODO"
-            //TODO: Fix this, we need to actually update the timestamp
-            // helpers::get_sqlite_date(task.updated_at)
+            day_id,
+            Local::now(),
+            Local::now()
         )
     }
     println!("{}", query);
     conn.execute(&query, &[]);
     Ok(())
+}
+
+pub fn remove_task(id: i64) {
+    let conn = Connection::open("../data.sqlite").unwrap();
+    conn.execute(&format!(
+        "delete from tasks where id = {}",
+        id
+    ), &[]);
 }
 
 pub fn get_tasks_for_day(day_id: i64) -> Vec<Task> {

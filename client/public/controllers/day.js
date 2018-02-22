@@ -170,7 +170,7 @@ angular.module('app')
     }
 
     function getDay(id) {
-      StorageManager.query('getDay', id, (day) => {
+      StorageManager.query('getDay', parseInt(id), (day) => {
         $scope.day = day;
         $scope.$apply();
         $scope.hours = getHours();

@@ -2,7 +2,7 @@
 #![plugin(rocket_codegen)]
 
 extern crate rusqlite;
-
+extern crate chrono;
 extern crate rocket;
 #[macro_use] extern crate rocket_contrib;
 #[macro_use] extern crate serde_derive;
@@ -31,6 +31,8 @@ fn rocket() -> rocket::Rocket {
         .mount("/getDays", routes![routes::get_days::get_days])
         .mount("/getDay", routes![routes::get_day::get_day])
         .mount("/saveDay", routes![routes::save_day::save_day])
+        .mount("/removeDay", routes![routes::remove_day::remove_day])
+        .mount("/removeTask", routes![routes::remove_task::remove_task])
         .catch(errors![not_found])
 }
 
