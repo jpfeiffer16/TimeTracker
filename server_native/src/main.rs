@@ -33,6 +33,9 @@ fn rocket() -> rocket::Rocket {
         .mount("/saveDay", routes![routes::save_day::save_day])
         .mount("/removeDay", routes![routes::remove_day::remove_day])
         .mount("/removeTask", routes![routes::remove_task::remove_task])
+        .mount("/getNotes", routes![routes::get_notes::get_notes])
+        .mount("/getNote", routes![routes::get_note::get_note])
+        .mount("/removeNote", routes![routes::remove_note::remove_note])
         .catch(errors![not_found])
 }
 

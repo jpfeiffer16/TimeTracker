@@ -1,7 +1,7 @@
 #[derive(Serialize,Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Note {
-  id: Option<i64>,
-  title: Option<String>,
-  text: Option<String>
+  pub id: Option<i64>,
+  pub title: Option<String>,
+  pub text: Option<String>
 }

@@ -1,12 +1,9 @@
 use rusqlite::Connection;
 use rocket_contrib::{Json, Value};
-// use super::super::helpers as helpers;
+use super::super::models::note::Note;
+use super::super::sql;
 
 #[post("/", format = "application/json")]
-pub fn get_days() -> Json<Vec<super::super::models::day::Day>> {
-  //TODO: Finish implementing. Also, there should be a module or static
-  //      property for the DB connection
-  // let conn = Connection::open("../data.sqlite").unwrap();
-  // let mut stmnt = conn.prepare("select * from notes").unwrap();
-  // Json()
+pub fn get_notes() -> Json<Vec<Note>> {
+  Json(sql::get_notes())
 }

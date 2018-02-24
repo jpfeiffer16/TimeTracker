@@ -1,6 +1,6 @@
 #[derive(Serialize,Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Category {
-  id: Option<i64>,
-  name: Option<String>
+  pub id: Option<i64>,
+  pub name: Option<String>
 }

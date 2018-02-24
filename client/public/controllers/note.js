@@ -27,7 +27,7 @@ angular.module('app')
 
     $scope.note = {};
     if ($routeParams.id) {
-      StorageManager.query('getNote', $routeParams.id, (note) => {
+      StorageManager.query('getNote', parseInt($routeParams.id), (note) => {
         $scope.note = note;
       });
     }

@@ -3,7 +3,8 @@ use chrono::prelude::*;
 use super::helpers;
 use super::models::day::Day;
 use super::models::task::Task;
-// use super::models::note::Note;
+use super::models::note::Note;
+use rusqlite::Error;
 
 pub fn get_days(dateFrom: Option<&String>, dateTo: Option<&String>) -> Vec<Day> {
     let conn = Connection::open("../data.sqlite").unwrap();
@@ -142,14 +143,14 @@ pub fn get_tasks_for_day(day_id: i64) -> Vec<Task> {
         conn.prepare(&format!("select * from tasks where dayId = {}", day_id))
             .unwrap();
     let task_iter = task_stmnt
-        .query_map(&[], |task_row| Task {
-            id: task_row.get(0),
-            description: task_row.get(1),
-            time: task_row.get(2),
-            created_at: Some(helpers::get_iso_date(task_row.get(3))),
-            updated_at: Some(helpers::get_iso_date(task_row.get(4))),
-            day_id: task_row.get(5),
-            synced: task_row.get(6),
+        .query_map(&[], |row| Task {
+            id: row.get(0),
+            description: row.get(1),
+            time: row.get(2),
+            created_at: Some(helpers::get_iso_date(row.get(3))),
+            updated_at: Some(helpers::get_iso_date(row.get(4))),
+            day_id: row.get(5),
+            synced: row.get(6),
         })
         .unwrap();
     let mut final_task_vec = Vec::new();
@@ -159,25 +160,44 @@ pub fn get_tasks_for_day(day_id: i64) -> Vec<Task> {
     final_task_vec
 }
 
-// pub fn get_note(id: i54) -> Vec<Note> {
-//     let conn = Connection::open("../data.sqlite").unwrap();
-//     let mut task_stmnt =
-//         conn.prepare(&format!("select * from notes where id = {}", id))
-//             .unwrap();
-//     let task_iter = task_stmnt
-//         .query_map(&[], |task_row| Task {
-//             id: task_row.get(0),
-//             description: task_row.get(1),
-//             time: task_row.get(2),
-//             created_at: Some(helpers::get_iso_date(task_row.get(3))),
-//             updated_at: Some(helpers::get_iso_date(task_row.get(4))),
-//             day_id: task_row.get(5),
-//             synced: task_row.get(6),
-//         })
-//         .unwrap();
-//     let mut final_task_vec = Vec::new();
-//     for task in task_iter {
-//         final_task_vec.push(task.unwrap());
-//     }
-//     final_task_vec
-// }
+
+pub fn get_notes() -> Vec<Note> {
+    let conn = Connection::open("../data.sqlite").unwrap();
+    let mut task_stmnt =
+        conn.prepare("select * from notes")
+            .unwrap();
+    let iter = task_stmnt
+        .query_map(&[], |row| Note {
+            id: row.get(0),
+            title: row.get(1),
+            text: row.get(2)
+        })
+        .unwrap();
+    let mut final_vec = Vec::new();
+    for row in iter {
+        final_vec.push(row.unwrap());
+    }
+    final_vec
+}
+
+pub fn get_note(id: i64) -> Result<Note, Error> {
+    let conn = Connection::open("../data.sqlite").unwrap();
+    let mut task_stmnt =
+        conn.prepare(&format!("select * from notes where id = {}", id))
+            .unwrap();
+    let mut result = task_stmnt
+        .query_map(&[], |row| Note {
+            id: row.get(0),
+            title: row.get(1),
+            text: row.get(2)
+        }).unwrap();
+    result.nth(0).unwrap()
+}
+
+pub fn remove_note(id: i64) {
+    let conn = Connection::open("../data.sqlite").unwrap();
+    conn.execute(&format!(
+        "delete from notes where id = {}",
+        id
+    ), &[]);
+}
