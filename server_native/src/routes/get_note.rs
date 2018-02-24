@@ -12,7 +12,9 @@ pub fn get_note(data: Json<Option<SingleValueBody>>) -> Json<Note> {
       Err(Error) => Note {
         id: None,
         title: None,
-        text: None
+        text: None,
+        created_at: None,
+        updated_at: None
       }
     }
   )

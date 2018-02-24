@@ -170,7 +170,9 @@ pub fn get_notes() -> Vec<Note> {
         .query_map(&[], |row| Note {
             id: row.get(0),
             title: row.get(1),
-            text: row.get(2)
+            text: row.get(2),
+            created_at: row.get(3),            
+            updated_at: row.get(4)
         })
         .unwrap();
     let mut final_vec = Vec::new();
@@ -189,9 +191,42 @@ pub fn get_note(id: i64) -> Result<Note, Error> {
         .query_map(&[], |row| Note {
             id: row.get(0),
             title: row.get(1),
-            text: row.get(2)
+            text: row.get(2),
+            created_at: row.get(3),            
+            updated_at: row.get(4)
         }).unwrap();
     result.nth(0).unwrap()
+}
+
+pub fn save_note(note: Note) -> Result<i64, ()> {
+    let conn = Connection::open("../data.sqlite").unwrap();
+    let mut query;
+
+    match note.id {
+        Some(id) => query = format!(
+            "UDATE notes SET title='{}', text='{}', updatedAt='{}' WHERE id={}",
+            note.title.unwrap(),
+            note.text.unwrap(),
+            Local::now(),
+            id
+        ),
+        None => query = format!(
+            "INSERT INTO notes (title, text, updatedAt, createdAt) VALUES ('{}', '{}', '{}', '{}')",
+            note.title.unwrap(),
+            note.text.unwrap(),
+            Local::now(),
+            Local::now()
+        )
+    }
+
+    println!("{}", query);
+    
+    conn.execute(&query, &[]);
+    
+    match note.id {
+        Some(id) => Ok(id),
+        None => Ok(conn.last_insert_rowid())
+    }
 }
 
 pub fn remove_note(id: i64) {
