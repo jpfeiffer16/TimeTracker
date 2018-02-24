@@ -3,6 +3,7 @@ use chrono::prelude::*;
 use super::helpers;
 use super::models::day::Day;
 use super::models::task::Task;
+// use super::models::note::Note;
 
 pub fn get_days(dateFrom: Option<&String>, dateTo: Option<&String>) -> Vec<Day> {
     let conn = Connection::open("../data.sqlite").unwrap();
@@ -24,7 +25,7 @@ pub fn get_days(dateFrom: Option<&String>, dateTo: Option<&String>) -> Vec<Day> 
             let tasks_vec = get_tasks_for_day(row.get(0));
             Day {
                 id: row.get(0),
-                date: helpers::get_iso_date(row.get(1)),
+                date: Some(helpers::get_iso_date(row.get(1))),
                 created_at: Some(helpers::get_iso_date(row.get(2))),
                 updated_at: Some(helpers::get_iso_date(row.get(3))),
                 tasks: tasks_vec,
@@ -46,7 +47,7 @@ pub fn get_day(id: i64) -> Day {
             let tasks_vec = get_tasks_for_day(row.get(0));
             Day {
                 id: row.get(0),
-                date: helpers::get_iso_date(row.get(1)),
+                date: Some(helpers::get_iso_date(row.get(1))),
                 created_at: Some(helpers::get_iso_date(row.get(2))),
                 updated_at: Some(helpers::get_iso_date(row.get(3))),
                 tasks: tasks_vec,
@@ -62,14 +63,14 @@ pub fn save_day(day: Day) -> Result<i64, ()> {
     match day.id {
         Some(id) => query = format!(
             "UPDATE days SET date='{}',updatedAt='{}' WHERE (id = {})",
-            helpers::get_sqlite_date(day.date),
+            helpers::get_sqlite_date(day.date.unwrap()),
             //TODO: Fix this, we need to actually update the timestamp
             Local::now(),
             id
         ),
         None => query = format!(
             "INSERT INTO days (date, createdAt, updatedAt) VALUES ('{}', '{}', '{}')",
-            helpers::get_sqlite_date(day.date),
+            helpers::get_sqlite_date(day.date.unwrap()),
             Local::now(),
             Local::now()
             //TODO: Fix this, we need to actually update the timestamp
@@ -107,16 +108,16 @@ pub fn save_task(task:Task, day_id: i64) -> Result<(), ()> {
     match (task.id) {
         Some(id) => query = format!(
             "UPDATE tasks SET description='{}',time={},dayId={},updatedAt='{}' WHERE (id = {})",
-            task.description,
-            task.time,
+            task.description.unwrap(),
+            task.time.unwrap(),
             day_id,
             Local::now(),
             id
         ),
         None => query = format!(
             "INSERT INTO tasks (description, time, dayId, createdAt, updatedAt) VALUES ('{}', {}, {}, '{}', '{}')",
-            task.description,
-            task.time,
+            task.description.unwrap(),
+            task.time.unwrap(),
             day_id,
             Local::now(),
             Local::now()
@@ -157,3 +158,26 @@ pub fn get_tasks_for_day(day_id: i64) -> Vec<Task> {
     }
     final_task_vec
 }
+
+// pub fn get_note(id: i54) -> Vec<Note> {
+//     let conn = Connection::open("../data.sqlite").unwrap();
+//     let mut task_stmnt =
+//         conn.prepare(&format!("select * from notes where id = {}", id))
+//             .unwrap();
+//     let task_iter = task_stmnt
+//         .query_map(&[], |task_row| Task {
+//             id: task_row.get(0),
+//             description: task_row.get(1),
+//             time: task_row.get(2),
+//             created_at: Some(helpers::get_iso_date(task_row.get(3))),
+//             updated_at: Some(helpers::get_iso_date(task_row.get(4))),
+//             day_id: task_row.get(5),
+//             synced: task_row.get(6),
+//         })
+//         .unwrap();
+//     let mut final_task_vec = Vec::new();
+//     for task in task_iter {
+//         final_task_vec.push(task.unwrap());
+//     }
+//     final_task_vec
+// }

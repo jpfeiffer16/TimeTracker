@@ -10,13 +10,13 @@ pub fn save_day(data: Json<Option<DayBody>>) -> Json<Day> {
     Ok(id) => Json(sql::get_day(id)),
     Err(_) => Json(Day {
       id: None,
-      date: "".to_string(),
+      date: None,
       created_at: None,
       updated_at: None,
       tasks: vec!{Task {
         id: None,
-        description: "".to_string(),
-        time: 0.0,
+        description: None,
+        time: None,
         created_at: None,
         updated_at: None,
         day_id: None,

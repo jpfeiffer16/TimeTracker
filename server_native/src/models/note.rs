@@ -2,6 +2,6 @@
 #[serde(rename_all = "camelCase")]
 pub struct Note {
   id: Option<i64>,
-  title: String,
-  text: String
+  title: Option<String>,
+  text: Option<String>
 }
