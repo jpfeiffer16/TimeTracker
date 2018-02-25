@@ -7,3 +7,4 @@ pub mod get_notes;
 pub mod get_note;
 pub mod save_note;
 pub mod remove_note;
+pub mod get_categories;

@@ -4,7 +4,9 @@ use super::helpers;
 use super::models::day::Day;
 use super::models::task::Task;
 use super::models::note::Note;
+use super::models::category::Category;
 use rusqlite::Error;
+use std::iter::FromIterator;
 
 pub fn get_days(dateFrom: Option<&String>, dateTo: Option<&String>) -> Vec<Day> {
     let conn = Connection::open("../data.sqlite").unwrap();
@@ -228,6 +230,43 @@ pub fn save_note(note: Note) -> Result<i64, ()> {
         None => Ok(conn.last_insert_rowid())
     }
 }
+
+pub fn get_categories() -> Result<Vec<Category>, Error>{
+    let conn = Connection::open("../data.sqlite").unwrap();
+    let mut stmnt = conn.prepare("SELECT * FROM categories").unwrap();
+    let itr = stmnt.query_map(&[], |row| {
+        Category {
+            id: row.get(0),
+            name: row.get(1),
+            created_at: row.get(2),
+            updated_at: row.get(3)
+        }
+    }).unwrap();
+    let mut final_vec = Vec::new();
+    for row in itr {
+        final_vec.push(row.unwrap());
+    }
+    Ok(final_vec)
+    // match itr {
+    //     Ok(rows) => Ok(Vec::from_iter(itr.map(|row| row.unwrap()))),
+    //     Err(err) => Err(err)
+    // }
+}
+
+// pub fn get_category(id: i64) -> Category {
+//     let conn = Connection::open("../data.sqlite").unwrap();
+//     let mut task_stmnt =
+//         conn.prepare(&format!("select * from categories where id = {}", id))
+//             .unwrap();
+//     let mut result = task_stmnt
+//         .query_map(&[], |row| Note {
+//             id: row.get(0),
+//             name: row.get(1),
+//             created_at: row.get(2),            
+//             updated_at: row.get(3)
+//         }).unwrap();
+//     result.nth(0).unwrap()
+// }
 
 pub fn remove_note(id: i64) {
     let conn = Connection::open("../data.sqlite").unwrap();
