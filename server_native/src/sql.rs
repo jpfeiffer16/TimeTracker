@@ -9,7 +9,7 @@ use rusqlite::Error;
 use std::iter::FromIterator;
 
 pub fn get_days(dateFrom: Option<&String>, dateTo: Option<&String>) -> Vec<Day> {
-    let conn = Connection::open("../data.sqlite").unwrap();
+    let conn = get_connection(String::from("../data.sqlite"));
     let mut query = format!(
         "select * from days where {} and {}",
         match dateFrom {
@@ -43,7 +43,7 @@ pub fn get_days(dateFrom: Option<&String>, dateTo: Option<&String>) -> Vec<Day> 
 }
 
 pub fn get_day(id: i64) -> Day {
-    let conn = Connection::open("../data.sqlite").unwrap();    
+    let conn = get_connection(String::from("../data.sqlite"));    
     let mut stmnt = conn.prepare(&format!("select * from days where id = {}", id)).unwrap();
     let mut day_iter = stmnt
         .query_map(&[], |row| {
@@ -61,7 +61,7 @@ pub fn get_day(id: i64) -> Day {
 }
 
 pub fn save_day(day: Day) -> Result<i64, ()> {
-    let conn = Connection::open("../data.sqlite").unwrap();
+    let conn = get_connection(String::from("../data.sqlite"));
     let mut query;
     match day.id {
         Some(id) => query = format!(
@@ -93,7 +93,7 @@ pub fn save_day(day: Day) -> Result<i64, ()> {
 }
 
 pub fn remove_day(id: i64) {
-    let conn = Connection::open("../data.sqlite").unwrap();
+    let conn = get_connection(String::from("../data.sqlite"));
     conn.execute(&format!(
         "delete from tasks where dayId = {}",
         id
@@ -105,7 +105,7 @@ pub fn remove_day(id: i64) {
 }
 
 pub fn save_task(task:Task, day_id: i64) -> Result<(), ()> {
-    let conn = Connection::open("../data.sqlite").unwrap();
+    let conn = get_connection(String::from("../data.sqlite"));
     let mut query;
     println!("{:?}", task);
     match (task.id) {
@@ -132,7 +132,7 @@ pub fn save_task(task:Task, day_id: i64) -> Result<(), ()> {
 }
 
 pub fn remove_task(id: i64) {
-    let conn = Connection::open("../data.sqlite").unwrap();
+    let conn = get_connection(String::from("../data.sqlite"));
     conn.execute(&format!(
         "delete from tasks where id = {}",
         id
@@ -140,7 +140,7 @@ pub fn remove_task(id: i64) {
 }
 
 pub fn get_tasks_for_day(day_id: i64) -> Vec<Task> {
-    let conn = Connection::open("../data.sqlite").unwrap();
+    let conn = get_connection(String::from("../data.sqlite"));
     let mut task_stmnt =
         conn.prepare(&format!("select * from tasks where dayId = {}", day_id))
             .unwrap();
@@ -164,7 +164,7 @@ pub fn get_tasks_for_day(day_id: i64) -> Vec<Task> {
 
 
 pub fn get_notes() -> Vec<Note> {
-    let conn = Connection::open("../data.sqlite").unwrap();
+    let conn = get_connection(String::from("../data.sqlite"));
     let mut task_stmnt =
         conn.prepare("select * from notes")
             .unwrap();
@@ -185,7 +185,7 @@ pub fn get_notes() -> Vec<Note> {
 }
 
 pub fn get_note(id: i64) -> Result<Note, Error> {
-    let conn = Connection::open("../data.sqlite").unwrap();
+    let conn = get_connection(String::from("../data.sqlite"));
     let mut task_stmnt =
         conn.prepare(&format!("select * from notes where id = {}", id))
             .unwrap();
@@ -201,7 +201,7 @@ pub fn get_note(id: i64) -> Result<Note, Error> {
 }
 
 pub fn save_note(note: Note) -> Result<i64, ()> {
-    let conn = Connection::open("../data.sqlite").unwrap();
+    let conn = get_connection(String::from("../data.sqlite"));
     let mut query;
 
     match note.id {
@@ -232,7 +232,7 @@ pub fn save_note(note: Note) -> Result<i64, ()> {
 }
 
 pub fn get_categories() -> Result<Vec<Category>, Error>{
-    let conn = Connection::open("../data.sqlite").unwrap();
+    let conn = get_connection(String::from("../data.sqlite"));
     let mut stmnt = conn.prepare("SELECT * FROM categories").unwrap();
     let itr = stmnt.query_map(&[], |row| {
         Category {
@@ -254,7 +254,7 @@ pub fn get_categories() -> Result<Vec<Category>, Error>{
 }
 
 // pub fn get_category(id: i64) -> Category {
-//     let conn = Connection::open("../data.sqlite").unwrap();
+//     let conn = get_connection(String::from("../data.sqlite"));
 //     let mut task_stmnt =
 //         conn.prepare(&format!("select * from categories where id = {}", id))
 //             .unwrap();
@@ -269,9 +269,13 @@ pub fn get_categories() -> Result<Vec<Category>, Error>{
 // }
 
 pub fn remove_note(id: i64) {
-    let conn = Connection::open("../data.sqlite").unwrap();
+    let conn = get_connection(String::from("../data.sqlite"));
     conn.execute(&format!(
         "delete from notes where id = {}",
         id
     ), &[]);
+}
+
+fn get_connection(path: String) -> Connection {
+    Connection::open(path).unwrap()
 }

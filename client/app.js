@@ -140,7 +140,7 @@ app.on('ready', function () {
     {
       label: 'Quit',
       click() {
-        app.quit();
+        quit();
       }
     }
   ]);
@@ -171,7 +171,7 @@ app.on('window-all-closed', () => {
   // if (process.platform !== 'darwin') {
   //   app.quit()
   // }
-})
+});
 
 app.on('activate', () => {
   // On macOS it's common to re-create a window in the app when the
@@ -181,7 +181,32 @@ app.on('activate', () => {
   } else {
     windows[windows.length - 1].window.focus();
   }
-})
+});
+
+if (process.env.SERVER_EXECUTABLE_PATH && process.env.SERVER_EXECUTABLE) {
+  const { spawn } = require('child_process');
+  let cwd = path.join(
+    __dirname,
+    process.env.SERVER_EXECUTABLE_PATH
+  );
+  serverCommand = spawn(
+    path.join(
+      __dirname,
+      process.env.SERVER_EXECUTABLE
+    ),
+    {
+      cwd,
+      stdio: 'inherit'
+    }
+  );
+}
+
+function quit() {
+  app.quit();
+  if (serverCommand) {
+    serverCommand.kill('SIGINT');
+  }
+}
 
 // let outlook = require("node-outlook");
 
