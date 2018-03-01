@@ -23,7 +23,7 @@ angular.module('app')
       title: ''
     };
     if ($routeParams.id) {
-      StorageManager.query('getCategory', $routeParams.id, (category) => {
+      StorageManager.query('getCategory', parseInt($routeParams.id), (category) => {
         $scope.category = category;
         $scope.$apply();
       });

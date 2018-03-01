@@ -34,7 +34,7 @@ angular.module('app')
 
     StorageManager.query('getCategories', null, (categories) => {
       $scope.categories = categories;
-      $scope.$apply();
+      // $scope.$apply();
     });
 
     $scope.save = function () {

@@ -38,6 +38,7 @@ fn rocket() -> rocket::Rocket {
         .mount("/saveNote", routes![routes::save_note::save_note])
         .mount("/removeNote", routes![routes::remove_note::remove_note])
         .mount("/getCategories", routes![routes::get_categories::get_categories])
+        .mount("/getCategory", routes![routes::get_category::get_category])
         .catch(errors![not_found])
 }
 

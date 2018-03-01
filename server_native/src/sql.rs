@@ -253,20 +253,20 @@ pub fn get_categories() -> Result<Vec<Category>, Error>{
     // }
 }
 
-// pub fn get_category(id: i64) -> Category {
-//     let conn = get_connection(String::from("../data.sqlite"));
-//     let mut task_stmnt =
-//         conn.prepare(&format!("select * from categories where id = {}", id))
-//             .unwrap();
-//     let mut result = task_stmnt
-//         .query_map(&[], |row| Note {
-//             id: row.get(0),
-//             name: row.get(1),
-//             created_at: row.get(2),            
-//             updated_at: row.get(3)
-//         }).unwrap();
-//     result.nth(0).unwrap()
-// }
+pub fn get_category(id: i64) -> Result<Category, Error> {
+    let conn = get_connection(String::from("../data.sqlite"));
+    let mut task_stmnt =
+        conn.prepare(&format!("select * from categories where id = {}", id))
+            .unwrap();
+    let mut result = task_stmnt
+        .query_map(&[], |row| Category {
+            id: row.get(0),
+            name: row.get(1),
+            created_at: row.get(2),           
+            updated_at: row.get(3)
+        }).unwrap();
+    Ok(result.nth(0).unwrap().unwrap())
+}
 
 pub fn remove_note(id: i64) {
     let conn = get_connection(String::from("../data.sqlite"));
