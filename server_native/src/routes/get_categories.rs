@@ -2,6 +2,7 @@ use rusqlite::Connection;
 use rocket_contrib::{Json, Value};
 use super::super::models::category::Category;
 use super::super::sql;
+use super::super::types::single_value_body::SingleValueBody;
 use rusqlite::Error;
 
 #[post("/", format = "application/json", data = "<data>")]

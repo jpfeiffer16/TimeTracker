@@ -25,7 +25,7 @@ pub fn get_days(dateFrom: Option<&String>, dateTo: Option<&String>, db: String) 
     let mut stmnt = conn.prepare(&query).unwrap();
     let day_iter = stmnt
         .query_map(&[], |row| {
-            let tasks_vec = get_tasks_for_day(row.get(0));
+            let tasks_vec = get_tasks_for_day(row.get(0), db);
             Day {
                 id: row.get(0),
                 date: Some(helpers::get_iso_date(row.get(1))),
@@ -47,7 +47,7 @@ pub fn get_day(id: i64, db: String) -> Day {
     let mut stmnt = conn.prepare(&format!("select * from days where id = {}", id)).unwrap();
     let mut day_iter = stmnt
         .query_map(&[], |row| {
-            let tasks_vec = get_tasks_for_day(row.get(0));
+            let tasks_vec = get_tasks_for_day(row.get(0), db);
             Day {
                 id: row.get(0),
                 date: Some(helpers::get_iso_date(row.get(1))),
@@ -84,7 +84,7 @@ pub fn save_day(day: Day, db: String) -> Result<i64, ()> {
     conn.execute(&query, &[]);
     let last_row = conn.last_insert_rowid();
     for task in day.tasks {
-        save_task(task, match day.id { Some(id) => id, None => last_row });
+        save_task(task, match day.id { Some(id) => id, None => last_row }, db);
     }
     Ok(match day.id {
         Some(id) => id,

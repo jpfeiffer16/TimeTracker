@@ -6,8 +6,8 @@ use super::super::sql;
 
 #[post("/", format = "application/json", data = "<data>")]
 pub fn save_day(data: Json<Option<DayBody>>) -> Json<Day> {
-  match sql::save_day(data.0.unwrap().params) {
-    Ok(id) => Json(sql::get_day(id)),
+  match sql::save_day(data.0.unwrap().params, data.0.unwrap().db) {
+    Ok(id) => Json(sql::get_day(id, data.0.unwrap().db)),
     Err(_) => Json(Day {
       id: None,
       date: None,

@@ -6,5 +6,5 @@ use rocket::data::FromData;
 #[derive(Deserialize)]
 pub struct Body {
   pub db: String,
-  pub params: HashMap<String, String>,
+  pub params: Option<HashMap<String, String>>,
 }
