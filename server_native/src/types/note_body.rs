@@ -5,5 +5,6 @@ use super::super::models::note::Note;
 
 #[derive(Deserialize)]
 pub struct NoteBody {
+  pub db: String,
   pub params: Note
 }

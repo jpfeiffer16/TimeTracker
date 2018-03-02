@@ -6,5 +6,6 @@ use super::super::models::day::Day;
 
 #[derive(Deserialize)]
 pub struct DayBody {
+  pub db: String,
   pub params: Day
 }

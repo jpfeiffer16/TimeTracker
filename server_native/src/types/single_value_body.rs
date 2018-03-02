@@ -5,5 +5,6 @@ use rocket::data::FromData;
 
 #[derive(Deserialize)]
 pub struct SingleValueBody {
-  pub params: i64,
+  pub db: String,
+  pub params: i64
 }
