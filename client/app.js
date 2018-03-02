@@ -4,7 +4,8 @@ const path = require('path');
 const Scheduler = require('./modules/scheduler');
 const notify = require('electron-main-notification');
 const databacker = require('databacker-client');
-require('dotenv').config({ path: './client/.env' });
+require('dotenv').config({ path: path.join(__dirname, './.env') });
+console.log(path.join(__dirname, './.env'));
 const SettingsManager = require('./modules/settingsManager');
 const fs = require('fs');
 // Scheduler.register(new Date(new Date().getTime() + 60000), () => {
@@ -85,6 +86,7 @@ function createWindow (path) {
   win.loadURL(`file://${__dirname}/index.html#!${path}`);
   
   // Open the DevTools.
+  console.log(process.env.SHOW_DEVTOOLS);
   if (process.env.SHOW_DEVTOOLS == 'true')
     win.webContents.openDevTools();
 
