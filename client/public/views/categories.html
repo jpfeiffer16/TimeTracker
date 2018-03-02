@@ -15,7 +15,7 @@
   <md-list>
     <md-list-item ng-repeat="category in categories | filter: searchText" ng-click="navigate('/category/' + category.id)" right-click-navigate="'/category/' + category.id" class="noright">
       <p>{{ category.name }}</p>
-      <md-icon ng-click="removeCategory(category.id, $index, $event)" aria-label="Remove Category" class="md-secondary md-hue-3" md-svg-src="images/ic_clear_black_24px.svg">
+      <!-- <md-icon ng-click="removeCategory(category.id, $index, $event)" aria-label="Remove Category" class="md-secondary md-hue-3" md-svg-src="images/ic_clear_black_24px.svg"> -->
       </md-icon>
     </md-list-item>
   </md-list>

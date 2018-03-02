@@ -268,6 +268,16 @@ pub fn get_category(id: i64) -> Result<Category, Error> {
     Ok(result.nth(0).unwrap().unwrap())
 }
 
+pub fn remove_category(id: i64) {
+    let conn = get_connection(String::from("../data.sqlite"));    
+    let query = format!("delete from categories where id = {}", id);
+    conn.execute(&query, &[]);
+}
+
+// pub fn save_category(category: Category) -> Result(i64, ()) {
+
+// }
+
 pub fn remove_note(id: i64) {
     let conn = get_connection(String::from("../data.sqlite"));
     conn.execute(&format!(
