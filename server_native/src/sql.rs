@@ -8,7 +8,7 @@ use super::models::category::Category;
 use rusqlite::Error;
 use std::iter::FromIterator;
 
-pub fn get_days(dateFrom: Option<&String>, dateTo: Option<&String>, db: String) -> Vec<Day> {
+pub fn get_days(dateFrom: Option<&String>, dateTo: Option<&String>, db: &String) -> Vec<Day> {
     let conn = get_connection(db);
     let mut query = format!(
         "select * from days where {} and {}",
@@ -42,104 +42,104 @@ pub fn get_days(dateFrom: Option<&String>, dateTo: Option<&String>, db: String) 
     final_result
 }
 
-pub fn get_day(id: i64, db: String) -> Day {
-    let conn = get_connection(db);    
-    let mut stmnt = conn.prepare(&format!("select * from days where id = {}", id)).unwrap();
-    let mut day_iter = stmnt
-        .query_map(&[], |row| {
-            let tasks_vec = get_tasks_for_day(row.get(0), db);
-            Day {
-                id: row.get(0),
-                date: Some(helpers::get_iso_date(row.get(1))),
-                created_at: Some(helpers::get_iso_date(row.get(2))),
-                updated_at: Some(helpers::get_iso_date(row.get(3))),
-                tasks: tasks_vec,
-            }
-        })
-        .unwrap();
-    day_iter.nth(0).unwrap().unwrap()
-}
+// pub fn get_day(id: i64, db: String) -> Day {
+//     let conn = get_connection(db);    
+//     let mut stmnt = conn.prepare(&format!("select * from days where id = {}", id)).unwrap();
+//     let mut day_iter = stmnt
+//         .query_map(&[], |row| {
+//             let tasks_vec = get_tasks_for_day(row.get(0), db);
+//             Day {
+//                 id: row.get(0),
+//                 date: Some(helpers::get_iso_date(row.get(1))),
+//                 created_at: Some(helpers::get_iso_date(row.get(2))),
+//                 updated_at: Some(helpers::get_iso_date(row.get(3))),
+//                 tasks: tasks_vec,
+//             }
+//         })
+//         .unwrap();
+//     day_iter.nth(0).unwrap().unwrap()
+// }
 
-pub fn save_day(day: Day, db: String) -> Result<i64, ()> {
-    let conn = get_connection(db);
-    let mut query;
-    match day.id {
-        Some(id) => query = format!(
-            "UPDATE days SET date='{}',updatedAt='{}' WHERE (id = {})",
-            helpers::get_sqlite_date(day.date.unwrap()),
-            //TODO: Fix this, we need to actually update the timestamp
-            Local::now(),
-            id
-        ),
-        None => query = format!(
-            "INSERT INTO days (date, createdAt, updatedAt) VALUES ('{}', '{}', '{}')",
-            helpers::get_sqlite_date(day.date.unwrap()),
-            Local::now(),
-            Local::now()
-            //TODO: Fix this, we need to actually update the timestamp
-            // day.updated_at,
-        )
-    }
-    println!("{}", query);
-    conn.execute(&query, &[]);
-    let last_row = conn.last_insert_rowid();
-    for task in day.tasks {
-        save_task(task, match day.id { Some(id) => id, None => last_row }, db);
-    }
-    Ok(match day.id {
-        Some(id) => id,
-        None => last_row
-    })
-}
+// pub fn save_day(day: Day, db: String) -> Result<i64, ()> {
+//     let conn = get_connection(db);
+//     let mut query;
+//     match day.id {
+//         Some(id) => query = format!(
+//             "UPDATE days SET date='{}',updatedAt='{}' WHERE (id = {})",
+//             helpers::get_sqlite_date(day.date.unwrap()),
+//             //TODO: Fix this, we need to actually update the timestamp
+//             Local::now(),
+//             id
+//         ),
+//         None => query = format!(
+//             "INSERT INTO days (date, createdAt, updatedAt) VALUES ('{}', '{}', '{}')",
+//             helpers::get_sqlite_date(day.date.unwrap()),
+//             Local::now(),
+//             Local::now()
+//             //TODO: Fix this, we need to actually update the timestamp
+//             // day.updated_at,
+//         )
+//     }
+//     println!("{}", query);
+//     conn.execute(&query, &[]);
+//     let last_row = conn.last_insert_rowid();
+//     for task in day.tasks {
+//         save_task(task, match day.id { Some(id) => id, None => last_row }, db);
+//     }
+//     Ok(match day.id {
+//         Some(id) => id,
+//         None => last_row
+//     })
+// }
 
-pub fn remove_day(id: i64, db: String) {
-    let conn = get_connection(db);
-    conn.execute(&format!(
-        "delete from tasks where dayId = {}",
-        id
-    ), &[]);
-    conn.execute(&format!(
-        "delete from days where id = {}",
-        id
-    ), &[]);
-}
+// pub fn remove_day(id: i64, db: String) {
+//     let conn = get_connection(db);
+//     conn.execute(&format!(
+//         "delete from tasks where dayId = {}",
+//         id
+//     ), &[]);
+//     conn.execute(&format!(
+//         "delete from days where id = {}",
+//         id
+//     ), &[]);
+// }
 
-pub fn save_task(task:Task, day_id: i64, db: String) -> Result<(), ()> {
-    let conn = get_connection(db);
-    let mut query;
-    println!("{:?}", task);
-    match (task.id) {
-        Some(id) => query = format!(
-            "UPDATE tasks SET description='{}',time={},dayId={},updatedAt='{}' WHERE (id = {})",
-            task.description.unwrap(),
-            task.time.unwrap(),
-            day_id,
-            Local::now(),
-            id
-        ),
-        None => query = format!(
-            "INSERT INTO tasks (description, time, dayId, createdAt, updatedAt) VALUES ('{}', {}, {}, '{}', '{}')",
-            task.description.unwrap(),
-            task.time.unwrap(),
-            day_id,
-            Local::now(),
-            Local::now()
-        )
-    }
-    println!("{}", query);
-    conn.execute(&query, &[]);
-    Ok(())
-}
+// pub fn save_task(task:Task, day_id: i64, db: String) -> Result<(), ()> {
+//     let conn = get_connection(db);
+//     let mut query;
+//     println!("{:?}", task);
+//     match (task.id) {
+//         Some(id) => query = format!(
+//             "UPDATE tasks SET description='{}',time={},dayId={},updatedAt='{}' WHERE (id = {})",
+//             task.description.unwrap(),
+//             task.time.unwrap(),
+//             day_id,
+//             Local::now(),
+//             id
+//         ),
+//         None => query = format!(
+//             "INSERT INTO tasks (description, time, dayId, createdAt, updatedAt) VALUES ('{}', {}, {}, '{}', '{}')",
+//             task.description.unwrap(),
+//             task.time.unwrap(),
+//             day_id,
+//             Local::now(),
+//             Local::now()
+//         )
+//     }
+//     println!("{}", query);
+//     conn.execute(&query, &[]);
+//     Ok(())
+// }
 
-pub fn remove_task(id: i64, db: String) {
-    let conn = get_connection(db);
-    conn.execute(&format!(
-        "delete from tasks where id = {}",
-        id
-    ), &[]);
-}
+// pub fn remove_task(id: i64, db: String) {
+//     let conn = get_connection(db);
+//     conn.execute(&format!(
+//         "delete from tasks where id = {}",
+//         id
+//     ), &[]);
+// }
 
-pub fn get_tasks_for_day(day_id: i64, db: String) -> Vec<Task> {
+pub fn get_tasks_for_day(day_id: i64, db: &String) -> Vec<Task> {
     let conn = get_connection(db);
     let mut task_stmnt =
         conn.prepare(&format!("select * from tasks where dayId = {}", day_id))
@@ -163,129 +163,129 @@ pub fn get_tasks_for_day(day_id: i64, db: String) -> Vec<Task> {
 }
 
 
-pub fn get_notes(db: String) -> Vec<Note> {
-    let conn = get_connection(db);
-    let mut task_stmnt =
-        conn.prepare("select * from notes")
-            .unwrap();
-    let iter = task_stmnt
-        .query_map(&[], |row| Note {
-            id: row.get(0),
-            title: row.get(1),
-            text: row.get(2),
-            created_at: row.get(3),            
-            updated_at: row.get(4)
-        })
-        .unwrap();
-    let mut final_vec = Vec::new();
-    for row in iter {
-        final_vec.push(row.unwrap());
-    }
-    final_vec
-}
-
-pub fn get_note(id: i64,db: String) -> Result<Note, Error> {
-    let conn = get_connection(db);
-    let mut task_stmnt =
-        conn.prepare(&format!("select * from notes where id = {}", id))
-            .unwrap();
-    let mut result = task_stmnt
-        .query_map(&[], |row| Note {
-            id: row.get(0),
-            title: row.get(1),
-            text: row.get(2),
-            created_at: row.get(3),            
-            updated_at: row.get(4)
-        }).unwrap();
-    result.nth(0).unwrap()
-}
-
-pub fn save_note(note: Note, db: String) -> Result<i64, ()> {
-    let conn = get_connection(db);
-    let mut query;
-
-    match note.id {
-        Some(id) => query = format!(
-            "UDATE notes SET title='{}', text='{}', updatedAt='{}' WHERE id={}",
-            note.title.unwrap(),
-            note.text.unwrap(),
-            Local::now(),
-            id
-        ),
-        None => query = format!(
-            "INSERT INTO notes (title, text, updatedAt, createdAt) VALUES ('{}', '{}', '{}', '{}')",
-            note.title.unwrap(),
-            note.text.unwrap(),
-            Local::now(),
-            Local::now()
-        )
-    }
-
-    println!("{}", query);
-    
-    conn.execute(&query, &[]);
-    
-    match note.id {
-        Some(id) => Ok(id),
-        None => Ok(conn.last_insert_rowid())
-    }
-}
-
-pub fn get_categories(db: String) -> Result<Vec<Category>, Error>{
-    let conn = get_connection(db);
-    let mut stmnt = conn.prepare("SELECT * FROM categories").unwrap();
-    let itr = stmnt.query_map(&[], |row| {
-        Category {
-            id: row.get(0),
-            name: row.get(1),
-            created_at: row.get(2),
-            updated_at: row.get(3)
-        }
-    }).unwrap();
-    let mut final_vec = Vec::new();
-    for row in itr {
-        final_vec.push(row.unwrap());
-    }
-    Ok(final_vec)
-    // match itr {
-    //     Ok(rows) => Ok(Vec::from_iter(itr.map(|row| row.unwrap()))),
-    //     Err(err) => Err(err)
-    // }
-}
-
-pub fn get_category(id: i64, db: String) -> Result<Category, Error> {
-    let conn = get_connection(db);
-    let mut task_stmnt =
-        conn.prepare(&format!("select * from categories where id = {}", id))
-            .unwrap();
-    let mut result = task_stmnt
-        .query_map(&[], |row| Category {
-            id: row.get(0),
-            name: row.get(1),
-            created_at: row.get(2),           
-            updated_at: row.get(3)
-        }).unwrap();
-    Ok(result.nth(0).unwrap().unwrap())
-}
-
-pub fn remove_category(id: i64, db: String) {
-    let conn = get_connection(db);    
-    let query = format!("delete from categories where id = {}", id);
-    conn.execute(&query, &[]);
-}
-
-// pub fn save_category(category: Category) -> Result(i64, ()) {
-
+// pub fn get_notes(db: String) -> Vec<Note> {
+//     let conn = get_connection(db);
+//     let mut task_stmnt =
+//         conn.prepare("select * from notes")
+//             .unwrap();
+//     let iter = task_stmnt
+//         .query_map(&[], |row| Note {
+//             id: row.get(0),
+//             title: row.get(1),
+//             text: row.get(2),
+//             created_at: row.get(3),            
+//             updated_at: row.get(4)
+//         })
+//         .unwrap();
+//     let mut final_vec = Vec::new();
+//     for row in iter {
+//         final_vec.push(row.unwrap());
+//     }
+//     final_vec
 // }
 
-pub fn remove_note(id: i64, db: String) {
-    let conn = get_connection(db);
-    conn.execute(&format!(
-        "delete from notes where id = {}",
-        id
-    ), &[]);
-}
+// pub fn get_note(id: i64,db: String) -> Result<Note, Error> {
+//     let conn = get_connection(db);
+//     let mut task_stmnt =
+//         conn.prepare(&format!("select * from notes where id = {}", id))
+//             .unwrap();
+//     let mut result = task_stmnt
+//         .query_map(&[], |row| Note {
+//             id: row.get(0),
+//             title: row.get(1),
+//             text: row.get(2),
+//             created_at: row.get(3),
+//             updated_at: row.get(4)
+//         }).unwrap();
+//     result.nth(0).unwrap()
+// }
 
-fn get_connection(path: String) -> Connection {
+// pub fn save_note(note: Note, db: String) -> Result<i64, ()> {
+//     let conn = get_connection(db);
+//     let mut query;
+
+//     match note.id {
+//         Some(id) => query = format!(
+//             "UDATE notes SET title='{}', text='{}', updatedAt='{}' WHERE id={}",
+//             note.title.unwrap(),
+//             note.text.unwrap(),
+//             Local::now(),
+//             id
+//         ),
+//         None => query = format!(
+//             "INSERT INTO notes (title, text, updatedAt, createdAt) VALUES ('{}', '{}', '{}', '{}')",
+//             note.title.unwrap(),
+//             note.text.unwrap(),
+//             Local::now(),
+//             Local::now()
+//         )
+//     }
+
+//     println!("{}", query);
+    
+//     conn.execute(&query, &[]);
+    
+//     match note.id {
+//         Some(id) => Ok(id),
+//         None => Ok(conn.last_insert_rowid())
+//     }
+// }
+
+// pub fn get_categories(db: String) -> Result<Vec<Category>, Error>{
+//     let conn = get_connection(db);
+//     let mut stmnt = conn.prepare("SELECT * FROM categories").unwrap();
+//     let itr = stmnt.query_map(&[], |row| {
+//         Category {
+//             id: row.get(0),
+//             name: row.get(1),
+//             created_at: row.get(2),
+//             updated_at: row.get(3)
+//         }
+//     }).unwrap();
+//     let mut final_vec = Vec::new();
+//     for row in itr {
+//         final_vec.push(row.unwrap());
+//     }
+//     Ok(final_vec)
+//     // match itr {
+//     //     Ok(rows) => Ok(Vec::from_iter(itr.map(|row| row.unwrap()))),
+//     //     Err(err) => Err(err)
+//     // }
+// }
+
+// pub fn get_category(id: i64, db: String) -> Result<Category, Error> {
+//     let conn = get_connection(db);
+//     let mut task_stmnt =
+//         conn.prepare(&format!("select * from categories where id = {}", id))
+//             .unwrap();
+//     let mut result = task_stmnt
+//         .query_map(&[], |row| Category {
+//             id: row.get(0),
+//             name: row.get(1),
+//             created_at: row.get(2),           
+//             updated_at: row.get(3)
+//         }).unwrap();
+//     Ok(result.nth(0).unwrap().unwrap())
+// }
+
+// pub fn remove_category(id: i64, db: String) {
+//     let conn = get_connection(db);    
+//     let query = format!("delete from categories where id = {}", id);
+//     conn.execute(&query, &[]);
+// }
+
+// // pub fn save_category(category: Category) -> Result(i64, ()) {
+
+// // }
+
+// pub fn remove_note(id: i64, db: String) {
+//     let conn = get_connection(db);
+//     conn.execute(&format!(
+//         "delete from notes where id = {}",
+//         id
+//     ), &[]);
+// }
+
+fn get_connection(path: &String) -> Connection {
     Connection::open(path).unwrap()
 }
