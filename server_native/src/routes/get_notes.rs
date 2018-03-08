@@ -6,5 +6,5 @@ use super::super::types::single_value_body::SingleValueBody;
 
 #[post("/", format = "application/json", data="<data>")]
 pub fn get_notes(data: Json<Option<SingleValueBody>>) -> Json<Vec<Note>> {
-  Json(sql::get_notes(data.0.unwrap().db))
+  Json(sql::get_notes(&data.0.unwrap().db))
 }

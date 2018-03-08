@@ -4,5 +4,6 @@ use super::super::sql;
 
 #[post("/", format = "application/json", data = "<data>")]
 pub fn get_day(data: Json<Option<SingleValueBody>>) -> Json<super::super::models::day::Day> {
-  Json(sql::get_day(data.0.unwrap().params, data.0.unwrap().db))
+  let body_data = data.0.unwrap();
+  Json(sql::get_day(body_data.params, &body_data.db))
 }

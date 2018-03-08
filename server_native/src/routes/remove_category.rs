@@ -4,7 +4,8 @@ use super::super::sql;
 
 #[post("/", format = "application/json", data = "<data>")]
 pub fn remove_category(data: Json<Option<SingleValueBody>>) -> Json<Value> {
-  sql::remove_category(data.0.unwrap().params, data.0.unwrap().db);
+  let body_data = data.0.unwrap();
+  sql::remove_category(body_data.params, &body_data.db);
   Json(json!({
     "Success": "true",
   }))

@@ -4,7 +4,8 @@ use super::super::sql;
 
 #[post("/", format = "application/json", data = "<data>")]
 pub fn remove_day(data: Json<Option<SingleValueBody>>) -> Json<Value> {
-  sql::remove_day(data.0.unwrap().params, data.0.unwrap().db);
+  let body_data = data.0.unwrap();
+  sql::remove_day(body_data.params, &body_data.db);
   Json(json!({
     "Success": "true"
   }))

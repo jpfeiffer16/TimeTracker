@@ -7,8 +7,8 @@ use rusqlite::Error;
 
 #[post("/", format = "application/json", data="<data>")]
 pub fn get_category(data: Json<Option<SingleValueBody>>) -> Result<Json<Category>, Json<Error>> {
-  
-  match sql::get_category(data.0.unwrap().params, data.0.unwrap().db) {
+  let body_data = data.0.unwrap();
+  match sql::get_category(body_data.params, &body_data.db) {
     Ok(category) => Ok(Json(category)),
     Err(err) => Err(Json(err))
   }
