@@ -1,4 +1,5 @@
-struct Data<T> {
-    db: Option<String>,
-    params: Option<T>
+#[derive(Deserialize)]
+pub struct Data<T> {
+    pub db: String,
+    pub params: T
 }
