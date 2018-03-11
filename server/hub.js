@@ -7,6 +7,7 @@ app.use(bodyParser.json());
  
 app.post('/:op', function (req, res) {
   let params = req.body.params;
+  SqlStorageManager.setDB(req.body.db);
   SqlStorageManager[req.params.op](params, (result) => {
     //TODO: Setup error handling here
     res.send(result);

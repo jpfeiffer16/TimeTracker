@@ -10,6 +10,14 @@ const SqlStorageManager = function(models, Cache, Touch, Clear) {
   Note = models.Note;
   Category = models.Category;
 
+  let setDB = function (path) {
+    let models = require('../storage')(path);
+    Day = models.Day;
+    Task = models.Task;
+    Note = models.Note;
+    Category = models.Category;
+  }
+
   //Days
   let getDays = function ({dateFrom, dateTo}, cb) {
     let where = {};
@@ -165,6 +173,7 @@ const SqlStorageManager = function(models, Cache, Touch, Clear) {
 
   //Exports
   return {
+    setDB,
     getDays,
     getDay,
     saveDay,
