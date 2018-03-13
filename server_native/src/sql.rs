@@ -8,7 +8,16 @@ use super::models::category::Category;
 use rusqlite::Error;
 use std::iter::FromIterator;
 
+fn ensure_schema(db: &String) {
+    let conn = get_connection(db);
+    conn.execute("CREATE TABLE  IF NOT EXISTS`categories` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` VARCHAR(255), `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL);", &[]);
+    conn.execute("CREATE TABLE IF NOT EXISTS `days` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `date` DATETIME, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL);", &[]);
+    conn.execute("CREATE TABLE IF NOT EXISTS `notes` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `title` VARCHAR(255), `text` VARCHAR(255), `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `categoryId` INTEGER REFERENCES `categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE);", &[]);
+    conn.execute("CREATE TABLE IF NOT EXISTS `tasks` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `description` VARCHAR(255), `time` INTEGER, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `dayId` INTEGER NOT NULL REFERENCES `days` (`id`) ON DELETE CASCADE ON UPDATE CASCADE, synced TINYINT(1));", &[]);
+}
+
 pub fn get_days(dateFrom: Option<&String>, dateTo: Option<&String>, db: &String) -> Vec<Day> {
+    ensure_schema(db);
     let conn = get_connection(db);
     let mut query = format!(
         "select * from days where {} and {}",
@@ -43,6 +52,7 @@ pub fn get_days(dateFrom: Option<&String>, dateTo: Option<&String>, db: &String)
 }
 
 pub fn get_day(id: i64, db: &String) -> Day {
+    ensure_schema(db);
     let conn = get_connection(db);    
     let mut stmnt = conn.prepare(&format!("select * from days where id = {}", id)).unwrap();
     let mut day_iter = stmnt
@@ -61,6 +71,7 @@ pub fn get_day(id: i64, db: &String) -> Day {
 }
 
 pub fn save_day(day: Day, db: &String) -> Result<i64, ()> {
+    ensure_schema(db);
     let conn = get_connection(db);
     let mut query;
     match day.id {
@@ -93,6 +104,7 @@ pub fn save_day(day: Day, db: &String) -> Result<i64, ()> {
 }
 
 pub fn remove_day(id: i64, db: &String) {
+    ensure_schema(db);
     let conn = get_connection(db);
     conn.execute(&format!(
         "delete from tasks where dayId = {}",
@@ -105,6 +117,7 @@ pub fn remove_day(id: i64, db: &String) {
 }
 
 pub fn save_task(task:Task, day_id: i64, db: &String) -> Result<(), ()> {
+    ensure_schema(db);
     let conn = get_connection(db);
     let mut query;
     println!("{:?}", task);
@@ -132,6 +145,7 @@ pub fn save_task(task:Task, day_id: i64, db: &String) -> Result<(), ()> {
 }
 
 pub fn remove_task(id: i64, db: &String) {
+    ensure_schema(db);
     let conn = get_connection(db);
     conn.execute(&format!(
         "delete from tasks where id = {}",
@@ -140,6 +154,7 @@ pub fn remove_task(id: i64, db: &String) {
 }
 
 pub fn get_tasks_for_day(day_id: i64, db: &String) -> Vec<Task> {
+    ensure_schema(db);
     let conn = get_connection(db);
     let mut task_stmnt =
         conn.prepare(&format!("select * from tasks where dayId = {}", day_id))
@@ -164,6 +179,7 @@ pub fn get_tasks_for_day(day_id: i64, db: &String) -> Vec<Task> {
 
 
 pub fn get_notes(db: &String) -> Vec<Note> {
+    ensure_schema(db);    
     let conn = get_connection(db);
     let mut task_stmnt =
         conn.prepare("select * from notes")
@@ -185,6 +201,7 @@ pub fn get_notes(db: &String) -> Vec<Note> {
 }
 
 pub fn get_note(id: i64,db: &String) -> Result<Note, Error> {
+    ensure_schema(db);
     let conn = get_connection(db);
     let mut task_stmnt =
         conn.prepare(&format!("select * from notes where id = {}", id))
@@ -201,6 +218,7 @@ pub fn get_note(id: i64,db: &String) -> Result<Note, Error> {
 }
 
 pub fn save_note(note: Note, db: &String) -> Result<i64, ()> {
+    ensure_schema(db);
     let conn = get_connection(db);
     let mut query;
 
@@ -232,6 +250,7 @@ pub fn save_note(note: Note, db: &String) -> Result<i64, ()> {
 }
 
 pub fn get_categories(db: &String) -> Result<Vec<Category>, Error>{
+    ensure_schema(db);
     let conn = get_connection(db);
     let mut stmnt = conn.prepare("SELECT * FROM categories").unwrap();
     let itr = stmnt.query_map(&[], |row| {
@@ -254,6 +273,7 @@ pub fn get_categories(db: &String) -> Result<Vec<Category>, Error>{
 }
 
 pub fn get_category(id: i64, db: &String) -> Result<Category, Error> {
+    ensure_schema(db);
     let conn = get_connection(db);
     let mut task_stmnt =
         conn.prepare(&format!("select * from categories where id = {}", id))
@@ -269,6 +289,7 @@ pub fn get_category(id: i64, db: &String) -> Result<Category, Error> {
 }
 
 pub fn remove_category(id: i64, db: &String) {
+    ensure_schema(db);
     let conn = get_connection(db);    
     let query = format!("delete from categories where id = {}", id);
     conn.execute(&query, &[]);
@@ -279,6 +300,7 @@ pub fn remove_category(id: i64, db: &String) {
 // }
 
 pub fn remove_note(id: i64, db: &String) {
+    ensure_schema(db);
     let conn = get_connection(db);
     conn.execute(&format!(
         "delete from notes where id = {}",
