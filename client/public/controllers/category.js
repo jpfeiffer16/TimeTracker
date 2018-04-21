@@ -20,7 +20,7 @@ angular.module('app')
       });
 
     $scope.category = {
-      title: ''
+      name: ''
     };
     if ($routeParams.id) {
       StorageManager.query('getCategory', parseInt($routeParams.id), (category) => {

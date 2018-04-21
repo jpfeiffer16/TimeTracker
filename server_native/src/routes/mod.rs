@@ -10,3 +10,4 @@ pub mod remove_note;
 pub mod get_categories;
 pub mod get_category;
 pub mod remove_category;
+pub mod save_category;

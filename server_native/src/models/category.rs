@@ -1,4 +1,5 @@
 #[derive(Serialize,Deserialize)]
+#[derive(Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Category {
   pub id: Option<i64>,

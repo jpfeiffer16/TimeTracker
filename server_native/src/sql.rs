@@ -266,10 +266,6 @@ pub fn get_categories(db: &String) -> Result<Vec<Category>, Error>{
         final_vec.push(row.unwrap());
     }
     Ok(final_vec)
-    // match itr {
-    //     Ok(rows) => Ok(Vec::from_iter(itr.map(|row| row.unwrap()))),
-    //     Err(err) => Err(err)
-    // }
 }
 
 pub fn get_category(id: i64, db: &String) -> Result<Category, Error> {
@@ -295,9 +291,34 @@ pub fn remove_category(id: i64, db: &String) {
     conn.execute(&query, &[]);
 }
 
-// pub fn save_category(category: Category) -> Result(i64, ()) {
+pub fn save_category(category: Category, db: &String) -> Result<i64, ()> {
+    ensure_schema(db);
+    let conn = get_connection(db);
 
-// }
+    let mut query;
+
+    match category.id {
+        Some(id) => query = format!(
+            "UDATE categories SET name='{}', updatedAt='{}' WHERE id={}",
+            category.name.unwrap(),
+            Local::now(),
+            id
+        ),
+        None => query = format!(
+            "INSERT INTO categories (name, updatedAt, createdAt) VALUES ('{}', '{}', '{}')",
+            category.name.unwrap(),
+            Local::now(),
+            Local::now()
+        )
+    }
+
+    conn.execute(&query, &[]);
+    
+    match category.id {
+        Some(id) => Ok(id),
+        None => Ok(conn.last_insert_rowid())
+    }
+}
 
 pub fn remove_note(id: i64, db: &String) {
     ensure_schema(db);
