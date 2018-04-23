@@ -5,5 +5,6 @@ pub struct Note {
   pub title: Option<String>,
   pub text: Option<String>,
   pub created_at: Option<String>,
-  pub updated_at: Option<String>
+  pub updated_at: Option<String>,
+  pub category_id: Option<i64>
 }

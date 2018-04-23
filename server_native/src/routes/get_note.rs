@@ -15,7 +15,8 @@ pub fn get_note(data: Json<Data<Option<i64>>>) -> Json<Note> {
         title: None,
         text: None,
         created_at: None,
-        updated_at: None
+        updated_at: None,
+        category_id: None
       }
     }
   )

@@ -15,7 +15,8 @@ pub fn save_note(data: Json<Data<Option<Note>>>) -> Json<Note> {
       title: None,
       text: None,
       created_at: None,
-      updated_at: None
+      updated_at: None,
+      category_id: None
     }
   })
 }

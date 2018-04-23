@@ -190,7 +190,8 @@ pub fn get_notes(db: &String) -> Vec<Note> {
             title: row.get(1),
             text: row.get(2),
             created_at: row.get(3),            
-            updated_at: row.get(4)
+            updated_at: row.get(4),
+            category_id: row.get(5)
         })
         .unwrap();
     let mut final_vec = Vec::new();
@@ -212,7 +213,8 @@ pub fn get_note(id: i64,db: &String) -> Result<Note, Error> {
             title: row.get(1),
             text: row.get(2),
             created_at: row.get(3),
-            updated_at: row.get(4)
+            updated_at: row.get(4),
+            category_id: row.get(5)
         }).unwrap();
     result.nth(0).unwrap()
 }
@@ -224,16 +226,18 @@ pub fn save_note(note: Note, db: &String) -> Result<i64, ()> {
 
     match note.id {
         Some(id) => query = format!(
-            "UDATE notes SET title='{}', text='{}', updatedAt='{}' WHERE id={}",
+            "UDATE notes SET title='{}', text='{}', updatedAt='{}' categoryId='{}' WHERE id={}",
             note.title.unwrap(),
             note.text.unwrap(),
+            note.category_id.unwrap(),
             Local::now(),
             id
         ),
         None => query = format!(
-            "INSERT INTO notes (title, text, updatedAt, createdAt) VALUES ('{}', '{}', '{}', '{}')",
+            "INSERT INTO notes (title, text, updatedAt, createdAt, categoryId) VALUES ('{}', '{}', '{}', '{}', '{}')",
             note.title.unwrap(),
             note.text.unwrap(),
+            note.category_id.unwrap(),            
             Local::now(),
             Local::now()
         )
